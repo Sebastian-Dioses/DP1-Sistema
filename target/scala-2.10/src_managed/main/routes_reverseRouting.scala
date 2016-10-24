@@ -1,6 +1,6 @@
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/conf/routes
-// @HASH:7a482c6077cdbacfcec00969d8cf49c2cfec9d0c
-// @DATE:Mon Oct 24 17:51:49 COT 2016
+// @HASH:f0c30a82c255e6098ceda1ed21f8ef5605a6815d
+// @DATE:Mon Oct 24 18:21:56 COT 2016
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,16 +13,17 @@ import play.libs.F
 import Router.queryString
 
 
+// @LINE:10
 // @LINE:9
-// @LINE:8
+// @LINE:6
 // @LINE:5
 package controllers {
 
-// @LINE:9
+// @LINE:10
 class ReverseWebJarAssets {
     
 
-// @LINE:9
+// @LINE:10
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "webjars/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -31,11 +32,11 @@ def at(file:String): Call = {
 }
                           
 
-// @LINE:8
+// @LINE:9
 class ReverseAssets {
     
 
-// @LINE:8
+// @LINE:9
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -44,12 +45,19 @@ def at(file:String): Call = {
 }
                           
 
+// @LINE:6
 // @LINE:5
 class ReverseApplication {
     
 
 // @LINE:5
 def index(): Call = {
+   Call("GET", _prefix)
+}
+                                                
+
+// @LINE:6
+def simulation(): Call = {
    Call("GET", _prefix)
 }
                                                 
@@ -60,16 +68,17 @@ def index(): Call = {
                   
 
 
+// @LINE:10
 // @LINE:9
-// @LINE:8
+// @LINE:6
 // @LINE:5
 package controllers.javascript {
 
-// @LINE:9
+// @LINE:10
 class ReverseWebJarAssets {
     
 
-// @LINE:9
+// @LINE:10
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.WebJarAssets.at",
    """
@@ -83,11 +92,11 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:8
+// @LINE:9
 class ReverseAssets {
     
 
-// @LINE:8
+// @LINE:9
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -101,6 +110,7 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:6
 // @LINE:5
 class ReverseApplication {
     
@@ -115,6 +125,17 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
    """
 )
                         
+
+// @LINE:6
+def simulation : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.simulation",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + """"})
+      }
+   """
+)
+                        
     
 }
               
@@ -122,17 +143,18 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
+// @LINE:10
 // @LINE:9
-// @LINE:8
+// @LINE:6
 // @LINE:5
 package controllers.ref {
 
 
-// @LINE:9
+// @LINE:10
 class ReverseWebJarAssets {
     
 
-// @LINE:9
+// @LINE:10
 def at(file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.WebJarAssets.at(file), HandlerDef(this, "controllers.WebJarAssets", "at", Seq(classOf[String]), "GET", """""", _prefix + """webjars/$file<.+>""")
 )
@@ -141,11 +163,11 @@ def at(file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 }
                           
 
-// @LINE:8
+// @LINE:9
 class ReverseAssets {
     
 
-// @LINE:8
+// @LINE:9
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -154,6 +176,7 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:6
 // @LINE:5
 class ReverseApplication {
     
@@ -161,6 +184,12 @@ class ReverseApplication {
 // @LINE:5
 def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.index(), HandlerDef(this, "controllers.Application", "index", Seq(), "GET", """""", _prefix + """""")
+)
+                      
+
+// @LINE:6
+def simulation(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.simulation(), HandlerDef(this, "controllers.Application", "simulation", Seq(), "GET", """""", _prefix + """""")
 )
                       
     

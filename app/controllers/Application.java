@@ -12,4 +12,8 @@ public class Application extends Controller {
         return ok(views.html.index.render("Titulo"));
     }
     
+    public static Result simulation() {
+            
+        return ok(views.html.simulation.render());
+    }
 }

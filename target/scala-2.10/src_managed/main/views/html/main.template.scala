@@ -66,7 +66,7 @@ Seq[Any](format.raw/*1.32*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Oct 24 17:51:49 COT 2016
+                    DATE: Mon Oct 24 18:21:56 COT 2016
                     SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/app/views/main.scala.html
                     HASH: 16acbdc4f82f78ec18dd107936e417f50646035a
                     MATRIX: 778->1|902->31|986->80|1012->85|1111->149|1125->155|1178->187|1251->225|1265->231|1344->289|1424->334|1438->340|1514->394|1577->429|1606->430|1666->463|1694->464|1943->677|1970->682|2098->774|2127->781
