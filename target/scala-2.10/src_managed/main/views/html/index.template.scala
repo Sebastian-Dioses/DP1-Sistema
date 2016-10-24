@@ -23,12 +23,12 @@ import views.html._
 object index extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[String,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(message: String):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(title: String):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
 
-Seq[Any](format.raw/*1.19*/("""
+Seq[Any](format.raw/*1.17*/("""
 
-"""),_display_(Seq[Any](/*3.2*/main("Welcome to Play Framework")/*3.35*/ {_display_(Seq[Any](format.raw/*3.37*/("""
+"""),_display_(Seq[Any](/*3.2*/headerandfooter("Welcome to Play Framework")/*3.46*/ {_display_(Seq[Any](format.raw/*3.48*/("""
     
     <!DOCTYPE html>
 	<html>
@@ -45,172 +45,169 @@ Seq[Any](format.raw/*1.19*/("""
 	
 	</head>
 	<body>
-	extends('layouts.headerandfooter-al-admin')
-
-		
-	section('content')
+	
 
 	<!---Cuerpo -->
 
-	<main class="main">
-		<div class="content" style="max-width: 100%;">
-			<!-- Utilizando Bootstrap -->			
-			<br/><br/>
-			<div class="container">
-				<div class="row">
-		  			<div class="col-sm-12 withoutpadding" >
-		                <img style="text-align:center;margin: 0 auto;display: block;" class="img-responsive" src=""""),_display_(Seq[Any](/*34.110*/routes/*34.116*/.Assets.at("images/simulation.gif"))),format.raw/*34.151*/(""""/>
-		  			</div>
-				</div>
-			</div>			
+
+	<div class="content" style="max-width: 100%;">
+		<!-- Utilizando Bootstrap -->			
+		<br/><br/>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12 text-center">
-					<div class="header">
-					  <h1 style="color:green">Bienvenido <strong>USER</strong></h1>
-					  <h2 style="color:green">usted se ha logueado como <strong>administrador general</strong> del Club Pappus</h2>
-					</div>
-					
-				</div>
-			</div>			
-		</div>	
-		</div>		
-		
-
-		<div class="table-responsive">
-		<div class="container">
-			<div class="form-group">
-			  		<div class="text-right">
-			  			<font color="black"> 
-			  				Filtra por todos los campos
-			  			</font>
-			  			
-			  		</div>
+	  			<div class="col-sm-12 withoutpadding" >
+	                <img style="text-align:center;margin: 0 auto;display: block;" class="img-responsive" src=""""),_display_(Seq[Any](/*31.109*/routes/*31.115*/.Assets.at("images/simulation.gif"))),format.raw/*31.150*/(""""/>
+	  			</div>
 			</div>
+		</div>			
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<div class="header">
+				  <h1 style="color:green">Bienvenido <strong>USER</strong></h1>
+				  <h2 style="color:green">usted se ha logueado como <strong>administrador general</strong> del Club Pappus</h2>
+				</div>
+				
+			</div>
+		</div>			
+	</div>	
+	</div>		
+	
 
-			<table class="table table-bordered table-hover text-center display" id="example">
-						<thead class="active" data-sortable="true">
-							<th><div align=center>N° DE PEDIDO</div></th>
-							<th><div align=center>CLIENTE</div></th>
-							<th><div align=center>N° DE PAQUETES</div></th>
-							<th><div align=center>ESTADO</div></th>							
-							<th><div align=center>DETALLE</div></th>
-							<th><div align=center>EDITAR</div></th>
-							<th><div align=center>ELIMINAR</div></th>
-						</thead>
-
-												
-						<tbody>
-						
-							<tr>
-								<td>1</td>
-								<td>Marcelo Milera</td>
-								<td>10</td>			
-								<td>En espera</td>
-								<td>
-					              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-					            </td>
-								<td>
-					              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-					            </td>
-					            <td>
-					              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
-					            </td>
-				            </tr>
-							<tr>
-								<td>2</td>
-								<td>Sebastian</td>
-								<td>20</td>			
-								<td>En vuelo</td>
-								<td>
-					              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-					            </td>
-								<td>
-					              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-					            </td>
-					            <td>
-					              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
-					            </td>
-				            </tr>
-				            <tr>
-								<td>3</td>
-								<td>José Luis Gil</td>
-								<td>2</td>			
-								<td>En espera</td>
-								<td>
-					              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-					            </td>
-								<td>
-					              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-					            </td>
-					            <td>
-					              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
-					            </td>
-				            </tr>
-				            <tr>
-								<td>4</td>
-								<td>Nilton Guerra</td>
-								<td>10</td>			
-								<td>En espera</td>
-								<td>
-					              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-					            </td>
-								<td>
-					              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-					            </td>
-					            <td>
-					              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
-					            </td>
-				            </tr>
-						</tbody>												
-				</table>
-			</div>		
+	<div class="table-responsive">
+	<div class="container">
+		<div class="form-group">
+		  		<div class="text-right">
+		  			<font color="black"> 
+		  				Filtra por todos los campos
+		  			</font>
+		  			
+		  		</div>
 		</div>
-	</main>
+
+		<table class="table table-bordered table-hover text-center display" id="example">
+					<thead class="active" data-sortable="true">
+						<th><div align=center>N° DE PEDIDO</div></th>
+						<th><div align=center>CLIENTE</div></th>
+						<th><div align=center>N° DE PAQUETES</div></th>
+						<th><div align=center>ESTADO</div></th>							
+						<th><div align=center>DETALLE</div></th>
+						<th><div align=center>EDITAR</div></th>
+						<th><div align=center>ELIMINAR</div></th>
+					</thead>
+
+											
+					<tbody>
+					
+						<tr>
+							<td>1</td>
+							<td>Marcelo Milera</td>
+							<td>10</td>			
+							<td>En espera</td>
+							<td>
+				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
+				            </td>
+							<td>
+				              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
+				            </td>
+				            <td>
+				              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
+				            </td>
+			            </tr>
+						<tr>
+							<td>2</td>
+							<td>Sebastian</td>
+							<td>20</td>			
+							<td>En vuelo</td>
+							<td>
+				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
+				            </td>
+							<td>
+				              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
+				            </td>
+				            <td>
+				              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
+				            </td>
+			            </tr>
+			            <tr>
+							<td>3</td>
+							<td>José Luis Gil</td>
+							<td>2</td>			
+							<td>En espera</td>
+							<td>
+				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
+				            </td>
+							<td>
+				              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
+				            </td>
+				            <td>
+				              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
+				            </td>
+			            </tr>
+			            <tr>
+							<td>4</td>
+							<td>Nilton Guerra</td>
+							<td>10</td>			
+							<td>En espera</td>
+							<td>
+				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
+				            </td>
+							<td>
+				              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
+				            </td>
+				            <td>
+				              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
+				            </td>
+			            </tr>
+					</tbody>												
+			</table>
+		</div>		
+	</div>
+	
 
 	<!--Pie de págna-->
 		
 	<!-- JQuery -->
-		<script src='"""),_display_(Seq[Any](/*146.17*/routes/*146.23*/.Assets.at("js/jquery-1.11.3.min.js"))),format.raw/*146.60*/("""'></script>
+		<script src='"""),_display_(Seq[Any](/*143.17*/routes/*143.23*/.Assets.at("js/jquery-1.11.3.min.js"))),format.raw/*143.60*/("""'></script>
 		<!-- Bootstrap -->
-		<script src='"""),_display_(Seq[Any](/*148.17*/routes/*148.23*/.Assets.at("js/bootstrap.js"))),format.raw/*148.52*/("""'></script>	
+		<script src='"""),_display_(Seq[Any](/*145.17*/routes/*145.23*/.Assets.at("js/bootstrap.js"))),format.raw/*145.52*/("""'></script>	
 		<!-- BXSlider -->
-		<script src='"""),_display_(Seq[Any](/*150.17*/routes/*150.23*/.Assets.at("js/jquery.bxslider.min.js"))),format.raw/*150.62*/("""'></script>		
+		<script src='"""),_display_(Seq[Any](/*147.17*/routes/*147.23*/.Assets.at("js/jquery.bxslider.min.js"))),format.raw/*147.62*/("""'></script>		
 		<!-- Mis Scripts -->
-		<script src='"""),_display_(Seq[Any](/*152.17*/routes/*152.23*/.Assets.at("js/MisScripts.js"))),format.raw/*152.53*/("""'></script>
+		<script src='"""),_display_(Seq[Any](/*149.17*/routes/*149.23*/.Assets.at("js/MisScripts.js"))),format.raw/*149.53*/("""'></script>
 
-		<script src='"""),_display_(Seq[Any](/*154.17*/routes/*154.23*/.Assets.at("js/jquery.dataTables.js"))),format.raw/*154.60*/("""'></script>
+		<script src='"""),_display_(Seq[Any](/*151.17*/routes/*151.23*/.Assets.at("js/jquery.dataTables.js"))),format.raw/*151.60*/("""'></script>
 		
 		<script>
-		$(document).ready(function() """),format.raw/*157.32*/("""{"""),format.raw/*157.33*/("""
-		   $('#example').DataTable( """),format.raw/*158.31*/("""{"""),format.raw/*158.32*/("""
-		       "language": """),format.raw/*159.22*/("""{"""),format.raw/*159.23*/("""
+		$(document).ready(function() """),format.raw/*154.32*/("""{"""),format.raw/*154.33*/("""
+		   $('#example').DataTable( """),format.raw/*155.31*/("""{"""),format.raw/*155.32*/("""
+		       "language": """),format.raw/*156.22*/("""{"""),format.raw/*156.23*/("""
 		           "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-		       """),format.raw/*161.10*/("""}"""),format.raw/*161.11*/("""
-		  	"""),format.raw/*162.6*/("""}"""),format.raw/*162.7*/(""");
-  		"""),format.raw/*163.5*/("""}"""),format.raw/*163.6*/(""");
+		       """),format.raw/*158.10*/("""}"""),format.raw/*158.11*/("""
+		  	"""),format.raw/*159.6*/("""}"""),format.raw/*159.7*/(""");
+  		"""),format.raw/*160.5*/("""}"""),format.raw/*160.6*/(""");
 		</script>
 	</body>
 	</html>
 
-""")))})),format.raw/*168.2*/("""
+""")))})),format.raw/*165.2*/("""
 """))}
     }
     
-    def render(message:String): play.api.templates.HtmlFormat.Appendable = apply(message)
+    def render(title:String): play.api.templates.HtmlFormat.Appendable = apply(title)
     
-    def f:((String) => play.api.templates.HtmlFormat.Appendable) = (message) => apply(message)
+    def f:((String) => play.api.templates.HtmlFormat.Appendable) = (title) => apply(title)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Oct 24 12:55:44 COT 2016
+                    DATE: Mon Oct 24 17:59:44 COT 2016
                     SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/app/views/index.scala.html
-                    HASH: 416ccc3d3b3ca704c1e207cfae6e0df0fab8f909
-                    MATRIX: 774->1|885->18|924->23|965->56|1004->58|1247->265|1262->271|1321->308|1393->344|1408->350|1462->382|1534->418|1549->424|1602->455|1674->491|1689->497|1745->531|1818->568|1833->574|1886->605|2377->1059|2393->1065|2451->1100|6244->4856|6260->4862|6320->4899|6408->4950|6424->4956|6476->4985|6564->5036|6580->5042|6642->5081|6734->5136|6750->5142|6803->5172|6871->5203|6887->5209|6947->5246|7036->5306|7066->5307|7127->5339|7157->5340|7209->5363|7239->5364|7362->5458|7392->5459|7427->5466|7456->5467|7492->5475|7521->5476|7593->5516
-                    LINES: 26->1|29->1|31->3|31->3|31->3|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|44->16|44->16|44->16|62->34|62->34|62->34|174->146|174->146|174->146|176->148|176->148|176->148|178->150|178->150|178->150|180->152|180->152|180->152|182->154|182->154|182->154|185->157|185->157|186->158|186->158|187->159|187->159|189->161|189->161|190->162|190->162|191->163|191->163|196->168
+                    HASH: a71d59daad284fba7652f4432037e821faba1343
+                    MATRIX: 774->1|883->16|922->21|974->65|1013->67|1256->274|1271->280|1330->317|1402->353|1417->359|1471->391|1543->427|1558->433|1611->464|1683->500|1698->506|1754->540|1827->577|1842->583|1895->614|2289->971|2305->977|2363->1012|6046->4658|6062->4664|6122->4701|6210->4752|6226->4758|6278->4787|6366->4838|6382->4844|6444->4883|6536->4938|6552->4944|6605->4974|6673->5005|6689->5011|6749->5048|6838->5108|6868->5109|6929->5141|6959->5142|7011->5165|7041->5166|7164->5260|7194->5261|7229->5268|7258->5269|7294->5277|7323->5278|7395->5318
+                    LINES: 26->1|29->1|31->3|31->3|31->3|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|44->16|44->16|44->16|59->31|59->31|59->31|171->143|171->143|171->143|173->145|173->145|173->145|175->147|175->147|175->147|177->149|177->149|177->149|179->151|179->151|179->151|182->154|182->154|183->155|183->155|184->156|184->156|186->158|186->158|187->159|187->159|188->160|188->160|193->165
                     -- GENERATED --
                 */
             

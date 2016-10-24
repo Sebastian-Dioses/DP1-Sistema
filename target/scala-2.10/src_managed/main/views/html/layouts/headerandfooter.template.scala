@@ -1,5 +1,5 @@
 
-package views.html
+package views.html.layouts
 
 import play.templates._
 import play.templates.TemplateMagic._
@@ -20,7 +20,7 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object main extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template2[String,Html,play.api.templates.HtmlFormat.Appendable] {
+object headerandfooter extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template2[String,Html,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
     def apply/*1.2*/(title: String)(content: Html):play.api.templates.HtmlFormat.Appendable = {
@@ -67,9 +67,9 @@ Seq[Any](format.raw/*1.32*/("""
                 /*
                     -- GENERATED --
                     DATE: Mon Oct 24 17:51:49 COT 2016
-                    SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/app/views/main.scala.html
+                    SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/app/views/layouts/headerandfooter.scala.html
                     HASH: 16acbdc4f82f78ec18dd107936e417f50646035a
-                    MATRIX: 778->1|902->31|986->80|1012->85|1111->149|1125->155|1178->187|1251->225|1265->231|1344->289|1424->334|1438->340|1514->394|1577->429|1606->430|1666->463|1694->464|1943->677|1970->682|2098->774|2127->781
+                    MATRIX: 797->1|921->31|1005->80|1031->85|1130->149|1144->155|1197->187|1270->225|1284->231|1363->289|1443->334|1457->340|1533->394|1596->429|1625->430|1685->463|1713->464|1962->677|1989->682|2117->774|2146->781
                     LINES: 26->1|29->1|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|39->11|39->11|41->13|41->13|48->20|48->20|53->25|53->25
                     -- GENERATED --
                 */

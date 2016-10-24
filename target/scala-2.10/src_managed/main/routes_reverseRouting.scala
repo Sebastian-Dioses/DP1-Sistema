@@ -1,6 +1,6 @@
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/conf/routes
 // @HASH:7a482c6077cdbacfcec00969d8cf49c2cfec9d0c
-// @DATE:Mon Oct 24 10:56:48 COT 2016
+// @DATE:Mon Oct 24 17:51:49 COT 2016
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
