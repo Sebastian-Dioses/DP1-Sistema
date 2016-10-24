@@ -12,4 +12,3 @@ playJavaSettings
 
 
 
-fork in run := true

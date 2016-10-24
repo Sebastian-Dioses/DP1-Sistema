@@ -1,0 +1,65 @@
+
+@main("Welcome to Play Framework") {
+    
+    <!DOCTYPE html>
+	<html>
+	<head>
+		<title>Simulation</title>
+		<meta charset="UTF-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel='stylesheet' href='@routes.Assets.at("css/jquery.bxslider.css")'>
+		<link rel='stylesheet' href='@routes.Assets.at("css/MisEstilos.css")'>
+		<link rel='stylesheet' href='@routes.Assets.at("css/bootstrap.css")'>
+		<link rel='stylesheet' href='@routes.Assets.at("css/font-awesome.css")'>	
+		
+	</head>
+	<body>
+	extends('layouts.headerandfooter-al-admin')
+
+		
+	section('content')
+
+	<!---Cuerpo -->
+
+	<main class="main">
+		<div class="content" style="max-width: 100%;">
+			<!-- Utilizando Bootstrap -->			
+			<br/><br/>
+			<div class="container">
+				<div class="row">
+		  			<div class="col-sm-12 withoutpadding" >
+		                <img style="text-align:center;margin: 0 auto;display: block;" class="img-responsive" src="@routes.Assets.at("images/simulation.gif")"/>
+		  			</div>
+				</div>
+			</div>			
+			<div class="container">
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<div class="header">
+					  <h1 style="color:green">Bienvenido <strong>USER</strong></h1>
+					  <h2 style="color:green">usted se ha logueado como <strong>administrador general</strong> del Club Pappus</h2>
+					</div>
+					
+				</div>
+			</div>
+		</div>	
+		</div>		
+	</main>
+
+	<!--Pie de págna-->
+		stop
+	<!-- JQuery -->
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<!-- Bootstrap -->
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<!-- BXSlider -->
+		<script src="js/jquery.bxslider.min.js"></script>
+		<!-- Mis Scripts -->
+		<script src="js/MisScripts.js"></script>
+
+
+	</body>
+	</html>
+
+}
