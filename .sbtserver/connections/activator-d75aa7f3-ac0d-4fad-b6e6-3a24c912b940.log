@@ -1,0 +1,26 @@
+New log file opened at Sun Oct 23 23:42:04 COT 2016 by 11484@Sebastian-PC
+Sending msg to client activator-d75aa7f3-ac0d-4fad-b6e6-3a24c912b940: DetachedLogEvent(LogMessage(debug,sbt server socket logs are in: C:\Users\Sebastián\hello-play-java\.sbtserver\connections\master.log))
+Sending msg to client activator-d75aa7f3-ac0d-4fad-b6e6-3a24c912b940: DetachedLogEvent(LogMessage(debug,sbt client logs are in: C:\Users\Sebastián\hello-play-java\.sbtserver\connections\activator-d75aa7f3-ac0d-4fad-b6e6-3a24c912b940.log))
+Reading next message from client.
+Client activator-d75aa7f3-ac0d-4fad-b6e6-3a24c912b940 closed, java.net.SocketException: Software caused connection abort: recv failed, shutting down
+Stopping client.
+Dropping message DetachedLogEvent(LogMessage(debug,sbt server socket logs are in: C:\Users\Sebastián\hello-play-java\.sbtserver\connections\master.log)) because client activator-d75aa7f3-ac0d-4fad-b6e6-3a24c912b940 of an exception serializing and sending: java.net.SocketException: Software caused connection abort: socket write error
+stack trace sending message was 
+java.net.SocketException: Software caused connection abort: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:109)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:153)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.flush(BufferedOutputStream.java:140)
+	at java.io.DataOutputStream.flush(DataOutputStream.java:123)
+	at sbt.impl.ipc.Peer.send(IPC.scala:79)
+	at sbt.impl.ipc.Peer.send(IPC.scala:83)
+	at sbt.impl.ipc.Peer.sendString(IPC.scala:106)
+	at sbt.impl.ipc.Peer.sendJson(IPC.scala:119)
+	at sbt.server.SbtClientHandler$$anonfun$send$1.apply$mcV$sp(SbtClientHandler.scala:128)
+	at sbt.server.SbtClientHandler.wrappedSend(SbtClientHandler.scala:113)
+	at sbt.server.SbtClientHandler.send(SbtClientHandler.scala:128)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:91)
+Dropping message (0,ReceivedResponse()) to dead client activator-d75aa7f3-ac0d-4fad-b6e6-3a24c912b940
+Dropping message DetachedLogEvent(LogMessage(debug,sbt general server logs are in: C:\Users\Sebastián\hello-play-java\.sbtserver\master.log)) to dead client activator-d75aa7f3-ac0d-4fad-b6e6-3a24c912b940
+Client activator-d75aa7f3-ac0d-4fad-b6e6-3a24c912b940 thread exiting.

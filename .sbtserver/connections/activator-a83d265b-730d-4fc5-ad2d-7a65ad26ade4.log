@@ -1,0 +1,69 @@
+New log file opened at Sun Oct 23 23:42:04 COT 2016 by 11484@Sebastian-PC
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,sbt server socket logs are in: C:\Users\Sebastián\hello-play-java\.sbtserver\connections\master.log))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,sbt client logs are in: C:\Users\Sebastián\hello-play-java\.sbtserver\connections\activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4.log))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,sbt general server logs are in: C:\Users\Sebastián\hello-play-java\.sbtserver\master.log))
+Reading next message from client.
+Got request: ListenToEvents()
+Reading next message from client.
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,> --initialize))
+Got request: ListenToBuildChange()
+Reading next message from client.
+Got request: SendSyntheticBuildChanged()
+Reading next message from client.
+Got request: KeyLookupRequest(discoveredMainClasses)
+Reading next message from client.
+Got request: KeyLookupRequest(mainClass)
+Reading next message from client.
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: (3,ReceivedResponse())
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,> initialize))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,> onFailure load-failed))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,> boot))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,> reload))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,[Loading] Scanning directory C:\Users\Sebastián\hello-play-java\project))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,[Loading] Found non-root projects ))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,[Loading] Done in C:\Users\Sebastián\hello-play-java\project, returning: ()))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))))))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,  :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.JUnitXmlReportPlugin)))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,  :: sorting:: found: List(sbt.plugins.CorePlugin) not found List(sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,  :: sorting:: found: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin) not found List(sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,  :: sorting:: found: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin) not found List(sbt.plugins.JUnitXmlReportPlugin)))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,  :: sorting:: found: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin) not found List()))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,  :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,[Loading] Done in C:\Users\Sebastián\hello-play-java\project, returning: (hello-play-java-build)))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(info,Loading project definition from C:\Users\Sebastián\hello-play-java\project))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,Running task... Cancel: sbt.TaskCancellationStrategy$Null$@57880ddb, check cycles: false))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,All initially invalidated sources: Set()
+))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,Copy resource mappings: 
+	))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,[Loading] Scanning directory C:\Users\Sebastián\hello-play-java))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogStdErr(C:\Users\Sebasti�n\hello-play-java\build.sbt:15: error: reference to fork is ambiguous;))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogStdErr(it is imported twice in the same scope by))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogStdErr(import play.Project._))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogStdErr(and import Keys._))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogStdErr(fork in run := true))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogStdErr(^))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(error,Type error in expression))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,> load-failed))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(error,Failed to load project.))
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: BuildFailedToLoad()
+Sending msg to client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4: DetachedLogEvent(LogMessage(debug,> server-wait-for-reboot))
+Client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4 closed, java.net.SocketException: Software caused connection abort: recv failed, shutting down
+Stopping client.
+Client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4 thread exiting.
+Dropping message (0,ReceivedResponse()) to dead client activator-a83d265b-730d-4fc5-ad2d-7a65ad26ade4
