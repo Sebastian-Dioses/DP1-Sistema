@@ -10,5 +10,3 @@ libraryDependencies ++= Seq(
 
 playJavaSettings
 
-
-

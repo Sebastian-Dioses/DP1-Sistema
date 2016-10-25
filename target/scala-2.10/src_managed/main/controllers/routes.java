@@ -1,6 +1,12 @@
+<<<<<<< HEAD
+// @SOURCE:C:/Users/Sebastián/hello-play-java/DP1-Sistema/conf/routes
+// @HASH:f955f7f7832faa9fe9ef2f3547f44545203691a1
+// @DATE:Mon Oct 24 10:40:42 COT 2016
+=======
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/conf/routes
-// @HASH:7a482c6077cdbacfcec00969d8cf49c2cfec9d0c
-// @DATE:Mon Oct 24 10:56:48 COT 2016
+// @HASH:6f108af92c91458ad6c8d2294ec13c257550881c
+// @DATE:Tue Oct 25 00:42:58 COT 2016
+>>>>>>> refs/remotes/origin/marcelo
 
 package controllers;
 
