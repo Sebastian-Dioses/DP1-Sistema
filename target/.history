@@ -60,4 +60,7 @@ clean
 compile
 run
 exit
+<<<<<<< HEAD
 run
+=======
+>>>>>>> origin/JL

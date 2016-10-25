@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/conf/routes
 // @HASH:d1bea76cfee579fdc40e5e5f98ef52cabbe97aee
 // @DATE:Tue Oct 25 16:02:06 COT 2016
+=======
+// @SOURCE:C:/Users/JoseLuis/Documents/GitHub/DP1-Sistema/conf/routes
+// @HASH:7c1552daf4003bf61d082a1477bd20f0e05258cf
+// @DATE:Tue Oct 25 17:51:37 COT 2016
+>>>>>>> origin/JL
 
 package controllers;
 
