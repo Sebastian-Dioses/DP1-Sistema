@@ -1,107 +1,15 @@
-2016-10-25 00:43:54,432 - [INFO] - from play in pool-558-thread-3 
+2016-10-25 08:54:01,018 - [INFO] - from play in pool-4-thread-5 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2016-10-25 00:44:05,411 - [INFO] - from play in play-internal-execution-context-1 
+2016-10-25 08:54:11,598 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2016-10-25 00:46:14,833 - [INFO] - from play in play-internal-execution-context-2 
+2016-10-25 10:17:58,420 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2016-10-25 00:47:47,989 - [INFO] - from play in play-internal-execution-context-3 
+2016-10-25 10:19:49,756 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2016-10-25 00:49:54,904 - [INFO] - from play in play-internal-execution-context-3 
-Application started (Dev)
-
-2016-10-25 00:51:11,925 - [INFO] - from play in play-internal-execution-context-3 
-Application started (Dev)
-
-2016-10-25 00:52:05,159 - [INFO] - from play in play-internal-execution-context-3 
-Application started (Dev)
-
-2016-10-25 00:52:55,061 - [INFO] - from play in play-internal-execution-context-3 
-Application started (Dev)
-
-2016-10-25 00:53:47,553 - [INFO] - from play in play-internal-execution-context-3 
-Application started (Dev)
-
-2016-10-25 00:54:27,062 - [INFO] - from play in play-internal-execution-context-3 
-Application started (Dev)
-
-2016-10-25 00:55:16,537 - [INFO] - from play in play-internal-execution-context-3 
-Application started (Dev)
-
-2016-10-25 00:56:13,381 - [INFO] - from play in play-internal-execution-context-4 
-Application started (Dev)
-
-2016-10-25 00:58:46,189 - [INFO] - from play in play-internal-execution-context-4 
-Application started (Dev)
-
-2016-10-25 01:00:17,696 - [INFO] - from play in play-internal-execution-context-4 
-Application started (Dev)
-
-2016-10-25 01:01:13,965 - [INFO] - from play in play-internal-execution-context-5 
-Application started (Dev)
-
-2016-10-25 01:01:40,770 - [INFO] - from play in play-internal-execution-context-5 
-Application started (Dev)
-
-2016-10-25 01:01:45,345 - [INFO] - from play in play-internal-execution-context-5 
-Application started (Dev)
-
-2016-10-25 01:02:44,171 - [INFO] - from play in play-internal-execution-context-5 
-Application started (Dev)
-
-2016-10-25 01:10:34,968 - [ERROR] - from application in New I/O worker #7 
-
-
-! @71oblh56d - Internal server error, for (GET) [/index] ->
-
-play.PlayExceptions$CompilationException: Compilation error['(' expected but ')' found.]
-	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
-	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
-	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
-	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
-	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
-	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10-2.2.2.jar:2.2.2]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10-2.2.2.jar:2.2.2]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-
-2016-10-25 01:11:19,815 - [INFO] - from play in play-internal-execution-context-5 
-Application started (Dev)
-
-2016-10-25 01:13:40,879 - [INFO] - from play in play-internal-execution-context-6 
-Application started (Dev)
-
-2016-10-25 01:15:41,879 - [INFO] - from play in play-internal-execution-context-6 
-Application started (Dev)
-
-2016-10-25 01:17:45,196 - [INFO] - from play in play-internal-execution-context-6 
-Application started (Dev)
-
-2016-10-25 01:20:19,051 - [INFO] - from play in play-internal-execution-context-7 
-Application started (Dev)
-
-2016-10-25 01:21:48,987 - [INFO] - from play in play-internal-execution-context-7 
-Application started (Dev)
-
-2016-10-25 01:23:23,741 - [INFO] - from play in play-internal-execution-context-7 
-Application started (Dev)
-
-2016-10-25 01:24:05,988 - [INFO] - from play in play-internal-execution-context-7 
-Application started (Dev)
-
-2016-10-25 01:24:18,897 - [INFO] - from play in play-internal-execution-context-7 
+2016-10-25 10:21:00,083 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 

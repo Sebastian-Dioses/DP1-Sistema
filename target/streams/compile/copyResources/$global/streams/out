@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+[debug] Copy resource mappings: 
+[debug] 	(C:\Users\Sebastián\hello-play-java\DP1-Sistema\conf\application.conf,C:\Users\Sebastián\hello-play-java\DP1-Sistema\target\scala-2.10\classes\application.conf)
+[debug] 	(C:\Users\Sebastián\hello-play-java\DP1-Sistema\conf\routes,C:\Users\Sebastián\hello-play-java\DP1-Sistema\target\scala-2.10\classes\routes)
+=======
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
 [0m[[0mdebug[0m] [0m	(C:\Users\MARCELO\Documents\GitHub\DP1-Sistema\conf\application.conf,C:\Users\MARCELO\Documents\GitHub\DP1-Sistema\target\scala-2.10\classes\application.conf)[0m
 [0m[[0mdebug[0m] [0m	(C:\Users\MARCELO\Documents\GitHub\DP1-Sistema\conf\routes,C:\Users\MARCELO\Documents\GitHub\DP1-Sistema\target\scala-2.10\classes\routes)[0m
+>>>>>>> refs/remotes/origin/marcelo
