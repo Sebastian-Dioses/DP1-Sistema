@@ -36,3 +36,4 @@ compile
 clean
 compile
 run
+exit
