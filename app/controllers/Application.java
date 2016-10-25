@@ -11,6 +11,12 @@ public class Application extends Controller {
         return ok(views.html.index.render("Titulo"));
     }
     
+
+    public static Result test(){
+        return ok(views.html.registrarPedido.render("YA SALIO LA BIENVENIDA PAPA"));
+    }
+    
+
     public static Result simulation() {            
         return ok(views.html.simulation.render("Titulo"));
     }
@@ -22,5 +28,5 @@ public class Application extends Controller {
 	public static Result users() {            
         return ok(views.html.users.render("Titulo"));
     }
-	
+
 }

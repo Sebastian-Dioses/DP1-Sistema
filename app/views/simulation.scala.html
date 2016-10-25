@@ -37,99 +37,25 @@
 	                <img style="text-align:center;margin: 0 auto;display: block;" class="img-responsive" src="@routes.Assets.at("images/simulation.gif")"/>
 	  			</div>
 			</div>
-		</div>				
-	</div>		
-	
+		</div>			
 
-	<div class="table-responsive">
-	<div class="container">
-		<div class="form-group">
-		  		<div class="text-right">
-		  			<font color="black"> 
-		  				Filtra por todos los campos
-		  			</font>
-		  			
-		  		</div>
-		</div>
-
-		<table class="table table-bordered table-hover text-center display" id="example">
-					<thead class="active" data-sortable="true">
-						<th><div align=center>CUENTA</div></th>
-						<th><div align=center>NOMBRE</div></th>
-						<th><div align=center>APELLIDO</div></th>
-						<th><div align=center>TIPO DE USUARIO</div></th>							
-						<th><div align=center>DETALLE</div></th>
-						<th><div align=center>EDITAR</div></th>
-						<th><div align=center>ELIMINAR</div></th>
-					</thead>
-
-											
-					<tbody>
-					
-						<tr>
-							<td>s.dioses</td>
-							<td>Sebastián</td>
-							<td>Dioses</td>			
-							<td>Administrador</td>
-							<td>
-				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-				            </td>
-							<td>
-				              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-				            </td>
-				            <td>
-				              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
-				            </td>
-			            </tr>
-						<tr>
-							<td>m.milera</td>
-							<td>Marcelo</td>
-							<td>Milera</td>			
-							<td>Administrador</td>
-							<td>
-				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-				            </td>
-							<td>
-				              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-				            </td>
-				            <td>
-				              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
-				            </td>
-			            </tr>
-			            <tr>
-							<td>n.guerra</td>
-							<td>Nilton</td>
-							<td>Guerra</td>			
-							<td>Cliente</td>
-							<td>
-				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-				            </td>
-							<td>
-				              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-				            </td>
-				            <td>
-				              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
-				            </td>
-			            </tr>
-			            <tr>
-							<td>j.gil</td>
-							<td>José</td>
-							<td>Gil</td>			
-							<td>Cliente</td>
-							<td>
-				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-				            </td>
-							<td>
-				              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-				            </td>
-				            <td>
-				              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
-				            </td>
-			            </tr>
-					</tbody>												
-			</table>
+		<br/><br/><br/>
+		<div class="container">
+			<div class="btn-group btn-group-justified">
+				<a type="button" class="btn btn-primary">Iniciar</a>
+				<a type="button" class="btn btn-primary">Ver Resultados</a>				
+				<div class="btn-group">
+					<select class="form-control" id="sel1" >
+						<option>Duración de la Simulación</option>
+						<option>20 min.</option>
+						<option>1 hora</option>
+						<option>3 horas</option>
+						<option>Indefinido</option>
+					</select>
+				</div>
+			</div>
 		</div>		
-	</div>
+	</div>		
 	
 
 	<!--Pie de págna-->

@@ -65,127 +65,53 @@ Seq[Any](format.raw/*1.17*/("""
 	                <img style="text-align:center;margin: 0 auto;display: block;" class="img-responsive" src=""""),_display_(Seq[Any](/*37.109*/routes/*37.115*/.Assets.at("images/simulation.gif"))),format.raw/*37.150*/(""""/>
 	  			</div>
 			</div>
-		</div>				
-	</div>		
-	
+		</div>			
 
-	<div class="table-responsive">
-	<div class="container">
-		<div class="form-group">
-		  		<div class="text-right">
-		  			<font color="black"> 
-		  				Filtra por todos los campos
-		  			</font>
-		  			
-		  		</div>
-		</div>
-
-		<table class="table table-bordered table-hover text-center display" id="example">
-					<thead class="active" data-sortable="true">
-						<th><div align=center>CUENTA</div></th>
-						<th><div align=center>NOMBRE</div></th>
-						<th><div align=center>APELLIDO</div></th>
-						<th><div align=center>TIPO DE USUARIO</div></th>							
-						<th><div align=center>DETALLE</div></th>
-						<th><div align=center>EDITAR</div></th>
-						<th><div align=center>ELIMINAR</div></th>
-					</thead>
-
-											
-					<tbody>
-					
-						<tr>
-							<td>s.dioses</td>
-							<td>Sebastián</td>
-							<td>Dioses</td>			
-							<td>Administrador</td>
-							<td>
-				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-				            </td>
-							<td>
-				              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-				            </td>
-				            <td>
-				              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
-				            </td>
-			            </tr>
-						<tr>
-							<td>m.milera</td>
-							<td>Marcelo</td>
-							<td>Milera</td>			
-							<td>Administrador</td>
-							<td>
-				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-				            </td>
-							<td>
-				              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-				            </td>
-				            <td>
-				              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
-				            </td>
-			            </tr>
-			            <tr>
-							<td>n.guerra</td>
-							<td>Nilton</td>
-							<td>Guerra</td>			
-							<td>Cliente</td>
-							<td>
-				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-				            </td>
-							<td>
-				              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-				            </td>
-				            <td>
-				              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
-				            </td>
-			            </tr>
-			            <tr>
-							<td>j.gil</td>
-							<td>José</td>
-							<td>Gil</td>			
-							<td>Cliente</td>
-							<td>
-				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-				            </td>
-							<td>
-				              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-				            </td>
-				            <td>
-				              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
-				            </td>
-			            </tr>
-					</tbody>												
-			</table>
+		<br/><br/><br/>
+		<div class="container">
+			<div class="btn-group btn-group-justified">
+				<a type="button" class="btn btn-primary">Iniciar</a>
+				<a type="button" class="btn btn-primary">Ver Resultados</a>				
+				<div class="btn-group">
+					<select class="form-control" id="sel1" >
+						<option>Duración de la Simulación</option>
+						<option>20 min.</option>
+						<option>1 hora</option>
+						<option>3 horas</option>
+						<option>Indefinido</option>
+					</select>
+				</div>
+			</div>
 		</div>		
-	</div>
+	</div>		
 	
 
 	<!--Pie de págna-->
 		
 	<!-- JQuery -->
-		<script src='"""),_display_(Seq[Any](/*138.17*/routes/*138.23*/.Assets.at("js/jquery-1.11.3.min.js"))),format.raw/*138.60*/("""'></script>
+		<script src='"""),_display_(Seq[Any](/*64.17*/routes/*64.23*/.Assets.at("js/jquery-1.11.3.min.js"))),format.raw/*64.60*/("""'></script>
 		<!-- Bootstrap -->
-		<script src='"""),_display_(Seq[Any](/*140.17*/routes/*140.23*/.Assets.at("js/bootstrap.js"))),format.raw/*140.52*/("""'></script>	
+		<script src='"""),_display_(Seq[Any](/*66.17*/routes/*66.23*/.Assets.at("js/bootstrap.js"))),format.raw/*66.52*/("""'></script>	
 		<!-- BXSlider -->
-		<script src='"""),_display_(Seq[Any](/*142.17*/routes/*142.23*/.Assets.at("js/jquery.bxslider.min.js"))),format.raw/*142.62*/("""'></script>		
+		<script src='"""),_display_(Seq[Any](/*68.17*/routes/*68.23*/.Assets.at("js/jquery.bxslider.min.js"))),format.raw/*68.62*/("""'></script>		
 		<!-- Mis Scripts -->
-		<script src='"""),_display_(Seq[Any](/*144.17*/routes/*144.23*/.Assets.at("js/MisScripts.js"))),format.raw/*144.53*/("""'></script>
+		<script src='"""),_display_(Seq[Any](/*70.17*/routes/*70.23*/.Assets.at("js/MisScripts.js"))),format.raw/*70.53*/("""'></script>
 
-		<script src='"""),_display_(Seq[Any](/*146.17*/routes/*146.23*/.Assets.at("js/jquery.dataTables.js"))),format.raw/*146.60*/("""'></script>
+		<script src='"""),_display_(Seq[Any](/*72.17*/routes/*72.23*/.Assets.at("js/jquery.dataTables.js"))),format.raw/*72.60*/("""'></script>
 		
 		<script>
-		$(document).ready(function() """),format.raw/*149.32*/("""{"""),format.raw/*149.33*/("""
-		   $('#example').DataTable( """),format.raw/*150.31*/("""{"""),format.raw/*150.32*/("""
-		       "language": """),format.raw/*151.22*/("""{"""),format.raw/*151.23*/("""
+		$(document).ready(function() """),format.raw/*75.32*/("""{"""),format.raw/*75.33*/("""
+		   $('#example').DataTable( """),format.raw/*76.31*/("""{"""),format.raw/*76.32*/("""
+		       "language": """),format.raw/*77.22*/("""{"""),format.raw/*77.23*/("""
 		           "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-		       """),format.raw/*153.10*/("""}"""),format.raw/*153.11*/("""
-		  	"""),format.raw/*154.6*/("""}"""),format.raw/*154.7*/(""");
-  		"""),format.raw/*155.5*/("""}"""),format.raw/*155.6*/(""");
+		       """),format.raw/*79.10*/("""}"""),format.raw/*79.11*/("""
+		  	"""),format.raw/*80.6*/("""}"""),format.raw/*80.7*/(""");
+  		"""),format.raw/*81.5*/("""}"""),format.raw/*81.6*/(""");
 		</script>
 	</body>
 	</html>
 
-""")))})),format.raw/*160.2*/("""
+""")))})),format.raw/*86.2*/("""
 """))}
     }
     
@@ -198,11 +124,11 @@ Seq[Any](format.raw/*1.17*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Oct 25 10:17:55 COT 2016
-                    SOURCE: C:/Users/JoseLuis/Documents/GitHub/DP1-Sistema/app/views/simulation.scala.html
-                    HASH: b7488475e7c153b0430bd6de21a782e939276582
-                    MATRIX: 779->1|888->16|925->19|939->26|992->71|1031->73|1265->271|1280->277|1339->314|1410->349|1425->355|1479->387|1550->422|1565->428|1618->459|1689->494|1704->500|1760->534|1832->570|1847->576|1900->607|2440->1110|2456->1116|2514->1151|5763->4363|5779->4369|5839->4406|5925->4455|5941->4461|5993->4490|6079->4539|6095->4545|6157->4584|6247->4637|6263->4643|6316->4673|6382->4702|6398->4708|6458->4745|6544->4802|6574->4803|6634->4834|6664->4835|6715->4857|6745->4858|6866->4950|6896->4951|6930->4957|6959->4958|6994->4965|7023->4966|7090->5001
-                    LINES: 26->1|29->1|31->3|31->3|31->3|31->3|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|44->16|44->16|44->16|65->37|65->37|65->37|166->138|166->138|166->138|168->140|168->140|168->140|170->142|170->142|170->142|172->144|172->144|172->144|174->146|174->146|174->146|177->149|177->149|178->150|178->150|179->151|179->151|181->153|181->153|182->154|182->154|183->155|183->155|188->160
+                    DATE: Tue Oct 25 17:28:09 COT 2016
+                    SOURCE: C:/Users/JoseLuis/Documents/PUCP/2016-2/DP1/Sistema Web/DP1-Sistema/app/views/simulation.scala.html
+                    HASH: 963fdaa461022842e85bdf9965652d973bc34eda
+                    MATRIX: 779->1|888->16|927->21|941->28|994->73|1033->75|1276->282|1291->288|1350->325|1422->361|1437->367|1491->399|1563->435|1578->441|1631->472|1703->508|1718->514|1774->548|1847->585|1862->591|1915->622|2476->1146|2492->1152|2550->1187|3235->1836|3250->1842|3309->1879|3396->1930|3411->1936|3462->1965|3549->2016|3564->2022|3625->2061|3716->2116|3731->2122|3783->2152|3850->2183|3865->2189|3924->2226|4012->2286|4041->2287|4101->2319|4130->2320|4181->2343|4210->2344|4332->2438|4361->2439|4395->2446|4423->2447|4458->2455|4486->2456|4557->2496
+                    LINES: 26->1|29->1|31->3|31->3|31->3|31->3|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|44->16|44->16|44->16|65->37|65->37|65->37|92->64|92->64|92->64|94->66|94->66|94->66|96->68|96->68|96->68|98->70|98->70|98->70|100->72|100->72|100->72|103->75|103->75|104->76|104->76|105->77|105->77|107->79|107->79|108->80|108->80|109->81|109->81|114->86
                     -- GENERATED --
                 */
             
