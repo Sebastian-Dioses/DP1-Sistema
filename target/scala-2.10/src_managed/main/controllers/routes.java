@@ -1,6 +1,6 @@
 // @SOURCE:C:/Users/JoseLuis/Documents/GitHub/DP1-Sistema/conf/routes
-// @HASH:5448ae150dc63a3d9f8d346a72b1c2ddac0bc726
-// @DATE:Tue Oct 25 07:12:29 COT 2016
+// @HASH:d9a76e7421863507d0eb9c09b08f9e37e3b21fea
+// @DATE:Tue Oct 25 08:53:38 COT 2016
 
 package controllers;
 

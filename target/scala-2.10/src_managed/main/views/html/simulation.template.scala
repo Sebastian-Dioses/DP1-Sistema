@@ -82,10 +82,10 @@ Seq[Any](format.raw/*1.17*/("""
 
 		<table class="table table-bordered table-hover text-center display" id="example">
 					<thead class="active" data-sortable="true">
-						<th><div align=center>N° DE PEDIDO</div></th>
-						<th><div align=center>CLIENTE</div></th>
-						<th><div align=center>N° DE PAQUETES</div></th>
-						<th><div align=center>ESTADO</div></th>							
+						<th><div align=center>CUENTA</div></th>
+						<th><div align=center>NOMBRE</div></th>
+						<th><div align=center>APELLIDO</div></th>
+						<th><div align=center>TIPO DE USUARIO</div></th>							
 						<th><div align=center>DETALLE</div></th>
 						<th><div align=center>EDITAR</div></th>
 						<th><div align=center>ELIMINAR</div></th>
@@ -95,10 +95,10 @@ Seq[Any](format.raw/*1.17*/("""
 					<tbody>
 					
 						<tr>
-							<td>1</td>
-							<td>Marcelo Milera</td>
-							<td>10</td>			
-							<td>En espera</td>
+							<td>s.dioses</td>
+							<td>Sebastián</td>
+							<td>Dioses</td>			
+							<td>Administrador</td>
 							<td>
 				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
 				            </td>
@@ -110,10 +110,10 @@ Seq[Any](format.raw/*1.17*/("""
 				            </td>
 			            </tr>
 						<tr>
-							<td>2</td>
-							<td>Sebastian</td>
-							<td>20</td>			
-							<td>En vuelo</td>
+							<td>m.milera</td>
+							<td>Marcelo</td>
+							<td>Milera</td>			
+							<td>Administrador</td>
 							<td>
 				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
 				            </td>
@@ -125,10 +125,10 @@ Seq[Any](format.raw/*1.17*/("""
 				            </td>
 			            </tr>
 			            <tr>
-							<td>3</td>
-							<td>José Luis Gil</td>
-							<td>2</td>			
-							<td>En espera</td>
+							<td>n.guerra</td>
+							<td>Nilton</td>
+							<td>Guerra</td>			
+							<td>Cliente</td>
 							<td>
 				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
 				            </td>
@@ -140,10 +140,10 @@ Seq[Any](format.raw/*1.17*/("""
 				            </td>
 			            </tr>
 			            <tr>
-							<td>4</td>
-							<td>Nilton Guerra</td>
-							<td>10</td>			
-							<td>En espera</td>
+							<td>j.gil</td>
+							<td>José</td>
+							<td>Gil</td>			
+							<td>Cliente</td>
 							<td>
 				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
 				            </td>
@@ -198,10 +198,10 @@ Seq[Any](format.raw/*1.17*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Oct 25 07:12:29 COT 2016
+                    DATE: Tue Oct 25 10:17:55 COT 2016
                     SOURCE: C:/Users/JoseLuis/Documents/GitHub/DP1-Sistema/app/views/simulation.scala.html
-                    HASH: 5f56b475cd59225a886e247f08b9cef59e11fba6
-                    MATRIX: 779->1|888->16|925->19|939->26|992->71|1031->73|1265->271|1280->277|1339->314|1410->349|1425->355|1479->387|1550->422|1565->428|1618->459|1689->494|1704->500|1760->534|1832->570|1847->576|1900->607|2440->1110|2456->1116|2514->1151|5746->4346|5762->4352|5822->4389|5908->4438|5924->4444|5976->4473|6062->4522|6078->4528|6140->4567|6230->4620|6246->4626|6299->4656|6365->4685|6381->4691|6441->4728|6527->4785|6557->4786|6617->4817|6647->4818|6698->4840|6728->4841|6849->4933|6879->4934|6913->4940|6942->4941|6977->4948|7006->4949|7073->4984
+                    HASH: b7488475e7c153b0430bd6de21a782e939276582
+                    MATRIX: 779->1|888->16|925->19|939->26|992->71|1031->73|1265->271|1280->277|1339->314|1410->349|1425->355|1479->387|1550->422|1565->428|1618->459|1689->494|1704->500|1760->534|1832->570|1847->576|1900->607|2440->1110|2456->1116|2514->1151|5763->4363|5779->4369|5839->4406|5925->4455|5941->4461|5993->4490|6079->4539|6095->4545|6157->4584|6247->4637|6263->4643|6316->4673|6382->4702|6398->4708|6458->4745|6544->4802|6574->4803|6634->4834|6664->4835|6715->4857|6745->4858|6866->4950|6896->4951|6930->4957|6959->4958|6994->4965|7023->4966|7090->5001
                     LINES: 26->1|29->1|31->3|31->3|31->3|31->3|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|44->16|44->16|44->16|65->37|65->37|65->37|166->138|166->138|166->138|168->140|168->140|168->140|170->142|170->142|170->142|172->144|172->144|172->144|174->146|174->146|174->146|177->149|177->149|178->150|178->150|179->151|179->151|181->153|181->153|182->154|182->154|183->155|183->155|188->160
                     -- GENERATED --
                 */
