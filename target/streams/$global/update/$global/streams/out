@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/C:/Users/JoseLuis/Documents/PUCP/2016-2/DP1/Sistema%20Web/DP1-Sistema/}dp1-sistema...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/C:/Users/JoseLuis/Documents/GitHub/DP1-Sistema/}dp1-sistema...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@21c2bc[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@13896f9[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.3 in sbt-chain[0m
@@ -5711,19 +5711,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.3!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.3!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2220ms :: artifacts dl 147ms[0m
-[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT compile produced in C:\Users\JoseLuis\Documents\PUCP\2016-2\DP1\Sistema Web\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT runtime produced in C:\Users\JoseLuis\Documents\PUCP\2016-2\DP1\Sistema Web\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT test produced in C:\Users\JoseLuis\Documents\PUCP\2016-2\DP1\Sistema Web\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT provided produced in C:\Users\JoseLuis\Documents\PUCP\2016-2\DP1\Sistema Web\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT optional produced in C:\Users\JoseLuis\Documents\PUCP\2016-2\DP1\Sistema Web\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT compile-internal produced in C:\Users\JoseLuis\Documents\PUCP\2016-2\DP1\Sistema Web\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT runtime-internal produced in C:\Users\JoseLuis\Documents\PUCP\2016-2\DP1\Sistema Web\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT test-internal produced in C:\Users\JoseLuis\Documents\PUCP\2016-2\DP1\Sistema Web\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT plugin produced in C:\Users\JoseLuis\Documents\PUCP\2016-2\DP1\Sistema Web\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT sources produced in C:\Users\JoseLuis\Documents\PUCP\2016-2\DP1\Sistema Web\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT docs produced in C:\Users\JoseLuis\Documents\PUCP\2016-2\DP1\Sistema Web\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT pom produced in C:\Users\JoseLuis\Documents\PUCP\2016-2\DP1\Sistema Web\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT scala-tool produced in C:\Users\JoseLuis\Documents\PUCP\2016-2\DP1\Sistema Web\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (2220ms resolve - 147ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3778ms :: artifacts dl 78ms[0m
+[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT compile produced in C:\Users\JoseLuis\Documents\GitHub\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT runtime produced in C:\Users\JoseLuis\Documents\GitHub\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT test produced in C:\Users\JoseLuis\Documents\GitHub\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT provided produced in C:\Users\JoseLuis\Documents\GitHub\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT optional produced in C:\Users\JoseLuis\Documents\GitHub\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT compile-internal produced in C:\Users\JoseLuis\Documents\GitHub\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT runtime-internal produced in C:\Users\JoseLuis\Documents\GitHub\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT test-internal produced in C:\Users\JoseLuis\Documents\GitHub\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT plugin produced in C:\Users\JoseLuis\Documents\GitHub\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT sources produced in C:\Users\JoseLuis\Documents\GitHub\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT docs produced in C:\Users\JoseLuis\Documents\GitHub\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT pom produced in C:\Users\JoseLuis\Documents\GitHub\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for hello-play-java#hello-play-java_2.10;1.0-SNAPSHOT scala-tool produced in C:\Users\JoseLuis\Documents\GitHub\DP1-Sistema\target\resolution-cache\reports\hello-play-java-hello-play-java_2.10-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (3778ms resolve - 78ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
