@@ -14,6 +14,6 @@ public class Application extends Controller {
     
     public static Result simulation() {
             
-        return ok(views.html.simulation.render());
+        return ok(views.html.simulation.render("Titulo"));
     }
 }
