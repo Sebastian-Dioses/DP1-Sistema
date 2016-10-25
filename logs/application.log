@@ -1,51 +1,9 @@
-2016-10-25 11:37:17,184 - [INFO] - from play in pool-6-thread-5 
+2016-10-25 16:03:39,320 - [INFO] - from play in pool-9-thread-2 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2016-10-25 11:38:34,994 - [INFO] - from play in play-internal-execution-context-1 
+2016-10-25 16:04:16,629 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2016-10-25 11:58:25,342 - [INFO] - from play in play-internal-execution-context-3 
-Application started (Dev)
-
-2016-10-25 12:02:48,044 - [INFO] - from play in play-internal-execution-context-3 
-Application started (Dev)
-
-2016-10-25 12:05:41,942 - [INFO] - from play in play-internal-execution-context-3 
-Application started (Dev)
-
-2016-10-25 12:12:28,467 - [INFO] - from play in play-internal-execution-context-5 
-Application started (Dev)
-
-2016-10-25 12:15:15,795 - [INFO] - from play in play-internal-execution-context-6 
-Application started (Dev)
-
-2016-10-25 12:18:38,361 - [INFO] - from play in play-internal-execution-context-7 
-Application started (Dev)
-
-2016-10-25 12:20:22,254 - [INFO] - from play in play-internal-execution-context-8 
-Application started (Dev)
-
-2016-10-25 12:21:56,305 - [INFO] - from play in play-internal-execution-context-8 
-Application started (Dev)
-
-2016-10-25 12:27:54,954 - [INFO] - from play in play-internal-execution-context-8 
-Application started (Dev)
-
-2016-10-25 12:33:33,018 - [INFO] - from play in play-internal-execution-context-8 
-Application started (Dev)
-
-2016-10-25 12:37:35,191 - [INFO] - from play in play-internal-execution-context-11 
-Application started (Dev)
-
-2016-10-25 12:39:12,551 - [INFO] - from play in play-internal-execution-context-12 
-Application started (Dev)
-
-2016-10-25 12:47:32,156 - [INFO] - from play in play-internal-execution-context-12 
-Application started (Dev)
-
-2016-10-25 12:50:51,154 - [INFO] - from play in play-internal-execution-context-12 
-Application started (Dev)
-
-2016-10-25 12:54:54,854 - [INFO] - from play in play-internal-execution-context-14 
+2016-10-25 16:18:36,448 - [INFO] - from play in play-internal-execution-context-3 
 Application started (Dev)
 

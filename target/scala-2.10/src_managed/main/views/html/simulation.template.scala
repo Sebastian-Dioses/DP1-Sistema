@@ -73,7 +73,8 @@ Seq[Any](format.raw/*1.17*/("""
 				<a type="button" class="btn btn-primary">Iniciar</a>
 				<a type="button" class="btn btn-primary">Ver Resultados</a>				
 				<div class="btn-group">
-					<select class="form-control" id="sel1"> Duración de la Simulación
+					<select class="form-control" id="sel1" >
+						<option>Duración de la Simulación</option>
 						<option>20 min.</option>
 						<option>1 hora</option>
 						<option>3 horas</option>
@@ -88,29 +89,29 @@ Seq[Any](format.raw/*1.17*/("""
 	<!--Pie de págna-->
 		
 	<!-- JQuery -->
-		<script src='"""),_display_(Seq[Any](/*63.17*/routes/*63.23*/.Assets.at("js/jquery-1.11.3.min.js"))),format.raw/*63.60*/("""'></script>
+		<script src='"""),_display_(Seq[Any](/*64.17*/routes/*64.23*/.Assets.at("js/jquery-1.11.3.min.js"))),format.raw/*64.60*/("""'></script>
 		<!-- Bootstrap -->
-		<script src='"""),_display_(Seq[Any](/*65.17*/routes/*65.23*/.Assets.at("js/bootstrap.js"))),format.raw/*65.52*/("""'></script>	
+		<script src='"""),_display_(Seq[Any](/*66.17*/routes/*66.23*/.Assets.at("js/bootstrap.js"))),format.raw/*66.52*/("""'></script>	
 		<!-- BXSlider -->
-		<script src='"""),_display_(Seq[Any](/*67.17*/routes/*67.23*/.Assets.at("js/jquery.bxslider.min.js"))),format.raw/*67.62*/("""'></script>		
+		<script src='"""),_display_(Seq[Any](/*68.17*/routes/*68.23*/.Assets.at("js/jquery.bxslider.min.js"))),format.raw/*68.62*/("""'></script>		
 		<!-- Mis Scripts -->
-		<script src='"""),_display_(Seq[Any](/*69.17*/routes/*69.23*/.Assets.at("js/MisScripts.js"))),format.raw/*69.53*/("""'></script>
+		<script src='"""),_display_(Seq[Any](/*70.17*/routes/*70.23*/.Assets.at("js/MisScripts.js"))),format.raw/*70.53*/("""'></script>
 
-		<script src='"""),_display_(Seq[Any](/*71.17*/routes/*71.23*/.Assets.at("js/jquery.dataTables.js"))),format.raw/*71.60*/("""'></script>
+		<script src='"""),_display_(Seq[Any](/*72.17*/routes/*72.23*/.Assets.at("js/jquery.dataTables.js"))),format.raw/*72.60*/("""'></script>
 		
 		<script>
-		$(document).ready(function() """),format.raw/*74.32*/("""{"""),format.raw/*74.33*/("""
-		   $('#example').DataTable( """),format.raw/*75.31*/("""{"""),format.raw/*75.32*/("""
-		       "language": """),format.raw/*76.22*/("""{"""),format.raw/*76.23*/("""
+		$(document).ready(function() """),format.raw/*75.32*/("""{"""),format.raw/*75.33*/("""
+		   $('#example').DataTable( """),format.raw/*76.31*/("""{"""),format.raw/*76.32*/("""
+		       "language": """),format.raw/*77.22*/("""{"""),format.raw/*77.23*/("""
 		           "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-		       """),format.raw/*78.10*/("""}"""),format.raw/*78.11*/("""
-		  	"""),format.raw/*79.6*/("""}"""),format.raw/*79.7*/(""");
-  		"""),format.raw/*80.5*/("""}"""),format.raw/*80.6*/(""");
+		       """),format.raw/*79.10*/("""}"""),format.raw/*79.11*/("""
+		  	"""),format.raw/*80.6*/("""}"""),format.raw/*80.7*/(""");
+  		"""),format.raw/*81.5*/("""}"""),format.raw/*81.6*/(""");
 		</script>
 	</body>
 	</html>
 
-""")))})),format.raw/*85.2*/("""
+""")))})),format.raw/*86.2*/("""
 """))}
     }
     
@@ -123,11 +124,11 @@ Seq[Any](format.raw/*1.17*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Oct 25 12:54:29 COT 2016
+                    DATE: Tue Oct 25 16:02:08 COT 2016
                     SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/app/views/simulation.scala.html
-                    HASH: 577c60773848cf8c559db447616b62abd45c0798
-                    MATRIX: 779->1|888->16|927->21|941->28|994->73|1033->75|1276->282|1291->288|1350->325|1422->361|1437->367|1491->399|1563->435|1578->441|1631->472|1703->508|1718->514|1774->548|1847->585|1862->591|1915->622|2476->1146|2492->1152|2550->1187|3210->1811|3225->1817|3284->1854|3371->1905|3386->1911|3437->1940|3524->1991|3539->1997|3600->2036|3691->2091|3706->2097|3758->2127|3825->2158|3840->2164|3899->2201|3987->2261|4016->2262|4076->2294|4105->2295|4156->2318|4185->2319|4307->2413|4336->2414|4370->2421|4398->2422|4433->2430|4461->2431|4532->2471
-                    LINES: 26->1|29->1|31->3|31->3|31->3|31->3|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|44->16|44->16|44->16|65->37|65->37|65->37|91->63|91->63|91->63|93->65|93->65|93->65|95->67|95->67|95->67|97->69|97->69|97->69|99->71|99->71|99->71|102->74|102->74|103->75|103->75|104->76|104->76|106->78|106->78|107->79|107->79|108->80|108->80|113->85
+                    HASH: 963fdaa461022842e85bdf9965652d973bc34eda
+                    MATRIX: 779->1|888->16|927->21|941->28|994->73|1033->75|1276->282|1291->288|1350->325|1422->361|1437->367|1491->399|1563->435|1578->441|1631->472|1703->508|1718->514|1774->548|1847->585|1862->591|1915->622|2476->1146|2492->1152|2550->1187|3235->1836|3250->1842|3309->1879|3396->1930|3411->1936|3462->1965|3549->2016|3564->2022|3625->2061|3716->2116|3731->2122|3783->2152|3850->2183|3865->2189|3924->2226|4012->2286|4041->2287|4101->2319|4130->2320|4181->2343|4210->2344|4332->2438|4361->2439|4395->2446|4423->2447|4458->2455|4486->2456|4557->2496
+                    LINES: 26->1|29->1|31->3|31->3|31->3|31->3|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|44->16|44->16|44->16|65->37|65->37|65->37|92->64|92->64|92->64|94->66|94->66|94->66|96->68|96->68|96->68|98->70|98->70|98->70|100->72|100->72|100->72|103->75|103->75|104->76|104->76|105->77|105->77|107->79|107->79|108->80|108->80|109->81|109->81|114->86
                     -- GENERATED --
                 */
             

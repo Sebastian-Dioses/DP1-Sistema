@@ -1,6 +1,34 @@
-@(message: String)
 
-@layouts.headerandfooter("") {
+package views.html
+
+import play.templates._
+import play.templates.TemplateMagic._
+
+import play.api.templates._
+import play.api.templates.PlayMagic._
+import models._
+import controllers._
+import java.lang._
+import java.util._
+import scala.collection.JavaConversions._
+import scala.collection.JavaConverters._
+import play.api.i18n._
+import play.core.j.PlayMagicForJava._
+import play.mvc._
+import play.data._
+import play.api.data.Field
+import play.mvc.Http.Context.Implicit._
+import views.html._
+/**/
+object registrarPedido extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[String,play.api.templates.HtmlFormat.Appendable] {
+
+    /**/
+    def apply/*1.2*/(message: String):play.api.templates.HtmlFormat.Appendable = {
+        _display_ {
+
+Seq[Any](format.raw/*1.19*/("""
+
+"""),_display_(Seq[Any](/*3.2*/layouts/*3.9*/.headerandfooter("")/*3.29*/ {_display_(Seq[Any](format.raw/*3.31*/("""
     
     <!DOCTYPE html>
     <html>
@@ -9,10 +37,10 @@
     	<meta charset="UTF-8">
     
     	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel='stylesheet' href='@routes.Assets.at("css/jquery.bxslider.css")'>
-		<link rel='stylesheet' href='@routes.Assets.at("css/MisEstilos.css")'>
-		<link rel='stylesheet' href='@routes.Assets.at("css/bootstrap.css")'>
-		<link rel='stylesheet' href='@routes.Assets.at("css/font-awesome.css")'>
+		<link rel='stylesheet' href='"""),_display_(Seq[Any](/*12.33*/routes/*12.39*/.Assets.at("css/jquery.bxslider.css"))),format.raw/*12.76*/("""'>
+		<link rel='stylesheet' href='"""),_display_(Seq[Any](/*13.33*/routes/*13.39*/.Assets.at("css/MisEstilos.css"))),format.raw/*13.71*/("""'>
+		<link rel='stylesheet' href='"""),_display_(Seq[Any](/*14.33*/routes/*14.39*/.Assets.at("css/bootstrap.css"))),format.raw/*14.70*/("""'>
+		<link rel='stylesheet' href='"""),_display_(Seq[Any](/*15.33*/routes/*15.39*/.Assets.at("css/font-awesome.css"))),format.raw/*15.73*/("""'>
     	
     </head>
     <body>
@@ -30,7 +58,7 @@
     		<div class="container">
 			
 			<form method="POST" action="add" class="form-horizontal form-border">
-				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<input type="hidden" name="_token" value=""""),format.raw/*33.47*/("""{"""),format.raw/*33.48*/("""{"""),format.raw/*33.49*/(""" csrf_token() """),format.raw/*33.63*/("""}"""),format.raw/*33.64*/("""}"""),format.raw/*33.65*/("""">
 				
 				<!-- Mensajes de error de validación del Request -->
 				<div class="col-sm-4"></div>
@@ -125,4 +153,24 @@
     </body>
     </html>
 
+""")))})),format.raw/*128.2*/("""
+"""))}
+    }
+    
+    def render(message:String): play.api.templates.HtmlFormat.Appendable = apply(message)
+    
+    def f:((String) => play.api.templates.HtmlFormat.Appendable) = (message) => apply(message)
+    
+    def ref: this.type = this
+
 }
+                /*
+                    -- GENERATED --
+                    DATE: Tue Oct 25 16:02:08 COT 2016
+                    SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/app/views/registrarPedido.scala.html
+                    HASH: 089db95362d988dab3f573c15e8aae07549421e9
+                    MATRIX: 784->1|895->18|934->23|948->30|976->50|1015->52|1284->285|1299->291|1358->328|1430->364|1445->370|1499->402|1571->438|1586->444|1639->475|1711->511|1726->517|1782->551|2311->1052|2340->1053|2369->1054|2411->1068|2440->1069|2469->1070|6331->4900
+                    LINES: 26->1|29->1|31->3|31->3|31->3|31->3|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|61->33|61->33|61->33|61->33|61->33|61->33|156->128
+                    -- GENERATED --
+                */
+            
