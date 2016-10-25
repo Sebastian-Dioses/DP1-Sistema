@@ -49,3 +49,7 @@ Temporary Items
 *.xml
 project/target/streams/$global/update/$global/streams/out
 project/target/streams/$global/update/$global/streams/output
+*.log
+*.xml
+*.properties
+*.class
