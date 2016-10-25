@@ -65,127 +65,52 @@ Seq[Any](format.raw/*1.17*/("""
 	                <img style="text-align:center;margin: 0 auto;display: block;" class="img-responsive" src=""""),_display_(Seq[Any](/*37.109*/routes/*37.115*/.Assets.at("images/simulation.gif"))),format.raw/*37.150*/(""""/>
 	  			</div>
 			</div>
-		</div>				
-	</div>		
-	
+		</div>			
 
-	<div class="table-responsive">
-	<div class="container">
-		<div class="form-group">
-		  		<div class="text-right">
-		  			<font color="black"> 
-		  				Filtra por todos los campos
-		  			</font>
-		  			
-		  		</div>
-		</div>
-
-		<table class="table table-bordered table-hover text-center display" id="example">
-					<thead class="active" data-sortable="true">
-						<th><div align=center>N° DE PEDIDO</div></th>
-						<th><div align=center>CLIENTE</div></th>
-						<th><div align=center>N° DE PAQUETES</div></th>
-						<th><div align=center>ESTADO</div></th>							
-						<th><div align=center>DETALLE</div></th>
-						<th><div align=center>EDITAR</div></th>
-						<th><div align=center>ELIMINAR</div></th>
-					</thead>
-
-											
-					<tbody>
-					
-						<tr>
-							<td>1</td>
-							<td>Marcelo Milera</td>
-							<td>10</td>			
-							<td>En espera</td>
-							<td>
-				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-				            </td>
-							<td>
-				              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-				            </td>
-				            <td>
-				              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
-				            </td>
-			            </tr>
-						<tr>
-							<td>2</td>
-							<td>Sebastian</td>
-							<td>20</td>			
-							<td>En vuelo</td>
-							<td>
-				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-				            </td>
-							<td>
-				              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-				            </td>
-				            <td>
-				              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
-				            </td>
-			            </tr>
-			            <tr>
-							<td>3</td>
-							<td>José Luis Gil</td>
-							<td>2</td>			
-							<td>En espera</td>
-							<td>
-				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-				            </td>
-							<td>
-				              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-				            </td>
-				            <td>
-				              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
-				            </td>
-			            </tr>
-			            <tr>
-							<td>4</td>
-							<td>Nilton Guerra</td>
-							<td>10</td>			
-							<td>En espera</td>
-							<td>
-				              <a class="btn btn-info"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-				            </td>
-							<td>
-				              <a class="btn btn-info"  title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-				            </td>
-				            <td>
-				              <a class="btn btn-info"  title="Eliminar"><i class="glyphicon glyphicon-remove"></i></a>    
-				            </td>
-			            </tr>
-					</tbody>												
-			</table>
+		<br/><br/><br/>
+		<div class="container">
+			<div class="btn-group btn-group-justified">
+				<a type="button" class="btn btn-primary">Iniciar</a>
+				<a type="button" class="btn btn-primary">Ver Resultados</a>				
+				<div class="btn-group">
+					<select class="form-control" id="sel1"> Duración de la Simulación
+						<option>20 min.</option>
+						<option>1 hora</option>
+						<option>3 horas</option>
+						<option>Indefinido</option>
+					</select>
+				</div>
+			</div>
 		</div>		
-	</div>
+	</div>		
 	
 
 	<!--Pie de págna-->
 		
 	<!-- JQuery -->
-		<script src='"""),_display_(Seq[Any](/*138.17*/routes/*138.23*/.Assets.at("js/jquery-1.11.3.min.js"))),format.raw/*138.60*/("""'></script>
+		<script src='"""),_display_(Seq[Any](/*63.17*/routes/*63.23*/.Assets.at("js/jquery-1.11.3.min.js"))),format.raw/*63.60*/("""'></script>
 		<!-- Bootstrap -->
-		<script src='"""),_display_(Seq[Any](/*140.17*/routes/*140.23*/.Assets.at("js/bootstrap.js"))),format.raw/*140.52*/("""'></script>	
+		<script src='"""),_display_(Seq[Any](/*65.17*/routes/*65.23*/.Assets.at("js/bootstrap.js"))),format.raw/*65.52*/("""'></script>	
 		<!-- BXSlider -->
-		<script src='"""),_display_(Seq[Any](/*142.17*/routes/*142.23*/.Assets.at("js/jquery.bxslider.min.js"))),format.raw/*142.62*/("""'></script>		
+		<script src='"""),_display_(Seq[Any](/*67.17*/routes/*67.23*/.Assets.at("js/jquery.bxslider.min.js"))),format.raw/*67.62*/("""'></script>		
 		<!-- Mis Scripts -->
-		<script src='"""),_display_(Seq[Any](/*144.17*/routes/*144.23*/.Assets.at("js/MisScripts.js"))),format.raw/*144.53*/("""'></script>
+		<script src='"""),_display_(Seq[Any](/*69.17*/routes/*69.23*/.Assets.at("js/MisScripts.js"))),format.raw/*69.53*/("""'></script>
 
-		<script src='"""),_display_(Seq[Any](/*146.17*/routes/*146.23*/.Assets.at("js/jquery.dataTables.js"))),format.raw/*146.60*/("""'></script>
+		<script src='"""),_display_(Seq[Any](/*71.17*/routes/*71.23*/.Assets.at("js/jquery.dataTables.js"))),format.raw/*71.60*/("""'></script>
 		
 		<script>
-		$(document).ready(function() """),format.raw/*149.32*/("""{"""),format.raw/*149.33*/("""
-		   $('#example').DataTable( """),format.raw/*150.31*/("""{"""),format.raw/*150.32*/("""
-		       "language": """),format.raw/*151.22*/("""{"""),format.raw/*151.23*/("""
+		$(document).ready(function() """),format.raw/*74.32*/("""{"""),format.raw/*74.33*/("""
+		   $('#example').DataTable( """),format.raw/*75.31*/("""{"""),format.raw/*75.32*/("""
+		       "language": """),format.raw/*76.22*/("""{"""),format.raw/*76.23*/("""
 		           "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-		       """),format.raw/*153.10*/("""}"""),format.raw/*153.11*/("""
-		  	"""),format.raw/*154.6*/("""}"""),format.raw/*154.7*/(""");
-  		"""),format.raw/*155.5*/("""}"""),format.raw/*155.6*/(""");
+		       """),format.raw/*78.10*/("""}"""),format.raw/*78.11*/("""
+		  	"""),format.raw/*79.6*/("""}"""),format.raw/*79.7*/(""");
+  		"""),format.raw/*80.5*/("""}"""),format.raw/*80.6*/(""");
 		</script>
 	</body>
 	</html>
 
-""")))})),format.raw/*160.2*/("""
+""")))})),format.raw/*85.2*/("""
 """))}
     }
     
@@ -198,11 +123,11 @@ Seq[Any](format.raw/*1.17*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Oct 25 00:42:59 COT 2016
+                    DATE: Tue Oct 25 12:54:29 COT 2016
                     SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/app/views/simulation.scala.html
-                    HASH: ee2c5cd3c2f7c79fb36ad9028c594bc75f7826bc
-                    MATRIX: 779->1|888->16|927->21|941->28|994->73|1033->75|1276->282|1291->288|1350->325|1422->361|1437->367|1491->399|1563->435|1578->441|1631->472|1703->508|1718->514|1774->548|1847->585|1862->591|1915->622|2476->1146|2492->1152|2550->1187|5883->4483|5899->4489|5959->4526|6047->4577|6063->4583|6115->4612|6203->4663|6219->4669|6281->4708|6373->4763|6389->4769|6442->4799|6510->4830|6526->4836|6586->4873|6675->4933|6705->4934|6766->4966|6796->4967|6848->4990|6878->4991|7001->5085|7031->5086|7066->5093|7095->5094|7131->5102|7160->5103|7232->5143
-                    LINES: 26->1|29->1|31->3|31->3|31->3|31->3|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|44->16|44->16|44->16|65->37|65->37|65->37|166->138|166->138|166->138|168->140|168->140|168->140|170->142|170->142|170->142|172->144|172->144|172->144|174->146|174->146|174->146|177->149|177->149|178->150|178->150|179->151|179->151|181->153|181->153|182->154|182->154|183->155|183->155|188->160
+                    HASH: 577c60773848cf8c559db447616b62abd45c0798
+                    MATRIX: 779->1|888->16|927->21|941->28|994->73|1033->75|1276->282|1291->288|1350->325|1422->361|1437->367|1491->399|1563->435|1578->441|1631->472|1703->508|1718->514|1774->548|1847->585|1862->591|1915->622|2476->1146|2492->1152|2550->1187|3210->1811|3225->1817|3284->1854|3371->1905|3386->1911|3437->1940|3524->1991|3539->1997|3600->2036|3691->2091|3706->2097|3758->2127|3825->2158|3840->2164|3899->2201|3987->2261|4016->2262|4076->2294|4105->2295|4156->2318|4185->2319|4307->2413|4336->2414|4370->2421|4398->2422|4433->2430|4461->2431|4532->2471
+                    LINES: 26->1|29->1|31->3|31->3|31->3|31->3|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|44->16|44->16|44->16|65->37|65->37|65->37|91->63|91->63|91->63|93->65|93->65|93->65|95->67|95->67|95->67|97->69|97->69|97->69|99->71|99->71|99->71|102->74|102->74|103->75|103->75|104->76|104->76|106->78|106->78|107->79|107->79|108->80|108->80|113->85
                     -- GENERATED --
                 */
             
