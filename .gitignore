@@ -53,3 +53,4 @@ project/target/streams/$global/update/$global/streams/output
 *.xml
 *.properties
 *.class
+logs/application.log
