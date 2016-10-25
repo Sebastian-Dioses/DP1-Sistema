@@ -10,4 +10,8 @@ public class Application extends Controller {
         return ok(views.html.index.render(""));
     }
     
+    public static Result test(){
+        return ok(views.html.registrarPedido.render("YA SALIO LA BIENVENIDA PAPA"));
+    }
+    
 }
