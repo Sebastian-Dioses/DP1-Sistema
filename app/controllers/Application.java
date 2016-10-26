@@ -24,13 +24,10 @@ public class Application extends Controller {
     public static Result login() {            
         return ok(views.html.login.render("Titulo"));
     }
-<<<<<<< HEAD
-=======
 	
 	public static Result users() {            
         return ok(views.html.users.render("Titulo"));
     }
->>>>>>> origin/JL
 
 	public static Result newuser() {            
         return ok(views.html.newuser.render("Titulo"));
