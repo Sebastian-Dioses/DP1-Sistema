@@ -32,4 +32,9 @@ public class Application extends Controller {
     }
 >>>>>>> origin/JL
 
+	public static Result newuser() {            
+        return ok(views.html.newuser.render("Titulo"));
+    }
+	
+	
 }

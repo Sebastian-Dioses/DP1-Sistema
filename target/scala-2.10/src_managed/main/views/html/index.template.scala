@@ -79,10 +79,14 @@ Seq[Any](format.raw/*1.17*/("""
                 /*
                     -- GENERATED --
 <<<<<<< HEAD
+<<<<<<< HEAD
                     DATE: Tue Oct 25 16:02:06 COT 2016
                     SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/app/views/index.scala.html
 =======
                     DATE: Tue Oct 25 17:51:39 COT 2016
+=======
+                    DATE: Tue Oct 25 18:51:54 COT 2016
+>>>>>>> origin/JL
                     SOURCE: C:/Users/JoseLuis/Documents/GitHub/DP1-Sistema/app/views/index.scala.html
 >>>>>>> origin/JL
                     HASH: b8cea344fcd29dadc81bd0da8ff74615dbe9de4f

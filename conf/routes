@@ -9,6 +9,11 @@ GET     /registroPedido            	controllers.Application.test()
 <<<<<<< HEAD
 =======
 GET     /user            			controllers.Application.users()
+<<<<<<< HEAD
+>>>>>>> origin/JL
+=======
+GET     /newuser            		controllers.Application.newuser()
+
 >>>>>>> origin/JL
 
 # Map static resources from the /public folder to the /assets URL path
