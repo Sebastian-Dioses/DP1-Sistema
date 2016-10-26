@@ -20,7 +20,7 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object registrarPedido extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[String,play.api.templates.HtmlFormat.Appendable] {
+object newuser extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[String,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
     def apply/*1.2*/(message: String):play.api.templates.HtmlFormat.Appendable = {
@@ -33,7 +33,7 @@ Seq[Any](format.raw/*1.19*/("""
     <!DOCTYPE html>
     <html>
     <head>
-    	<title>REGISTRAR PEDIDO</title>
+    	<title>REGISTRAR USUARIO</title>
     	<meta charset="UTF-8">
     
     	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,7 +52,7 @@ Seq[Any](format.raw/*1.19*/("""
     		<br/><br/>
     		<div class="container">
     			<div class="col-sm-12 text-left lead">
-    					<strong>REGISTRAR PEDIDO</strong>
+    					<strong>REGISTRAR USUARIO</strong>
     			</div>		
     		</div>
     		<div class="container">
@@ -79,11 +79,10 @@ Seq[Any](format.raw/*1.19*/("""
 
 				<!-- INICIO INCIIO -->				                       				
 				<div class="form-group required">
-		    		<label for="clienteOrigen_input" class="col-sm-4 control-label">Cliente Origen</label>
+		    		<label for="clienteOrigen_input" class="col-sm-4 control-label">Cuenta</label>
 		    		<div class="col-sm-5">
 		      			<input type="text" class="form-control" id="cliente_origen" name="cliente_origen" placeholder="Cliente Origen" onkeypress="return inputLimiter(event,'Numbers')" readonly>
 		    		</div>
-		    		<a class="btn btn-info" name="buscarCliente" href="#"  title="Buscar Cliente" data-toggle="modal" data-target="#modalBuscarCliente"><i name="buscarCliente" class="glyphicon glyphicon-search"></i></a>
 		  		</div>
 		  		
 		  		<div class="form-group required">
@@ -91,7 +90,6 @@ Seq[Any](format.raw/*1.19*/("""
 		    		<div class="col-sm-5">
 		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" placeholder="Ciudad Origen" onkeypress="return inputLimiter(event,'Numbers')" readonly>
 		    		</div>
-		    		<a class="btn btn-info" name="buscarCiudad" href="#"  title="Buscar Ciudad" data-toggle="modal" data-target="#modalBuscarCiudad"><i name="buscarCiudad" class="glyphicon glyphicon-search"></i></a>
 		  		</div>
 		  		
 		  		<div class="form-group required">
@@ -99,7 +97,6 @@ Seq[Any](format.raw/*1.19*/("""
 		    		<div class="col-sm-5">
 		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" placeholder="Ciudad Destino" onkeypress="return inputLimiter(event,'Numbers')" readonly>
 		    		</div>
-		    		<a class="btn btn-info" name="buscarCiudad" href="#"  title="Buscar Ciudad" data-toggle="modal" data-target="#modalBuscarCiudad"><i name="buscarCiudad" class="glyphicon glyphicon-search"></i></a>
 		  		</div>
 		  		
 		  		<div class="form-group required">
@@ -153,8 +150,7 @@ Seq[Any](format.raw/*1.19*/("""
     </body>
     </html>
 
-""")))})),format.raw/*128.2*/("""
-"""))}
+""")))})))}
     }
     
     def render(message:String): play.api.templates.HtmlFormat.Appendable = apply(message)
@@ -166,11 +162,11 @@ Seq[Any](format.raw/*1.19*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Oct 25 18:51:54 COT 2016
-                    SOURCE: C:/Users/JoseLuis/Documents/GitHub/DP1-Sistema/app/views/registrarPedido.scala.html
-                    HASH: 089db95362d988dab3f573c15e8aae07549421e9
-                    MATRIX: 784->1|895->18|934->23|948->30|976->50|1015->52|1284->285|1299->291|1358->328|1430->364|1445->370|1499->402|1571->438|1586->444|1639->475|1711->511|1726->517|1782->551|2311->1052|2340->1053|2369->1054|2411->1068|2440->1069|2469->1070|6331->4900
-                    LINES: 26->1|29->1|31->3|31->3|31->3|31->3|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|61->33|61->33|61->33|61->33|61->33|61->33|156->128
+                    DATE: Tue Oct 25 18:53:07 COT 2016
+                    SOURCE: C:/Users/JoseLuis/Documents/GitHub/DP1-Sistema/app/views/newuser.scala.html
+                    HASH: 12f77df2e614c83605df3cf3d6deffbacd32e6bb
+                    MATRIX: 776->1|887->18|926->23|940->30|968->50|1007->52|1277->286|1292->292|1351->329|1423->365|1438->371|1492->403|1564->439|1579->445|1632->476|1704->512|1719->518|1775->552|2305->1054|2334->1055|2363->1056|2405->1070|2434->1071|2463->1072
+                    LINES: 26->1|29->1|31->3|31->3|31->3|31->3|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|61->33|61->33|61->33|61->33|61->33|61->33
                     -- GENERATED --
                 */
             

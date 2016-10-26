@@ -1,6 +1,6 @@
 // @SOURCE:C:/Users/JoseLuis/Documents/GitHub/DP1-Sistema/conf/routes
-// @HASH:7c1552daf4003bf61d082a1477bd20f0e05258cf
-// @DATE:Tue Oct 25 17:51:37 COT 2016
+// @HASH:1714834964d038433324eff6ae66c7f363c36972
+// @DATE:Tue Oct 25 18:51:52 COT 2016
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,8 +13,9 @@ import play.libs.F
 import Router.queryString
 
 
-// @LINE:13
-// @LINE:12
+// @LINE:15
+// @LINE:14
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
@@ -22,11 +23,11 @@ import Router.queryString
 // @LINE:5
 package controllers {
 
-// @LINE:13
+// @LINE:15
 class ReverseWebJarAssets {
     
 
-// @LINE:13
+// @LINE:15
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "webjars/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -35,11 +36,11 @@ def at(file:String): Call = {
 }
                           
 
-// @LINE:12
+// @LINE:14
 class ReverseAssets {
     
 
-// @LINE:12
+// @LINE:14
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -48,6 +49,7 @@ def at(file:String): Call = {
 }
                           
 
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
@@ -55,6 +57,12 @@ def at(file:String): Call = {
 // @LINE:5
 class ReverseApplication {
     
+
+// @LINE:10
+def newuser(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "newuser")
+}
+                                                
 
 // @LINE:7
 def simulation(): Call = {
@@ -92,8 +100,9 @@ def login(): Call = {
                   
 
 
-// @LINE:13
-// @LINE:12
+// @LINE:15
+// @LINE:14
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
@@ -101,11 +110,11 @@ def login(): Call = {
 // @LINE:5
 package controllers.javascript {
 
-// @LINE:13
+// @LINE:15
 class ReverseWebJarAssets {
     
 
-// @LINE:13
+// @LINE:15
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.WebJarAssets.at",
    """
@@ -119,11 +128,11 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:12
+// @LINE:14
 class ReverseAssets {
     
 
-// @LINE:12
+// @LINE:14
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -137,6 +146,7 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
@@ -144,6 +154,17 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 // @LINE:5
 class ReverseApplication {
     
+
+// @LINE:10
+def newuser : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.newuser",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "newuser"})
+      }
+   """
+)
+                        
 
 // @LINE:7
 def simulation : JavascriptReverseRoute = JavascriptReverseRoute(
@@ -206,8 +227,9 @@ def login : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
-// @LINE:13
-// @LINE:12
+// @LINE:15
+// @LINE:14
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
@@ -216,11 +238,11 @@ def login : JavascriptReverseRoute = JavascriptReverseRoute(
 package controllers.ref {
 
 
-// @LINE:13
+// @LINE:15
 class ReverseWebJarAssets {
     
 
-// @LINE:13
+// @LINE:15
 def at(file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.WebJarAssets.at(file), HandlerDef(this, "controllers.WebJarAssets", "at", Seq(classOf[String]), "GET", """""", _prefix + """webjars/$file<.+>""")
 )
@@ -229,11 +251,11 @@ def at(file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 }
                           
 
-// @LINE:12
+// @LINE:14
 class ReverseAssets {
     
 
-// @LINE:12
+// @LINE:14
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -242,6 +264,7 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
@@ -249,6 +272,12 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 // @LINE:5
 class ReverseApplication {
     
+
+// @LINE:10
+def newuser(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.newuser(), HandlerDef(this, "controllers.Application", "newuser", Seq(), "GET", """""", _prefix + """newuser""")
+)
+                      
 
 // @LINE:7
 def simulation(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
