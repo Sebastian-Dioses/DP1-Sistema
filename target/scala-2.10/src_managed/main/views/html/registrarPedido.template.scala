@@ -166,17 +166,8 @@ Seq[Any](format.raw/*1.19*/("""
 }
                 /*
                     -- GENERATED --
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    DATE: Tue Oct 25 16:02:08 COT 2016
-                    SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/app/views/registrarPedido.scala.html
-=======
-                    DATE: Tue Oct 25 17:51:39 COT 2016
-=======
-                    DATE: Tue Oct 25 18:51:54 COT 2016
->>>>>>> origin/JL
+                    DATE: Sun Oct 30 11:55:42 COT 2016
                     SOURCE: C:/Users/JoseLuis/Documents/GitHub/DP1-Sistema/app/views/registrarPedido.scala.html
->>>>>>> origin/JL
                     HASH: 089db95362d988dab3f573c15e8aae07549421e9
                     MATRIX: 784->1|895->18|934->23|948->30|976->50|1015->52|1284->285|1299->291|1358->328|1430->364|1445->370|1499->402|1571->438|1586->444|1639->475|1711->511|1726->517|1782->551|2311->1052|2340->1053|2369->1054|2411->1068|2440->1069|2469->1070|6331->4900
                     LINES: 26->1|29->1|31->3|31->3|31->3|31->3|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|61->33|61->33|61->33|61->33|61->33|61->33|156->128

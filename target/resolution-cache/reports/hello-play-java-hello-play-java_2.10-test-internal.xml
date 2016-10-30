@@ -7,15 +7,7 @@
 		revision="1.0-SNAPSHOT"
 		conf="test-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-<<<<<<< HEAD
-<<<<<<< HEAD
-		date="20161025160207"/>
-=======
-		date="20161025175137"/>
->>>>>>> origin/JL
-=======
-		date="20161025185152"/>
->>>>>>> origin/JL
+		date="20161030115531"/>
 	<dependencies>
 		<module organisation="com.typesafe.play" name="play-java_2.10">
 			<revision name="2.2.2" status="release" pubdate="20150421105814" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="43">

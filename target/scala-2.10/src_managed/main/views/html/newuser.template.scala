@@ -81,39 +81,38 @@ Seq[Any](format.raw/*1.19*/("""
 				<div class="form-group required">
 		    		<label for="clienteOrigen_input" class="col-sm-4 control-label">Cuenta</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="cliente_origen" name="cliente_origen" placeholder="Cliente Origen" onkeypress="return inputLimiter(event,'Numbers')" readonly>
+		      			<input type="text" class="form-control" id="cantidadInput" name="cantidad" placeholder="Nombre de Cuenta" onkeypress="return inputLimiter(event,'Numbers')"  onkeypress="myFunction()">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudadOrigen_input" class="col-sm-4 control-label">Ciudad Origen</label>
+		    		<label for="ciudadOrigen_input" class="col-sm-4 control-label">Nombre</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" placeholder="Ciudad Origen" onkeypress="return inputLimiter(event,'Numbers')" readonly>
+		      			<input type="text" class="form-control" id="cantidadInput" name="cantidad" placeholder="Nombre de Usuario" onkeypress="return inputLimiter(event,'Numbers')"  onkeypress="myFunction()">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudadDestino_input" class="col-sm-4 control-label">Ciudad Destino</label>
+		    		<label for="ciudadDestino_input" class="col-sm-4 control-label">Apellido</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" placeholder="Ciudad Destino" onkeypress="return inputLimiter(event,'Numbers')" readonly>
+		      			<input type="text" class="form-control" id="cantidadInput" name="cantidad" placeholder="Apellido de Usuario" onkeypress="return inputLimiter(event,'Numbers')"  onkeypress="myFunction()">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-			    	<label for="cantidadPaquetesInput" class="col-sm-4 control-label" >Cantidad de Paquetes</label>
+			    	<label for="cantidadPaquetesInput" class="col-sm-4 control-label">DNI</label>
 			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="cantidadInput" name="cantidad" placeholder="Cantidad de Paquetes" onkeypress="return inputLimiter(event,'Numbers')"  onkeypress="myFunction()">
+			      		<input type="text" class="form-control" id="cantidadInput" name="cantidad" placeholder="DNI de Usuario" onkeypress="return inputLimiter(event,'Numbers')"  onkeypress="myFunction()">
 			    	</div>			      					      		
 			  	</div>	
 			  
 		  		<div class="form-group required">
-		    		<label for="tipoDestino" class="col-sm-4 control-label">Tipo de Destino</label>
-		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="tipoDestino" name="tipoDestino" placeholder="Tipo de Destino" readonly>
-		    		</div>		    		
-		  		</div>			  				 
+			    	<label for="cantidadPaquetesInput" class="col-sm-4 control-label">Correo</label>
+			    	<div class="col-sm-5">
+			      		<input type="text" class="form-control" id="cantidadInput" name="cantidad" placeholder="Correo de Usuario" onkeypress="return inputLimiter(event,'Numbers')"  onkeypress="myFunction()">
+			    	</div>
+			  	</div>
 			  	
-			  				  								
 					<!-- FIN FIN FIN  -->				
 			
 				</br>
@@ -162,9 +161,9 @@ Seq[Any](format.raw/*1.19*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Oct 25 18:53:07 COT 2016
+                    DATE: Sun Oct 30 11:55:42 COT 2016
                     SOURCE: C:/Users/JoseLuis/Documents/GitHub/DP1-Sistema/app/views/newuser.scala.html
-                    HASH: 12f77df2e614c83605df3cf3d6deffbacd32e6bb
+                    HASH: 62d3e98bd67bcc97c6f408ba40ee3268aefe3d08
                     MATRIX: 776->1|887->18|926->23|940->30|968->50|1007->52|1277->286|1292->292|1351->329|1423->365|1438->371|1492->403|1564->439|1579->445|1632->476|1704->512|1719->518|1775->552|2305->1054|2334->1055|2363->1056|2405->1070|2434->1071|2463->1072
                     LINES: 26->1|29->1|31->3|31->3|31->3|31->3|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|61->33|61->33|61->33|61->33|61->33|61->33
                     -- GENERATED --
