@@ -24,5 +24,14 @@ public class Application extends Controller {
     public static Result login() {            
         return ok(views.html.login.render("Titulo"));
     }
+	
+	public static Result users() {            
+        return ok(views.html.users.render("Titulo"));
+    }
 
+	public static Result newuser() {            
+        return ok(views.html.newuser.render("Titulo"));
+    }
+	
+	
 }
