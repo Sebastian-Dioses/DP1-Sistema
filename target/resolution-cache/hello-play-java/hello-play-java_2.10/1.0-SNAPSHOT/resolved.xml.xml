@@ -4,15 +4,7 @@
 		module="hello-play-java_2.10"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-<<<<<<< HEAD
-<<<<<<< HEAD
-		publication="20161025160207"
-=======
-		publication="20161025175137"
->>>>>>> origin/JL
-=======
-		publication="20161025185152"
->>>>>>> origin/JL
+		publication="20161101023535"
 	>
 		<description>
 		hello-play-java
@@ -40,13 +32,20 @@
 		<artifact name="hello-play-java_2.10" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 	</publications>
 	<dependencies>
-		<dependency org="org.scala-lang" name="scala-compiler" rev="2.10.3" conf="scala-tool->default,optional(default)"/>
-		<dependency org="org.scala-lang" name="scala-library" rev="2.10.3" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.10.6" conf="scala-tool->default,optional(default)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.10.6" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-enhancer" rev="1.1.0" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="twirl-api_2.10" rev="1.1.1" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-ebean_2.10" rev="3.0.1" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-server_2.10" rev="2.5.0" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-test_2.10" rev="2.5.0" conf="test->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-omnidoc_2.10" rev="2.5.0" conf="docs->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-java_2.10" rev="2.5.0" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-netty-server_2.10" rev="2.5.0" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-logback_2.10" rev="2.5.0" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-jdbc_2.10" rev="2.5.0" conf="compile->default(compile)"/>
 		<dependency org="org.webjars" name="webjars-play_2.10" rev="2.2.2" conf="compile->default(compile)"/>
 		<dependency org="org.webjars" name="bootstrap" rev="2.3.1" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play_2.10" rev="2.2.2" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-test_2.10" rev="2.2.2" conf="test->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-docs_2.10" rev="2.2.2" conf="docs->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-java_2.10" rev="2.2.2" conf="compile->default(compile)"/>
+		<dependency org="mysql" name="mysql-connector-java" rev="5.1.38" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>
