@@ -12,12 +12,10 @@ public class Application extends Controller {
     public static Result index() {            
         return ok(views.html.index.render(Ciudades.getAll()));
     }
-    
 
     public static Result test(){
         return ok(views.html.registrarPedido.render("YA SALIO LA BIENVENIDA PAPA"));
     }
-    
 
     public static Result simulation() {            
         return ok(views.html.simulation.render("Titulo"));
