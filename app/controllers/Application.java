@@ -1,14 +1,16 @@
 package controllers;
 
-import play.mvc.*;
+import models.Ciudades;
+import play.mvc.Controller;
+import play.mvc.Result;
 
 import views.html.*;
 
-
+@play.db.jpa.Transactional(readOnly=true)
 public class Application extends Controller {
     
     public static Result index() {            
-        return ok(views.html.index.render("Titulo"));
+        return ok(views.html.index.render(Ciudades.getAll()));
     }
     
 

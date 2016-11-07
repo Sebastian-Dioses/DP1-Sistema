@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/conf/routes
-// @DATE:Sun Nov 06 16:26:51 COT 2016
+// @DATE:Mon Nov 07 15:11:44 COT 2016
 
 package router
 
@@ -44,7 +44,7 @@ class Routes extends GeneratedRouter {
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """registroPedido""", """controllers.Application.test()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """user""", """controllers.Application.users()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """newuser""", """controllers.Application.newuser()"""),
-    ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""", """controllers.Assets.at(path:String = "/public", file:String)"""),
+    ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.at(path:String = "/public", file:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -167,7 +167,7 @@ class Routes extends GeneratedRouter {
       Seq(classOf[String], classOf[String]),
       "GET",
       """ Map static resources from the /public folder to the /assets URL path""",
-      this.prefix + """assets/$file<.+>"""
+      this.prefix + """assets/""" + "$" + """file<.+>"""
     )
   )
 
