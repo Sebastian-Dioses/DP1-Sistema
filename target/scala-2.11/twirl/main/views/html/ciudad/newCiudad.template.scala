@@ -172,7 +172,7 @@ Seq[Any](format.raw/*1.19*/("""
 object newCiudad extends newCiudad_Scope0.newCiudad
               /*
                   -- GENERATED --
-                  DATE: Tue Nov 08 06:26:06 COT 2016
+                  DATE: Tue Nov 08 11:30:36 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/app/views/ciudad/newCiudad.scala.html
                   HASH: f6e91590fe422e87dd8d2143c82f715c0a925af8
                   MATRIX: 760->1|872->18|902->23|916->30|944->50|983->52|1021->64|1270->286|1285->292|1343->329|1406->365|1421->371|1474->403|1537->439|1552->445|1604->476|1667->512|1682->518|1737->552|2266->1053|2295->1054|2324->1055|2353->1056|2394->1069|2423->1070|2452->1071
