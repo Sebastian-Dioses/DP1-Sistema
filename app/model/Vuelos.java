@@ -4,8 +4,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.Type;
-import org.joda.time.LocalDateTime;
-import org.joda.time.DateTime;
+//import org.joda.time.LocalDateTime;
+//import org.joda.time.DateTime;
 import play.db.jpa.JPA;
 
 import java.util.Date;
@@ -21,15 +21,15 @@ public class Vuelos {
     @NotNull
     public String ciudad_destino;
     @NotNull
-    public DateTime hora_salida;
+    public Date hora_salida;
     @NotNull
-    public DateTime hora_llegada;
+    public Date hora_llegada;
 
     private Vuelos(){
 
     }
 
-    public Vuelos(String ciudad_origen, String ciudad_destino, DateTime hora_salida, DateTime hora_llegada){
+    public Vuelos(String ciudad_origen, String ciudad_destino, Date hora_salida, Date hora_llegada){
         this.ciudad_origen=ciudad_origen;
         this.ciudad_destino=ciudad_destino;        
         this.hora_salida=hora_salida;
@@ -43,5 +43,9 @@ public class Vuelos {
         return query.getResultList();                  
     }
 
+    public void save(){
+        JPA.em().persist(this);
+        JPA.em().flush();
+    }
 
 }

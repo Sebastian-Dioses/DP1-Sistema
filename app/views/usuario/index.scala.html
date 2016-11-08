@@ -42,7 +42,8 @@
 					<thead class="active" data-sortable="true">
 						<th><div align=center>ID</div></th>
 						<th><div align=center>USUARIO</div></th>
-						<th><div align=center>CONTRASEÑA</div></th>													
+						<th><div align=center>PERSONA</div></th>
+						<th><div align=center>CORREO</div></th>
 						<th><div align=center>DETALLE</div></th>
 						<th><div align=center>EDITAR</div></th>
 						<th><div align=center>ELIMINAR</div></th>
@@ -53,8 +54,9 @@
 					@for(usuario <- usuarios){
 						<tr>
 							<td>@usuario.id</td>
-							<td>@usuario.nombre</td>
-							<td>@usuario.contraseña</td>							
+							<td>@usuario.nombre</td>							
+							<td>@usuario.persona.nombre</td>
+							<td>@usuario.persona.correo</td>
 							<td>
 				              <a class="btn btn-info" href="#"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
 				            </td>

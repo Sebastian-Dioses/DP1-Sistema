@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/conf/routes
-// @DATE:Tue Nov 08 12:35:52 COT 2016
+// @DATE:Tue Nov 08 16:10:25 COT 2016
 
 package router
 
@@ -50,6 +50,8 @@ class Routes extends GeneratedRouter {
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """ciudad""", """controllers.CiudadesC.index()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """ciudad/new""", """controllers.CiudadesC.newO()"""),
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """ciudad/add""", """controllers.CiudadesC.create()"""),
+    ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """persona""", """controllers.PersonasC.index()"""),
+    ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """vuelo""", """controllers.VuelosC.index()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.at(path:String = "/public", file:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -262,11 +264,45 @@ class Routes extends GeneratedRouter {
     )
   )
 
+  // @LINE:21
+  private[this] lazy val controllers_PersonasC_index12_route: Route.ParamsExtractor = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("persona")))
+  )
+  private[this] lazy val controllers_PersonasC_index12_invoker = createInvoker(
+    controllers.PersonasC.index(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.PersonasC",
+      "index",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """persona"""
+    )
+  )
+
   // @LINE:23
-  private[this] lazy val controllers_Assets_at12_route: Route.ParamsExtractor = Route("GET",
+  private[this] lazy val controllers_VuelosC_index13_route: Route.ParamsExtractor = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("vuelo")))
+  )
+  private[this] lazy val controllers_VuelosC_index13_invoker = createInvoker(
+    controllers.VuelosC.index(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.VuelosC",
+      "index",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """vuelo"""
+    )
+  )
+
+  // @LINE:26
+  private[this] lazy val controllers_Assets_at14_route: Route.ParamsExtractor = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_at12_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at14_invoker = createInvoker(
     controllers.Assets.at(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -354,10 +390,22 @@ class Routes extends GeneratedRouter {
         controllers_CiudadesC_create11_invoker.call(controllers.CiudadesC.create())
       }
   
+    // @LINE:21
+    case controllers_PersonasC_index12_route(params) =>
+      call { 
+        controllers_PersonasC_index12_invoker.call(controllers.PersonasC.index())
+      }
+  
     // @LINE:23
-    case controllers_Assets_at12_route(params) =>
+    case controllers_VuelosC_index13_route(params) =>
+      call { 
+        controllers_VuelosC_index13_invoker.call(controllers.VuelosC.index())
+      }
+  
+    // @LINE:26
+    case controllers_Assets_at14_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at12_invoker.call(controllers.Assets.at(path, file))
+        controllers_Assets_at14_invoker.call(controllers.Assets.at(path, file))
       }
   }
 }

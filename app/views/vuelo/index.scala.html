@@ -1,0 +1,103 @@
+@(vuelos:List[models.Vuelos])
+@layouts.headerandfooter("Welcome to Play Framework") {
+    
+    <!DOCTYPE html>
+	<html>
+	<head>
+		<title>PLAN DE VUELO</title>
+		<meta charset="UTF-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel='stylesheet' href='@routes.Assets.at("css/jquery.bxslider.css")'>
+		<link rel='stylesheet' href='@routes.Assets.at("css/MisEstilos.css")'>
+		<link rel='stylesheet' href='@routes.Assets.at("css/bootstrap.css")'>
+		<link rel='stylesheet' href='@routes.Assets.at("css/font-awesome.css")'>	
+		<link rel='stylesheet' href='@routes.Assets.at("css/DataTable.css")'>	
+	
+	</head>
+	<body>
+	
+
+	<!---Cuerpo -->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<p class="lead"><strong>PLAN DE VUELO</strong></p>				
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="table-responsive">
+		<div class="container">
+			<div class="form-group">
+			  		<div class="text-right">
+			  			<font color="black"> 
+			  				Filtra por todos los campos
+			  			</font>
+			  			
+			  		</div>
+			</div>
+			<table class="table table-bordered table-hover text-center display" id="example">
+					<thead class="active" data-sortable="true">
+						<th><div align=center>ORIGEN</div></th>
+						<th><div align=center>DESTINO</div></th>
+						<th><div align=center>HORA SALIDA</div></th>
+						<th><div align=center>HORA LLEGADA</div></th>
+						<th><div align=center>DETALLE</div></th>
+						<th><div align=center>EDITAR</div></th>
+						<th><div align=center>ELIMINAR</div></th>
+					</thead>
+
+											
+					<tbody>
+					@for(vuelo <- vuelos){
+						<tr>
+							<td>@vuelo.ciudad_origen</td>
+							<td>@vuelo.ciudad_destino</td>
+							<td>@vuelo.hora_salida.format("HH:mm")</td>							
+							<td>@vuelo.hora_llegada.format("HH:mm")</td>
+							<td>
+				              <a class="btn btn-info" href="#"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
+				            </td>
+							<td>
+				              <a class="btn btn-info" href="#" title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
+				            </td>
+				            <td>
+				              <a class="btn btn-info"  title="Eliminar" data-href="#" data-toggle="modal" data-target="#modalEliminar"><i class="glyphicon glyphicon-remove"></i></a>    
+				            </td>
+			            </tr>
+					}
+					</tbody>						
+					
+			</table>			
+		</div>		
+	</div>
+	
+
+	<!--Pie de págna-->
+		
+	<!-- JQuery -->
+		<script src='@routes.Assets.at("js/jquery-1.11.3.min.js")'></script>
+		<!-- Bootstrap -->
+		<script src='@routes.Assets.at("js/bootstrap.js")'></script>	
+		<!-- BXSlider -->
+		<script src='@routes.Assets.at("js/jquery.bxslider.min.js")'></script>		
+		<!-- Mis Scripts -->
+		<script src='@routes.Assets.at("js/MisScripts.js")'></script>
+
+		<script src='@routes.Assets.at("js/jquery.dataTables.js")'></script>
+		
+		<script>
+		$(document).ready(function() {
+		   $('#example').DataTable( {
+		       "language": {
+		           "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+		       }
+		  	});
+  		});
+		</script>
+	</body>
+	</html>
+
+}

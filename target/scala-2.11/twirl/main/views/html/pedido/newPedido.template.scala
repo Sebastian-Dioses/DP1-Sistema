@@ -82,23 +82,23 @@ Seq[Any](format.raw/*1.19*/("""
 
 				<!-- INICIO INCIO-->				                       				
 				<div class="form-group required">
-		    		<label for="clienteOrigen_input" class="col-sm-4 control-label">Ciudad de origen</label>
+		    		<label for="clienteOrigen_input" class="col-sm-4 control-label">Ciudad de Origen</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" placeholder="Nombre de Cuenta" >
+		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" placeholder="Ciudad de Origen" >
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudadOrigen_input" class="col-sm-4 control-label">Ciudad de destino</label>
+		    		<label for="ciudadOrigen_input" class="col-sm-4 control-label">Ciudad de Destino</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" placeholder="Nombre de Usuario" >
+		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" placeholder="Ciudad de Destino" >
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudadDestino_input" class="col-sm-4 control-label">Persona</label>
+		    		<label for="ciudadDestino_input" class="col-sm-4 control-label">ID Persona</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="personas_id" name="personas_id" placeholder="Apellido de Usuario" >
+		      			<input type="text" class="form-control" id="personas_id" name="personas_id" placeholder="ID de Persona" >
 		    		</div>
 		  		</div>
 		  		
@@ -159,9 +159,9 @@ Seq[Any](format.raw/*1.19*/("""
 object newPedido extends newPedido_Scope0.newPedido
               /*
                   -- GENERATED --
-                  DATE: Tue Nov 08 12:35:53 COT 2016
+                  DATE: Tue Nov 08 16:58:17 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/app/views/pedido/newPedido.scala.html
-                  HASH: 8d2b77e551634698f3c8dd2d5e3dddc75f0ea12a
+                  HASH: 3b15b429c14df4437e562f46272d337656e71a29
                   MATRIX: 760->1|872->18|902->23|916->30|944->50|983->52|1021->64|1269->285|1284->291|1342->328|1405->364|1420->370|1473->402|1536->438|1551->444|1603->475|1666->511|1681->517|1736->551|2265->1052|2294->1053|2323->1054|2352->1055|2393->1068|2422->1069|2451->1070
                   LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33
                   -- GENERATED --

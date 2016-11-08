@@ -33,9 +33,9 @@ public class PedidosC extends Controller {
             String ciudad_destino = requestData.get("ciudad_destino");
             Long personas_id = new Long(Integer.parseInt(requestData.get("personas_id")));
             
-            Pedidos city = new Pedidos(ciudad_origen, ciudad_destino, personas_id); 
+            Pedidos pedido = new Pedidos(ciudad_origen, ciudad_destino, personas_id); 
            
-            city.save();
+            pedido.save();
 
             flash("success", "El pedido fue creado con éxito");
             return redirect(controllers.routes.PedidosC.index());

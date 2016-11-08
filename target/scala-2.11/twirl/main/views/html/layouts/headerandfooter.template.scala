@@ -104,10 +104,9 @@ Seq[Any](format.raw/*1.32*/("""
               Mantenimientos <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="#" title="Clientes" target="_self">Clientes</a></li>
-              <li><a href="#" title="Aviones" target="_self">Aviones</a></li>
-              <li><a href="#" title="Aeropuertos" target="_self">Aeropuertos/Almacenes</a></li>
-              <li><a href="#" title="Planes de Vuelo" target="_self">Planes de Vuelo</a></li>
+              <li><a href='"""),_display_(/*76.29*/routes/*76.35*/.PersonasC.index()),format.raw/*76.53*/("""' title="Personas" target="_self">Personas</a></li>              
+              <li><a href='"""),_display_(/*77.29*/routes/*77.35*/.CiudadesC.index()),format.raw/*77.53*/("""' title="Aeropuertos" target="_self">Aeropuertos/Almacenes</a></li>
+              <li><a href='"""),_display_(/*78.29*/routes/*78.35*/.VuelosC.index()),format.raw/*78.51*/("""' title="Planes de Vuelo" target="_self">Planes de Vuelo</a></li>
             </ul>
           </li>
         </ul>
@@ -119,8 +118,8 @@ Seq[Any](format.raw/*1.32*/("""
               Usuarios <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                <li><a href='"""),_display_(/*91.31*/routes/*91.37*/.UsuariosC.index()),format.raw/*91.55*/("""' title="Consultar usuarios" target="_self">Consultar</a></li>
-                <li><a href='"""),_display_(/*92.31*/routes/*92.37*/.UsuariosC.newO()),format.raw/*92.54*/("""' title="Registrar Usuario" target="_self">Registrar</a></li>
+                <li><a href='"""),_display_(/*90.31*/routes/*90.37*/.UsuariosC.index()),format.raw/*90.55*/("""' title="Consultar usuarios" target="_self">Consultar</a></li>
+                <li><a href='"""),_display_(/*91.31*/routes/*91.37*/.UsuariosC.newO()),format.raw/*91.54*/("""' title="Registrar Usuario" target="_self">Registrar</a></li>
                 </li>
             </ul>
           </li>
@@ -133,8 +132,8 @@ Seq[Any](format.raw/*1.32*/("""
               Pedidos <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                <li><a href='"""),_display_(/*105.31*/routes/*105.37*/.PedidosC.index()),format.raw/*105.54*/("""' title="Consultar talleres" target="_self">Consultar</a></li>
-                <li><a href='"""),_display_(/*106.31*/routes/*106.37*/.PedidosC.newO()),format.raw/*106.53*/("""' title="Registrar talleres" target="_self">Registrar</a></li>
+                <li><a href='"""),_display_(/*104.31*/routes/*104.37*/.PedidosC.index()),format.raw/*104.54*/("""' title="Consultar talleres" target="_self">Consultar</a></li>
+                <li><a href='"""),_display_(/*105.31*/routes/*105.37*/.PedidosC.newO()),format.raw/*105.53*/("""' title="Registrar talleres" target="_self">Registrar</a></li>
             </ul>
           </li>
         </ul>
@@ -142,7 +141,7 @@ Seq[Any](format.raw/*1.32*/("""
          <!-- Proveedores -->
         <ul class="nav navbar-nav">
           <li class="dropdown">
-            <a href='"""),_display_(/*114.23*/routes/*114.29*/.Application.simulation()),format.raw/*114.54*/("""' class="dropdown-toggle btn-lg" role="button">
+            <a href='"""),_display_(/*113.23*/routes/*113.29*/.Application.simulation()),format.raw/*113.54*/("""' class="dropdown-toggle btn-lg" role="button">
               Simulación 
             </a>           
           </li>
@@ -164,12 +163,12 @@ Seq[Any](format.raw/*1.32*/("""
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle btn-lg" data-toggle="dropdown" role="button">
-            <!--"""),format.raw/*136.17*/("""{"""),format.raw/*136.18*/("""!!Auth::user()->name!!"""),format.raw/*136.40*/("""}"""),format.raw/*136.41*/("""--> <span class="glyphicon glyphicon-user"><span class="caret"></span>
+            <!--"""),format.raw/*135.17*/("""{"""),format.raw/*135.18*/("""!!Auth::user()->name!!"""),format.raw/*135.40*/("""}"""),format.raw/*135.41*/("""--> <span class="glyphicon glyphicon-user"><span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><a href=""""),format.raw/*139.28*/("""{"""),format.raw/*139.29*/("""!!URL::to('/cuenta')!!"""),format.raw/*139.51*/("""}"""),format.raw/*139.52*/("""" title="Ir a cuenta" target="_self">Mi Cuenta</a></li>
-              <li><a href=""""),format.raw/*140.28*/("""{"""),format.raw/*140.29*/("""!!URL::to('/password/change')!!"""),format.raw/*140.60*/("""}"""),format.raw/*140.61*/("""" title="Cambiar contraseña" target="_self">Cambiar mi contraseña</a></li>
-              <li><a href=""""),format.raw/*141.28*/("""{"""),format.raw/*141.29*/("""!!URL::to('/logout')!!"""),format.raw/*141.51*/("""}"""),format.raw/*141.52*/("""" title="LOGOUT" target="_self">Logout</a></li>
+              <li><a href=""""),format.raw/*138.28*/("""{"""),format.raw/*138.29*/("""!!URL::to('/cuenta')!!"""),format.raw/*138.51*/("""}"""),format.raw/*138.52*/("""" title="Ir a cuenta" target="_self">Mi Cuenta</a></li>
+              <li><a href=""""),format.raw/*139.28*/("""{"""),format.raw/*139.29*/("""!!URL::to('/password/change')!!"""),format.raw/*139.60*/("""}"""),format.raw/*139.61*/("""" title="Cambiar contraseña" target="_self">Cambiar mi contraseña</a></li>
+              <li><a href=""""),format.raw/*140.28*/("""{"""),format.raw/*140.29*/("""!!URL::to('/logout')!!"""),format.raw/*140.51*/("""}"""),format.raw/*140.52*/("""" title="LOGOUT" target="_self">Logout</a></li>
             </ul>
           </li>
         </ul>
@@ -180,27 +179,27 @@ Seq[Any](format.raw/*1.32*/("""
 <!---Cuerpo -->
 
 <main class="main">
-"""),_display_(/*152.2*/content),format.raw/*152.9*/("""
-"""),format.raw/*153.1*/("""</main>
+"""),_display_(/*151.2*/content),format.raw/*151.9*/("""
+"""),format.raw/*152.1*/("""</main>
 <!--Pie de págna-->
 
 <footer class="footer">
     <div class="content">
         <div class="footer-1">
             <div class="logofoot">
-                <img alt="Papus Club" src='"""),_display_(/*160.45*/routes/*160.51*/.Assets.at("images/logo-min.png")),format.raw/*160.84*/("""' title="Papus Club" style="z-index: -1;">               
+                <img alt="Papus Club" src='"""),_display_(/*159.45*/routes/*159.51*/.Assets.at("images/logo-min.png")),format.raw/*159.84*/("""' title="Papus Club" style="z-index: -1;">               
             </div>
             <div class="contacto">
                 <ul class="info">
                         <li><a href="#" title="telefono">(51) 1 523 4910</a></li>
-                        <li><span><img class="PointImg" src='"""),_display_(/*165.63*/routes/*165.69*/.Assets.at("images/punto.png")),format.raw/*165.99*/("""' width="3px" height="3px"></img></span></li>
+                        <li><span><img class="PointImg" src='"""),_display_(/*164.63*/routes/*164.69*/.Assets.at("images/punto.png")),format.raw/*164.99*/("""' width="3px" height="3px"></img></span></li>
                         <li><a href="#" title="e-mail"></a></li>
                 </ul>
                 <ul class="terminos-condiciones">
                         <li><a href="#" title="Terminos y Condiciones">TÉRMINOS Y CONDICIONES</a></li>
-                        <li><span><img class="PointImg" src='"""),_display_(/*170.63*/routes/*170.69*/.Assets.at("images/punto.png")),format.raw/*170.99*/("""'  width="3px" height="3px"></img></span></li>
+                        <li><span><img class="PointImg" src='"""),_display_(/*169.63*/routes/*169.69*/.Assets.at("images/punto.png")),format.raw/*169.99*/("""'  width="3px" height="3px"></img></span></li>
                         <li><a href="#" title="Privacidad">PRIVACIDAD</a></li>
-                        <li><span><img class="PointImg" src='"""),_display_(/*172.63*/routes/*172.69*/.Assets.at("images/punto.png")),format.raw/*172.99*/("""'  width="3px" height="3px"></img></span></li>
+                        <li><span><img class="PointImg" src='"""),_display_(/*171.63*/routes/*171.69*/.Assets.at("images/punto.png")),format.raw/*171.99*/("""'  width="3px" height="3px"></img></span></li>
                 </ul>
                     
             </div>
@@ -227,11 +226,11 @@ Seq[Any](format.raw/*1.32*/("""
 object headerandfooter extends headerandfooter_Scope0.headerandfooter
               /*
                   -- GENERATED --
-                  DATE: Tue Nov 08 12:35:53 COT 2016
+                  DATE: Tue Nov 08 17:43:38 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/app/views/layouts/headerandfooter.scala.html
-                  HASH: dbf98c65b7181fadd451ddc50d828c3976ddd67e
-                  MATRIX: 778->1|903->31|933->35|1110->185|1138->186|1179->200|1275->268|1304->269|1411->347|1441->348|1483->362|1534->385|1563->386|1624->419|1653->420|1695->434|1753->464|1782->465|1895->549|1925->550|1967->564|2035->604|2064->605|2186->698|2216->699|2258->713|2314->741|2343->742|2406->777|2435->778|2477->792|2525->812|2554->813|2605->836|2634->837|2663->838|2894->1041|2923->1042|2969->1060|3042->1105|3071->1106|3117->1124|3228->1207|3257->1208|3286->1209|3319->1214|3348->1215|3394->1233|3452->1263|3481->1264|3523->1278|3552->1279|3581->1280|3614->1285|3643->1286|3689->1304|3743->1330|3772->1331|3809->1341|3838->1342|3867->1344|5210->2660|5225->2666|5281->2700|5512->2904|5527->2910|5568->2930|6793->4128|6808->4134|6847->4152|6968->4246|6983->4252|7021->4269|7523->4743|7539->4749|7578->4766|7700->4860|7716->4866|7754->4882|8030->5130|8046->5136|8093->5161|8930->5969|8960->5970|9011->5992|9041->5993|9227->6150|9257->6151|9308->6173|9338->6174|9451->6258|9481->6259|9541->6290|9571->6291|9703->6394|9733->6395|9784->6417|9814->6418|10081->6658|10109->6665|10139->6667|10363->6863|10379->6869|10434->6902|10757->7197|10773->7203|10825->7233|11206->7586|11222->7592|11274->7622|11492->7812|11508->7818|11560->7848
-                  LINES: 27->1|32->1|34->3|38->7|38->7|39->8|41->10|41->10|41->10|41->10|42->11|42->11|42->11|42->11|42->11|43->12|43->12|43->12|43->12|43->12|44->13|44->13|44->13|44->13|44->13|45->14|45->14|45->14|45->14|45->14|46->15|46->15|46->15|46->15|46->15|46->15|49->18|49->18|50->19|50->19|50->19|51->20|52->21|52->21|52->21|52->21|52->21|53->22|54->23|54->23|55->24|55->24|55->24|55->24|55->24|56->25|57->26|57->26|58->27|58->27|59->28|87->56|87->56|87->56|94->63|94->63|94->63|122->91|122->91|122->91|123->92|123->92|123->92|136->105|136->105|136->105|137->106|137->106|137->106|145->114|145->114|145->114|167->136|167->136|167->136|167->136|170->139|170->139|170->139|170->139|171->140|171->140|171->140|171->140|172->141|172->141|172->141|172->141|183->152|183->152|184->153|191->160|191->160|191->160|196->165|196->165|196->165|201->170|201->170|201->170|203->172|203->172|203->172
+                  HASH: 8a9463c90fac14f8e3fef2b273adc53096a869c2
+                  MATRIX: 778->1|903->31|933->35|1110->185|1138->186|1179->200|1275->268|1304->269|1411->347|1441->348|1483->362|1534->385|1563->386|1624->419|1653->420|1695->434|1753->464|1782->465|1895->549|1925->550|1967->564|2035->604|2064->605|2186->698|2216->699|2258->713|2314->741|2343->742|2406->777|2435->778|2477->792|2525->812|2554->813|2605->836|2634->837|2663->838|2894->1041|2923->1042|2969->1060|3042->1105|3071->1106|3117->1124|3228->1207|3257->1208|3286->1209|3319->1214|3348->1215|3394->1233|3452->1263|3481->1264|3523->1278|3552->1279|3581->1280|3614->1285|3643->1286|3689->1304|3743->1330|3772->1331|3809->1341|3838->1342|3867->1344|5210->2660|5225->2666|5281->2700|5512->2904|5527->2910|5568->2930|6077->3412|6092->3418|6131->3436|6253->3531|6268->3537|6307->3555|6431->3652|6446->3658|6483->3674|6969->4133|6984->4139|7023->4157|7144->4251|7159->4257|7197->4274|7699->4748|7715->4754|7754->4771|7876->4865|7892->4871|7930->4887|8206->5135|8222->5141|8269->5166|9106->5974|9136->5975|9187->5997|9217->5998|9403->6155|9433->6156|9484->6178|9514->6179|9627->6263|9657->6264|9717->6295|9747->6296|9879->6399|9909->6400|9960->6422|9990->6423|10257->6663|10285->6670|10315->6672|10539->6868|10555->6874|10610->6907|10933->7202|10949->7208|11001->7238|11382->7591|11398->7597|11450->7627|11668->7817|11684->7823|11736->7853
+                  LINES: 27->1|32->1|34->3|38->7|38->7|39->8|41->10|41->10|41->10|41->10|42->11|42->11|42->11|42->11|42->11|43->12|43->12|43->12|43->12|43->12|44->13|44->13|44->13|44->13|44->13|45->14|45->14|45->14|45->14|45->14|46->15|46->15|46->15|46->15|46->15|46->15|49->18|49->18|50->19|50->19|50->19|51->20|52->21|52->21|52->21|52->21|52->21|53->22|54->23|54->23|55->24|55->24|55->24|55->24|55->24|56->25|57->26|57->26|58->27|58->27|59->28|87->56|87->56|87->56|94->63|94->63|94->63|107->76|107->76|107->76|108->77|108->77|108->77|109->78|109->78|109->78|121->90|121->90|121->90|122->91|122->91|122->91|135->104|135->104|135->104|136->105|136->105|136->105|144->113|144->113|144->113|166->135|166->135|166->135|166->135|169->138|169->138|169->138|169->138|170->139|170->139|170->139|170->139|171->140|171->140|171->140|171->140|182->151|182->151|183->152|190->159|190->159|190->159|195->164|195->164|195->164|200->169|200->169|200->169|202->171|202->171|202->171
                   -- GENERATED --
               */
           

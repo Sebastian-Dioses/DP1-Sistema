@@ -9,8 +9,8 @@ import org.hibernate.annotations.Type;
 import play.db.jpa.JPA;
 
 import java.util.Date;
+import java.text.DateFormat;
 import java.util.List;
-
 
 @Entity
 public class Pedidos {
@@ -20,6 +20,8 @@ public class Pedidos {
     public String ciudad_origen;
     @NotNull
     public String ciudad_destino;
+    @NotNull    
+    public Date fecha_registro;
     @NotNull
     public Long personas_id;
 
@@ -30,7 +32,8 @@ public class Pedidos {
     public Pedidos(String ciudad_origen, String ciudad_destino, Long personas_id){
         this.ciudad_origen=ciudad_origen;
         this.ciudad_destino=ciudad_destino;
-        this.personas_id=personas_id;                    
+        this.personas_id=personas_id;        
+        this.fecha_registro=new Date();
     }
     
         

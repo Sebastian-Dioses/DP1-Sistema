@@ -4,7 +4,7 @@
 		module="hello-play-java_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20161108123552"
+		publication="20161108161023"
 	>
 		<description>
 		hello-play-java
