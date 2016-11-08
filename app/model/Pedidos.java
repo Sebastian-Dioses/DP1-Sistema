@@ -4,8 +4,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.Type;
-import org.joda.time.LocalDateTime;
-import org.joda.time.DateTime;
+//import org.joda.time.LocalDateTime;
+//import org.joda.time.DateTime;
 import play.db.jpa.JPA;
 
 import java.util.Date;
@@ -15,26 +15,22 @@ import java.util.List;
 @Entity
 public class Pedidos {
     @Id @GeneratedValue
-    public Long idpedidos;
+    public Long id=null;
     @NotNull
     public String ciudad_origen;
     @NotNull
     public String ciudad_destino;
     @NotNull
-    public DateTime fecha_registro;
-    @NotNull
-    public Long persona_idpersona;
+    public Long personas_id;
 
     private Pedidos(){
 
     }
 
-    public Pedidos(Long idpedidos, String ciudad_origen, String ciudad_destino, DateTime fecha_registro, Long persona_idpersona){
-        this.idpedidos=idpedidos;
+    public Pedidos(String ciudad_origen, String ciudad_destino, Long personas_id){
         this.ciudad_origen=ciudad_origen;
         this.ciudad_destino=ciudad_destino;
-        this.fecha_registro=fecha_registro;
-        this.persona_idpersona=persona_idpersona;                    
+        this.personas_id=personas_id;                    
     }
     
         
@@ -44,5 +40,9 @@ public class Pedidos {
         return query.getResultList();                  
     }
 
+    public void save(){
+        JPA.em().persist(this);
+        JPA.em().flush();
+    }
 
 }

@@ -46,14 +46,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.properties
-*.xml
 project/target/streams/$global/update/$global/streams/out
 project/target/streams/$global/update/$global/streams/output
 *.log
-*.xml
 *.properties
 *.class
-<<<<<<< HEAD
 logs/application.log
-=======
->>>>>>> origin/JL
+#*.xml

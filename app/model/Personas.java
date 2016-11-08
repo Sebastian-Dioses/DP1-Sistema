@@ -15,7 +15,7 @@ import java.util.List;
 @Entity
 public class Personas {
     @Id @GeneratedValue
-    public Long idpersona;
+    public Long id=null;
     @NotNull
     public String nombre;
     @NotNull
@@ -23,20 +23,19 @@ public class Personas {
     @NotNull
     public String correo;
     @NotNull
-    public DateTime fecha_creacion;
-    @NotNull
-    public Long tipo_persona;
+    public int tipo_persona;
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "personas_id")
+    public Usuarios usuario;
 
     private Personas(){
 
     }
 
-    public Personas(Long idpersona, String nombre, String dni, String correo, DateTime fecha_creacion, Long tipo_persona){
-        this.idpersona=idpersona;
+    public Personas(String nombre, String dni, String correo, int tipo_persona){
         this.nombre=nombre;
         this.dni=dni;
         this.correo=correo;
-        this.fecha_creacion=fecha_creacion;
         this.tipo_persona=tipo_persona;                    
     }
     
@@ -47,5 +46,8 @@ public class Personas {
         return query.getResultList();                  
     }
 
-
+    public void save(){
+        JPA.em().persist(this);
+        JPA.em().flush();
+    }
 }

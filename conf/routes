@@ -5,9 +5,18 @@
 GET     /							controllers.Application.login()
 GET     /index						controllers.Application.index()
 GET     /simulation					controllers.Application.simulation()
-GET     /registroPedido            	controllers.Application.test()
-GET     /user            			controllers.Application.users()
-GET     /newuser            		controllers.Application.newuser()
+
+GET     /pedido            			controllers.PedidosC.index()
+GET     /pedido/new            		controllers.PedidosC.newO()
+POST    /pedido/add					controllers.PedidosC.create()
+
+GET     /user            			controllers.UsuariosC.index()
+GET     /user/new            		controllers.UsuariosC.newO()
+POST    /user/add					controllers.UsuariosC.create()
+
+GET     /ciudad            			controllers.CiudadesC.index()
+GET     /ciudad/new            		controllers.CiudadesC.newO()
+POST    /ciudad/add					controllers.CiudadesC.create()
 
 
 # Map static resources from the /public folder to the /assets URL path

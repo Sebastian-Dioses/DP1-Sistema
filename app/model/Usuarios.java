@@ -4,37 +4,34 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.Type;
-import org.joda.time.LocalDateTime;
-import org.joda.time.DateTime;
+//import org.joda.time.LocalDateTime;
+//import org.joda.time.DateTime;
 import play.db.jpa.JPA;
 
 import java.util.Date;
 import java.util.List;
 
-
 @Entity
 public class Usuarios {
     @Id @GeneratedValue
-    public Long idusuario;
+    public Long id=null;
     @NotNull
     public String nombre;
     @NotNull
-    public String contrasena;
+    public String contraseña;  
     @NotNull
-    public DateTime fecha_creacion;
-    @NotNull
-    public Long persona_idpersona;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="id")
+    public Personas personas_id;
 
     private Usuarios(){
 
     }
 
-    public Usuarios(Long idusuario, String nombre, String contrasena, DateTime fecha_creacion, Long persona_idpersona){
-        this.idusuario=idusuario;
+    public Usuarios(String nombre, String contraseña, Personas personas_id){
         this.nombre=nombre;
-        this.contrasena=contrasena;        
-        this.fecha_creacion=fecha_creacion;
-        this.persona_idpersona=persona_idpersona;                    
+        this.contraseña=contraseña;        
+        this.personas_id=personas_id;                    
     }
     
         
@@ -44,5 +41,8 @@ public class Usuarios {
         return query.getResultList();                  
     }
 
-
+    public void save(){
+        JPA.em().persist(this);
+        JPA.em().flush();
+    }
 }

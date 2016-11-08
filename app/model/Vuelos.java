@@ -15,7 +15,7 @@ import java.util.List;
 @Entity
 public class Vuelos {
     @Id @GeneratedValue
-    public Long idvuelos;
+    public Long id;
     @NotNull
     public String ciudad_origen;
     @NotNull
@@ -29,8 +29,7 @@ public class Vuelos {
 
     }
 
-    public Vuelos(Long idvuelos, String ciudad_origen, String ciudad_destino, DateTime hora_salida, DateTime hora_llegada){
-        this.idvuelos=idvuelos;
+    public Vuelos(String ciudad_origen, String ciudad_destino, DateTime hora_salida, DateTime hora_llegada){
         this.ciudad_origen=ciudad_origen;
         this.ciudad_destino=ciudad_destino;        
         this.hora_salida=hora_salida;
