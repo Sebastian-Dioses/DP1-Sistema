@@ -20,18 +20,20 @@ public class Usuarios {
     @NotNull
     public String contraseña;  
     @NotNull
+    public Long personas_id;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="id")
-    public Personas personas_id;
+    public Personas persona;
 
     private Usuarios(){
 
     }
 
-    public Usuarios(String nombre, String contraseña, Personas personas_id){
+    public Usuarios(String nombre, String contraseña, Long personas_id){
         this.nombre=nombre;
         this.contraseña=contraseña;        
-        this.personas_id=personas_id;                    
+        this.personas_id=personas_id;
     }
     
         
@@ -44,5 +46,13 @@ public class Usuarios {
     public void save(){
         JPA.em().persist(this);
         JPA.em().flush();
+    }
+
+    public Personas getPersona(){
+        return this.persona;        
+    }
+
+    public void setPersona(Personas persona){
+        this.persona=persona;
     }
 }

@@ -159,7 +159,7 @@ Seq[Any](format.raw/*1.19*/("""
 object newPedido extends newPedido_Scope0.newPedido
               /*
                   -- GENERATED --
-                  DATE: Tue Nov 08 11:30:37 COT 2016
+                  DATE: Tue Nov 08 12:35:53 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/app/views/pedido/newPedido.scala.html
                   HASH: 8d2b77e551634698f3c8dd2d5e3dddc75f0ea12a
                   MATRIX: 760->1|872->18|902->23|916->30|944->50|983->52|1021->64|1269->285|1284->291|1342->328|1405->364|1420->370|1473->402|1536->438|1551->444|1603->475|1666->511|1681->517|1736->551|2265->1052|2294->1053|2323->1054|2352->1055|2393->1068|2422->1069|2451->1070

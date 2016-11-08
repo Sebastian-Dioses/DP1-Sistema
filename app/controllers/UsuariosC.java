@@ -39,9 +39,9 @@ public class UsuariosC extends Controller {
             
             Personas per = new Personas(nombre, dni, correo, 1);
             
-            per.save();
-            
-            Usuarios user = new Usuarios(cuenta, "1234", per); 
+            per.save();                    
+
+            Usuarios user = new Usuarios(cuenta, "1234", per.id); 
                             
             user.save();
 

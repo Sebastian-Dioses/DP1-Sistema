@@ -4,8 +4,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.Type;
-import org.joda.time.LocalDateTime;
-import org.joda.time.DateTime;
+//import org.joda.time.LocalDateTime;
+//import org.joda.time.DateTime;
 import play.db.jpa.JPA;
 
 import java.util.Date;
@@ -14,7 +14,7 @@ import java.util.List;
 
 @Entity
 public class Personas {
-    @Id @GeneratedValue
+    @Id @GeneratedValue    
     public Long id=null;
     @NotNull
     public String nombre;
@@ -25,8 +25,8 @@ public class Personas {
     @NotNull
     public int tipo_persona;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "personas_id")
-    public Usuarios usuario;
+    //@OneToOne(cascade = CascadeType.ALL)
+    //public Usuarios usuario;
 
     private Personas(){
 
@@ -46,8 +46,22 @@ public class Personas {
         return query.getResultList();                  
     }
 
+    public static Personas getById(Long id){
+        Personas t = JPA.em().find(Personas.class, id);
+       
+        return t;
+    }
+
     public void save(){
         JPA.em().persist(this);
         JPA.em().flush();
     }
+
+    //public Usuarios getUsuario(){
+        //return this.usuario;
+    //}
+
+    //public void setUsuario(Usuarios usuario){
+        //this.usuario=usuario;        
+    //}
 }
