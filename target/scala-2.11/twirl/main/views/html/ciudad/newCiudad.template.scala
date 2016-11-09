@@ -36,7 +36,7 @@ Seq[Any](format.raw/*1.19*/("""
     """),format.raw/*5.5*/("""<!DOCTYPE html>
     <html>
     <head>
-    	<title>REGISTRAR USUARIO</title>
+    	<title>REGISTRAR AEROPUERTO</title>
     	<meta charset="UTF-8">
     
     	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +55,7 @@ Seq[Any](format.raw/*1.19*/("""
     		<br/><br/>
     		<div class="container">
     			<div class="col-sm-12 text-left lead">
-    					<strong>REGISTRAR Ciudad</strong>
+    					<strong>REGISTRAR AEROPUERTO</strong>
     			</div>		
     		</div>
     		<div class="container">
@@ -84,35 +84,35 @@ Seq[Any](format.raw/*1.19*/("""
 				<div class="form-group required">
 		    		<label for="clienteOrigen_input" class="col-sm-4 control-label">Código de ciudad</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="cod_ciudad" name="cod_ciudad" placeholder="Nombre de Cuenta" >
+		      			<input type="text" class="form-control" id="cod_ciudad" name="cod_ciudad" placeholder="Código de ciudad" >
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
 		    		<label for="ciudadOrigen_input" class="col-sm-4 control-label">Nombre</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de Usuario" >
+		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" >
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
 		    		<label for="ciudadDestino_input" class="col-sm-4 control-label">País</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="pais" name="pais" placeholder="Apellido de Usuario" >
+		      			<input type="text" class="form-control" id="pais" name="pais" placeholder="País" >
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
 			    	<label for="cantidadPaquetesInput" class="col-sm-4 control-label">Nombre Abreviado</label>
 			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="abreviado" name="abreviado" placeholder="DNI de Usuario" >
+			      		<input type="text" class="form-control" id="abreviado" name="abreviado" placeholder="Nombre Abreviado" >
 			    	</div>			      					      		
 			  	</div>	
 			  
 		  		<div class="form-group required">
 			    	<label for="cantidadPaquetesInput" class="col-sm-4 control-label">Capacidad del almacen</label>
 			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="capacidad_almacen" name="capacidad_almacen" placeholder="Correo de Usuario" >
+			      		<input type="text" class="form-control" id="capacidad_almacen" name="capacidad_almacen" placeholder="Capacidad del almacen" >
 			    	</div>
 			  	</div>
 			  	
@@ -172,10 +172,10 @@ Seq[Any](format.raw/*1.19*/("""
 object newCiudad extends newCiudad_Scope0.newCiudad
               /*
                   -- GENERATED --
-                  DATE: Tue Nov 08 16:10:34 COT 2016
+                  DATE: Tue Nov 08 19:27:23 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/app/views/ciudad/newCiudad.scala.html
-                  HASH: f6e91590fe422e87dd8d2143c82f715c0a925af8
-                  MATRIX: 760->1|872->18|902->23|916->30|944->50|983->52|1021->64|1270->286|1285->292|1343->329|1406->365|1421->371|1474->403|1537->439|1552->445|1604->476|1667->512|1682->518|1737->552|2266->1053|2295->1054|2324->1055|2353->1056|2394->1069|2423->1070|2452->1071
+                  HASH: 7f5563301727cb9ecf3e18f1dc0b7e01c6c8a0f2
+                  MATRIX: 760->1|872->18|902->23|916->30|944->50|983->52|1021->64|1273->289|1288->295|1346->332|1409->368|1424->374|1477->406|1540->442|1555->448|1607->479|1670->515|1685->521|1740->555|2273->1060|2302->1061|2331->1062|2360->1063|2401->1076|2430->1077|2459->1078
                   LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33
                   -- GENERATED --
               */
