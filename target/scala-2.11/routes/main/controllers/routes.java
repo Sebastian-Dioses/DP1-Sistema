@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/conf/routes
-// @DATE:Tue Nov 08 18:24:33 COT 2016
+// @DATE:Tue Nov 08 19:48:54 COT 2016
 
 package controllers;
 
