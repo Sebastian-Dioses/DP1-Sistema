@@ -4,7 +4,7 @@
 		module="dp1-sistema-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20161108194711"
+		publication="20161113190305"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

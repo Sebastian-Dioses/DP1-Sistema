@@ -159,8 +159,8 @@ Seq[Any](format.raw/*1.19*/("""
 object newPedido extends newPedido_Scope0.newPedido
               /*
                   -- GENERATED --
-                  DATE: Tue Nov 08 19:49:17 COT 2016
-                  SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/app/views/pedido/newPedido.scala.html
+                  DATE: Sun Nov 13 19:04:21 COT 2016
+                  SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/pedido/newPedido.scala.html
                   HASH: 3b15b429c14df4437e562f46272d337656e71a29
                   MATRIX: 760->1|872->18|902->23|916->30|944->50|983->52|1021->64|1269->285|1284->291|1342->328|1405->364|1420->370|1473->402|1536->438|1551->444|1603->475|1666->511|1681->517|1736->551|2265->1052|2294->1053|2323->1054|2352->1055|2393->1068|2422->1069|2451->1070
                   LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33
