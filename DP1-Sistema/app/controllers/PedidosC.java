@@ -49,4 +49,14 @@ public class PedidosC extends Controller {
 
     }
 	
+    @play.db.jpa.Transactional      
+    public static Result detail(Long idPedido) {            
+        return ok(views.html.pedido.detail.render(Pedidos.getById(idPedido)));
+    }
+
+    @play.db.jpa.Transactional      
+    public static Result delete(Long idPedido) {            
+        Pedidos.delete(idPedido);
+        return ok(views.html.pedido.index.render(Pedidos.getAll()));
+    }
 }

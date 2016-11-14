@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/conf/routes
-// @DATE:Sun Nov 13 18:57:42 COT 2016
+// @DATE:Sun Nov 13 23:39:01 COT 2016
 
 package router
 
@@ -44,6 +44,8 @@ class Routes extends GeneratedRouter {
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """pedido""", """controllers.PedidosC.index()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """pedido/new""", """controllers.PedidosC.newO()"""),
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """pedido/add""", """controllers.PedidosC.create()"""),
+    ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """pedido/detail""", """controllers.PedidosC.detail(id:Long)"""),
+    ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """pedido/delete""", """controllers.PedidosC.delete(id:Long)"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """user""", """controllers.UsuariosC.index()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """user/new""", """controllers.UsuariosC.newO()"""),
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """user/add""", """controllers.UsuariosC.create()"""),
@@ -162,11 +164,45 @@ class Routes extends GeneratedRouter {
     )
   )
 
+  // @LINE:12
+  private[this] lazy val controllers_PedidosC_detail6_route: Route.ParamsExtractor = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pedido/detail")))
+  )
+  private[this] lazy val controllers_PedidosC_detail6_invoker = createInvoker(
+    controllers.PedidosC.detail(fakeValue[Long]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.PedidosC",
+      "detail",
+      Seq(classOf[Long]),
+      "GET",
+      """""",
+      this.prefix + """pedido/detail"""
+    )
+  )
+
   // @LINE:13
-  private[this] lazy val controllers_UsuariosC_index6_route: Route.ParamsExtractor = Route("GET",
+  private[this] lazy val controllers_PedidosC_delete7_route: Route.ParamsExtractor = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pedido/delete")))
+  )
+  private[this] lazy val controllers_PedidosC_delete7_invoker = createInvoker(
+    controllers.PedidosC.delete(fakeValue[Long]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.PedidosC",
+      "delete",
+      Seq(classOf[Long]),
+      "GET",
+      """""",
+      this.prefix + """pedido/delete"""
+    )
+  )
+
+  // @LINE:15
+  private[this] lazy val controllers_UsuariosC_index8_route: Route.ParamsExtractor = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user")))
   )
-  private[this] lazy val controllers_UsuariosC_index6_invoker = createInvoker(
+  private[this] lazy val controllers_UsuariosC_index8_invoker = createInvoker(
     controllers.UsuariosC.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -179,11 +215,11 @@ class Routes extends GeneratedRouter {
     )
   )
 
-  // @LINE:14
-  private[this] lazy val controllers_UsuariosC_newO7_route: Route.ParamsExtractor = Route("GET",
+  // @LINE:16
+  private[this] lazy val controllers_UsuariosC_newO9_route: Route.ParamsExtractor = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/new")))
   )
-  private[this] lazy val controllers_UsuariosC_newO7_invoker = createInvoker(
+  private[this] lazy val controllers_UsuariosC_newO9_invoker = createInvoker(
     controllers.UsuariosC.newO(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -196,11 +232,11 @@ class Routes extends GeneratedRouter {
     )
   )
 
-  // @LINE:15
-  private[this] lazy val controllers_UsuariosC_create8_route: Route.ParamsExtractor = Route("POST",
+  // @LINE:17
+  private[this] lazy val controllers_UsuariosC_create10_route: Route.ParamsExtractor = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/add")))
   )
-  private[this] lazy val controllers_UsuariosC_create8_invoker = createInvoker(
+  private[this] lazy val controllers_UsuariosC_create10_invoker = createInvoker(
     controllers.UsuariosC.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -213,11 +249,11 @@ class Routes extends GeneratedRouter {
     )
   )
 
-  // @LINE:17
-  private[this] lazy val controllers_CiudadesC_index9_route: Route.ParamsExtractor = Route("GET",
+  // @LINE:19
+  private[this] lazy val controllers_CiudadesC_index11_route: Route.ParamsExtractor = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("ciudad")))
   )
-  private[this] lazy val controllers_CiudadesC_index9_invoker = createInvoker(
+  private[this] lazy val controllers_CiudadesC_index11_invoker = createInvoker(
     controllers.CiudadesC.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -230,11 +266,11 @@ class Routes extends GeneratedRouter {
     )
   )
 
-  // @LINE:18
-  private[this] lazy val controllers_CiudadesC_newO10_route: Route.ParamsExtractor = Route("GET",
+  // @LINE:20
+  private[this] lazy val controllers_CiudadesC_newO12_route: Route.ParamsExtractor = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("ciudad/new")))
   )
-  private[this] lazy val controllers_CiudadesC_newO10_invoker = createInvoker(
+  private[this] lazy val controllers_CiudadesC_newO12_invoker = createInvoker(
     controllers.CiudadesC.newO(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -247,11 +283,11 @@ class Routes extends GeneratedRouter {
     )
   )
 
-  // @LINE:19
-  private[this] lazy val controllers_CiudadesC_create11_route: Route.ParamsExtractor = Route("POST",
+  // @LINE:21
+  private[this] lazy val controllers_CiudadesC_create13_route: Route.ParamsExtractor = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("ciudad/add")))
   )
-  private[this] lazy val controllers_CiudadesC_create11_invoker = createInvoker(
+  private[this] lazy val controllers_CiudadesC_create13_invoker = createInvoker(
     controllers.CiudadesC.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -264,11 +300,11 @@ class Routes extends GeneratedRouter {
     )
   )
 
-  // @LINE:21
-  private[this] lazy val controllers_PersonasC_index12_route: Route.ParamsExtractor = Route("GET",
+  // @LINE:23
+  private[this] lazy val controllers_PersonasC_index14_route: Route.ParamsExtractor = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("persona")))
   )
-  private[this] lazy val controllers_PersonasC_index12_invoker = createInvoker(
+  private[this] lazy val controllers_PersonasC_index14_invoker = createInvoker(
     controllers.PersonasC.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -281,11 +317,11 @@ class Routes extends GeneratedRouter {
     )
   )
 
-  // @LINE:23
-  private[this] lazy val controllers_VuelosC_index13_route: Route.ParamsExtractor = Route("GET",
+  // @LINE:25
+  private[this] lazy val controllers_VuelosC_index15_route: Route.ParamsExtractor = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("vuelo")))
   )
-  private[this] lazy val controllers_VuelosC_index13_invoker = createInvoker(
+  private[this] lazy val controllers_VuelosC_index15_invoker = createInvoker(
     controllers.VuelosC.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -298,11 +334,11 @@ class Routes extends GeneratedRouter {
     )
   )
 
-  // @LINE:26
-  private[this] lazy val controllers_Assets_at14_route: Route.ParamsExtractor = Route("GET",
+  // @LINE:28
+  private[this] lazy val controllers_Assets_at16_route: Route.ParamsExtractor = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_at14_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at16_invoker = createInvoker(
     controllers.Assets.at(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -354,58 +390,70 @@ class Routes extends GeneratedRouter {
         controllers_PedidosC_create5_invoker.call(controllers.PedidosC.create())
       }
   
-    // @LINE:13
-    case controllers_UsuariosC_index6_route(params) =>
-      call { 
-        controllers_UsuariosC_index6_invoker.call(controllers.UsuariosC.index())
+    // @LINE:12
+    case controllers_PedidosC_detail6_route(params) =>
+      call(params.fromQuery[Long]("id", None)) { (id) =>
+        controllers_PedidosC_detail6_invoker.call(controllers.PedidosC.detail(id))
       }
   
-    // @LINE:14
-    case controllers_UsuariosC_newO7_route(params) =>
-      call { 
-        controllers_UsuariosC_newO7_invoker.call(controllers.UsuariosC.newO())
+    // @LINE:13
+    case controllers_PedidosC_delete7_route(params) =>
+      call(params.fromQuery[Long]("id", None)) { (id) =>
+        controllers_PedidosC_delete7_invoker.call(controllers.PedidosC.delete(id))
       }
   
     // @LINE:15
-    case controllers_UsuariosC_create8_route(params) =>
+    case controllers_UsuariosC_index8_route(params) =>
       call { 
-        controllers_UsuariosC_create8_invoker.call(controllers.UsuariosC.create())
+        controllers_UsuariosC_index8_invoker.call(controllers.UsuariosC.index())
+      }
+  
+    // @LINE:16
+    case controllers_UsuariosC_newO9_route(params) =>
+      call { 
+        controllers_UsuariosC_newO9_invoker.call(controllers.UsuariosC.newO())
       }
   
     // @LINE:17
-    case controllers_CiudadesC_index9_route(params) =>
+    case controllers_UsuariosC_create10_route(params) =>
       call { 
-        controllers_CiudadesC_index9_invoker.call(controllers.CiudadesC.index())
-      }
-  
-    // @LINE:18
-    case controllers_CiudadesC_newO10_route(params) =>
-      call { 
-        controllers_CiudadesC_newO10_invoker.call(controllers.CiudadesC.newO())
+        controllers_UsuariosC_create10_invoker.call(controllers.UsuariosC.create())
       }
   
     // @LINE:19
-    case controllers_CiudadesC_create11_route(params) =>
+    case controllers_CiudadesC_index11_route(params) =>
       call { 
-        controllers_CiudadesC_create11_invoker.call(controllers.CiudadesC.create())
+        controllers_CiudadesC_index11_invoker.call(controllers.CiudadesC.index())
+      }
+  
+    // @LINE:20
+    case controllers_CiudadesC_newO12_route(params) =>
+      call { 
+        controllers_CiudadesC_newO12_invoker.call(controllers.CiudadesC.newO())
       }
   
     // @LINE:21
-    case controllers_PersonasC_index12_route(params) =>
+    case controllers_CiudadesC_create13_route(params) =>
       call { 
-        controllers_PersonasC_index12_invoker.call(controllers.PersonasC.index())
+        controllers_CiudadesC_create13_invoker.call(controllers.CiudadesC.create())
       }
   
     // @LINE:23
-    case controllers_VuelosC_index13_route(params) =>
+    case controllers_PersonasC_index14_route(params) =>
       call { 
-        controllers_VuelosC_index13_invoker.call(controllers.VuelosC.index())
+        controllers_PersonasC_index14_invoker.call(controllers.PersonasC.index())
       }
   
-    // @LINE:26
-    case controllers_Assets_at14_route(params) =>
+    // @LINE:25
+    case controllers_VuelosC_index15_route(params) =>
+      call { 
+        controllers_VuelosC_index15_invoker.call(controllers.VuelosC.index())
+      }
+  
+    // @LINE:28
+    case controllers_Assets_at16_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at14_invoker.call(controllers.Assets.at(path, file))
+        controllers_Assets_at16_invoker.call(controllers.Assets.at(path, file))
       }
   }
 }
