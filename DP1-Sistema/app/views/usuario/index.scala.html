@@ -27,6 +27,19 @@
 		</div>
 	</div>
 	
+	@if(flash.containsKey("success")) {
+		<div class="alert alert-success">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>¡Éxito!</strong> @flash.get("success")
+		</div>
+	}
+
+	@if(flash.containsKey("error")) {
+		<div class="alert alert-danger">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>¡Error!</strong> Indicates a dangerous or potentially negative action.
+		</div>
+	}
 
 	<div class="table-responsive">
 		<div class="container">

@@ -58,8 +58,21 @@ Seq[Any](format.raw/*1.34*/("""
 		</div>
 	</div>
 	
+	"""),_display_(/*30.3*/if(flash.containsKey("success"))/*30.35*/ {_display_(Seq[Any](format.raw/*30.37*/("""
+		"""),format.raw/*31.3*/("""<div class="alert alert-success">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>¡Éxito!</strong> """),_display_(/*33.30*/flash/*33.35*/.get("success")),format.raw/*33.50*/("""
+		"""),format.raw/*34.3*/("""</div>
+	""")))}),format.raw/*35.3*/("""
 
-	<div class="table-responsive">
+	"""),_display_(/*37.3*/if(flash.containsKey("error"))/*37.33*/ {_display_(Seq[Any](format.raw/*37.35*/("""
+		"""),format.raw/*38.3*/("""<div class="alert alert-danger">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>¡Error!</strong> Indicates a dangerous or potentially negative action.
+		</div>
+	""")))}),format.raw/*42.3*/("""
+
+	"""),format.raw/*44.2*/("""<div class="table-responsive">
 		<div class="container">
 			<div class="form-group">
 			  		<div class="text-right">
@@ -82,12 +95,12 @@ Seq[Any](format.raw/*1.34*/("""
 
 											
 					<tbody>
-					"""),_display_(/*54.7*/for(usuario <- usuarios) yield /*54.31*/{_display_(Seq[Any](format.raw/*54.32*/("""
-						"""),format.raw/*55.7*/("""<tr>
-							<td>"""),_display_(/*56.13*/usuario/*56.20*/.id),format.raw/*56.23*/("""</td>
-							<td>"""),_display_(/*57.13*/usuario/*57.20*/.nombre),format.raw/*57.27*/("""</td>							
-							<td>"""),_display_(/*58.13*/usuario/*58.20*/.persona.nombre),format.raw/*58.35*/("""</td>
-							<td>"""),_display_(/*59.13*/usuario/*59.20*/.persona.correo),format.raw/*59.35*/("""</td>
+					"""),_display_(/*67.7*/for(usuario <- usuarios) yield /*67.31*/{_display_(Seq[Any](format.raw/*67.32*/("""
+						"""),format.raw/*68.7*/("""<tr>
+							<td>"""),_display_(/*69.13*/usuario/*69.20*/.id),format.raw/*69.23*/("""</td>
+							<td>"""),_display_(/*70.13*/usuario/*70.20*/.nombre),format.raw/*70.27*/("""</td>							
+							<td>"""),_display_(/*71.13*/usuario/*71.20*/.persona.nombre),format.raw/*71.35*/("""</td>
+							<td>"""),_display_(/*72.13*/usuario/*72.20*/.persona.correo),format.raw/*72.35*/("""</td>
 							<td>
 				              <a class="btn btn-info" href="#"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
 				            </td>
@@ -98,8 +111,8 @@ Seq[Any](format.raw/*1.34*/("""
 				              <a class="btn btn-info"  title="Eliminar" data-href="#" data-toggle="modal" data-target="#modalEliminar"><i class="glyphicon glyphicon-remove"></i></a>    
 				            </td>
 			            </tr>
-					""")))}),format.raw/*70.7*/("""
-					"""),format.raw/*71.6*/("""</tbody>						
+					""")))}),format.raw/*83.7*/("""
+					"""),format.raw/*84.6*/("""</tbody>						
 					
 			</table>			
 		</div>		
@@ -109,24 +122,24 @@ Seq[Any](format.raw/*1.34*/("""
 	<!--Pie de págna-->
 		
 	<!-- JQuery -->
-		<script src='"""),_display_(/*81.17*/routes/*81.23*/.Assets.at("js/jquery-1.11.3.min.js")),format.raw/*81.60*/("""'></script>
+		<script src='"""),_display_(/*94.17*/routes/*94.23*/.Assets.at("js/jquery-1.11.3.min.js")),format.raw/*94.60*/("""'></script>
 		<!-- Bootstrap -->
-		<script src='"""),_display_(/*83.17*/routes/*83.23*/.Assets.at("js/bootstrap.js")),format.raw/*83.52*/("""'></script>	
+		<script src='"""),_display_(/*96.17*/routes/*96.23*/.Assets.at("js/bootstrap.js")),format.raw/*96.52*/("""'></script>	
 		<!-- BXSlider -->
-		<script src='"""),_display_(/*85.17*/routes/*85.23*/.Assets.at("js/jquery.bxslider.min.js")),format.raw/*85.62*/("""'></script>		
+		<script src='"""),_display_(/*98.17*/routes/*98.23*/.Assets.at("js/jquery.bxslider.min.js")),format.raw/*98.62*/("""'></script>		
 		<!-- Mis Scripts -->
-		<script src='"""),_display_(/*87.17*/routes/*87.23*/.Assets.at("js/MisScripts.js")),format.raw/*87.53*/("""'></script>
+		<script src='"""),_display_(/*100.17*/routes/*100.23*/.Assets.at("js/MisScripts.js")),format.raw/*100.53*/("""'></script>
 
-		<script src='"""),_display_(/*89.17*/routes/*89.23*/.Assets.at("js/jquery.dataTables.js")),format.raw/*89.60*/("""'></script>
+		<script src='"""),_display_(/*102.17*/routes/*102.23*/.Assets.at("js/jquery.dataTables.js")),format.raw/*102.60*/("""'></script>
 		
 		<script>
-		$(document).ready(function() """),format.raw/*92.32*/("""{"""),format.raw/*92.33*/("""
-		   """),format.raw/*93.6*/("""$('#example').DataTable( """),format.raw/*93.31*/("""{"""),format.raw/*93.32*/("""
-		       """),format.raw/*94.10*/(""""language": """),format.raw/*94.22*/("""{"""),format.raw/*94.23*/("""
-		           """),format.raw/*95.14*/(""""url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-		       """),format.raw/*96.10*/("""}"""),format.raw/*96.11*/("""
-		  	"""),format.raw/*97.6*/("""}"""),format.raw/*97.7*/(""");
-  		"""),format.raw/*98.5*/("""}"""),format.raw/*98.6*/(""");
+		$(document).ready(function() """),format.raw/*105.32*/("""{"""),format.raw/*105.33*/("""
+		   """),format.raw/*106.6*/("""$('#example').DataTable( """),format.raw/*106.31*/("""{"""),format.raw/*106.32*/("""
+		       """),format.raw/*107.10*/(""""language": """),format.raw/*107.22*/("""{"""),format.raw/*107.23*/("""
+		           """),format.raw/*108.14*/(""""url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+		       """),format.raw/*109.10*/("""}"""),format.raw/*109.11*/("""
+		  	"""),format.raw/*110.6*/("""}"""),format.raw/*110.7*/(""");
+  		"""),format.raw/*111.5*/("""}"""),format.raw/*111.6*/(""");
 		</script>
 	</body>
 	</html>
@@ -151,11 +164,11 @@ Seq[Any](format.raw/*1.34*/("""
 object index extends index_Scope0.index
               /*
                   -- GENERATED --
-                  DATE: Mon Nov 14 12:51:19 COT 2016
+                  DATE: Mon Nov 14 17:23:36 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/usuario/index.scala.html
-                  HASH: 93bc82edaa63f62c8c5b9c8b9f003fdedc806b81
-                  MATRIX: 768->1|895->33|923->36|937->43|990->88|1029->90|1067->102|1288->296|1303->302|1361->339|1424->375|1439->381|1492->413|1555->449|1570->455|1622->486|1685->522|1700->528|1755->562|1819->599|1834->605|1886->636|2899->1623|2939->1647|2978->1648|3013->1656|3058->1674|3074->1681|3098->1684|3144->1703|3160->1710|3188->1717|3241->1743|3257->1750|3293->1765|3339->1784|3355->1791|3391->1806|3982->2367|4016->2374|4168->2499|4183->2505|4241->2542|4319->2593|4334->2599|4384->2628|4462->2679|4477->2685|4537->2724|4619->2779|4634->2785|4685->2815|4743->2846|4758->2852|4816->2889|4904->2949|4933->2950|4967->2957|5020->2982|5049->2983|5088->2994|5128->3006|5157->3007|5200->3022|5307->3101|5336->3102|5370->3109|5398->3110|5433->3118|5461->3119
-                  LINES: 27->1|32->1|33->2|33->2|33->2|33->2|35->4|42->11|42->11|42->11|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|85->54|85->54|85->54|86->55|87->56|87->56|87->56|88->57|88->57|88->57|89->58|89->58|89->58|90->59|90->59|90->59|101->70|102->71|112->81|112->81|112->81|114->83|114->83|114->83|116->85|116->85|116->85|118->87|118->87|118->87|120->89|120->89|120->89|123->92|123->92|124->93|124->93|124->93|125->94|125->94|125->94|126->95|127->96|127->96|128->97|128->97|129->98|129->98
+                  HASH: 14580b9cb7befe4c026d7d71f5fcf1b98b41f2aa
+                  MATRIX: 768->1|895->33|923->36|937->43|990->88|1029->90|1067->102|1288->296|1303->302|1361->339|1424->375|1439->381|1492->413|1555->449|1570->455|1622->486|1685->522|1700->528|1755->562|1819->599|1834->605|1886->636|2139->863|2180->895|2220->897|2251->901|2424->1047|2438->1052|2474->1067|2505->1071|2545->1081|2577->1087|2616->1117|2656->1119|2687->1123|2928->1334|2960->1339|3745->2098|3785->2122|3824->2123|3859->2131|3904->2149|3920->2156|3944->2159|3990->2178|4006->2185|4034->2192|4087->2218|4103->2225|4139->2240|4185->2259|4201->2266|4237->2281|4828->2842|4862->2849|5014->2974|5029->2980|5087->3017|5165->3068|5180->3074|5230->3103|5308->3154|5323->3160|5383->3199|5466->3254|5482->3260|5534->3290|5593->3321|5609->3327|5668->3364|5757->3424|5787->3425|5822->3432|5876->3457|5906->3458|5946->3469|5987->3481|6017->3482|6061->3497|6169->3576|6199->3577|6234->3584|6263->3585|6299->3593|6328->3594
+                  LINES: 27->1|32->1|33->2|33->2|33->2|33->2|35->4|42->11|42->11|42->11|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|61->30|61->30|61->30|62->31|64->33|64->33|64->33|65->34|66->35|68->37|68->37|68->37|69->38|73->42|75->44|98->67|98->67|98->67|99->68|100->69|100->69|100->69|101->70|101->70|101->70|102->71|102->71|102->71|103->72|103->72|103->72|114->83|115->84|125->94|125->94|125->94|127->96|127->96|127->96|129->98|129->98|129->98|131->100|131->100|131->100|133->102|133->102|133->102|136->105|136->105|137->106|137->106|137->106|138->107|138->107|138->107|139->108|140->109|140->109|141->110|141->110|142->111|142->111
                   -- GENERATED --
               */
           
