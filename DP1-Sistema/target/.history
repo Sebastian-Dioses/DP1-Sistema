@@ -456,3 +456,11 @@ compile
 run
 compile
 run
+clean
+compile
+reload
+compile
+clean
+reload
+compile
+run

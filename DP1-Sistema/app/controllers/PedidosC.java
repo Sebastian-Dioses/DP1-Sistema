@@ -13,7 +13,9 @@ import play.data.DynamicForm;
 import play.data.Form;
 import play.db.jpa.JPA;
 
+import play.mvc.Security;
 
+@Security.Authenticated(SecuredC.class)
 public class PedidosC extends Controller {
     @play.db.jpa.Transactional      
 	public static Result index() {            

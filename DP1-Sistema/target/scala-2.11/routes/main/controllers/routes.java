@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/conf/routes
-// @DATE:Sun Nov 13 23:39:01 COT 2016
+// @DATE:Mon Nov 14 13:20:47 COT 2016
 
 package controllers;
 
@@ -15,6 +15,7 @@ public class routes {
   public static final controllers.ReversePersonasC PersonasC = new controllers.ReversePersonasC(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseVuelosC VuelosC = new controllers.ReverseVuelosC(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseApplication Application = new controllers.ReverseApplication(RoutesPrefix.byNamePrefix());
+  public static final controllers.ReverseSessionC SessionC = new controllers.ReverseSessionC(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseCiudadesC CiudadesC = new controllers.ReverseCiudadesC(RoutesPrefix.byNamePrefix());
 
   public static class javascript {
@@ -25,6 +26,7 @@ public class routes {
     public static final controllers.javascript.ReversePersonasC PersonasC = new controllers.javascript.ReversePersonasC(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseVuelosC VuelosC = new controllers.javascript.ReverseVuelosC(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseApplication Application = new controllers.javascript.ReverseApplication(RoutesPrefix.byNamePrefix());
+    public static final controllers.javascript.ReverseSessionC SessionC = new controllers.javascript.ReverseSessionC(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseCiudadesC CiudadesC = new controllers.javascript.ReverseCiudadesC(RoutesPrefix.byNamePrefix());
   }
 

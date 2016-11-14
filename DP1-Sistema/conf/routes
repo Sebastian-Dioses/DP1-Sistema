@@ -2,8 +2,12 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-GET     /							controllers.Application.login()
-GET     /index						controllers.Application.index()
+# Home page
+GET     /login		                controllers.SessionC.login()
+POST    /login                      controllers.SessionC.authenticate()
+GET     /logout                     controllers.SessionC.logout()
+
+GET     /							controllers.Application.index()
 GET     /simulation					controllers.Application.simulation()
 
 GET     /pedido            			controllers.PedidosC.index()
