@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/conf/routes
-// @DATE:Mon Nov 14 13:20:47 COT 2016
+// @DATE:Mon Nov 14 20:48:28 COT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:32
+  // @LINE:39
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:32
+    // @LINE:39
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -35,7 +35,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:13
+  // @LINE:16
   class ReversePedidosC(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -43,7 +43,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:17
+    // @LINE:20
     def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PedidosC.delete",
       """
@@ -53,7 +53,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:16
+    // @LINE:19
     def detail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PedidosC.detail",
       """
@@ -63,7 +63,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:15
+    // @LINE:18
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PedidosC.create",
       """
@@ -73,7 +73,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:14
+    // @LINE:17
     def newO: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PedidosC.newO",
       """
@@ -83,7 +83,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:13
+    // @LINE:16
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PedidosC.index",
       """
@@ -95,7 +95,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:19
+  // @LINE:22
   class ReverseUsuariosC(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -103,7 +103,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:21
+    // @LINE:24
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UsuariosC.create",
       """
@@ -113,7 +113,17 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:20
+    // @LINE:25
+    def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UsuariosC.delete",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "user/delete" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id0)])})
+        }
+      """
+    )
+  
+    // @LINE:23
     def newO: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UsuariosC.newO",
       """
@@ -123,7 +133,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:19
+    // @LINE:22
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UsuariosC.index",
       """
@@ -135,7 +145,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:27
+  // @LINE:32
   class ReversePersonasC(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -143,7 +153,17 @@ package controllers.javascript {
     }
 
   
-    // @LINE:27
+    // @LINE:33
+    def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PersonasC.delete",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "persona/delete" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id0)])})
+        }
+      """
+    )
+  
+    // @LINE:32
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PersonasC.index",
       """
@@ -155,7 +175,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:29
+  // @LINE:35
   class ReverseVuelosC(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -163,7 +183,17 @@ package controllers.javascript {
     }
 
   
-    // @LINE:29
+    // @LINE:36
+    def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.VuelosC.delete",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "vuelo/delete" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id0)])})
+        }
+      """
+    )
+  
+    // @LINE:35
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VuelosC.index",
       """
@@ -175,7 +205,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:10
+  // @LINE:13
   class ReverseApplication(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -183,7 +213,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:10
+    // @LINE:13
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.index",
       """
@@ -193,7 +223,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:11
+    // @LINE:14
     def simulation: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.simulation",
       """
@@ -223,6 +253,36 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:11
+    def account: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.SessionC.account",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "cuenta"})
+        }
+      """
+    )
+  
+    // @LINE:9
+    def changePassword: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.SessionC.changePassword",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "cambiarPassword"})
+        }
+      """
+    )
+  
+    // @LINE:10
+    def updatePassword: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.SessionC.updatePassword",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "cambiarPassword"})
+        }
+      """
+    )
+  
     // @LINE:7
     def authenticate: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SessionC.authenticate",
@@ -245,7 +305,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:23
+  // @LINE:27
   class ReverseCiudadesC(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -253,7 +313,17 @@ package controllers.javascript {
     }
 
   
-    // @LINE:25
+    // @LINE:30
+    def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CiudadesC.delete",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "ciudad/delete" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("id", id0)])})
+        }
+      """
+    )
+  
+    // @LINE:29
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CiudadesC.create",
       """
@@ -263,7 +333,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:24
+    // @LINE:28
     def newO: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CiudadesC.newO",
       """
@@ -273,7 +343,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:23
+    // @LINE:27
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CiudadesC.index",
       """

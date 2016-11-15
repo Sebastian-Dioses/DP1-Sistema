@@ -59,4 +59,9 @@ public class UsuariosC extends Controller {
 
     }
 	
+    @play.db.jpa.Transactional      
+    public static Result delete(Long idUsuario) {            
+        Usuarios.delete(idUsuario);
+        return ok(views.html.usuario.index.render(Usuarios.getAll()));
+    }
 }

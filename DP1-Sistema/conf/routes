@@ -6,6 +6,9 @@
 GET     /login		                controllers.SessionC.login()
 POST    /login                      controllers.SessionC.authenticate()
 GET     /logout                     controllers.SessionC.logout()
+GET     /cambiarPassword			controllers.SessionC.changePassword()
+POST    /cambiarPassword			controllers.SessionC.updatePassword()
+GET     /cuenta						controllers.SessionC.account()
 
 GET     /							controllers.Application.index()
 GET     /simulation					controllers.Application.simulation()
@@ -19,14 +22,18 @@ GET     /pedido/delete				controllers.PedidosC.delete(id: Long)
 GET     /user            			controllers.UsuariosC.index()
 GET     /user/new            		controllers.UsuariosC.newO()
 POST    /user/add					controllers.UsuariosC.create()
+GET     /user/delete				controllers.UsuariosC.delete(id: Long)
 
 GET     /ciudad            			controllers.CiudadesC.index()
 GET     /ciudad/new            		controllers.CiudadesC.newO()
 POST    /ciudad/add					controllers.CiudadesC.create()
+GET     /ciudad/delete				controllers.CiudadesC.delete(id: String)
 
 GET     /persona          			controllers.PersonasC.index()
+GET     /persona/delete				controllers.PersonasC.delete(id: Long)
 
 GET     /vuelo          			controllers.VuelosC.index()
+GET     /vuelo/delete				controllers.VuelosC.delete(id: Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

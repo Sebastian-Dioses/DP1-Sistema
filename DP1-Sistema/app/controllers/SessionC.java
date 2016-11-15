@@ -58,4 +58,18 @@ public class SessionC extends Controller {
         flash("info", "Cierre de sesión correcto");
         return redirect(routes.SessionC.login());
     }
+
+    @play.db.jpa.Transactional   
+    public static Result changePassword(){
+        return ok(views.html.usuario.editPass.render(Usuarios.getByNombre(session().get("token"))));
+    }
+
+    public static Result updatePassword(){
+        Usuarios.updatePassword(session().get("token"));
+        return null;
+    }
+
+    public static Result account(){
+        return null;
+    }
 }

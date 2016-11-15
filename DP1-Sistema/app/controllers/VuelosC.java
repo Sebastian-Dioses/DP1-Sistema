@@ -58,5 +58,10 @@ public class VuelosC extends Controller {
 
     }
     */
-	
+    
+    @play.db.jpa.Transactional      
+    public static Result delete(Long idVuelos) {            
+        Vuelos.delete(idVuelos);
+        return ok(views.html.vuelo.index.render(Vuelos.getAll()));
+    }	
 }

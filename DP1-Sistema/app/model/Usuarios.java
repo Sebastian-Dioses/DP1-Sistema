@@ -80,4 +80,20 @@ public class Usuarios {
         JPA.em().flush();
     }
 
+    public static Usuarios getById(Long id){
+        Usuarios t = JPA.em().find(Usuarios.class, id);
+        
+        return t;
+    }
+
+    public static void delete(Long id){
+        Usuarios p = Usuarios.getById(id);
+        JPA.em().remove(p);
+    }
+
+    public static void updatePassword(String nombre){
+        Usuarios p = Usuarios.getByNombre(nombre);
+        
+        JPA.em().remove(p);
+    }
 }

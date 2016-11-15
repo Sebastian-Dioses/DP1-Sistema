@@ -52,4 +52,9 @@ public class CiudadesC extends Controller {
 
     }
 	
+    @play.db.jpa.Transactional      
+    public static Result delete(String idCiudad) {            
+        Ciudades.delete(idCiudad);
+        return ok(views.html.ciudad.index.render(Ciudades.getAll()));
+    }
 }

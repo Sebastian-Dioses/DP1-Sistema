@@ -82,37 +82,37 @@ Seq[Any](format.raw/*1.19*/("""
 
 				<!-- INICIO INCIIO -->				                       				
 				<div class="form-group required">
-		    		<label for="clienteOrigen_input" class="col-sm-4 control-label">Cuenta</label>
+		    		<label for="cuenta" class="col-sm-4 control-label">Cuenta</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="cuenta" name="cuenta" placeholder="Nombre de Cuenta" >
+		      			<input type="text" class="form-control" id="cuenta" name="cuenta" placeholder="Nombre de Cuenta" required="required">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudadOrigen_input" class="col-sm-4 control-label">Nombre</label>
+		    		<label for="nombre" class="col-sm-4 control-label">Nombre</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de Usuario" >
+		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de Usuario" required>
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudadDestino_input" class="col-sm-4 control-label">Apellido</label>
+		    		<label for="apellido" class="col-sm-4 control-label">Apellido</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido de Usuario" >
+		      			<input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido de Usuario" required>
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-			    	<label for="cantidadPaquetesInput" class="col-sm-4 control-label">DNI</label>
+			    	<label for="dni" class="col-sm-4 control-label">DNI</label>
 			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="dni" name="dni" placeholder="DNI de Usuario" >
+			      		<input type="text" class="form-control" id="dni" name="dni" placeholder="DNI de Usuario" required>
 			    	</div>			      					      		
 			  	</div>	
 			  
 		  		<div class="form-group required">
-			    	<label for="cantidadPaquetesInput" class="col-sm-4 control-label">Correo</label>
+			    	<label for="correo" class="col-sm-4 control-label">Correo</label>
 			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="correo" name="correo" placeholder="Correo de Usuario" >
+			      		<input type="text" class="form-control" id="correo" name="correo" placeholder="Correo de Usuario" required>
 			    	</div>
 			  	</div>
 			  	
@@ -172,9 +172,9 @@ Seq[Any](format.raw/*1.19*/("""
 object newUser extends newUser_Scope0.newUser
               /*
                   -- GENERATED --
-                  DATE: Mon Nov 14 12:51:19 COT 2016
+                  DATE: Mon Nov 14 18:14:21 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/persona/newUser.scala.html
-                  HASH: 4b4b9c9d00ba2d2f559480a609ee3df1b7147b2f
+                  HASH: 95a03acc843655079b6a22b61eab7fd36fac17b5
                   MATRIX: 757->1|869->18|899->23|913->30|941->50|980->52|1018->64|1267->286|1282->292|1340->329|1403->365|1418->371|1471->403|1534->439|1549->445|1601->476|1664->512|1679->518|1734->552|2264->1054|2293->1055|2322->1056|2351->1057|2392->1070|2421->1071|2450->1072
                   LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33
                   -- GENERATED --

@@ -28,14 +28,14 @@
 	</div>
 	
 	@if(flash.containsKey("success")) {
-		<div class="alert alert-success">
+		<div class="alert alert-success fade in">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			<strong>¡Éxito!</strong> @flash.get("success")
 		</div>
 	}
 
 	@if(flash.containsKey("error")) {
-		<div class="alert alert-danger">
+		<div class="alert alert-danger fade in">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			<strong>¡Error!</strong> Indicates a dangerous or potentially negative action.
 		</div>
@@ -77,7 +77,7 @@
 				              <a class="btn btn-info" href="#" title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
 				            </td>
 				            <td>
-				              <a class="btn btn-info"  title="Eliminar" data-href="#" data-toggle="modal" data-target="#modalEliminar"><i class="glyphicon glyphicon-remove"></i></a>    
+				              <a class="btn btn-info"  title="Eliminar" href='@routes.UsuariosC.delete(usuario.id)'><i class="glyphicon glyphicon-remove"></i></a>    
 				            </td>
 			            </tr>
 					}

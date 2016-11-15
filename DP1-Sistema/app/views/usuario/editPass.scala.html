@@ -1,11 +1,11 @@
-@(message: String)
+@(usuario:models.Usuarios)
 
 @layouts.headerandfooter("") {
     
     <!DOCTYPE html>
     <html>
     <head>
-    	<title>REGISTRAR USUARIO</title>
+    	<title>CAMBIAR CONTRASEÑA</title>
     	<meta charset="UTF-8">
     
     	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,12 +24,12 @@
     		<br/><br/>
     		<div class="container">
     			<div class="col-sm-12 text-left lead">
-    					<strong>REGISTRAR USUARIO</strong>
+    					<strong>CAMBIAR CONTRASEÑA</strong>
     			</div>		
     		</div>
     		<div class="container">
 			
-			<form method="POST" action="add" class="form-horizontal form-border">
+			<form method="POST" action="cambiarPassword" class="form-horizontal form-border">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				
 				<!-- Mensajes de error de validación del Request -->
@@ -51,39 +51,32 @@
 
 				<!-- INICIO INCIIO -->				                       				
 				<div class="form-group required">
-		    		<label for="cuenta" class="col-sm-4 control-label">Cuenta</label>
+		    		<label for="nombre" class="col-sm-4 control-label">Cuenta</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="cuenta" name="cuenta" placeholder="Nombre de Cuenta" required="required">
+		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de Cuenta" disabled value="@usuario.nombre">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="nombre" class="col-sm-4 control-label">Nombre</label>
+		    		<label for="pwActual" class="col-sm-4 control-label">Contraseña actual</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de Usuario" required>
+		      			<input type="password" class="form-control" id="pwActual" name="pwActual" placeholder="Contraseña actual" required>
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="apellido" class="col-sm-4 control-label">Apellido</label>
+		    		<label for="pwNueva" class="col-sm-4 control-label">Nueva contraseña</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido de Usuario" required>
+		      			<input type="password" class="form-control" id="pwNueva" name="pwNueva" placeholder="Nueva contraseña" >
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-			    	<label for="dni" class="col-sm-4 control-label">DNI</label>
+			    	<label for="pwNueva2" class="col-sm-4 control-label">Confirmar nueva contraseña</label>
 			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="dni" name="dni" placeholder="DNI de Usuario" required>
+			      		<input type="password" class="form-control" id="pwNueva2" name="pwNueva2" placeholder="Confirmar nueva contraseña" required>
 			    	</div>			      					      		
-			  	</div>	
-			  
-		  		<div class="form-group required">
-			    	<label for="correo" class="col-sm-4 control-label">Correo</label>
-			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="correo" name="correo" placeholder="Correo de Usuario" required>
-			    	</div>
-			  	</div>
+			  	</div>			
 			  	
 					<!-- FIN FIN FIN  -->				
 			

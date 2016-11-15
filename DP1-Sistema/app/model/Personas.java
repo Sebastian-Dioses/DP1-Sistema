@@ -46,22 +46,19 @@ public class Personas {
         return query.getResultList();                  
     }
 
-    public static Personas getById(Long id){
-        Personas t = JPA.em().find(Personas.class, id);
-       
-        return t;
-    }
-
     public void save(){
         JPA.em().persist(this);
         JPA.em().flush();
     }
 
-    //public Usuarios getUsuario(){
-        //return this.usuario;
-    //}
+    public static Personas getById(Long id){
+        Personas t = JPA.em().find(Personas.class, id);
+        
+        return t;
+    }
 
-    //public void setUsuario(Usuarios usuario){
-        //this.usuario=usuario;        
-    //}
+    public static void delete(Long id){
+        Personas p = Personas.getById(id);
+        JPA.em().remove(p);
+    }
 }

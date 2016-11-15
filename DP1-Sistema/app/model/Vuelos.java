@@ -4,8 +4,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.Type;
-//import org.joda.time.LocalDateTime;
-//import org.joda.time.DateTime;
 import play.db.jpa.JPA;
 
 import java.util.Date;
@@ -48,4 +46,15 @@ public class Vuelos {
         JPA.em().flush();
     }
 
+    public static Vuelos getById(Long id){
+        
+        Vuelos t = JPA.em().find(Vuelos.class, id);
+        
+        return t;
+    }
+
+    public static void delete(Long id){
+        Vuelos p = Vuelos.getById(id);
+        JPA.em().remove(p);
+    }
 }
