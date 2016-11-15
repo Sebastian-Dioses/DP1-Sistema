@@ -68,4 +68,10 @@ public class Ciudades {
         JPA.em().persist(this);
         JPA.em().flush();
     }
-}
+
+    public static void delete(String id){
+        Ciudades p = Ciudades.getById(id);
+        JPA.em().remove(p);
+    }
+}    
+
