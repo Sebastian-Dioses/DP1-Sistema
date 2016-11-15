@@ -91,9 +91,7 @@ public class Usuarios {
         JPA.em().remove(p);
     }
 
-    public static void updatePassword(String nombre){
-        Usuarios p = Usuarios.getByNombre(nombre);
-        
-        JPA.em().remove(p);
+    public void setPassword(String password){
+        this.contraseña= BCrypt.hashpw(password, BCrypt.gensalt());
     }
 }

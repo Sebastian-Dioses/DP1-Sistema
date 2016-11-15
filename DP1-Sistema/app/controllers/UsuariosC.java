@@ -14,6 +14,7 @@ import play.data.DynamicForm;
 import play.data.Form;
 import play.db.jpa.JPA;
 
+import org.mindrot.jbcrypt.BCrypt;
 import play.mvc.Security;
 
 @Security.Authenticated(SecuredC.class)
@@ -63,5 +64,53 @@ public class UsuariosC extends Controller {
     public static Result delete(Long idUsuario) {            
         Usuarios.delete(idUsuario);
         return ok(views.html.usuario.index.render(Usuarios.getAll()));
+    }    
+
+    @play.db.jpa.Transactional  
+    public static Result updatePassword(){        
+        
+        try{
+            Usuarios user = Usuarios.getByNombre(session().get("token"));
+
+            DynamicForm requestData = Form.form().bindFromRequest();
+
+            String pwActual = requestData.get("pwActual");
+            String pwNueva = requestData.get("pwNueva");
+            String pwNueva2 = requestData.get("pwNueva2");            
+            
+            //Verificar
+            if (BCrypt.checkpw(pwActual,user.contraseña)){
+                if (pwNueva.equals(pwNueva2)){
+                    user.setPassword(pwNueva);
+            
+                    user.save();
+
+                    flash("success", "Se cambió la contraseña con éxito");
+                    return redirect(controllers.routes.Application.index());        
+                }
+                else{
+                    flash("error", "Confirmar contraseña");
+                    return redirect(controllers.routes.SessionC.changePassword());           
+                }
+
+            }
+            else{
+                session().clear();                
+                flash("error", "La contraseña ingresada no es correcta");                
+                return redirect(routes.SessionC.login());
+            }
+            
+
+        }catch (Exception e){
+
+            Logger.error(e.getMessage());
+            flash("error", "Ocurrió un error");
+            return redirect(controllers.routes.Application.index());
+        }        
     }
+
+    public static Result account(){
+        return null;
+    }
+
 }

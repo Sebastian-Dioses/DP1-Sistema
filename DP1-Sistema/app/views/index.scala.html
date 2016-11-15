@@ -25,6 +25,20 @@
 	</div>	
 	<!--Pie de págna-->
 	
+	@if(flash.containsKey("success")) {
+		<div class="alert alert-success fade in text-center">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>¡Éxito!</strong> @flash.get("success")
+		</div>
+	}
+
+	@if(flash.containsKey("error")) {
+		<div class="alert alert-danger fade in text-center">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>¡Error!</strong> @flash.get("error")
+		</div>
+	}
+
 	<div class="table-responsive">
 		<div class="container">
 			<div class="form-group">

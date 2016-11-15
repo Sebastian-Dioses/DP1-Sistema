@@ -23,6 +23,27 @@
             <div class="panel-heading lead text-center" style="color: gray"><strong>S I M U &nbsp S O F T &nbsp - &nbsp L O G I N &nbsp; <p class="glyphicon glyphicon-user"></p></strong>
             </div>
 
+            @if(flash.containsKey("success")) {
+                <div class="alert alert-success fade in text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>¡Éxito!</strong> @flash.get("success")
+                </div>
+            }
+
+            @if(flash.containsKey("error")) {
+                <div class="alert alert-danger fade in text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>¡Error!</strong> @flash.get("error")
+                </div>
+            }
+
+            @if(flash.containsKey("info")) {
+                <div class="alert alert-info fade in text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>¡Info!</strong> @flash.get("info")
+                </div>
+            }
+
             <form class="m-t" role="form" id="login-form" method="POST" action="@controllers.routes.SessionC.authenticate()" novalidate>
 
             <div class="panel-body">                               
@@ -57,12 +78,7 @@
                 </div>
 
                 </form>
-                
-                <div class="form-group">
-                    <div class="col-sm-12  text-right">
-                        <a class="btn btn-link login-links" ><strong>¿No recuerdas tu contraseña?</strong></a>          
-                    </div>
-                </div>                
+                                        
             </div>                                          
     	</div>      
     </div>

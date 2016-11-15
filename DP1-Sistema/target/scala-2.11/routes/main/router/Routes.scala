@@ -1,11 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/conf/routes
-<<<<<<< HEAD
-// @DATE:Sun Nov 13 19:03:59 COT 2016
-=======
-// @DATE:Mon Nov 14 20:48:28 COT 2016
->>>>>>> marcelo
+// @DATE:Mon Nov 14 22:47:59 COT 2016
 
 package router
 
@@ -46,8 +42,8 @@ class Routes extends GeneratedRouter {
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""", """controllers.SessionC.authenticate()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""", """controllers.SessionC.logout()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """cambiarPassword""", """controllers.SessionC.changePassword()"""),
-    ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """cambiarPassword""", """controllers.SessionC.updatePassword()"""),
-    ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """cuenta""", """controllers.SessionC.account()"""),
+    ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """cambiarPassword""", """controllers.UsuariosC.updatePassword()"""),
+    ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """cuenta""", """controllers.UsuariosC.account()"""),
     ("""GET""", prefix, """controllers.Application.index()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """simulation""", """controllers.Application.simulation()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """pedido""", """controllers.PedidosC.index()"""),
@@ -144,14 +140,14 @@ class Routes extends GeneratedRouter {
   )
 
   // @LINE:10
-  private[this] lazy val controllers_SessionC_updatePassword4_route: Route.ParamsExtractor = Route("POST",
+  private[this] lazy val controllers_UsuariosC_updatePassword4_route: Route.ParamsExtractor = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cambiarPassword")))
   )
-  private[this] lazy val controllers_SessionC_updatePassword4_invoker = createInvoker(
-    controllers.SessionC.updatePassword(),
+  private[this] lazy val controllers_UsuariosC_updatePassword4_invoker = createInvoker(
+    controllers.UsuariosC.updatePassword(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
-      "controllers.SessionC",
+      "controllers.UsuariosC",
       "updatePassword",
       Nil,
       "POST",
@@ -161,14 +157,14 @@ class Routes extends GeneratedRouter {
   )
 
   // @LINE:11
-  private[this] lazy val controllers_SessionC_account5_route: Route.ParamsExtractor = Route("GET",
+  private[this] lazy val controllers_UsuariosC_account5_route: Route.ParamsExtractor = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cuenta")))
   )
-  private[this] lazy val controllers_SessionC_account5_invoker = createInvoker(
-    controllers.SessionC.account(),
+  private[this] lazy val controllers_UsuariosC_account5_invoker = createInvoker(
+    controllers.UsuariosC.account(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
-      "controllers.SessionC",
+      "controllers.UsuariosC",
       "account",
       Nil,
       "GET",
@@ -545,15 +541,15 @@ class Routes extends GeneratedRouter {
       }
   
     // @LINE:10
-    case controllers_SessionC_updatePassword4_route(params) =>
+    case controllers_UsuariosC_updatePassword4_route(params) =>
       call { 
-        controllers_SessionC_updatePassword4_invoker.call(controllers.SessionC.updatePassword())
+        controllers_UsuariosC_updatePassword4_invoker.call(controllers.UsuariosC.updatePassword())
       }
   
     // @LINE:11
-    case controllers_SessionC_account5_route(params) =>
+    case controllers_UsuariosC_account5_route(params) =>
       call { 
-        controllers_SessionC_account5_invoker.call(controllers.SessionC.account())
+        controllers_UsuariosC_account5_invoker.call(controllers.UsuariosC.account())
       }
   
     // @LINE:13

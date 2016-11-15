@@ -7,11 +7,7 @@
 		revision="1.0-SNAPSHOT"
 		conf="provided"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-<<<<<<< HEAD
-		date="20161113190358"/>
-=======
-		date="20161114180431"/>
->>>>>>> marcelo
+		date="20161114224758"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>

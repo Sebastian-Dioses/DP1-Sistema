@@ -484,3 +484,9 @@ run
 compile
 run
 >>>>>>> marcelo
+run
+compile
+clean
+reload
+compile
+run

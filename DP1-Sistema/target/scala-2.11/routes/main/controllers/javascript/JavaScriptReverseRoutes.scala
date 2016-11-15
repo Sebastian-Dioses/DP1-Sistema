@@ -1,11 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/conf/routes
-<<<<<<< HEAD
-// @DATE:Sun Nov 13 19:03:59 COT 2016
-=======
-// @DATE:Mon Nov 14 20:48:28 COT 2016
->>>>>>> marcelo
+// @DATE:Mon Nov 14 22:47:59 COT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -99,23 +95,13 @@ package controllers.javascript {
   
   }
 
-  // @LINE:22
+  // @LINE:10
   class ReverseUsuariosC(_prefix: => String) {
 
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
-  
-    // @LINE:24
-    def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.UsuariosC.create",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "user/add"})
-        }
-      """
-    )
   
     // @LINE:25
     def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
@@ -127,12 +113,42 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:24
+    def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UsuariosC.create",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "user/add"})
+        }
+      """
+    )
+  
     // @LINE:23
     def newO: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UsuariosC.newO",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "user/new"})
+        }
+      """
+    )
+  
+    // @LINE:11
+    def account: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UsuariosC.account",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "cuenta"})
+        }
+      """
+    )
+  
+    // @LINE:10
+    def updatePassword: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UsuariosC.updatePassword",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "cambiarPassword"})
         }
       """
     )
@@ -257,32 +273,12 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:11
-    def account: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.SessionC.account",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "cuenta"})
-        }
-      """
-    )
-  
     // @LINE:9
     def changePassword: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SessionC.changePassword",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "cambiarPassword"})
-        }
-      """
-    )
-  
-    // @LINE:10
-    def updatePassword: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.SessionC.updatePassword",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "cambiarPassword"})
         }
       """
     )

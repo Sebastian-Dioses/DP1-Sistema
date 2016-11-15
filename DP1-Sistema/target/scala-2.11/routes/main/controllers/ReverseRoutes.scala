@@ -1,11 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/conf/routes
-<<<<<<< HEAD
-// @DATE:Sun Nov 13 19:03:59 COT 2016
-=======
-// @DATE:Mon Nov 14 20:48:28 COT 2016
->>>>>>> marcelo
+// @DATE:Mon Nov 14 22:47:59 COT 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -71,18 +67,12 @@ package controllers {
   
   }
 
-  // @LINE:22
+  // @LINE:10
   class ReverseUsuariosC(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
-  
-    // @LINE:24
-    def create(): Call = {
-      import ReverseRouteContext.empty
-      Call("POST", _prefix + { _defaultPrefix } + "user/add")
-    }
   
     // @LINE:25
     def delete(id:Long): Call = {
@@ -90,10 +80,28 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "user/delete" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
     }
   
+    // @LINE:24
+    def create(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "user/add")
+    }
+  
     // @LINE:23
     def newO(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "user/new")
+    }
+  
+    // @LINE:11
+    def account(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "cuenta")
+    }
+  
+    // @LINE:10
+    def updatePassword(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "cambiarPassword")
     }
   
     // @LINE:22
@@ -180,22 +188,10 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "logout")
     }
   
-    // @LINE:11
-    def account(): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "cuenta")
-    }
-  
     // @LINE:9
     def changePassword(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "cambiarPassword")
-    }
-  
-    // @LINE:10
-    def updatePassword(): Call = {
-      import ReverseRouteContext.empty
-      Call("POST", _prefix + { _defaultPrefix } + "cambiarPassword")
     }
   
     // @LINE:7
