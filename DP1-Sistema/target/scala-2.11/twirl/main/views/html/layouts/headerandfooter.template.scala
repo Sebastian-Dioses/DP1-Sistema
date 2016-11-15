@@ -88,7 +88,7 @@ Seq[Any](format.raw/*1.32*/("""
       </div>
 
       <div class="collapse navbar-collapse" id="navbar1">
-        <!-- Servicios -->
+        <!-- Principal -->
         <ul class="nav navbar-nav">
           <li class="dropdown">
             <a href='"""),_display_(/*63.23*/routes/*63.29*/.Application.index()),format.raw/*63.49*/("""' class="dropdown-toggle btn-lg" role="button">
@@ -97,7 +97,7 @@ Seq[Any](format.raw/*1.32*/("""
           </li>
         </ul>
         
-        <!-- Ambientes -->
+        <!-- Mantenimientos -->
         <ul class="nav navbar-nav">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle btn-lg" data-toggle="dropdown" role="button">
@@ -111,7 +111,7 @@ Seq[Any](format.raw/*1.32*/("""
           </li>
         </ul>
 
-        <!-- Actividades -->
+        <!-- Usuarios -->
         <ul class="nav navbar-nav">
           <li class="dropdown">
             <a href="#" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" role="button" >
@@ -125,7 +125,7 @@ Seq[Any](format.raw/*1.32*/("""
           </li>
         </ul>
 
-        <!-- Talleres -->
+        <!-- Pedidos -->
         <ul class="nav navbar-nav">
           <li class="dropdown">
             <a href="#" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" role="button" >
@@ -138,12 +138,16 @@ Seq[Any](format.raw/*1.32*/("""
           </li>
         </ul>
         
-         <!-- Proveedores -->
-        <ul class="nav navbar-nav">
+         <!-- Simulacion -->
+         <ul class="nav navbar-nav">
           <li class="dropdown">
-            <a href='"""),_display_(/*113.23*/routes/*113.29*/.Application.simulation()),format.raw/*113.54*/("""' class="dropdown-toggle btn-lg" role="button">
-              Simulación 
-            </a>           
+            <a href="#" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" role="button" >
+              Enrutamiento <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href='"""),_display_(/*117.31*/routes/*117.37*/.Application.simulation()),format.raw/*117.62*/("""' title="Ejecutar Enrutamiento" target="_self">Ejecutar Enrutamiento</a></li>
+                <li><a href='"""),_display_(/*118.31*/routes/*118.37*/.Application.simulation()),format.raw/*118.62*/("""' title="Ejecutar Simulación" target="_self">Ejecutar Simulación</a></li>
+            </ul>
           </li>
         </ul>
 
@@ -167,9 +171,9 @@ Seq[Any](format.raw/*1.32*/("""
               <span class="glyphicon glyphicon-user"><span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <!--<li><a href='"""),_display_(/*139.33*/routes/*139.39*/.UsuariosC.account()),format.raw/*139.59*/("""' title="Ir a cuenta" target="_self">Mi Cuenta</a></li>-->
-              <li><a href='"""),_display_(/*140.29*/routes/*140.35*/.SessionC.changePassword()),format.raw/*140.61*/("""' title="Cambiar contraseña" target="_self">Cambiar mi contraseña</a></li>
-              <li><a href='"""),_display_(/*141.29*/routes/*141.35*/.SessionC.logout()),format.raw/*141.53*/("""' title="LOGOUT" target="_self">Logout</a></li>
+              <!--<li><a href='"""),_display_(/*143.33*/routes/*143.39*/.UsuariosC.account()),format.raw/*143.59*/("""' title="Ir a cuenta" target="_self">Mi Cuenta</a></li>-->
+              <li><a href='"""),_display_(/*144.29*/routes/*144.35*/.SessionC.changePassword()),format.raw/*144.61*/("""' title="Cambiar contraseña" target="_self">Cambiar mi contraseña</a></li>
+              <li><a href='"""),_display_(/*145.29*/routes/*145.35*/.SessionC.logout()),format.raw/*145.53*/("""' title="LOGOUT" target="_self">Logout</a></li>
             </ul>
           </li>
         </ul>
@@ -180,27 +184,27 @@ Seq[Any](format.raw/*1.32*/("""
 <!---Cuerpo -->
 
 <main class="main">
-"""),_display_(/*152.2*/content),format.raw/*152.9*/("""
-"""),format.raw/*153.1*/("""</main>
+"""),_display_(/*156.2*/content),format.raw/*156.9*/("""
+"""),format.raw/*157.1*/("""</main>
 <!--Pie de págna-->
 
 <footer class="footer">
     <div class="content">
         <div class="footer-1">
             <div class="logofoot">
-                <img alt="Papus Club" src='"""),_display_(/*160.45*/routes/*160.51*/.Assets.at("images/logo-min.png")),format.raw/*160.84*/("""' title="Papus Club" style="z-index: -1;">               
+                <img alt="Papus Club" src='"""),_display_(/*164.45*/routes/*164.51*/.Assets.at("images/logo-min.png")),format.raw/*164.84*/("""' title="Papus Club" style="z-index: -1;">               
             </div>
             <div class="contacto">
                 <ul class="info">
                         <li><a href="#" title="telefono">(51) 1 523 4910</a></li>
-                        <li><span><img class="PointImg" src='"""),_display_(/*165.63*/routes/*165.69*/.Assets.at("images/punto.png")),format.raw/*165.99*/("""' width="3px" height="3px"></img></span></li>
+                        <li><span><img class="PointImg" src='"""),_display_(/*169.63*/routes/*169.69*/.Assets.at("images/punto.png")),format.raw/*169.99*/("""' width="3px" height="3px"></img></span></li>
                         <li><a href="#" title="e-mail"></a></li>
                 </ul>
                 <ul class="terminos-condiciones">
                         <li><a href="#" title="Terminos y Condiciones">TÉRMINOS Y CONDICIONES</a></li>
-                        <li><span><img class="PointImg" src='"""),_display_(/*170.63*/routes/*170.69*/.Assets.at("images/punto.png")),format.raw/*170.99*/("""'  width="3px" height="3px"></img></span></li>
+                        <li><span><img class="PointImg" src='"""),_display_(/*174.63*/routes/*174.69*/.Assets.at("images/punto.png")),format.raw/*174.99*/("""'  width="3px" height="3px"></img></span></li>
                         <li><a href="#" title="Privacidad">PRIVACIDAD</a></li>
-                        <li><span><img class="PointImg" src='"""),_display_(/*172.63*/routes/*172.69*/.Assets.at("images/punto.png")),format.raw/*172.99*/("""'  width="3px" height="3px"></img></span></li>
+                        <li><span><img class="PointImg" src='"""),_display_(/*176.63*/routes/*176.69*/.Assets.at("images/punto.png")),format.raw/*176.99*/("""'  width="3px" height="3px"></img></span></li>
                 </ul>
                     
             </div>
@@ -227,11 +231,11 @@ Seq[Any](format.raw/*1.32*/("""
 object headerandfooter extends headerandfooter_Scope0.headerandfooter
               /*
                   -- GENERATED --
-                  DATE: Mon Nov 14 23:58:02 COT 2016
+                  DATE: Tue Nov 15 11:49:07 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/layouts/headerandfooter.scala.html
-                  HASH: 512b7a5e8f3311e6e20bfaae81b353b0fdd8482f
-                  MATRIX: 778->1|903->31|933->35|1110->185|1138->186|1179->200|1275->268|1304->269|1411->347|1441->348|1483->362|1534->385|1563->386|1624->419|1653->420|1695->434|1753->464|1782->465|1895->549|1925->550|1967->564|2035->604|2064->605|2186->698|2216->699|2258->713|2314->741|2343->742|2406->777|2435->778|2477->792|2525->812|2554->813|2605->836|2634->837|2663->838|2894->1041|2923->1042|2969->1060|3042->1105|3071->1106|3117->1124|3228->1207|3257->1208|3286->1209|3319->1214|3348->1215|3394->1233|3452->1263|3481->1264|3523->1278|3552->1279|3581->1280|3614->1285|3643->1286|3689->1304|3743->1330|3772->1331|3809->1341|3838->1342|3867->1344|5210->2660|5225->2666|5281->2700|5512->2904|5527->2910|5568->2930|6077->3412|6092->3418|6131->3436|6253->3531|6268->3537|6307->3555|6431->3652|6446->3658|6483->3674|6969->4133|6984->4139|7023->4157|7144->4251|7159->4257|7197->4274|7699->4748|7715->4754|7754->4771|7876->4865|7892->4871|7930->4887|8206->5135|8222->5141|8269->5166|9272->6141|9288->6147|9330->6167|9446->6255|9462->6261|9510->6287|9642->6391|9658->6397|9698->6415|9913->6603|9941->6610|9971->6612|10195->6808|10211->6814|10266->6847|10589->7142|10605->7148|10657->7178|11038->7531|11054->7537|11106->7567|11324->7757|11340->7763|11392->7793
-                  LINES: 27->1|32->1|34->3|38->7|38->7|39->8|41->10|41->10|41->10|41->10|42->11|42->11|42->11|42->11|42->11|43->12|43->12|43->12|43->12|43->12|44->13|44->13|44->13|44->13|44->13|45->14|45->14|45->14|45->14|45->14|46->15|46->15|46->15|46->15|46->15|46->15|49->18|49->18|50->19|50->19|50->19|51->20|52->21|52->21|52->21|52->21|52->21|53->22|54->23|54->23|55->24|55->24|55->24|55->24|55->24|56->25|57->26|57->26|58->27|58->27|59->28|87->56|87->56|87->56|94->63|94->63|94->63|107->76|107->76|107->76|108->77|108->77|108->77|109->78|109->78|109->78|121->90|121->90|121->90|122->91|122->91|122->91|135->104|135->104|135->104|136->105|136->105|136->105|144->113|144->113|144->113|170->139|170->139|170->139|171->140|171->140|171->140|172->141|172->141|172->141|183->152|183->152|184->153|191->160|191->160|191->160|196->165|196->165|196->165|201->170|201->170|201->170|203->172|203->172|203->172
+                  HASH: 3bb641fd1eb31d57b913dd35b8ca5f48e6d8feea
+                  MATRIX: 778->1|903->31|933->35|1110->185|1138->186|1179->200|1275->268|1304->269|1411->347|1441->348|1483->362|1534->385|1563->386|1624->419|1653->420|1695->434|1753->464|1782->465|1895->549|1925->550|1967->564|2035->604|2064->605|2186->698|2216->699|2258->713|2314->741|2343->742|2406->777|2435->778|2477->792|2525->812|2554->813|2605->836|2634->837|2663->838|2894->1041|2923->1042|2969->1060|3042->1105|3071->1106|3117->1124|3228->1207|3257->1208|3286->1209|3319->1214|3348->1215|3394->1233|3452->1263|3481->1264|3523->1278|3552->1279|3581->1280|3614->1285|3643->1286|3689->1304|3743->1330|3772->1331|3809->1341|3838->1342|3867->1344|5210->2660|5225->2666|5281->2700|5512->2904|5527->2910|5568->2930|6082->3417|6097->3423|6136->3441|6258->3536|6273->3542|6312->3560|6436->3657|6451->3663|6488->3679|6971->4135|6986->4141|7025->4159|7146->4253|7161->4259|7199->4276|7700->4749|7716->4755|7755->4772|7877->4866|7893->4872|7931->4888|8428->5357|8444->5363|8491->5388|8628->5497|8644->5503|8691->5528|9683->6492|9699->6498|9741->6518|9857->6606|9873->6612|9921->6638|10053->6742|10069->6748|10109->6766|10324->6954|10352->6961|10382->6963|10606->7159|10622->7165|10677->7198|11000->7493|11016->7499|11068->7529|11449->7882|11465->7888|11517->7918|11735->8108|11751->8114|11803->8144
+                  LINES: 27->1|32->1|34->3|38->7|38->7|39->8|41->10|41->10|41->10|41->10|42->11|42->11|42->11|42->11|42->11|43->12|43->12|43->12|43->12|43->12|44->13|44->13|44->13|44->13|44->13|45->14|45->14|45->14|45->14|45->14|46->15|46->15|46->15|46->15|46->15|46->15|49->18|49->18|50->19|50->19|50->19|51->20|52->21|52->21|52->21|52->21|52->21|53->22|54->23|54->23|55->24|55->24|55->24|55->24|55->24|56->25|57->26|57->26|58->27|58->27|59->28|87->56|87->56|87->56|94->63|94->63|94->63|107->76|107->76|107->76|108->77|108->77|108->77|109->78|109->78|109->78|121->90|121->90|121->90|122->91|122->91|122->91|135->104|135->104|135->104|136->105|136->105|136->105|148->117|148->117|148->117|149->118|149->118|149->118|174->143|174->143|174->143|175->144|175->144|175->144|176->145|176->145|176->145|187->156|187->156|188->157|195->164|195->164|195->164|200->169|200->169|200->169|205->174|205->174|205->174|207->176|207->176|207->176
                   -- GENERATED --
               */
           

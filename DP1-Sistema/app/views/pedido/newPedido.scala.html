@@ -51,23 +51,23 @@
 
 				<!-- INICIO INCIO-->				                       				
 				<div class="form-group required">
-		    		<label for="clienteOrigen_input" class="col-sm-4 control-label">Ciudad de Origen</label>
+		    		<label for="ciudad_origen" class="col-sm-4 control-label">Ciudad de Origen</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" placeholder="Ciudad de Origen" >
+		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" placeholder="Ciudad de Origen" required onkeypress="return inputLimiter(event,'Letters')">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudadOrigen_input" class="col-sm-4 control-label">Ciudad de Destino</label>
+		    		<label for="ciudad_destino" class="col-sm-4 control-label">Ciudad de Destino</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" placeholder="Ciudad de Destino" >
+		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" placeholder="Ciudad de Destino" required onkeypress="return inputLimiter(event,'Letters')">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudadDestino_input" class="col-sm-4 control-label">ID Persona</label>
+		    		<label for="personas_id" class="col-sm-4 control-label">ID Persona</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="personas_id" name="personas_id" placeholder="ID de Persona" >
+		      			<input type="text" class="form-control" id="personas_id" name="personas_id" placeholder="ID de Persona" required onkeypress="return inputLimiter(event,'Numbers')">
 		    		</div>
 		  		</div>
 		  		
@@ -83,7 +83,7 @@
 						<input class="btn btn-primary" type="submit" value="Confirmar">
 					</div>
 					<div class="btn-group">						
-						<a href="#" onclick="history.go(-1)" class="btn btn-info">Cancelar</a>
+						<a href='@routes.PedidosC.index()' class="btn btn-info">Cancelar</a>
 					</div>
 				</div>
 				</br>

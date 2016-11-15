@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/conf/routes
-// @DATE:Mon Nov 14 22:47:59 COT 2016
+// @DATE:Tue Nov 15 12:45:30 COT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:39
+  // @LINE:43
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:39
+    // @LINE:43
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -165,7 +165,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:32
+  // @LINE:34
   class ReversePersonasC(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -173,7 +173,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:33
+    // @LINE:35
     def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PersonasC.delete",
       """
@@ -183,7 +183,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:32
+    // @LINE:34
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PersonasC.index",
       """
@@ -195,7 +195,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:35
+  // @LINE:37
   class ReverseVuelosC(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -203,7 +203,17 @@ package controllers.javascript {
     }
 
   
-    // @LINE:36
+    // @LINE:39
+    def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.VuelosC.create",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "vuelo/add"})
+        }
+      """
+    )
+  
+    // @LINE:40
     def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VuelosC.delete",
       """
@@ -213,7 +223,17 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:35
+    // @LINE:38
+    def newO: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.VuelosC.newO",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "vuelo/new"})
+        }
+      """
+    )
+  
+    // @LINE:37
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VuelosC.index",
       """
@@ -314,11 +334,11 @@ package controllers.javascript {
 
   
     // @LINE:30
-    def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.CiudadesC.delete",
+    def edit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CiudadesC.edit",
       """
         function(id0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "ciudad/delete" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("id", id0)])})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "ciudad/edit" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("id", id0)])})
         }
       """
     )
@@ -339,6 +359,26 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "ciudad/new"})
+        }
+      """
+    )
+  
+    // @LINE:32
+    def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CiudadesC.delete",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "ciudad/delete" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("id", id0)])})
+        }
+      """
+    )
+  
+    // @LINE:31
+    def update: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CiudadesC.update",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "ciudad/update"})
         }
       """
     )

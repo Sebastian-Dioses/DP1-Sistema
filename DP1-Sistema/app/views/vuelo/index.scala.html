@@ -27,6 +27,26 @@
 		</div>
 	</div>
 	
+	@if(flash.containsKey("success")) {
+        <div class="alert alert-success fade in text-center">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>¡Éxito!</strong> @flash.get("success")
+        </div>
+    }
+
+    @if(flash.containsKey("error")) {
+        <div class="alert alert-danger fade in text-center">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>¡Error!</strong> @flash.get("error")
+        </div>
+    }
+
+    @if(flash.containsKey("info")) {
+        <div class="alert alert-info fade in text-center">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>¡Info!</strong> @flash.get("info")
+        </div>
+    }
 
 	<div class="table-responsive">
 		<div class="container">
@@ -73,7 +93,14 @@
 			</table>			
 		</div>		
 	</div>
-	
+	<br/>
+	<div class="container">		
+		<div class="form-group">
+			<div class="col-sm-16 text-right">
+				<a class="btn btn-info" href='@routes.VuelosC.newO()' title="Registrar Plan de Vuelo" >Registrar Plan de Vuelo<i class="glyphicon" ></i> </a>	
+			</div>
+		</div>		
+	</div>
 
 	<!--Pie de págna-->
 		

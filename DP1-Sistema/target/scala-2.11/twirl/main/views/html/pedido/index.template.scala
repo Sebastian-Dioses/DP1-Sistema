@@ -35,7 +35,7 @@ Seq[Any](format.raw/*1.32*/("""
     """),format.raw/*4.5*/("""<!DOCTYPE html>
 	<html>
 	<head>
-		<title>Home Page</title>
+		<title>PEDIDOS</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel='stylesheet' href='"""),_display_(/*10.33*/routes/*10.39*/.Assets.at("css/jquery.bxslider.css")),format.raw/*10.76*/("""'>
@@ -50,13 +50,33 @@ Seq[Any](format.raw/*1.32*/("""
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<p class="lead"><strong>BIENVENIDO A SIMUSOFT</strong></p>
+				<p class="lead"><strong>PEDIDOS</strong></p>
 			</div>
 		</div>
 	</div>	
 	<!--Pie de págna-->
+	"""),_display_(/*27.3*/if(flash.containsKey("success"))/*27.35*/ {_display_(Seq[Any](format.raw/*27.37*/("""
+        """),format.raw/*28.9*/("""<div class="alert alert-success fade in text-center">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>¡Éxito!</strong> """),_display_(/*30.39*/flash/*30.44*/.get("success")),format.raw/*30.59*/("""
+        """),format.raw/*31.9*/("""</div>
+    """)))}),format.raw/*32.6*/("""
+
+    """),_display_(/*34.6*/if(flash.containsKey("error"))/*34.36*/ {_display_(Seq[Any](format.raw/*34.38*/("""
+        """),format.raw/*35.9*/("""<div class="alert alert-danger fade in text-center">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>¡Error!</strong> """),_display_(/*37.39*/flash/*37.44*/.get("error")),format.raw/*37.57*/("""
+        """),format.raw/*38.9*/("""</div>
+    """)))}),format.raw/*39.6*/("""
+
+    """),_display_(/*41.6*/if(flash.containsKey("info"))/*41.35*/ {_display_(Seq[Any](format.raw/*41.37*/("""
+        """),format.raw/*42.9*/("""<div class="alert alert-info fade in text-center">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>¡Info!</strong> """),_display_(/*44.38*/flash/*44.43*/.get("info")),format.raw/*44.55*/("""
+        """),format.raw/*45.9*/("""</div>
+    """)))}),format.raw/*46.6*/("""
 	
-	<div class="table-responsive">
+	"""),format.raw/*48.2*/("""<div class="table-responsive">
 		<div class="container">
 			<div class="form-group">
 			  		<div class="text-right">
@@ -73,57 +93,61 @@ Seq[Any](format.raw/*1.32*/("""
 						<th><div align=center>DESTINO</div></th>							
 						<th><div align=center>REMITENTE</div></th>	
 						<th><div align=center>DETALLE</div></th>
-						<th><div align=center>EDITAR</div></th>
 						<th><div align=center>ELIMINAR</div></th>
 					</thead>
 
 											
 					<tbody>
-					"""),_display_(/*51.7*/for(pedido <- pedidos) yield /*51.29*/{_display_(Seq[Any](format.raw/*51.30*/("""
-						"""),format.raw/*52.7*/("""<tr>
-							<td>"""),_display_(/*53.13*/pedido/*53.19*/.id),format.raw/*53.22*/("""</td>
-							<td>"""),_display_(/*54.13*/pedido/*54.19*/.ciudad_origen),format.raw/*54.33*/("""</td>
-							<td>"""),_display_(/*55.13*/pedido/*55.19*/.ciudad_destino),format.raw/*55.34*/("""</td>							
-							<td>"""),_display_(/*56.13*/pedido/*56.19*/.personas_id),format.raw/*56.31*/("""</td>
+					"""),_display_(/*70.7*/for(pedido <- pedidos) yield /*70.29*/{_display_(Seq[Any](format.raw/*70.30*/("""
+						"""),format.raw/*71.7*/("""<tr>
+							<td>"""),_display_(/*72.13*/pedido/*72.19*/.id),format.raw/*72.22*/("""</td>
+							<td>"""),_display_(/*73.13*/pedido/*73.19*/.ciudad_origen),format.raw/*73.33*/("""</td>
+							<td>"""),_display_(/*74.13*/pedido/*74.19*/.ciudad_destino),format.raw/*74.34*/("""</td>							
+							<td>"""),_display_(/*75.13*/pedido/*75.19*/.persona.nombre),format.raw/*75.34*/("""</td>
 							<td>
-				              <a class="btn btn-info" href='"""),_display_(/*58.50*/routes/*58.56*/.PedidosC.detail(pedido.id)),format.raw/*58.83*/("""' title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-				            </td>
-							<td>
-				              <a class="btn btn-info" href="#" title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-				            </td>
+				              <a class="btn btn-info" href='"""),_display_(/*77.50*/routes/*77.56*/.PedidosC.detail(pedido.id)),format.raw/*77.83*/("""' title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
+				            </td>							
 				            <td>
-				              <a class="btn btn-info"  title="Eliminar" href='"""),_display_(/*64.68*/routes/*64.74*/.PedidosC.delete(pedido.id)),format.raw/*64.101*/("""' ><i class="glyphicon glyphicon-remove"></i></a>    
+				              <a class="btn btn-info"  title="Eliminar" href='"""),_display_(/*80.68*/routes/*80.74*/.PedidosC.delete(pedido.id)),format.raw/*80.101*/("""' ><i class="glyphicon glyphicon-remove"></i></a>    
 				            </td>
 			            </tr>
-					""")))}),format.raw/*67.7*/("""
-					"""),format.raw/*68.6*/("""</tbody>						
+					""")))}),format.raw/*83.7*/("""
+					"""),format.raw/*84.6*/("""</tbody>						
 					
 			</table>			
 		</div>		
 	</div>
+	<br/>
+	<div class="container">		
+		<div class="form-group">
+			<div class="col-sm-16 text-right">
+				<a class="btn btn-info" href='"""),_display_(/*93.36*/routes/*93.42*/.PedidosC.newO()),format.raw/*93.58*/("""' title="Registrar Pedido" >Registrar Pedido<i class="glyphicon" ></i> </a>	
+			</div>
+		</div>		
+	</div>
 
 	<!-- JQuery -->
-	<script src='"""),_display_(/*75.16*/routes/*75.22*/.Assets.at("js/jquery-1.11.3.min.js")),format.raw/*75.59*/("""'></script>
+	<script src='"""),_display_(/*99.16*/routes/*99.22*/.Assets.at("js/jquery-1.11.3.min.js")),format.raw/*99.59*/("""'></script>
 	<!-- Bootstrap -->
-	<script src='"""),_display_(/*77.16*/routes/*77.22*/.Assets.at("js/bootstrap.js")),format.raw/*77.51*/("""'></script>	
+	<script src='"""),_display_(/*101.16*/routes/*101.22*/.Assets.at("js/bootstrap.js")),format.raw/*101.51*/("""'></script>	
 	<!-- BXSlider -->
-	<script src='"""),_display_(/*79.16*/routes/*79.22*/.Assets.at("js/jquery.bxslider.min.js")),format.raw/*79.61*/("""'></script>
+	<script src='"""),_display_(/*103.16*/routes/*103.22*/.Assets.at("js/jquery.bxslider.min.js")),format.raw/*103.61*/("""'></script>
 	
-	<script src='"""),_display_(/*81.16*/routes/*81.22*/.Assets.at("js/jquery.dataTables.js")),format.raw/*81.59*/("""'></script>
+	<script src='"""),_display_(/*105.16*/routes/*105.22*/.Assets.at("js/jquery.dataTables.js")),format.raw/*105.59*/("""'></script>
 
 	<script>
-		$(document).ready(function() """),format.raw/*84.32*/("""{"""),format.raw/*84.33*/("""
-		   """),format.raw/*85.6*/("""$('#example').DataTable( """),format.raw/*85.31*/("""{"""),format.raw/*85.32*/("""
-		       """),format.raw/*86.10*/(""""language": """),format.raw/*86.22*/("""{"""),format.raw/*86.23*/("""
-		           """),format.raw/*87.14*/(""""url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-		       """),format.raw/*88.10*/("""}"""),format.raw/*88.11*/("""
-		  	"""),format.raw/*89.6*/("""}"""),format.raw/*89.7*/(""");
-  		"""),format.raw/*90.5*/("""}"""),format.raw/*90.6*/(""");
+		$(document).ready(function() """),format.raw/*108.32*/("""{"""),format.raw/*108.33*/("""
+		   """),format.raw/*109.6*/("""$('#example').DataTable( """),format.raw/*109.31*/("""{"""),format.raw/*109.32*/("""
+		       """),format.raw/*110.10*/(""""language": """),format.raw/*110.22*/("""{"""),format.raw/*110.23*/("""
+		           """),format.raw/*111.14*/(""""url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+		       """),format.raw/*112.10*/("""}"""),format.raw/*112.11*/("""
+		  	"""),format.raw/*113.6*/("""}"""),format.raw/*113.7*/(""");
+  		"""),format.raw/*114.5*/("""}"""),format.raw/*114.6*/(""");
 	</script>
 	</body>
 	</html>
 
-""")))}),format.raw/*95.2*/("""
+""")))}),format.raw/*119.2*/("""
 """))
       }
     }
@@ -144,11 +168,11 @@ Seq[Any](format.raw/*1.32*/("""
 object index extends index_Scope0.index
               /*
                   -- GENERATED --
-                  DATE: Mon Nov 14 22:48:04 COT 2016
+                  DATE: Tue Nov 15 12:40:24 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/pedido/index.scala.html
-                  HASH: 522f71c7ecce0e033cf833329095699799957a64
-                  MATRIX: 766->1|891->31|919->34|933->41|986->86|1025->88|1063->100|1283->293|1298->299|1356->336|1419->372|1434->378|1487->410|1550->446|1565->452|1617->483|1680->519|1695->525|1750->559|1814->596|1829->602|1881->633|2931->1657|2969->1679|3008->1680|3043->1688|3088->1706|3103->1712|3127->1715|3173->1734|3188->1740|3223->1754|3269->1773|3284->1779|3320->1794|3373->1820|3388->1826|3421->1838|3517->1907|3532->1913|3580->1940|3939->2272|3954->2278|4003->2305|4139->2411|4173->2418|4295->2513|4310->2519|4368->2556|4444->2605|4459->2611|4509->2640|4585->2689|4600->2695|4660->2734|4718->2765|4733->2771|4791->2808|4876->2865|4905->2866|4939->2873|4992->2898|5021->2899|5060->2910|5100->2922|5129->2923|5172->2938|5279->3017|5308->3018|5342->3025|5370->3026|5405->3034|5433->3035|5502->3074
-                  LINES: 27->1|32->1|33->2|33->2|33->2|33->2|35->4|41->10|41->10|41->10|42->11|42->11|42->11|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|82->51|82->51|82->51|83->52|84->53|84->53|84->53|85->54|85->54|85->54|86->55|86->55|86->55|87->56|87->56|87->56|89->58|89->58|89->58|95->64|95->64|95->64|98->67|99->68|106->75|106->75|106->75|108->77|108->77|108->77|110->79|110->79|110->79|112->81|112->81|112->81|115->84|115->84|116->85|116->85|116->85|117->86|117->86|117->86|118->87|119->88|119->88|120->89|120->89|121->90|121->90|126->95
+                  HASH: 07a7c53c492115d474393f59fb2c39fcac3deb40
+                  MATRIX: 766->1|891->31|919->34|933->41|986->86|1025->88|1063->100|1281->291|1296->297|1354->334|1417->370|1432->376|1485->408|1548->444|1563->450|1615->481|1678->517|1693->523|1748->557|1812->594|1827->600|1879->631|2144->870|2185->902|2225->904|2262->914|2473->1098|2487->1103|2523->1118|2560->1128|2603->1141|2638->1150|2677->1180|2717->1182|2754->1192|2964->1375|2978->1380|3012->1393|3049->1403|3092->1416|3127->1425|3165->1454|3205->1456|3242->1466|3449->1646|3463->1651|3496->1663|3533->1673|3576->1686|3609->1692|4357->2414|4395->2436|4434->2437|4469->2445|4514->2463|4529->2469|4553->2472|4599->2491|4614->2497|4649->2511|4695->2530|4710->2536|4746->2551|4799->2577|4814->2583|4850->2598|4946->2667|4961->2673|5009->2700|5224->2888|5239->2894|5288->2921|5424->3027|5458->3034|5683->3232|5698->3238|5735->3254|5907->3399|5922->3405|5980->3442|6057->3491|6073->3497|6124->3526|6201->3575|6217->3581|6278->3620|6337->3651|6353->3657|6412->3694|6498->3751|6528->3752|6563->3759|6617->3784|6647->3785|6687->3796|6728->3808|6758->3809|6802->3824|6910->3903|6940->3904|6975->3911|7004->3912|7040->3920|7069->3921|7139->3960
+                  LINES: 27->1|32->1|33->2|33->2|33->2|33->2|35->4|41->10|41->10|41->10|42->11|42->11|42->11|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|58->27|58->27|58->27|59->28|61->30|61->30|61->30|62->31|63->32|65->34|65->34|65->34|66->35|68->37|68->37|68->37|69->38|70->39|72->41|72->41|72->41|73->42|75->44|75->44|75->44|76->45|77->46|79->48|101->70|101->70|101->70|102->71|103->72|103->72|103->72|104->73|104->73|104->73|105->74|105->74|105->74|106->75|106->75|106->75|108->77|108->77|108->77|111->80|111->80|111->80|114->83|115->84|124->93|124->93|124->93|130->99|130->99|130->99|132->101|132->101|132->101|134->103|134->103|134->103|136->105|136->105|136->105|139->108|139->108|140->109|140->109|140->109|141->110|141->110|141->110|142->111|143->112|143->112|144->113|144->113|145->114|145->114|150->119
                   -- GENERATED --
               */
           

@@ -84,7 +84,7 @@ Seq[Any](format.raw/*1.19*/("""
 				<div class="form-group required">
 		    		<label for="cuenta" class="col-sm-4 control-label">Cuenta</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="cuenta" name="cuenta" placeholder="Nombre de Cuenta" required="required" onkeypress="return inputLimiter(event,'NameCharactersAndNumbers')">
+		      			<input type="text" class="form-control" id="cuenta" name="cuenta" placeholder="Nombre de Cuenta" required onkeypress="return inputLimiter(event,'NameCharactersAndNumbers')">
 		    		</div>
 		  		</div>
 		  		
@@ -127,7 +127,7 @@ Seq[Any](format.raw/*1.19*/("""
 						<input class="btn btn-primary" type="submit" value="Confirmar">
 					</div>
 					<div class="btn-group">						
-						<a href="#" onclick="history.go(-1)" class="btn btn-info">Cancelar</a>
+						<a href='"""),_display_(/*99.17*/routes/*99.23*/.UsuariosC.index()),format.raw/*99.41*/("""' class="btn btn-info">Cancelar</a>
 					</div>
 				</div>
 				</br>
@@ -172,11 +172,11 @@ Seq[Any](format.raw/*1.19*/("""
 object newUser extends newUser_Scope0.newUser
               /*
                   -- GENERATED --
-                  DATE: Mon Nov 14 22:48:05 COT 2016
+                  DATE: Tue Nov 15 12:58:43 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/usuario/newUser.scala.html
-                  HASH: 8b90a74eb5871de25dde2c79c6488519fec6e4fb
-                  MATRIX: 757->1|869->18|899->23|913->30|941->50|980->52|1018->64|1267->286|1282->292|1340->329|1403->365|1418->371|1471->403|1534->439|1549->445|1601->476|1664->512|1679->518|1734->552|2264->1054|2293->1055|2322->1056|2351->1057|2392->1070|2421->1071|2450->1072
-                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33
+                  HASH: 3202b8f22c8bcef63536852fa642467189d5fbd5
+                  MATRIX: 757->1|869->18|899->23|913->30|941->50|980->52|1018->64|1267->286|1282->292|1340->329|1403->365|1418->371|1471->403|1534->439|1549->445|1601->476|1664->512|1679->518|1734->552|2264->1054|2293->1055|2322->1056|2351->1057|2392->1070|2421->1071|2450->1072|5015->3610|5030->3616|5069->3634
+                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33|130->99|130->99|130->99
                   -- GENERATED --
               */
           

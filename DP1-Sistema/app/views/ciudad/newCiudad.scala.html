@@ -33,7 +33,26 @@
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				
 				<!-- Mensajes de error de validación del Request -->
-				<div class="col-sm-4"></div>
+				@if(flash.containsKey("success")) {
+			        <div class="alert alert-success fade in text-center">
+			            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			            <strong>¡Éxito!</strong> @flash.get("success")
+			        </div>
+			    }
+
+			    @if(flash.containsKey("error")) {
+			        <div class="alert alert-danger fade in text-center">
+			            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			            <strong>¡Error!</strong> @flash.get("error")
+			        </div>
+			    }
+
+			    @if(flash.containsKey("info")) {
+			        <div class="alert alert-info fade in text-center">
+			            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			            <strong>¡Info!</strong> @flash.get("info")
+			        </div>
+			    }
 				
 
 				<br/>
@@ -51,37 +70,37 @@
 
 				<!-- INICIO INCIO-->				                       				
 				<div class="form-group required">
-		    		<label for="clienteOrigen_input" class="col-sm-4 control-label">Código de ciudad</label>
+		    		<label for="cod_ciudad" class="col-sm-4 control-label">Código de ciudad</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="cod_ciudad" name="cod_ciudad" placeholder="Código de ciudad" >
+		      			<input type="text" class="form-control" id="cod_ciudad" name="cod_ciudad" placeholder="Código de ciudad" required onkeypress="return inputLimiter(event,'Letters')">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudadOrigen_input" class="col-sm-4 control-label">Nombre</label>
+		    		<label for="nombre" class="col-sm-4 control-label">Nombre</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" >
+		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required onkeypress="return inputLimiter(event,'Letters')">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudadDestino_input" class="col-sm-4 control-label">País</label>
+		    		<label for="pais" class="col-sm-4 control-label">País</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="pais" name="pais" placeholder="País" >
+		      			<input type="text" class="form-control" id="pais" name="pais" placeholder="País" required onkeypress="return inputLimiter(event,'Letters')">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-			    	<label for="cantidadPaquetesInput" class="col-sm-4 control-label">Nombre Abreviado</label>
+			    	<label for="abreviado" class="col-sm-4 control-label">Nombre Abreviado</label>
 			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="abreviado" name="abreviado" placeholder="Nombre Abreviado" >
+			      		<input type="text" class="form-control" id="abreviado" name="abreviado" placeholder="Nombre Abreviado" required onkeypress="return inputLimiter(event,'Letters')">
 			    	</div>			      					      		
 			  	</div>	
 			  
 		  		<div class="form-group required">
-			    	<label for="cantidadPaquetesInput" class="col-sm-4 control-label">Capacidad del almacen</label>
+			    	<label for="capacidad_almacen" class="col-sm-4 control-label">Capacidad del almacen</label>
 			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="capacidad_almacen" name="capacidad_almacen" placeholder="Capacidad del almacen" >
+			      		<input type="text" class="form-control" id="capacidad_almacen" name="capacidad_almacen" placeholder="Capacidad del almacen" required onkeypress="return inputLimiter(event,'Numbers')">
 			    	</div>
 			  	</div>
 			  	
@@ -96,7 +115,7 @@
 						<input class="btn btn-primary" type="submit" value="Confirmar">
 					</div>
 					<div class="btn-group">						
-						<a href="#" onclick="history.go(-1)" class="btn btn-info">Cancelar</a>
+						<a href='@routes.CiudadesC.index()' class="btn btn-info">Cancelar</a>
 					</div>
 				</div>
 				</br>

@@ -11,7 +11,7 @@ import play.mvc.Security;
 public class Application extends Controller {
     @play.db.jpa.Transactional(readOnly=true)
     public static Result index() {            
-        return ok(views.html.index.render(Ciudades.getAll()));
+        return ok(views.html.ciudad.index.render(Ciudades.getAll()));
     }
 
     public static Result simulation() {            

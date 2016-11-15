@@ -64,10 +64,29 @@ Seq[Any](format.raw/*1.19*/("""
 				<input type="hidden" name="_token" value=""""),format.raw/*33.47*/("""{"""),format.raw/*33.48*/("""{"""),format.raw/*33.49*/(""" """),format.raw/*33.50*/("""csrf_token() """),format.raw/*33.63*/("""}"""),format.raw/*33.64*/("""}"""),format.raw/*33.65*/("""">
 				
 				<!-- Mensajes de error de validación del Request -->
-				<div class="col-sm-4"></div>
+				"""),_display_(/*36.6*/if(flash.containsKey("success"))/*36.38*/ {_display_(Seq[Any](format.raw/*36.40*/("""
+			        """),format.raw/*37.12*/("""<div class="alert alert-success fade in text-center">
+			            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			            <strong>¡Éxito!</strong> """),_display_(/*39.42*/flash/*39.47*/.get("success")),format.raw/*39.62*/("""
+			        """),format.raw/*40.12*/("""</div>
+			    """)))}),format.raw/*41.9*/("""
+
+			    """),_display_(/*43.9*/if(flash.containsKey("error"))/*43.39*/ {_display_(Seq[Any](format.raw/*43.41*/("""
+			        """),format.raw/*44.12*/("""<div class="alert alert-danger fade in text-center">
+			            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			            <strong>¡Error!</strong> """),_display_(/*46.42*/flash/*46.47*/.get("error")),format.raw/*46.60*/("""
+			        """),format.raw/*47.12*/("""</div>
+			    """)))}),format.raw/*48.9*/("""
+
+			    """),_display_(/*50.9*/if(flash.containsKey("info"))/*50.38*/ {_display_(Seq[Any](format.raw/*50.40*/("""
+			        """),format.raw/*51.12*/("""<div class="alert alert-info fade in text-center">
+			            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			            <strong>¡Info!</strong> """),_display_(/*53.41*/flash/*53.46*/.get("info")),format.raw/*53.58*/("""
+			        """),format.raw/*54.12*/("""</div>
+			    """)))}),format.raw/*55.9*/("""
 				
 
-				<br/>
+				"""),format.raw/*58.5*/("""<br/>
 				<br/>
 				<div class="form-group">
 			  		<div class="text-center">
@@ -82,37 +101,37 @@ Seq[Any](format.raw/*1.19*/("""
 
 				<!-- INICIO INCIO-->				                       				
 				<div class="form-group required">
-		    		<label for="clienteOrigen_input" class="col-sm-4 control-label">Código de ciudad</label>
+		    		<label for="cod_ciudad" class="col-sm-4 control-label">Código de ciudad</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="cod_ciudad" name="cod_ciudad" placeholder="Código de ciudad" >
+		      			<input type="text" class="form-control" id="cod_ciudad" name="cod_ciudad" placeholder="Código de ciudad" required onkeypress="return inputLimiter(event,'Letters')">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudadOrigen_input" class="col-sm-4 control-label">Nombre</label>
+		    		<label for="nombre" class="col-sm-4 control-label">Nombre</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" >
+		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required onkeypress="return inputLimiter(event,'Letters')">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudadDestino_input" class="col-sm-4 control-label">País</label>
+		    		<label for="pais" class="col-sm-4 control-label">País</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="pais" name="pais" placeholder="País" >
+		      			<input type="text" class="form-control" id="pais" name="pais" placeholder="País" required onkeypress="return inputLimiter(event,'Letters')">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-			    	<label for="cantidadPaquetesInput" class="col-sm-4 control-label">Nombre Abreviado</label>
+			    	<label for="abreviado" class="col-sm-4 control-label">Nombre Abreviado</label>
 			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="abreviado" name="abreviado" placeholder="Nombre Abreviado" >
+			      		<input type="text" class="form-control" id="abreviado" name="abreviado" placeholder="Nombre Abreviado" required onkeypress="return inputLimiter(event,'Letters')">
 			    	</div>			      					      		
 			  	</div>	
 			  
 		  		<div class="form-group required">
-			    	<label for="cantidadPaquetesInput" class="col-sm-4 control-label">Capacidad del almacen</label>
+			    	<label for="capacidad_almacen" class="col-sm-4 control-label">Capacidad del almacen</label>
 			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="capacidad_almacen" name="capacidad_almacen" placeholder="Capacidad del almacen" >
+			      		<input type="text" class="form-control" id="capacidad_almacen" name="capacidad_almacen" placeholder="Capacidad del almacen" required onkeypress="return inputLimiter(event,'Numbers')">
 			    	</div>
 			  	</div>
 			  	
@@ -127,7 +146,7 @@ Seq[Any](format.raw/*1.19*/("""
 						<input class="btn btn-primary" type="submit" value="Confirmar">
 					</div>
 					<div class="btn-group">						
-						<a href="#" onclick="history.go(-1)" class="btn btn-info">Cancelar</a>
+						<a href='"""),_display_(/*118.17*/routes/*118.23*/.CiudadesC.index()),format.raw/*118.41*/("""' class="btn btn-info">Cancelar</a>
 					</div>
 				</div>
 				</br>
@@ -172,11 +191,11 @@ Seq[Any](format.raw/*1.19*/("""
 object newCiudad extends newCiudad_Scope0.newCiudad
               /*
                   -- GENERATED --
-                  DATE: Mon Nov 14 22:48:04 COT 2016
+                  DATE: Tue Nov 15 11:29:10 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/ciudad/newCiudad.scala.html
-                  HASH: 7f5563301727cb9ecf3e18f1dc0b7e01c6c8a0f2
-                  MATRIX: 760->1|872->18|902->23|916->30|944->50|983->52|1021->64|1273->289|1288->295|1346->332|1409->368|1424->374|1477->406|1540->442|1555->448|1607->479|1670->515|1685->521|1740->555|2273->1060|2302->1061|2331->1062|2360->1063|2401->1076|2430->1077|2459->1078
-                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33
+                  HASH: 31ef6c9e294de4ff5b6a354649c991641800cae5
+                  MATRIX: 760->1|872->18|902->23|916->30|944->50|983->52|1021->64|1273->289|1288->295|1346->332|1409->368|1424->374|1477->406|1540->442|1555->448|1607->479|1670->515|1685->521|1740->555|2273->1060|2302->1061|2331->1062|2360->1063|2401->1076|2430->1077|2459->1078|2558->1151|2599->1183|2639->1185|2680->1198|2897->1388|2911->1393|2947->1408|2988->1421|3034->1437|3072->1449|3111->1479|3151->1481|3192->1494|3408->1683|3422->1688|3456->1701|3497->1714|3543->1730|3581->1742|3619->1771|3659->1773|3700->1786|3913->1972|3927->1977|3960->1989|4001->2002|4047->2018|4088->2032|6569->4485|6585->4491|6625->4509
+                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33|67->36|67->36|67->36|68->37|70->39|70->39|70->39|71->40|72->41|74->43|74->43|74->43|75->44|77->46|77->46|77->46|78->47|79->48|81->50|81->50|81->50|82->51|84->53|84->53|84->53|85->54|86->55|89->58|149->118|149->118|149->118
                   -- GENERATED --
               */
           

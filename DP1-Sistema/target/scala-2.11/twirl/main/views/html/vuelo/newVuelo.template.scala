@@ -36,7 +36,7 @@ Seq[Any](format.raw/*1.19*/("""
     """),format.raw/*5.5*/("""<!DOCTYPE html>
     <html>
     <head>
-    	<title>REGISTRAR USUARIO</title>
+    	<title>REGISTRAR PLAN DE VUELO</title>
     	<meta charset="UTF-8">
     
     	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +55,7 @@ Seq[Any](format.raw/*1.19*/("""
     		<br/><br/>
     		<div class="container">
     			<div class="col-sm-12 text-left lead">
-    					<strong>REGISTRAR USUARIO</strong>
+    					<strong>REGISTRAR PLAN DE VUELO</strong>
     			</div>		
     		</div>
     		<div class="container">
@@ -82,41 +82,33 @@ Seq[Any](format.raw/*1.19*/("""
 
 				<!-- INICIO INCIIO -->				                       				
 				<div class="form-group required">
-		    		<label for="clienteOrigen_input" class="col-sm-4 control-label">Cuenta</label>
+		    		<label for="ciudad_origen" class="col-sm-4 control-label">Ciudad de Origen</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="cuenta" name="cuenta" placeholder="Nombre de Cuenta" >
+		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" placeholder="Ciudad de Origen" required onkeypress="return inputLimiter(event,'Letters')">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudadOrigen_input" class="col-sm-4 control-label">Nombre</label>
+		    		<label for="ciudad_destino" class="col-sm-4 control-label">Ciudad de Destino</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de Usuario" >
+		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" placeholder="Ciudad de Destino" required onkeypress="return inputLimiter(event,'Letters')">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudadDestino_input" class="col-sm-4 control-label">Apellido</label>
+		    		<label for="hora_salida" class="col-sm-4 control-label">Hora de Salida</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido de Usuario" >
+		      			<input type="time" class="form-control" id="hora_salida" name="hora_salida" placeholder="Hora de Salida" required onkeypress="return inputLimiter(event,'Nulo')">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-			    	<label for="cantidadPaquetesInput" class="col-sm-4 control-label">DNI</label>
+			    	<label for="hora_llegada" class="col-sm-4 control-label">Hora de Llegada</label>
 			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="dni" name="dni" placeholder="DNI de Usuario" >
+			      		<input type="time" class="form-control" id="hora_llegada" name="hora_llegada" placeholder="Hora de Llegada" required onkeypress="return inputLimiter(event,'Nulo')">
 			    	</div>			      					      		
-			  	</div>	
-			  
-		  		<div class="form-group required">
-			    	<label for="cantidadPaquetesInput" class="col-sm-4 control-label">Correo</label>
-			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="correo" name="correo" placeholder="Correo de Usuario" >
-			    	</div>
-			  	</div>
-			  	
-					<!-- FIN FIN FIN  -->				
+			  	</div>				  			  	
+				<!-- FIN FIN FIN  -->				
 			
 				</br>
 			  	</br>
@@ -127,7 +119,7 @@ Seq[Any](format.raw/*1.19*/("""
 						<input class="btn btn-primary" type="submit" value="Confirmar">
 					</div>
 					<div class="btn-group">						
-						<a href="#" onclick="history.go(-1)" class="btn btn-info">Cancelar</a>
+						<a href='"""),_display_(/*91.17*/routes/*91.23*/.VuelosC.index()),format.raw/*91.39*/("""' class="btn btn-info">Cancelar</a>
 					</div>
 				</div>
 				</br>
@@ -172,11 +164,11 @@ Seq[Any](format.raw/*1.19*/("""
 object newVuelo extends newVuelo_Scope0.newVuelo
               /*
                   -- GENERATED --
-                  DATE: Mon Nov 14 22:48:05 COT 2016
+                  DATE: Tue Nov 15 12:58:43 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/vuelo/newVuelo.scala.html
-                  HASH: 4b4b9c9d00ba2d2f559480a609ee3df1b7147b2f
-                  MATRIX: 757->1|869->18|899->23|913->30|941->50|980->52|1018->64|1267->286|1282->292|1340->329|1403->365|1418->371|1471->403|1534->439|1549->445|1601->476|1664->512|1679->518|1734->552|2264->1054|2293->1055|2322->1056|2351->1057|2392->1070|2421->1071|2450->1072
-                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33
+                  HASH: c012ae83d2481bea4bf5adef4908a3328380aa12
+                  MATRIX: 757->1|869->18|899->23|913->30|941->50|980->52|1018->64|1273->292|1288->298|1346->335|1409->371|1424->377|1477->409|1540->445|1555->451|1607->482|1670->518|1685->524|1740->558|2276->1066|2305->1067|2334->1068|2363->1069|2404->1082|2433->1083|2462->1084|4750->3345|4765->3351|4802->3367
+                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33|122->91|122->91|122->91
                   -- GENERATED --
               */
           

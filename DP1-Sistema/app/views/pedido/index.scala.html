@@ -4,7 +4,7 @@
     <!DOCTYPE html>
 	<html>
 	<head>
-		<title>Home Page</title>
+		<title>PEDIDOS</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel='stylesheet' href='@routes.Assets.at("css/jquery.bxslider.css")'>
@@ -19,11 +19,31 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<p class="lead"><strong>BIENVENIDO A SIMUSOFT</strong></p>
+				<p class="lead"><strong>PEDIDOS</strong></p>
 			</div>
 		</div>
 	</div>	
 	<!--Pie de págna-->
+	@if(flash.containsKey("success")) {
+        <div class="alert alert-success fade in text-center">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>¡Éxito!</strong> @flash.get("success")
+        </div>
+    }
+
+    @if(flash.containsKey("error")) {
+        <div class="alert alert-danger fade in text-center">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>¡Error!</strong> @flash.get("error")
+        </div>
+    }
+
+    @if(flash.containsKey("info")) {
+        <div class="alert alert-info fade in text-center">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>¡Info!</strong> @flash.get("info")
+        </div>
+    }
 	
 	<div class="table-responsive">
 		<div class="container">
@@ -42,7 +62,6 @@
 						<th><div align=center>DESTINO</div></th>							
 						<th><div align=center>REMITENTE</div></th>	
 						<th><div align=center>DETALLE</div></th>
-						<th><div align=center>EDITAR</div></th>
 						<th><div align=center>ELIMINAR</div></th>
 					</thead>
 
@@ -53,13 +72,10 @@
 							<td>@pedido.id</td>
 							<td>@pedido.ciudad_origen</td>
 							<td>@pedido.ciudad_destino</td>							
-							<td>@pedido.personas_id</td>
+							<td>@pedido.persona.nombre</td>
 							<td>
 				              <a class="btn btn-info" href='@routes.PedidosC.detail(pedido.id)' title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-				            </td>
-							<td>
-				              <a class="btn btn-info" href="#" title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-				            </td>
+				            </td>							
 				            <td>
 				              <a class="btn btn-info"  title="Eliminar" href='@routes.PedidosC.delete(pedido.id)' ><i class="glyphicon glyphicon-remove"></i></a>    
 				            </td>
@@ -68,6 +84,14 @@
 					</tbody>						
 					
 			</table>			
+		</div>		
+	</div>
+	<br/>
+	<div class="container">		
+		<div class="form-group">
+			<div class="col-sm-16 text-right">
+				<a class="btn btn-info" href='@routes.PedidosC.newO()' title="Registrar Pedido" >Registrar Pedido<i class="glyphicon" ></i> </a>	
+			</div>
 		</div>		
 	</div>
 

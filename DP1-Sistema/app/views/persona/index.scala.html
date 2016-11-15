@@ -27,6 +27,26 @@
 		</div>
 	</div>
 	
+	@if(flash.containsKey("success")) {
+        <div class="alert alert-success fade in text-center">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>¡Éxito!</strong> @flash.get("success")
+        </div>
+    }
+
+    @if(flash.containsKey("error")) {
+        <div class="alert alert-danger fade in text-center">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>¡Error!</strong> @flash.get("error")
+        </div>
+    }
+
+    @if(flash.containsKey("info")) {
+        <div class="alert alert-info fade in text-center">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>¡Info!</strong> @flash.get("info")
+        </div>
+    }
 
 	<div class="table-responsive">
 		<div class="container">
@@ -43,8 +63,7 @@
 						<th><div align=center>ID</div></th>
 						<th><div align=center>USUARIO</div></th>
 						<th><div align=center>DNI</div></th>
-						<th><div align=center>CORREO</div></th>
-						<th><div align=center>DETALLE</div></th>
+						<th><div align=center>CORREO</div></th>						
 						<th><div align=center>EDITAR</div></th>
 						<th><div align=center>ELIMINAR</div></th>
 					</thead>
@@ -56,10 +75,7 @@
 							<td>@persona.id</td>
 							<td>@persona.nombre</td>
 							<td>@persona.dni</td>							
-							<td>@persona.correo</td>
-							<td>
-				              <a class="btn btn-info" href="#"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-				            </td>
+							<td>@persona.correo</td>							
 							<td>
 				              <a class="btn btn-info" href="#" title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
 				            </td>

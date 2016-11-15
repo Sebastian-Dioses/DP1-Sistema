@@ -84,7 +84,7 @@ Seq[Any](format.raw/*1.27*/("""
 				<div class="form-group required">
 		    		<label for="nombre" class="col-sm-4 control-label">Cuenta</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de Cuenta" disabled value=""""),_display_(/*56.126*/usuario/*56.133*/.nombre),format.raw/*56.140*/("""">
+		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de Cuenta" readonly value=""""),_display_(/*56.126*/usuario/*56.133*/.nombre),format.raw/*56.140*/("""">
 		    		</div>
 		  		</div>
 		  		
@@ -165,9 +165,9 @@ Seq[Any](format.raw/*1.27*/("""
 object editPass extends editPass_Scope0.editPass
               /*
                   -- GENERATED --
-                  DATE: Mon Nov 14 22:48:05 COT 2016
+                  DATE: Tue Nov 15 11:12:13 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/usuario/editPass.scala.html
-                  HASH: bb3d67c1eb01826c6f3410c6134cfeb81913ec40
+                  HASH: 38cb428b85a284258ddcb68242f670bf520b5454
                   MATRIX: 768->1|888->26|918->31|932->38|960->58|999->60|1037->72|1287->295|1302->301|1360->338|1423->374|1438->380|1491->412|1554->448|1569->454|1621->485|1684->521|1699->527|1754->561|2297->1076|2326->1077|2355->1078|2384->1079|2425->1092|2454->1093|2483->1094|3182->1765|3199->1772|3228->1779
                   LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33|87->56|87->56|87->56
                   -- GENERATED --

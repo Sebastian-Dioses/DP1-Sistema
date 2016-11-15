@@ -53,7 +53,7 @@
 				<div class="form-group required">
 		    		<label for="cuenta" class="col-sm-4 control-label">Cuenta</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="cuenta" name="cuenta" placeholder="Nombre de Cuenta" required="required" onkeypress="return inputLimiter(event,'NameCharactersAndNumbers')">
+		      			<input type="text" class="form-control" id="cuenta" name="cuenta" placeholder="Nombre de Cuenta" required onkeypress="return inputLimiter(event,'NameCharactersAndNumbers')">
 		    		</div>
 		  		</div>
 		  		
@@ -96,7 +96,7 @@
 						<input class="btn btn-primary" type="submit" value="Confirmar">
 					</div>
 					<div class="btn-group">						
-						<a href="#" onclick="history.go(-1)" class="btn btn-info">Cancelar</a>
+						<a href='@routes.UsuariosC.index()' class="btn btn-info">Cancelar</a>
 					</div>
 				</div>
 				</br>

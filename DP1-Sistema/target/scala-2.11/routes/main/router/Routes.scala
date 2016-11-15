@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/conf/routes
-// @DATE:Mon Nov 14 22:47:59 COT 2016
+// @DATE:Tue Nov 15 12:45:30 COT 2016
 
 package router
 
@@ -58,10 +58,14 @@ class Routes extends GeneratedRouter {
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """ciudad""", """controllers.CiudadesC.index()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """ciudad/new""", """controllers.CiudadesC.newO()"""),
     ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """ciudad/add""", """controllers.CiudadesC.create()"""),
+    ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """ciudad/edit""", """controllers.CiudadesC.edit(id:String)"""),
+    ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """ciudad/update""", """controllers.CiudadesC.update()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """ciudad/delete""", """controllers.CiudadesC.delete(id:String)"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """persona""", """controllers.PersonasC.index()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """persona/delete""", """controllers.PersonasC.delete(id:Long)"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """vuelo""", """controllers.VuelosC.index()"""),
+    ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """vuelo/new""", """controllers.VuelosC.newO()"""),
+    ("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """vuelo/add""", """controllers.VuelosC.create()"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """vuelo/delete""", """controllers.VuelosC.delete(id:Long)"""),
     ("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.at(path:String = "/public", file:String)"""),
     Nil
@@ -412,10 +416,44 @@ class Routes extends GeneratedRouter {
   )
 
   // @LINE:30
-  private[this] lazy val controllers_CiudadesC_delete20_route: Route.ParamsExtractor = Route("GET",
+  private[this] lazy val controllers_CiudadesC_edit20_route: Route.ParamsExtractor = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("ciudad/edit")))
+  )
+  private[this] lazy val controllers_CiudadesC_edit20_invoker = createInvoker(
+    controllers.CiudadesC.edit(fakeValue[String]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CiudadesC",
+      "edit",
+      Seq(classOf[String]),
+      "GET",
+      """""",
+      this.prefix + """ciudad/edit"""
+    )
+  )
+
+  // @LINE:31
+  private[this] lazy val controllers_CiudadesC_update21_route: Route.ParamsExtractor = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("ciudad/update")))
+  )
+  private[this] lazy val controllers_CiudadesC_update21_invoker = createInvoker(
+    controllers.CiudadesC.update(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CiudadesC",
+      "update",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """ciudad/update"""
+    )
+  )
+
+  // @LINE:32
+  private[this] lazy val controllers_CiudadesC_delete22_route: Route.ParamsExtractor = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("ciudad/delete")))
   )
-  private[this] lazy val controllers_CiudadesC_delete20_invoker = createInvoker(
+  private[this] lazy val controllers_CiudadesC_delete22_invoker = createInvoker(
     controllers.CiudadesC.delete(fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -428,11 +466,11 @@ class Routes extends GeneratedRouter {
     )
   )
 
-  // @LINE:32
-  private[this] lazy val controllers_PersonasC_index21_route: Route.ParamsExtractor = Route("GET",
+  // @LINE:34
+  private[this] lazy val controllers_PersonasC_index23_route: Route.ParamsExtractor = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("persona")))
   )
-  private[this] lazy val controllers_PersonasC_index21_invoker = createInvoker(
+  private[this] lazy val controllers_PersonasC_index23_invoker = createInvoker(
     controllers.PersonasC.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -445,11 +483,11 @@ class Routes extends GeneratedRouter {
     )
   )
 
-  // @LINE:33
-  private[this] lazy val controllers_PersonasC_delete22_route: Route.ParamsExtractor = Route("GET",
+  // @LINE:35
+  private[this] lazy val controllers_PersonasC_delete24_route: Route.ParamsExtractor = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("persona/delete")))
   )
-  private[this] lazy val controllers_PersonasC_delete22_invoker = createInvoker(
+  private[this] lazy val controllers_PersonasC_delete24_invoker = createInvoker(
     controllers.PersonasC.delete(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -462,11 +500,11 @@ class Routes extends GeneratedRouter {
     )
   )
 
-  // @LINE:35
-  private[this] lazy val controllers_VuelosC_index23_route: Route.ParamsExtractor = Route("GET",
+  // @LINE:37
+  private[this] lazy val controllers_VuelosC_index25_route: Route.ParamsExtractor = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("vuelo")))
   )
-  private[this] lazy val controllers_VuelosC_index23_invoker = createInvoker(
+  private[this] lazy val controllers_VuelosC_index25_invoker = createInvoker(
     controllers.VuelosC.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -479,11 +517,45 @@ class Routes extends GeneratedRouter {
     )
   )
 
-  // @LINE:36
-  private[this] lazy val controllers_VuelosC_delete24_route: Route.ParamsExtractor = Route("GET",
+  // @LINE:38
+  private[this] lazy val controllers_VuelosC_newO26_route: Route.ParamsExtractor = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("vuelo/new")))
+  )
+  private[this] lazy val controllers_VuelosC_newO26_invoker = createInvoker(
+    controllers.VuelosC.newO(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.VuelosC",
+      "newO",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """vuelo/new"""
+    )
+  )
+
+  // @LINE:39
+  private[this] lazy val controllers_VuelosC_create27_route: Route.ParamsExtractor = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("vuelo/add")))
+  )
+  private[this] lazy val controllers_VuelosC_create27_invoker = createInvoker(
+    controllers.VuelosC.create(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.VuelosC",
+      "create",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """vuelo/add"""
+    )
+  )
+
+  // @LINE:40
+  private[this] lazy val controllers_VuelosC_delete28_route: Route.ParamsExtractor = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("vuelo/delete")))
   )
-  private[this] lazy val controllers_VuelosC_delete24_invoker = createInvoker(
+  private[this] lazy val controllers_VuelosC_delete28_invoker = createInvoker(
     controllers.VuelosC.delete(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -496,11 +568,11 @@ class Routes extends GeneratedRouter {
     )
   )
 
-  // @LINE:39
-  private[this] lazy val controllers_Assets_at25_route: Route.ParamsExtractor = Route("GET",
+  // @LINE:43
+  private[this] lazy val controllers_Assets_at29_route: Route.ParamsExtractor = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_at25_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at29_invoker = createInvoker(
     controllers.Assets.at(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -637,39 +709,63 @@ class Routes extends GeneratedRouter {
       }
   
     // @LINE:30
-    case controllers_CiudadesC_delete20_route(params) =>
+    case controllers_CiudadesC_edit20_route(params) =>
       call(params.fromQuery[String]("id", None)) { (id) =>
-        controllers_CiudadesC_delete20_invoker.call(controllers.CiudadesC.delete(id))
+        controllers_CiudadesC_edit20_invoker.call(controllers.CiudadesC.edit(id))
+      }
+  
+    // @LINE:31
+    case controllers_CiudadesC_update21_route(params) =>
+      call { 
+        controllers_CiudadesC_update21_invoker.call(controllers.CiudadesC.update())
       }
   
     // @LINE:32
-    case controllers_PersonasC_index21_route(params) =>
-      call { 
-        controllers_PersonasC_index21_invoker.call(controllers.PersonasC.index())
+    case controllers_CiudadesC_delete22_route(params) =>
+      call(params.fromQuery[String]("id", None)) { (id) =>
+        controllers_CiudadesC_delete22_invoker.call(controllers.CiudadesC.delete(id))
       }
   
-    // @LINE:33
-    case controllers_PersonasC_delete22_route(params) =>
-      call(params.fromQuery[Long]("id", None)) { (id) =>
-        controllers_PersonasC_delete22_invoker.call(controllers.PersonasC.delete(id))
+    // @LINE:34
+    case controllers_PersonasC_index23_route(params) =>
+      call { 
+        controllers_PersonasC_index23_invoker.call(controllers.PersonasC.index())
       }
   
     // @LINE:35
-    case controllers_VuelosC_index23_route(params) =>
-      call { 
-        controllers_VuelosC_index23_invoker.call(controllers.VuelosC.index())
+    case controllers_PersonasC_delete24_route(params) =>
+      call(params.fromQuery[Long]("id", None)) { (id) =>
+        controllers_PersonasC_delete24_invoker.call(controllers.PersonasC.delete(id))
       }
   
-    // @LINE:36
-    case controllers_VuelosC_delete24_route(params) =>
-      call(params.fromQuery[Long]("id", None)) { (id) =>
-        controllers_VuelosC_delete24_invoker.call(controllers.VuelosC.delete(id))
+    // @LINE:37
+    case controllers_VuelosC_index25_route(params) =>
+      call { 
+        controllers_VuelosC_index25_invoker.call(controllers.VuelosC.index())
+      }
+  
+    // @LINE:38
+    case controllers_VuelosC_newO26_route(params) =>
+      call { 
+        controllers_VuelosC_newO26_invoker.call(controllers.VuelosC.newO())
       }
   
     // @LINE:39
-    case controllers_Assets_at25_route(params) =>
+    case controllers_VuelosC_create27_route(params) =>
+      call { 
+        controllers_VuelosC_create27_invoker.call(controllers.VuelosC.create())
+      }
+  
+    // @LINE:40
+    case controllers_VuelosC_delete28_route(params) =>
+      call(params.fromQuery[Long]("id", None)) { (id) =>
+        controllers_VuelosC_delete28_invoker.call(controllers.VuelosC.delete(id))
+      }
+  
+    // @LINE:43
+    case controllers_Assets_at29_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at25_invoker.call(controllers.Assets.at(path, file))
+        controllers_Assets_at29_invoker.call(controllers.Assets.at(path, file))
       }
   }
 }
