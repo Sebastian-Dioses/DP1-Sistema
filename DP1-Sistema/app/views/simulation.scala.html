@@ -77,23 +77,15 @@
                 </div>
             </div>
         </div>          
-<div id="controls">
-  <input type="button" value="play/pause" onclick="togglePlay();" />
-  &nbsp;&nbsp;&nbsp;
-  Current frame: <span id="frame">0</span>
-</div>     
-        <br/><br/><br/>
         <div class="container">
             <div class="btn-group btn-group-justified">
-                <a type="button" class="btn btn-primary">Iniciar</a>
+                <a type="button" class="btn btn-primary" onclick="togglePlay();">Iniciar/Pausar</a>
                 <a type="button" class="btn btn-primary">Ver Resultados</a>             
                 <div class="btn-group">
-                    <select class="form-control" id="sel1" >
-                        <option>Duración de la Simulación</option>
-                        <option>20 min.</option>
-                        <option>1 hora</option>
-                        <option>3 horas</option>
-                        <option>Indefinido</option>
+                    <select class="form-control" id="selVel" >
+                        <option>1 seg-1 hora</option>
+                        <option>1 seg-5 horas</option>
+                        <option>1 seg-10 horas</option>
                     </select>
                 </div>
             </div>
