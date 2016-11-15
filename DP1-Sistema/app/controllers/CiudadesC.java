@@ -17,11 +17,11 @@ import play.mvc.Security;
 @Security.Authenticated(SecuredC.class)
 public class CiudadesC extends Controller {
     @play.db.jpa.Transactional(readOnly=true)        
-	public static Result index() {            
+    public static Result index() {            
         return ok(views.html.ciudad.index.render(Ciudades.getAll()));
     }
 
-	public static Result newO() {            
+    public static Result newO() {            
         return ok(views.html.ciudad.newCiudad.render("Titulo"));
     }
 
@@ -34,9 +34,12 @@ public class CiudadesC extends Controller {
             String nombre = requestData.get("nombre");
             String pais = requestData.get("pais");
             String abreviado = requestData.get("abreviado");
+            int lati = Integer.parseInt(requestData.get("latitud"));
+            int longi = Integer.parseInt(requestData.get("longitud"));
             int capacidad_almacen = Integer.parseInt(requestData.get("capacidad_almacen"));
-            
-            Ciudades city = new Ciudades(cod_ciudad, nombre, pais, abreviado, capacidad_almacen); 
+            int huso = Integer.parseInt(requestData.get("huso"));
+
+            Ciudades city = new Ciudades(cod_ciudad, nombre, pais, abreviado, capacidad_almacen,lati,longi,huso); 
            
             city.save();
 
@@ -92,5 +95,5 @@ public class CiudadesC extends Controller {
     public static Result delete(String idCiudad) {            
         Ciudades.delete(idCiudad);
         return ok(views.html.ciudad.index.render(Ciudades.getAll()));
-    }
+    }    
 }

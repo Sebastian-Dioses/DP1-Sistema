@@ -24,7 +24,7 @@
     		<br/><br/>
     		<div class="container">
     			<div class="col-sm-12 text-left lead">
-    					<strong>DETALLE DE PEDIDO</strong>
+    					<strong>REGISTRAR PEDIDO</strong>
     			</div>		
     		</div>
     		<div class="container">
@@ -46,7 +46,7 @@
 				<div class="form-group">
 		    		<label for="clienteOrigen_input" class="col-sm-4 control-label">Código del pedido:</label>
 		    		<div class="col-sm-1">
-		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" readonly value="@pedido.id">
+		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" disabled="true" value="@pedido.id">
 		    		</div>		    	
 		  		</div>
 
@@ -54,15 +54,15 @@
 		    		<label for="clienteOrigen_input" class="col-sm-3 control-label">Origen:</label>
 		    		<label for="clienteOrigen_input" class="col-sm-1 control-label">Código</label>
 		    		<div class="col-sm-1">
-		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" readonly value="@pedido.ciudadOrigen.cod_ciudad">
+		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" disabled="true" value="@pedido.ciudadOrigen.cod_ciudad">
 		    		</div>		    	
 		    		<label for="clienteOrigen_input" class="col-sm-1 control-label">Ciudad</label>
 		    		<div class="col-sm-2">
-		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" readonly value="@pedido.ciudadOrigen.nombre">
+		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" disabled="true" value="@pedido.ciudadOrigen.nombre">
 		    		</div>
 		    		<label for="clienteOrigen_input" class="col-sm-1 control-label">País</label>	
 		    		<div class="col-sm-2">
-		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" readonly value="@pedido.ciudadOrigen.pais">
+		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" disabled="true" value="@pedido.ciudadOrigen.pais">
 		    		</div>
 		  		</div>
 		  				  		
@@ -70,15 +70,15 @@
 		    		<label for="clienteDestino_input" class="col-sm-3 control-label">Destino:</label>
 		    		<label for="clienteDestino_input" class="col-sm-1 control-label">Código</label>
 		    		<div class="col-sm-1">
-		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" readonly value="@pedido.ciudadDestino.cod_ciudad">
+		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" disabled="true" value="@pedido.ciudadDestino.cod_ciudad">
 		    		</div>
 		    		<label for="clienteDestino_input" class="col-sm-1 control-label">Ciudad</label>
 		    		<div class="col-sm-2">
-		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" readonly value="@pedido.ciudadDestino.nombre">
+		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" disabled="true" value="@pedido.ciudadDestino.nombre">
 		    		</div>
 		    		<label for="clienteDestino_input" class="col-sm-1 control-label">País</label>	
 		    		<div class="col-sm-2">
-		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" readonly value="@pedido.ciudadDestino.pais">
+		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" disabled="true" value="@pedido.ciudadDestino.pais">
 		    		</div>
 		  		</div>		  				  	
 
@@ -86,26 +86,26 @@
 		    		<label for="ciudadDestino_input" class="col-sm-3 control-label">Remitente:</label>
 		    		<label for="ciudadDestino_input" class="col-sm-1 control-label">ID</label>
 		    		<div class="col-sm-1">
-		      			<input type="text" class="form-control" id="personas_id" name="personas_id" readonly value="@pedido.persona.id">
+		      			<input type="text" class="form-control" id="personas_id" name="personas_id" disabled="true" value="@pedido.persona.id">
 		    		</div>		    	
 		    		<label for="ciudadDestino_input" class="col-sm-1 control-label">DNI</label>	
 		    		<div class="col-sm-2">
-		      			<input type="text" class="form-control" id="personas_id" name="personas_id" readonly value="@pedido.persona.dni">
+		      			<input type="text" class="form-control" id="personas_id" name="personas_id" disabled="true" value="@pedido.persona.dni">
 		    		</div>
 		    		<label for="ciudadDestino_input" class="col-sm-1 control-label">Nombre</label>	
 		    		<div class="col-sm-2">
-		      			<input type="text" class="form-control" id="personas_id" name="personas_id" readonly value="@pedido.persona.nombre">
+		      			<input type="text" class="form-control" id="personas_id" name="personas_id" disabled="true" value="@pedido.persona.nombre">
 		    		</div>
 		  		</div>		  				  
 
 		  		<div class="form-group">
 		    		<label for="fecha_input" class="col-sm-4 control-label">Fecha de Registro:</label>
 		    		<div class="col-sm-4">
-		      			<input type="text" class="form-control" id="fecha" name="fecha" readonly value="@pedido.fecha_registro.format("dd/MM/YYYY")">
+		      			<input type="text" class="form-control" id="fecha" name="fecha" disabled="true" value="@pedido.fecha_registro.format("dd/MM/YYYY")">
 		    		</div>
 		    		<label for="fecha_input" class="col-sm-1 control-label">Hora</label>
 		    		<div class="col-sm-2">
-		      			<input type="text" class="form-control" id="fecha" name="fecha" readonly value="@pedido.fecha_registro.format("HH:mm")">
+		      			<input type="text" class="form-control" id="fecha" name="fecha" disabled="true" value="@pedido.fecha_registro.format("HH:mm")">
 		    		</div>
 		  		</div>
 			  	
@@ -116,7 +116,7 @@
 				<div class="btn-inline">
 					<div class="btn-group col-sm-5"></div>									
 					<div class="btn-group">						
-						<a href='@routes.PedidosC.index()' class="btn btn-info">Regresar</a>
+						<a href="#" onclick="history.go(-1)" class="btn btn-info">Cancelar</a>
 					</div>
 				</div>
 				</br>
@@ -128,14 +128,13 @@
 		</div>
         </div>		
     
-    <!-- JQuery -->
-    	<script src="js/jquery-1.11.3.min.js"></script>
-    	<!-- Bootstrap -->
-    	<script type="text/javascript" src="js/bootstrap.js"></script>
-    	<!-- BXSlider -->
-    	<script src="js/jquery.bxslider.min.js"></script>
-    	<!-- Mis Scripts -->
-    	<script src="js/MisScripts.js"></script>
+	<!-- JQuery -->
+	<script src='@routes.Assets.at("js/jquery-1.11.3.min.js")'></script>
+	<!-- Bootstrap -->
+	<script src='@routes.Assets.at("js/bootstrap.js")'></script>	
+	<!-- BXSlider -->
+	<script src='@routes.Assets.at("js/jquery.bxslider.min.js")'></script>
+    	<script src='@routes.Assets.at("js/MisScripts.js")'></script>
     
     
     </body>
