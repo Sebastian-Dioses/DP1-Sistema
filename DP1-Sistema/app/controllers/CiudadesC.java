@@ -12,7 +12,9 @@ import play.data.DynamicForm;
 import play.data.Form;
 import play.db.jpa.JPA;
 
+import play.mvc.Security;
 
+@Security.Authenticated(SecuredC.class)
 public class CiudadesC extends Controller {
     @play.db.jpa.Transactional(readOnly=true)        
 	public static Result index() {            
@@ -50,4 +52,9 @@ public class CiudadesC extends Controller {
 
     }
 	
+    @play.db.jpa.Transactional      
+    public static Result delete(String idCiudad) {            
+        Ciudades.delete(idCiudad);
+        return ok(views.html.ciudad.index.render(Ciudades.getAll()));
+    }
 }

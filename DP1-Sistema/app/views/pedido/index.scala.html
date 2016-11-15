@@ -55,13 +55,13 @@
 							<td>@pedido.ciudad_destino</td>							
 							<td>@pedido.personas_id</td>
 							<td>
-				              <a class="btn btn-info" href="#"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
+				              <a class="btn btn-info" href='@routes.PedidosC.detail(pedido.id)' title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
 				            </td>
 							<td>
 				              <a class="btn btn-info" href="#" title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
 				            </td>
 				            <td>
-				              <a class="btn btn-info"  title="Eliminar" data-href="#" data-toggle="modal" data-target="#modalEliminar"><i class="glyphicon glyphicon-remove"></i></a>    
+				              <a class="btn btn-info"  title="Eliminar" href='@routes.PedidosC.delete(pedido.id)' ><i class="glyphicon glyphicon-remove"></i></a>    
 				            </td>
 			            </tr>
 					}

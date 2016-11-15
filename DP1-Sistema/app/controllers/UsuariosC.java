@@ -14,7 +14,9 @@ import play.data.DynamicForm;
 import play.data.Form;
 import play.db.jpa.JPA;
 
+import play.mvc.Security;
 
+@Security.Authenticated(SecuredC.class)
 public class UsuariosC extends Controller {
     
     @play.db.jpa.Transactional   
@@ -42,7 +44,7 @@ public class UsuariosC extends Controller {
             per.save();                    
 
             Usuarios user = new Usuarios(cuenta, "1234", per.id); 
-                            
+            
             user.save();
 
             flash("success", "El pedido fue creado con éxito");
@@ -57,4 +59,9 @@ public class UsuariosC extends Controller {
 
     }
 	
+    @play.db.jpa.Transactional      
+    public static Result delete(Long idUsuario) {            
+        Usuarios.delete(idUsuario);
+        return ok(views.html.usuario.index.render(Usuarios.getAll()));
+    }
 }

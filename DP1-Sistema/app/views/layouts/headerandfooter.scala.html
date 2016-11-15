@@ -135,9 +135,9 @@
             <!--{!!Auth::user()->name!!}--> <span class="glyphicon glyphicon-user"><span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="{!!URL::to('/cuenta')!!}" title="Ir a cuenta" target="_self">Mi Cuenta</a></li>
-              <li><a href="{!!URL::to('/password/change')!!}" title="Cambiar contraseña" target="_self">Cambiar mi contraseña</a></li>
-              <li><a href="{!!URL::to('/logout')!!}" title="LOGOUT" target="_self">Logout</a></li>
+              <li><a href='@routes.SessionC.account()' title="Ir a cuenta" target="_self">Mi Cuenta</a></li>
+              <li><a href='@routes.SessionC.changePassword()' title="Cambiar contraseña" target="_self">Cambiar mi contraseña</a></li>
+              <li><a href='@routes.SessionC.logout()' title="LOGOUT" target="_self">Logout</a></li>
             </ul>
           </li>
         </ul>

@@ -5,9 +5,11 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.*;
 
-@play.db.jpa.Transactional(readOnly=true)
+import play.mvc.Security;
+
+@Security.Authenticated(SecuredC.class)
 public class Application extends Controller {
-    
+    @play.db.jpa.Transactional(readOnly=true)
     public static Result index() {            
         return ok(views.html.index.render(Ciudades.getAll()));
     }

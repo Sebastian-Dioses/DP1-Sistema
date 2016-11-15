@@ -25,8 +25,12 @@ public class Ciudades {
     public String abreviado;
     @NotNull
     public int capacidad_almacen;    
-
-
+    /*
+    @OneToMany(mappedBy="ciudadDestino")
+    public Pedidos pedido_in;
+    @OneToMany(mappedBy="ciudadOrigen")
+    public Pedidos pedido_out;
+    */
     private Ciudades(){
 
     }
@@ -45,8 +49,19 @@ public class Ciudades {
         return query.getResultList();                  
     }
 
+    public static Ciudades getById(String id){
+        Ciudades t = JPA.em().find(Ciudades.class, id);
+        
+        return t;
+    }
+
     public void save(){
         JPA.em().persist(this);
         JPA.em().flush();
+    }
+
+    public static void delete(String id){
+        Ciudades p = Ciudades.getById(id);
+        JPA.em().remove(p);
     }
 }

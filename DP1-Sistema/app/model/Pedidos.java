@@ -16,7 +16,7 @@ import java.util.List;
 public class Pedidos {
     @Id @GeneratedValue
     public Long id=null;
-    @NotNull
+    @NotNull    
     public String ciudad_origen;
     @NotNull
     public String ciudad_destino;
@@ -24,6 +24,18 @@ public class Pedidos {
     public Date fecha_registro;
     @NotNull
     public Long personas_id;
+
+    @ManyToOne
+    @JoinColumn(name="ciudad_origen", insertable = false, updatable = false)
+    public Ciudades ciudadOrigen;
+
+    @ManyToOne
+    @JoinColumn(name="ciudad_destino", insertable = false, updatable = false)
+    public Ciudades ciudadDestino;
+
+    @ManyToOne
+    @JoinColumn(name="personas_id", insertable = false, updatable = false)
+    public Personas persona;
 
     private Pedidos(){
 
@@ -33,7 +45,7 @@ public class Pedidos {
         this.ciudad_origen=ciudad_origen;
         this.ciudad_destino=ciudad_destino;
         this.personas_id=personas_id;        
-        this.fecha_registro=new Date();
+        this.fecha_registro=new Date();        
     }
     
         
@@ -43,9 +55,19 @@ public class Pedidos {
         return query.getResultList();                  
     }
 
+    public static Pedidos getById(Long id){
+        Pedidos t = JPA.em().find(Pedidos.class, id);
+        
+        return t;
+    }
+
     public void save(){
         JPA.em().persist(this);
         JPA.em().flush();
     }
 
+    public static void delete(Long id){
+        Pedidos p = Pedidos.getById(id);
+        JPA.em().remove(p);
+    }
 }

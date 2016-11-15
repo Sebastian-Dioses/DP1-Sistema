@@ -53,18 +53,21 @@ Seq[Any](format.raw/*1.17*/("""
         <div class="panel panel-default panel-login-box">
             <div class="panel-heading lead text-center" style="color: gray"><strong>S I M U &nbsp S O F T &nbsp - &nbsp L O G I N &nbsp; <p class="glyphicon glyphicon-user"></p></strong>
             </div>
+
+            <form class="m-t" role="form" id="login-form" method="POST" action=""""),_display_(/*26.82*/controllers/*26.93*/.routes.SessionC.authenticate()),format.raw/*26.124*/("""" novalidate>
+
             <div class="panel-body">                               
                 <div class="form-group">
                     <label class="control-label col-sm-2 col-sm-offset-2 lead"><strong>Usuario:</strong></label>
                     <div class="col-md-5">
-                        <input type="email" class="form-control" name="email" placeholder="Ingresa tu correo">
+                        <input type="email" class="form-control" name="username" id="username" placeholder="Ingresa tu correo">
                     </div>
                 </div>
                 <br/><br/><br/>
                 <div class="form-group">
                     <label class="control-label col-sm-2 col-sm-offset-2 lead"><strong>Contraseña:</strong></label>
                     <div class="col-md-5">
-                        <input type="password" class="form-control" name="password" placeholder="Ingrese su contraseña">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Ingrese su contraseña">
                     </div>
                 </div>
 
@@ -80,11 +83,11 @@ Seq[Any](format.raw/*1.17*/("""
 
                 <div class="form-group">
                     <div class="col-md-6 text-right">
-                        <a href='"""),_display_(/*52.35*/routes/*52.41*/.Application.index()),format.raw/*52.61*/("""' class="btn btn-primary" role="button">
-                            <i class="fa fa-btn fa-sign-in" ></i> Ingresar
-                        </a>
+                        <input class="btn btn-primary" type="submit" value="Ingresar">
                     </div>                        
                 </div>
+
+                </form>
                 
                 <div class="form-group">
                     <div class="col-sm-12  text-right">
@@ -98,16 +101,16 @@ Seq[Any](format.raw/*1.17*/("""
 	<!--Pie de págna-->
 		
 	<!-- JQuery -->
-		<script src='"""),_display_(/*70.17*/routes/*70.23*/.Assets.at("js/jquery-1.11.3.min.js")),format.raw/*70.60*/("""'></script>
+		<script src='"""),_display_(/*73.17*/routes/*73.23*/.Assets.at("js/jquery-1.11.3.min.js")),format.raw/*73.60*/("""'></script>
 		<!-- Bootstrap -->
-		<script src='"""),_display_(/*72.17*/routes/*72.23*/.Assets.at("js/bootstrap.js")),format.raw/*72.52*/("""'></script>	
+		<script src='"""),_display_(/*75.17*/routes/*75.23*/.Assets.at("js/bootstrap.js")),format.raw/*75.52*/("""'></script>	
 		<!-- BXSlider -->
-		<script src='"""),_display_(/*74.17*/routes/*74.23*/.Assets.at("js/jquery.bxslider.min.js")),format.raw/*74.62*/("""'></script>		
+		<script src='"""),_display_(/*77.17*/routes/*77.23*/.Assets.at("js/jquery.bxslider.min.js")),format.raw/*77.62*/("""'></script>		
 
 	</body>
 	</html>
 
-""")))}),format.raw/*79.2*/("""
+""")))}),format.raw/*82.2*/("""
 """))
       }
     }
@@ -128,11 +131,15 @@ Seq[Any](format.raw/*1.17*/("""
 object login extends login_Scope0.login
               /*
                   -- GENERATED --
+<<<<<<< HEAD
                   DATE: Sun Nov 13 19:04:09 COT 2016
+=======
+                  DATE: Mon Nov 14 18:04:33 COT 2016
+>>>>>>> marcelo
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/login.scala.html
-                  HASH: ac54b5c876575be51bbacff93cc16305b5c26e12
-                  MATRIX: 745->1|855->16|885->21|899->28|952->73|991->75|1029->87|1249->280|1264->286|1322->323|1385->359|1400->365|1453->397|1516->433|1531->439|1583->470|1646->506|1661->512|1716->546|1780->583|1795->589|1847->620|3671->2417|3686->2423|3727->2443|4441->3130|4456->3136|4514->3173|4592->3224|4607->3230|4657->3259|4735->3310|4750->3316|4810->3355|4880->3395
-                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|42->11|42->11|42->11|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|83->52|83->52|83->52|101->70|101->70|101->70|103->72|103->72|103->72|105->74|105->74|105->74|110->79
+                  HASH: 90b263f29636910749c7584a52da57953073ee41
+                  MATRIX: 745->1|855->16|885->21|899->28|952->73|991->75|1029->87|1249->280|1264->286|1322->323|1385->359|1400->365|1453->397|1516->433|1531->439|1583->470|1646->506|1661->512|1716->546|1780->583|1795->589|1847->620|2323->1069|2343->1080|2396->1111|4522->3210|4537->3216|4595->3253|4673->3304|4688->3310|4738->3339|4816->3390|4831->3396|4891->3435|4961->3475
+                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|42->11|42->11|42->11|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|57->26|57->26|57->26|104->73|104->73|104->73|106->75|106->75|106->75|108->77|108->77|108->77|113->82
                   -- GENERATED --
               */
           
