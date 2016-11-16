@@ -64,7 +64,6 @@
 						<th><div align=center>DESTINO</div></th>
 						<th><div align=center>HORA SALIDA</div></th>
 						<th><div align=center>HORA LLEGADA</div></th>
-						<th><div align=center>DETALLE</div></th>
 						<th><div align=center>EDITAR</div></th>
 						<th><div align=center>ELIMINAR</div></th>
 					</thead>
@@ -78,10 +77,7 @@
 							<td>@vuelo.hora_salida.format("HH:mm")</td>							
 							<td>@vuelo.hora_llegada.format("HH:mm")</td>
 							<td>
-				              <a class="btn btn-info" href="#"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
-				            </td>
-							<td>
-				              <a class="btn btn-info" href="#" title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
+				              <a class="btn btn-info" href='@routes.VuelosC.edit(vuelo.id)' title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
 				            </td>
 				            <td>
 				              <a class="btn btn-info"  title="Eliminar" href='@routes.VuelosC.delete(vuelo.id)' ><i class="glyphicon glyphicon-remove"></i></a>    
