@@ -55,7 +55,7 @@ Seq[Any](format.raw/*1.26*/("""
     		<br/><br/>
     		<div class="container">
     			<div class="col-sm-12 text-left lead">
-    					<strong>DETALLE DE PEDIDO</strong>
+    					<strong>REGISTRAR PEDIDO</strong>
     			</div>		
     		</div>
     		<div class="container">
@@ -77,7 +77,7 @@ Seq[Any](format.raw/*1.26*/("""
 				<div class="form-group">
 		    		<label for="clienteOrigen_input" class="col-sm-4 control-label">Código del pedido:</label>
 		    		<div class="col-sm-1">
-		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" readonly value=""""),_display_(/*49.109*/pedido/*49.115*/.id),format.raw/*49.118*/("""">
+		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" disabled="true" value=""""),_display_(/*49.116*/pedido/*49.122*/.id),format.raw/*49.125*/("""">
 		    		</div>		    	
 		  		</div>
 
@@ -85,15 +85,15 @@ Seq[Any](format.raw/*1.26*/("""
 		    		<label for="clienteOrigen_input" class="col-sm-3 control-label">Origen:</label>
 		    		<label for="clienteOrigen_input" class="col-sm-1 control-label">Código</label>
 		    		<div class="col-sm-1">
-		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" readonly value=""""),_display_(/*57.109*/pedido/*57.115*/.ciudadOrigen.cod_ciudad),format.raw/*57.139*/("""">
+		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" disabled="true" value=""""),_display_(/*57.116*/pedido/*57.122*/.ciudadOrigen.cod_ciudad),format.raw/*57.146*/("""">
 		    		</div>		    	
 		    		<label for="clienteOrigen_input" class="col-sm-1 control-label">Ciudad</label>
 		    		<div class="col-sm-2">
-		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" readonly value=""""),_display_(/*61.109*/pedido/*61.115*/.ciudadOrigen.nombre),format.raw/*61.135*/("""">
+		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" disabled="true" value=""""),_display_(/*61.116*/pedido/*61.122*/.ciudadOrigen.nombre),format.raw/*61.142*/("""">
 		    		</div>
 		    		<label for="clienteOrigen_input" class="col-sm-1 control-label">País</label>	
 		    		<div class="col-sm-2">
-		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" readonly value=""""),_display_(/*65.109*/pedido/*65.115*/.ciudadOrigen.pais),format.raw/*65.133*/("""">
+		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" disabled="true" value=""""),_display_(/*65.116*/pedido/*65.122*/.ciudadOrigen.pais),format.raw/*65.140*/("""">
 		    		</div>
 		  		</div>
 		  				  		
@@ -101,15 +101,15 @@ Seq[Any](format.raw/*1.26*/("""
 		    		<label for="clienteDestino_input" class="col-sm-3 control-label">Destino:</label>
 		    		<label for="clienteDestino_input" class="col-sm-1 control-label">Código</label>
 		    		<div class="col-sm-1">
-		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" readonly value=""""),_display_(/*73.111*/pedido/*73.117*/.ciudadDestino.cod_ciudad),format.raw/*73.142*/("""">
+		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" disabled="true" value=""""),_display_(/*73.118*/pedido/*73.124*/.ciudadDestino.cod_ciudad),format.raw/*73.149*/("""">
 		    		</div>
 		    		<label for="clienteDestino_input" class="col-sm-1 control-label">Ciudad</label>
 		    		<div class="col-sm-2">
-		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" readonly value=""""),_display_(/*77.111*/pedido/*77.117*/.ciudadDestino.nombre),format.raw/*77.138*/("""">
+		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" disabled="true" value=""""),_display_(/*77.118*/pedido/*77.124*/.ciudadDestino.nombre),format.raw/*77.145*/("""">
 		    		</div>
 		    		<label for="clienteDestino_input" class="col-sm-1 control-label">País</label>	
 		    		<div class="col-sm-2">
-		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" readonly value=""""),_display_(/*81.111*/pedido/*81.117*/.ciudadDestino.pais),format.raw/*81.136*/("""">
+		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" disabled="true" value=""""),_display_(/*81.118*/pedido/*81.124*/.ciudadDestino.pais),format.raw/*81.143*/("""">
 		    		</div>
 		  		</div>		  				  	
 
@@ -117,26 +117,26 @@ Seq[Any](format.raw/*1.26*/("""
 		    		<label for="ciudadDestino_input" class="col-sm-3 control-label">Remitente:</label>
 		    		<label for="ciudadDestino_input" class="col-sm-1 control-label">ID</label>
 		    		<div class="col-sm-1">
-		      			<input type="text" class="form-control" id="personas_id" name="personas_id" readonly value=""""),_display_(/*89.105*/pedido/*89.111*/.persona.id),format.raw/*89.122*/("""">
+		      			<input type="text" class="form-control" id="personas_id" name="personas_id" disabled="true" value=""""),_display_(/*89.112*/pedido/*89.118*/.persona.id),format.raw/*89.129*/("""">
 		    		</div>		    	
 		    		<label for="ciudadDestino_input" class="col-sm-1 control-label">DNI</label>	
 		    		<div class="col-sm-2">
-		      			<input type="text" class="form-control" id="personas_id" name="personas_id" readonly value=""""),_display_(/*93.105*/pedido/*93.111*/.persona.dni),format.raw/*93.123*/("""">
+		      			<input type="text" class="form-control" id="personas_id" name="personas_id" disabled="true" value=""""),_display_(/*93.112*/pedido/*93.118*/.persona.dni),format.raw/*93.130*/("""">
 		    		</div>
 		    		<label for="ciudadDestino_input" class="col-sm-1 control-label">Nombre</label>	
 		    		<div class="col-sm-2">
-		      			<input type="text" class="form-control" id="personas_id" name="personas_id" readonly value=""""),_display_(/*97.105*/pedido/*97.111*/.persona.nombre),format.raw/*97.126*/("""">
+		      			<input type="text" class="form-control" id="personas_id" name="personas_id" disabled="true" value=""""),_display_(/*97.112*/pedido/*97.118*/.persona.nombre),format.raw/*97.133*/("""">
 		    		</div>
 		  		</div>		  				  
 
 		  		<div class="form-group">
 		    		<label for="fecha_input" class="col-sm-4 control-label">Fecha de Registro:</label>
 		    		<div class="col-sm-4">
-		      			<input type="text" class="form-control" id="fecha" name="fecha" readonly value=""""),_display_(/*104.93*/pedido/*104.99*/.fecha_registro.format("dd/MM/YYYY")),format.raw/*104.135*/("""">
+		      			<input type="text" class="form-control" id="fecha" name="fecha" disabled="true" value=""""),_display_(/*104.100*/pedido/*104.106*/.fecha_registro.format("dd/MM/YYYY")),format.raw/*104.142*/("""">
 		    		</div>
 		    		<label for="fecha_input" class="col-sm-1 control-label">Hora</label>
 		    		<div class="col-sm-2">
-		      			<input type="text" class="form-control" id="fecha" name="fecha" readonly value=""""),_display_(/*108.93*/pedido/*108.99*/.fecha_registro.format("HH:mm")),format.raw/*108.130*/("""">
+		      			<input type="text" class="form-control" id="fecha" name="fecha" disabled="true" value=""""),_display_(/*108.100*/pedido/*108.106*/.fecha_registro.format("HH:mm")),format.raw/*108.137*/("""">
 		    		</div>
 		  		</div>
 			  	
@@ -147,7 +147,7 @@ Seq[Any](format.raw/*1.26*/("""
 				<div class="btn-inline">
 					<div class="btn-group col-sm-5"></div>									
 					<div class="btn-group">						
-						<a href='"""),_display_(/*119.17*/routes/*119.23*/.PedidosC.index()),format.raw/*119.40*/("""' class="btn btn-info">Regresar</a>
+						<a href="#" onclick="history.go(-1)" class="btn btn-info">Cancelar</a>
 					</div>
 				</div>
 				</br>
@@ -191,11 +191,19 @@ Seq[Any](format.raw/*1.26*/("""
 object detail extends detail_Scope0.detail
               /*
                   -- GENERATED --
+<<<<<<< HEAD
                   DATE: Tue Nov 15 18:09:16 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/pedido/detail.scala.html
                   HASH: 9f49f813d85a03716904793e548c41fb7ca4945f
                   MATRIX: 762->1|881->25|911->30|925->37|953->57|992->59|1030->71|1279->293|1294->299|1352->336|1415->372|1430->378|1483->410|1546->446|1561->452|1613->483|1676->519|1691->525|1746->559|2276->1061|2305->1062|2334->1063|2363->1064|2404->1077|2433->1078|2462->1079|2984->1573|3000->1579|3025->1582|3443->1972|3459->1978|3505->2002|3788->2257|3804->2263|3846->2283|4121->2530|4137->2536|4177->2554|4607->2956|4623->2962|4670->2987|4949->3238|4965->3244|5008->3265|5286->3515|5302->3521|5343->3540|5762->3931|5778->3937|5811->3948|6088->4197|6104->4203|6138->4215|6411->4460|6427->4466|6464->4481|6786->4775|6802->4781|6861->4817|7111->5039|7127->5045|7181->5076|7448->5315|7464->5321|7503->5338|7708->5515|7724->5521|7783->5558|7860->5607|7876->5613|7927->5642|8004->5691|8020->5697|8081->5736|8141->5768|8157->5774|8209->5804
                   LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33|80->49|80->49|80->49|88->57|88->57|88->57|92->61|92->61|92->61|96->65|96->65|96->65|104->73|104->73|104->73|108->77|108->77|108->77|112->81|112->81|112->81|120->89|120->89|120->89|124->93|124->93|124->93|128->97|128->97|128->97|135->104|135->104|135->104|139->108|139->108|139->108|150->119|150->119|150->119|163->132|163->132|163->132|165->134|165->134|165->134|167->136|167->136|167->136|168->137|168->137|168->137
+=======
+                  DATE: Tue Nov 15 20:03:14 COT 2016
+                  SOURCE: C:/Users/JoseLuis/Documents/DP1/DP1-Sistema/DP1-Sistema/app/views/pedido/detail.scala.html
+                  HASH: 1873e57525e52d69a4e82961a2dd72856afed81c
+                  MATRIX: 762->1|881->25|911->30|925->37|953->57|992->59|1030->71|1279->293|1294->299|1352->336|1415->372|1430->378|1483->410|1546->446|1561->452|1613->483|1676->519|1691->525|1746->559|2275->1060|2304->1061|2333->1062|2362->1063|2403->1076|2432->1077|2461->1078|2990->1579|3006->1585|3031->1588|3456->1985|3472->1991|3518->2015|3808->2277|3824->2283|3866->2303|4148->2557|4164->2563|4204->2581|4641->2990|4657->2996|4704->3021|4990->3279|5006->3285|5049->3306|5334->3563|5350->3569|5391->3588|5817->3986|5833->3992|5866->4003|6150->4259|6166->4265|6200->4277|6480->4529|6496->4535|6533->4550|6863->4851|6880->4857|6939->4893|7197->5122|7214->5128|7268->5159|7737->5600|7753->5606|7812->5643|7889->5692|7905->5698|7956->5727|8033->5776|8049->5782|8110->5821|8170->5853|8186->5859|8238->5889
+                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33|80->49|80->49|80->49|88->57|88->57|88->57|92->61|92->61|92->61|96->65|96->65|96->65|104->73|104->73|104->73|108->77|108->77|108->77|112->81|112->81|112->81|120->89|120->89|120->89|124->93|124->93|124->93|128->97|128->97|128->97|135->104|135->104|135->104|139->108|139->108|139->108|163->132|163->132|163->132|165->134|165->134|165->134|167->136|167->136|167->136|168->137|168->137|168->137
+>>>>>>> 24dff40eaed1b655d957aba2eef3eba483c90e50
                   -- GENERATED --
               */
           

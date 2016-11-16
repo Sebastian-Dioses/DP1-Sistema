@@ -95,7 +95,6 @@ AmCharts.ready(function() {
   map = new AmCharts.AmMap();
     map.path = "http://www.amcharts.com/lib/3/";
 
-  map.addTitle("Pedidos en vuelo", 14);
   map.areasSettings = {
     unlistedAreasColor: "#000000",
     unlistedAreasAlpha: 0.1
@@ -143,10 +142,16 @@ var targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z 
 // initilize variables
 var currentFrame = 0;
 var interval;
-var speed = 1000; // time between frames in milliseconds
+
 var contador=0;
 // function to start stop
 function togglePlay() {
+
+var divisor=1;
+var opcion=document.getElementById('selVel').selectedIndex;
+if(opcion==1) divisor=5;
+else if(opcion==2) divisor=10;
+var speed = 1000/divisor; // time between frames in milliseconds
 
 var planeSVG = "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -80,134h-35l43,-133h-71l-24,30h-28l15,-47";
   
@@ -159,9 +164,18 @@ var planeSVG = "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -
   }
   else {
     // start playing
+
+    var log = document.getElementById('maplog');
+
+
     interval = setInterval( function () {
       // var numLineas=map.dataProvider.lines.length;
       // for(var i=0;i<)
+    var hora=currentFrame;
+    if(currentFrame<10) hora="0"+hora;
+    map.titles.pop();   
+    map.addTitle("Hora actual: "+ hora+":00", 14);
+    //map.validateNow();      
       while (map.dataProvider.lines.length > 0) {
           map.dataProvider.lines.pop();
       } 
@@ -197,9 +211,17 @@ var planeSVG = "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -
               //   loop: false,
               //   scale: 0.03,
               //   positionScale: 1.8,
-              //   animationDuration: 12,
+              //   animationDuration: 1,
               //   lineId: i
               // });
+
+                log.innerHTML = JSON.stringify({
+                "vuelo id: ":vuelos[i][0],
+                "origen: ": vuelos[i][1],
+                "destino: ": vuelos[i][2],
+                "hora Salida ": vuelos[i][3],
+                "hora Llegada ": vuelos[i][4],
+              }) + "<br />" + log.innerHTML;
 
 
       }
@@ -221,8 +243,6 @@ var planeSVG = "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -
       // }
       map.validateData();
       
-      // set frame indicator
-      document.getElementById( 'frame' ).innerHTML = currentFrame;
       
     }, speed );
     

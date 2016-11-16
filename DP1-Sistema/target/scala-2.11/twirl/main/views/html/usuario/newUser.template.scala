@@ -172,8 +172,13 @@ Seq[Any](format.raw/*1.19*/("""
 object newUser extends newUser_Scope0.newUser
               /*
                   -- GENERATED --
+<<<<<<< HEAD
                   DATE: Tue Nov 15 17:19:09 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/usuario/newUser.scala.html
+=======
+                  DATE: Tue Nov 15 20:03:14 COT 2016
+                  SOURCE: C:/Users/JoseLuis/Documents/DP1/DP1-Sistema/DP1-Sistema/app/views/usuario/newUser.scala.html
+>>>>>>> 24dff40eaed1b655d957aba2eef3eba483c90e50
                   HASH: 3202b8f22c8bcef63536852fa642467189d5fbd5
                   MATRIX: 757->1|869->18|899->23|913->30|941->50|980->52|1018->64|1267->286|1282->292|1340->329|1403->365|1418->371|1471->403|1534->439|1549->445|1601->476|1664->512|1679->518|1734->552|2264->1054|2293->1055|2322->1056|2351->1057|2392->1070|2421->1071|2450->1072|5015->3610|5030->3616|5069->3634
                   LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33|130->99|130->99|130->99
