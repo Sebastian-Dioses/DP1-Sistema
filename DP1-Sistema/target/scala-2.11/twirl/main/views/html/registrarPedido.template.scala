@@ -177,8 +177,8 @@ Seq[Any](format.raw/*1.19*/("""
 object registrarPedido extends registrarPedido_Scope0.registrarPedido
               /*
                   -- GENERATED --
-                  DATE: Mon Nov 14 22:48:03 COT 2016
-                  SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/registrarPedido.scala.html
+                  DATE: Tue Nov 15 20:03:13 COT 2016
+                  SOURCE: C:/Users/JoseLuis/Documents/DP1/DP1-Sistema/DP1-Sistema/app/views/registrarPedido.scala.html
                   HASH: 276c6f5cd87696f418d044bb9610a883ce17c8b6
                   MATRIX: 765->1|877->18|907->23|921->30|949->50|988->52|1026->64|1274->285|1289->291|1347->328|1410->364|1425->370|1478->402|1541->438|1556->444|1608->475|1671->511|1686->517|1741->551|2270->1052|2299->1053|2328->1054|2357->1055|2398->1068|2427->1069|2456->1070|6317->4900
                   LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33|159->128
