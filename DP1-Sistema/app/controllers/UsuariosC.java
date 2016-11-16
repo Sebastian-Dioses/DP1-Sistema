@@ -40,7 +40,7 @@ public class UsuariosC extends Controller {
             String dni = requestData.get("dni");
             String correo = requestData.get("correo");
             
-            Personas per = new Personas(nombre, dni, correo, 1);
+            Personas per = new Personas(nombre + " " + apellido, dni, correo, 1);
             
             per.save();                    
 
@@ -48,7 +48,7 @@ public class UsuariosC extends Controller {
             
             user.save();
 
-            flash("success", "El pedido fue creado con éxito");
+            flash("success", "El usuario fue creado con éxito");
             return redirect(controllers.routes.UsuariosC.index());
 
         }catch (Exception e){
@@ -62,8 +62,15 @@ public class UsuariosC extends Controller {
 	
     @play.db.jpa.Transactional      
     public static Result delete(Long idUsuario) {            
-        Usuarios.delete(idUsuario);
-        return ok(views.html.usuario.index.render(Usuarios.getAll()));
+        try{
+            Usuarios.delete(idUsuario);
+            flash("success", "Usuario eliminado con éxito");
+            return redirect(controllers.routes.UsuariosC.index());
+        }catch (Exception e){            
+            flash("error", "Ocurrió un error");
+            return redirect(controllers.routes.UsuariosC.index());
+        }
+        
     }    
 
     @play.db.jpa.Transactional  

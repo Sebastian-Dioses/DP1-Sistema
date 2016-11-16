@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/conf/routes
-// @DATE:Tue Nov 15 15:55:13 COT 2016
+// @DATE:Tue Nov 15 19:00:06 COT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:43
+  // @LINE:49
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:43
+    // @LINE:49
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -173,12 +173,52 @@ package controllers.javascript {
     }
 
   
-    // @LINE:35
+    // @LINE:39
     def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PersonasC.delete",
       """
         function(id0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "persona/delete" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id0)])})
+        }
+      """
+    )
+  
+    // @LINE:36
+    def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PersonasC.create",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "persona/add"})
+        }
+      """
+    )
+  
+    // @LINE:37
+    def edit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PersonasC.edit",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "persona/edit" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id0)])})
+        }
+      """
+    )
+  
+    // @LINE:35
+    def newO: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PersonasC.newO",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "persona/new"})
+        }
+      """
+    )
+  
+    // @LINE:38
+    def update: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PersonasC.update",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "persona/update"})
         }
       """
     )
@@ -195,7 +235,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:37
+  // @LINE:41
   class ReverseVuelosC(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -203,17 +243,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:39
-    def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.VuelosC.create",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "vuelo/add"})
-        }
-      """
-    )
-  
-    // @LINE:40
+    // @LINE:46
     def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VuelosC.delete",
       """
@@ -223,7 +253,27 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:38
+    // @LINE:43
+    def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.VuelosC.create",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "vuelo/add"})
+        }
+      """
+    )
+  
+    // @LINE:44
+    def edit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.VuelosC.edit",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "vuelo/edit" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id0)])})
+        }
+      """
+    )
+  
+    // @LINE:42
     def newO: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VuelosC.newO",
       """
@@ -233,7 +283,17 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:37
+    // @LINE:45
+    def update: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.VuelosC.update",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "vuelo/update"})
+        }
+      """
+    )
+  
+    // @LINE:41
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VuelosC.index",
       """

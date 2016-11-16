@@ -5,7 +5,7 @@ import play.twirl.api._
 import play.twirl.api.TemplateMagic._
 
 
-     object newUser_Scope0 {
+     object edit_Scope0 {
 import models._
 import controllers._
 import play.api.i18n._
@@ -21,22 +21,22 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class newUser extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[String,play.twirl.api.HtmlFormat.Appendable] {
+class edit extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[models.Personas,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(message: String):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(persona: models.Personas):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.19*/("""
+Seq[Any](format.raw/*1.28*/("""
 
 """),_display_(/*3.2*/layouts/*3.9*/.headerandfooter("")/*3.29*/ {_display_(Seq[Any](format.raw/*3.31*/("""
     
     """),format.raw/*5.5*/("""<!DOCTYPE html>
     <html>
     <head>
-    	<title>REGISTRAR USUARIO</title>
+    	<title>REGISTRAR PERSONA</title>
     	<meta charset="UTF-8">
     
     	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,12 +55,12 @@ Seq[Any](format.raw/*1.19*/("""
     		<br/><br/>
     		<div class="container">
     			<div class="col-sm-12 text-left lead">
-    					<strong>REGISTRAR USUARIO</strong>
+    					<strong>REGISTRAR PERSONA</strong>
     			</div>		
     		</div>
     		<div class="container">
 			
-			<form method="POST" action="add" class="form-horizontal form-border">
+			<form method="POST" action="update" class="form-horizontal form-border">
 				<input type="hidden" name="_token" value=""""),format.raw/*33.47*/("""{"""),format.raw/*33.48*/("""{"""),format.raw/*33.49*/(""" """),format.raw/*33.50*/("""csrf_token() """),format.raw/*33.63*/("""}"""),format.raw/*33.64*/("""}"""),format.raw/*33.65*/("""">
 				
 				<!-- Mensajes de error de validación del Request -->
@@ -80,39 +80,32 @@ Seq[Any](format.raw/*1.19*/("""
 			  	</br>
 			  	</br>	
 
-				<!-- INICIO INCIIO -->				                       				
-				<div class="form-group required">
-		    		<label for="cuenta" class="col-sm-4 control-label">Cuenta</label>
+				<!-- INICIO INCIIO -->				                       							
+		  		<div class="form-group required">
+		    		<label for="id" class="col-sm-4 control-label">ID Persona</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="cuenta" name="cuenta" placeholder="Nombre de Cuenta" required="required">
+		      			<input type="text" class="form-control" id="id" name="id" readonly value=""""),_display_(/*56.87*/persona/*56.94*/.id),format.raw/*56.97*/("""">
 		    		</div>
 		  		</div>
-		  		
+
 		  		<div class="form-group required">
 		    		<label for="nombre" class="col-sm-4 control-label">Nombre</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de Usuario" required>
+		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de Persona" readonly value=""""),_display_(/*63.127*/persona/*63.134*/.nombre),format.raw/*63.141*/("""">
 		    		</div>
-		  		</div>
-		  		
-		  		<div class="form-group required">
-		    		<label for="apellido" class="col-sm-4 control-label">Apellido</label>
-		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido de Usuario" required>
-		    		</div>
-		  		</div>
+		  		</div>		  
 		  		
 		  		<div class="form-group required">
 			    	<label for="dni" class="col-sm-4 control-label">DNI</label>
 			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="dni" name="dni" placeholder="DNI de Usuario" required>
+			      		<input type="text" class="form-control" id="dni" name="dni" placeholder="DNI de Persona" readonly value=""""),_display_(/*70.118*/persona/*70.125*/.dni),format.raw/*70.129*/("""">
 			    	</div>			      					      		
 			  	</div>	
 			  
 		  		<div class="form-group required">
 			    	<label for="correo" class="col-sm-4 control-label">Correo</label>
 			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="correo" name="correo" placeholder="Correo de Usuario" required>
+			      		<input type="text" class="form-control" id="correo" name="correo" placeholder="Correo de Persona" required onkeypress="return inputLimiter(event,'NameCharactersAndNumbers')" value=""""),_display_(/*77.194*/persona/*77.201*/.correo),format.raw/*77.208*/("""">
 			    	</div>
 			  	</div>
 			  	
@@ -127,7 +120,7 @@ Seq[Any](format.raw/*1.19*/("""
 						<input class="btn btn-primary" type="submit" value="Confirmar">
 					</div>
 					<div class="btn-group">						
-						<a href="#" onclick="history.go(-1)" class="btn btn-info">Cancelar</a>
+						<a href='"""),_display_(/*92.17*/routes/*92.23*/.PersonasC.index()),format.raw/*92.41*/("""' class="btn btn-info">Cancelar</a>
 					</div>
 				</div>
 				</br>
@@ -157,9 +150,9 @@ Seq[Any](format.raw/*1.19*/("""
     }
   }
 
-  def render(message:String): play.twirl.api.HtmlFormat.Appendable = apply(message)
+  def render(persona:models.Personas): play.twirl.api.HtmlFormat.Appendable = apply(persona)
 
-  def f:((String) => play.twirl.api.HtmlFormat.Appendable) = (message) => apply(message)
+  def f:((models.Personas) => play.twirl.api.HtmlFormat.Appendable) = (persona) => apply(persona)
 
   def ref: this.type = this
 
@@ -169,14 +162,14 @@ Seq[Any](format.raw/*1.19*/("""
 }
 
 /**/
-object newUser extends newUser_Scope0.newUser
+object edit extends edit_Scope0.edit
               /*
                   -- GENERATED --
-                  DATE: Mon Nov 14 22:48:04 COT 2016
-                  SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/persona/newUser.scala.html
-                  HASH: 95a03acc843655079b6a22b61eab7fd36fac17b5
-                  MATRIX: 757->1|869->18|899->23|913->30|941->50|980->52|1018->64|1267->286|1282->292|1340->329|1403->365|1418->371|1471->403|1534->439|1549->445|1601->476|1664->512|1679->518|1734->552|2264->1054|2293->1055|2322->1056|2351->1057|2392->1070|2421->1071|2450->1072
-                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33
+                  DATE: Tue Nov 15 18:47:24 COT 2016
+                  SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/persona/edit.scala.html
+                  HASH: 5de630c955c256ff1616774ac7cf52050f8eed41
+                  MATRIX: 760->1|881->27|911->32|925->39|953->59|992->61|1030->73|1279->295|1294->301|1352->338|1415->374|1430->380|1483->412|1546->448|1561->454|1613->485|1676->521|1691->527|1746->561|2279->1066|2308->1067|2337->1068|2366->1069|2407->1082|2436->1083|2465->1084|3129->1721|3145->1728|3169->1731|3507->2041|3524->2048|3553->2055|3886->2360|3903->2367|3929->2371|4362->2776|4379->2783|4408->2790|4787->3142|4802->3148|4841->3166
+                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33|87->56|87->56|87->56|94->63|94->63|94->63|101->70|101->70|101->70|108->77|108->77|108->77|123->92|123->92|123->92
                   -- GENERATED --
               */
           

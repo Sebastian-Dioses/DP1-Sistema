@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/conf/routes
-// @DATE:Tue Nov 15 15:55:13 COT 2016
+// @DATE:Tue Nov 15 19:00:06 COT 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -13,14 +13,14 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:43
+  // @LINE:49
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:43
+    // @LINE:49
     def at(file:String): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
@@ -119,10 +119,34 @@ package controllers {
     }
 
   
-    // @LINE:35
+    // @LINE:39
     def delete(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "persona/delete" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
+    }
+  
+    // @LINE:36
+    def create(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "persona/add")
+    }
+  
+    // @LINE:37
+    def edit(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "persona/edit" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
+    }
+  
+    // @LINE:35
+    def newO(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "persona/new")
+    }
+  
+    // @LINE:38
+    def update(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "persona/update")
     }
   
     // @LINE:34
@@ -133,32 +157,44 @@ package controllers {
   
   }
 
-  // @LINE:37
+  // @LINE:41
   class ReverseVuelosC(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:39
-    def create(): Call = {
-      import ReverseRouteContext.empty
-      Call("POST", _prefix + { _defaultPrefix } + "vuelo/add")
-    }
-  
-    // @LINE:40
+    // @LINE:46
     def delete(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "vuelo/delete" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
     }
   
-    // @LINE:38
+    // @LINE:43
+    def create(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "vuelo/add")
+    }
+  
+    // @LINE:44
+    def edit(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "vuelo/edit" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
+    }
+  
+    // @LINE:42
     def newO(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "vuelo/new")
     }
   
-    // @LINE:37
+    // @LINE:45
+    def update(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "vuelo/update")
+    }
+  
+    // @LINE:41
     def index(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "vuelo")

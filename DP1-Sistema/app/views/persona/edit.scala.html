@@ -1,11 +1,11 @@
-@(message: String)
+@(persona: models.Personas)
 
 @layouts.headerandfooter("") {
     
     <!DOCTYPE html>
     <html>
     <head>
-    	<title>REGISTRAR USUARIO</title>
+    	<title>REGISTRAR PERSONA</title>
     	<meta charset="UTF-8">
     
     	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,12 +24,12 @@
     		<br/><br/>
     		<div class="container">
     			<div class="col-sm-12 text-left lead">
-    					<strong>REGISTRAR USUARIO</strong>
+    					<strong>REGISTRAR PERSONA</strong>
     			</div>		
     		</div>
     		<div class="container">
 			
-			<form method="POST" action="add" class="form-horizontal form-border">
+			<form method="POST" action="update" class="form-horizontal form-border">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				
 				<!-- Mensajes de error de validación del Request -->
@@ -49,39 +49,32 @@
 			  	</br>
 			  	</br>	
 
-				<!-- INICIO INCIIO -->				                       				
-				<div class="form-group required">
-		    		<label for="cuenta" class="col-sm-4 control-label">Cuenta</label>
+				<!-- INICIO INCIIO -->				                       							
+		  		<div class="form-group required">
+		    		<label for="id" class="col-sm-4 control-label">ID Persona</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="cuenta" name="cuenta" placeholder="Nombre de Cuenta" required="required">
+		      			<input type="text" class="form-control" id="id" name="id" readonly value="@persona.id">
 		    		</div>
 		  		</div>
-		  		
+
 		  		<div class="form-group required">
 		    		<label for="nombre" class="col-sm-4 control-label">Nombre</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de Usuario" required>
+		      			<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de Persona" readonly value="@persona.nombre">
 		    		</div>
-		  		</div>
-		  		
-		  		<div class="form-group required">
-		    		<label for="apellido" class="col-sm-4 control-label">Apellido</label>
-		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido de Usuario" required>
-		    		</div>
-		  		</div>
+		  		</div>		  
 		  		
 		  		<div class="form-group required">
 			    	<label for="dni" class="col-sm-4 control-label">DNI</label>
 			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="dni" name="dni" placeholder="DNI de Usuario" required>
+			      		<input type="text" class="form-control" id="dni" name="dni" placeholder="DNI de Persona" readonly value="@persona.dni">
 			    	</div>			      					      		
 			  	</div>	
 			  
 		  		<div class="form-group required">
 			    	<label for="correo" class="col-sm-4 control-label">Correo</label>
 			    	<div class="col-sm-5">
-			      		<input type="text" class="form-control" id="correo" name="correo" placeholder="Correo de Usuario" required>
+			      		<input type="text" class="form-control" id="correo" name="correo" placeholder="Correo de Persona" required onkeypress="return inputLimiter(event,'NameCharactersAndNumbers')" value="@persona.correo">
 			    	</div>
 			  	</div>
 			  	
@@ -96,7 +89,7 @@
 						<input class="btn btn-primary" type="submit" value="Confirmar">
 					</div>
 					<div class="btn-group">						
-						<a href="#" onclick="history.go(-1)" class="btn btn-info">Cancelar</a>
+						<a href='@routes.PersonasC.index()' class="btn btn-info">Cancelar</a>
 					</div>
 				</div>
 				</br>

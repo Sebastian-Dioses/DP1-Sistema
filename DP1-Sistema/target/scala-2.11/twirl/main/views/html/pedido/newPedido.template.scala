@@ -82,23 +82,23 @@ Seq[Any](format.raw/*1.19*/("""
 
 				<!-- INICIO INCIO-->				                       				
 				<div class="form-group required">
-		    		<label for="ciudad_origen" class="col-sm-4 control-label">Ciudad de Origen</label>
+		    		<label for="clienteOrigen_input" class="col-sm-4 control-label">Ciudad de Origen</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" placeholder="Ciudad de Origen" required onkeypress="return inputLimiter(event,'Letters')">
+		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" placeholder="Ciudad de Origen" >
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudad_destino" class="col-sm-4 control-label">Ciudad de Destino</label>
+		    		<label for="ciudadOrigen_input" class="col-sm-4 control-label">Ciudad de Destino</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" placeholder="Ciudad de Destino" required onkeypress="return inputLimiter(event,'Letters')">
+		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" placeholder="Ciudad de Destino" >
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="personas_id" class="col-sm-4 control-label">ID Persona</label>
+		    		<label for="ciudadDestino_input" class="col-sm-4 control-label">ID Persona</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="personas_id" name="personas_id" placeholder="ID de Persona" required onkeypress="return inputLimiter(event,'Numbers')">
+		      			<input type="text" class="form-control" id="personas_id" name="personas_id" placeholder="ID de Persona" >
 		    		</div>
 		  		</div>
 		  		
@@ -126,14 +126,14 @@ Seq[Any](format.raw/*1.19*/("""
 		</div>
         </div>		
     
-    <!-- JQuery -->
-    	<script src="js/jquery-1.11.3.min.js"></script>
-    	<!-- Bootstrap -->
-    	<script type="text/javascript" src="js/bootstrap.js"></script>
-    	<!-- BXSlider -->
-    	<script src="js/jquery.bxslider.min.js"></script>
+	<!-- JQuery -->
+	<script src='"""),_display_(/*99.16*/routes/*99.22*/.Assets.at("js/jquery-1.11.3.min.js")),format.raw/*99.59*/("""'></script>
+	<!-- Bootstrap -->
+	<script src='"""),_display_(/*101.16*/routes/*101.22*/.Assets.at("js/bootstrap.js")),format.raw/*101.51*/("""'></script>	
+	<!-- BXSlider -->
+	<script src='"""),_display_(/*103.16*/routes/*103.22*/.Assets.at("js/jquery.bxslider.min.js")),format.raw/*103.61*/("""'></script>
     	<!-- Mis Scripts -->
-    	<script src="js/MisScripts.js"></script>
+    	<script src='"""),_display_(/*105.20*/routes/*105.26*/.Assets.at("js/MisScripts.js")),format.raw/*105.56*/("""'></script>
     
     
     </body>
@@ -159,11 +159,11 @@ Seq[Any](format.raw/*1.19*/("""
 object newPedido extends newPedido_Scope0.newPedido
               /*
                   -- GENERATED --
-                  DATE: Tue Nov 15 11:27:50 COT 2016
+                  DATE: Tue Nov 15 17:38:34 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/pedido/newPedido.scala.html
-                  HASH: 37d13e12ffa5afc35dffaf56cbf0ae3f7431d755
-                  MATRIX: 760->1|872->18|902->23|916->30|944->50|983->52|1021->64|1269->285|1284->291|1342->328|1405->364|1420->370|1473->402|1536->438|1551->444|1603->475|1666->511|1681->517|1736->551|2265->1052|2294->1053|2323->1054|2352->1055|2393->1068|2422->1069|2451->1070|4340->2932|4355->2938|4393->2955
-                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33|117->86|117->86|117->86
+                  HASH: beba8d32bca5a0fe3739033de37de6ec50146f6b
+                  MATRIX: 760->1|872->18|902->23|916->30|944->50|983->52|1021->64|1269->285|1284->291|1342->328|1405->364|1420->370|1473->402|1536->438|1551->444|1603->475|1666->511|1681->517|1736->551|2265->1052|2294->1053|2323->1054|2352->1055|2393->1068|2422->1069|2451->1070|4184->2776|4199->2782|4237->2799|4441->2976|4456->2982|4514->3019|4591->3068|4607->3074|4658->3103|4735->3152|4751->3158|4812->3197|4899->3256|4915->3262|4967->3292
+                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33|117->86|117->86|117->86|130->99|130->99|130->99|132->101|132->101|132->101|134->103|134->103|134->103|136->105|136->105|136->105
                   -- GENERATED --
               */
           
