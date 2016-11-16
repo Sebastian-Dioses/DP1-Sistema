@@ -1,30 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package models;
+package model;
 
+/**
+ * Created by GUERRA on 31/10/2016.
+ */
 import java.util.ArrayList;
 
 /**
- *
- * @author alulab14
+
  */
 public class RutaEscogida {
-    private ArrayList<Ruta> listaRutaEscogida ;        
+    private ArrayList<Ruta> listaRutaEscogida ;
     private int tiempoRuta;
     public int capacidades=0;
     private ArrayList<Integer> tiemposEspera;
     private ArrayList<Integer> tiemposTraslado;
-    private int estadoRuta;//0: Factible 1:No Factible Por Tiempo 2: No Factible Por Capacidad Almacen 3: No Factible Por Capacidad Vuelo
 
     public RutaEscogida(int tiempoRuta){
         this.listaRutaEscogida= new ArrayList<Ruta>();
         this.tiemposEspera = new ArrayList<Integer>();
         this.tiemposTraslado = new ArrayList<Integer>();
         this.tiempoRuta=tiempoRuta;
-        this.estadoRuta=-1;//Empieza siendo factible
     }
 
     public RutaEscogida(Ruta ruta,int tiempoTraslado,int tiempoEspera){
@@ -34,7 +29,7 @@ public class RutaEscogida {
         this.tiemposEspera = new ArrayList<Integer>();
         this.tiemposEspera.add(tiempoEspera);
         this.tiemposTraslado = new ArrayList<Integer>();
-        this.tiemposTraslado.add(tiempoTraslado);            
+        this.tiemposTraslado.add(tiempoTraslado);
     }
 
     public RutaEscogida(ArrayList<Ruta> rutas,int tiempoRuta){
@@ -47,7 +42,6 @@ public class RutaEscogida {
         this.tiempoRuta = r.tiempoRuta;
         this.tiemposEspera = new ArrayList<Integer>(r.tiemposEspera);
         this.tiemposTraslado = new ArrayList<Integer>(r.tiemposTraslado);
-        this.estadoRuta=r.estadoRuta;
     }
 
 
@@ -107,25 +101,11 @@ public class RutaEscogida {
             String cadena=this.listaRutaEscogida.get(0).getCiudadOrigen();//Se concatena la primera ciudad
             for(Ruta r : this.listaRutaEscogida){
                 cadena+="-"+r.getCiudadFin();
-            }       
+            }
             return cadena;
         }catch(ArrayIndexOutOfBoundsException e){
             System.out.println("Method Halted!, continuing doing the next thing");
-        }            
+        }
         return null;
-    }
-
-    /**
-     * @return the estadoRuta
-     */
-    public int getEstadoRuta() {
-        return estadoRuta;
-    }
-
-    /**
-     * @param estadoRuta the estadoRuta to set
-     */
-    public void setEstadoRuta(int estadoRuta) {
-        this.estadoRuta = estadoRuta;
     }
 }
