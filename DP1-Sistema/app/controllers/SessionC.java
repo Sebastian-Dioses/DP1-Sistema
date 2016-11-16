@@ -63,6 +63,13 @@ public class SessionC extends Controller {
     @play.db.jpa.Transactional   
     @Security.Authenticated(SecuredC.class)
     public static Result changePassword(){
-        return ok(views.html.usuario.editPass.render(Usuarios.getByNombre(session().get("token"))));
+        Usuarios user = Usuarios.getByNombre(session().get("token"));
+        if (user!=null)
+            return ok(views.html.usuario.editPass.render(user));
+        else{
+            flash("error", "Sesión iniciada como Admin");
+            return redirect(routes.Application.index());
+        }
+
     }    
 }
