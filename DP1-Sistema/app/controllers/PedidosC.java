@@ -1,6 +1,6 @@
 package controllers;
 
-import models.*;
+import models.Pedidos;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.pedido.*;
@@ -12,21 +12,6 @@ import java.util.Date;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.db.jpa.JPA;
-
-import play.libs.Json;
-import com.google.gson.Gson;
-
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Reader;
-import java.io.File;
-
-import play.Play; 
-import java.util.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 
 import play.mvc.Security;
 
@@ -52,46 +37,7 @@ public class PedidosC extends Controller {
             
             Pedidos pedido = new Pedidos(ciudad_origen, ciudad_destino, personas_id); 
            
-            //Aca se debe llamar al algoritmo
-			Logger.info("Se lee informacion para el algoritmo");
-			
-			Gson gson = new Gson();
-			GestorCiudades temporal= new GestorCiudades();
-			try (Reader reader = new FileReader( Play.application().getFile("/conf/staff.json"))) {
-				temporal=gson.fromJson(reader, GestorCiudades.class);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			Logger.info("Se leyo informacion con exito");
-			
-			DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
-			DateFormat hourFormat = new SimpleDateFormat("HH:mm");
-			
-			Date date = new Date();
-			
-			
-			RutaEscogida mejorRuta=temporal.DFS(ciudad_origen,ciudad_destino,1,hourFormat.format(date),1,dateFormat.format(date));
-			
-			if(mejorRuta.getEstadoRuta()==0){//0 es Factible
-				pedido.save();
-				
-				Logger.info("Ruta: "+ mejorRuta.imprimirRecorrido());
-				
-				for(int i=0;i<mejorRuta.getListaRutaEscogida().size();i++){
-					Ruta r= mejorRuta.getListaRutaEscogida().get(i);
-					Vuelos v=Vuelos.getIdByOtherValues(ciudad_origen,ciudad_destino, hourFormat.parse(r.getHoraOrigen()), hourFormat.parse(r.getHoraFin()));
-					
-					
-					Integer tiempoEspera=mejorRuta.getTiemposEspera().get(i);
-					Integer tiemposTraslado=mejorRuta.getTiemposTraslado().get(i);
-					
-					Pedidos_x_vuelos pXV= new Pedidos_x_vuelos(pedido.id,personas_id,v.id,i,tiempoEspera,tiemposTraslado);
-					
-					pXV.save();
-				}
-			}else{
-				Logger.info("No se encontro ruta");
-			}
+            pedido.save();
 
             flash("success", "El pedido fue creado con éxito");
             return redirect(controllers.routes.PedidosC.index());

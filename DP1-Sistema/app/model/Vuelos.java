@@ -46,25 +46,6 @@ public class Vuelos {
         JPA.em().flush();
     }
 
-	public static Vuelos getIdByOtherValues(String ciudad_origen,String ciudad_destino,Date hora_salida, Date hora_llegada){
-        
-        Vuelos vuelo = null;
-
-        try{
-            TypedQuery<Vuelos> query1 = JPA.em().createQuery(
-                    "Select v from Vuelos v where v.ciudad_origen=:ciudad_origen AND v.ciudad_destino=:ciudad_destino AND v.hora_salida=:hora_salida AND v.hora_llegada=:hora_llegada", Vuelos.class);
-            query1.setParameter("ciudad_origen", ciudad_origen);
-			query1.setParameter("ciudad_destino", ciudad_destino);
-			query1.setParameter("hora_salida", hora_salida);
-			query1.setParameter("hora_llegada", hora_llegada);
-			
-			vuelo=query1.getSingleResult();
-        }catch(NoResultException e){
-        }
-
-        return vuelo;
-    }
-	
     public static Vuelos getById(Long id){
         
         Vuelos t = JPA.em().find(Vuelos.class, id);

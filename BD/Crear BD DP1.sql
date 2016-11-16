@@ -114,17 +114,13 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `dp1`.`pedidos_x_vuelos`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `dp1`.`pedidos_x_vuelos` ;
-
 CREATE TABLE IF NOT EXISTS `dp1`.`pedidos_x_vuelos` (
-  `id` INT(11) NOT NULL,
   `pedidos_id` INT(11) NOT NULL,
   `pedidos_personas_id` INT(11) NOT NULL,
   `vuelos_id` INT(11) NOT NULL,
-  `num_vuelo` INT(11) NOT NULL,
-  `tiempo_EsperaH` INT(11) NULL,
-  `tiempo_TrasladoH` INT(11) NULL,
-  PRIMARY KEY (`id`),
+  `fecha_salida` DATE NULL DEFAULT NULL,
+  `fecha_llegada` DATE NULL DEFAULT NULL,
+  PRIMARY KEY (`pedidos_id`, `pedidos_personas_id`, `vuelos_id`),
   INDEX `fk_pedido_has_plan_de_vuelo_plan_de_vuelo1_idx` (`vuelos_id` ASC),
   INDEX `fk_pedido_has_plan_de_vuelo_pedido1_idx` (`pedidos_id` ASC, `pedidos_personas_id` ASC),
   CONSTRAINT `fk_pedido_has_plan_de_vuelo_pedido1`
