@@ -490,3 +490,8 @@ clean
 reload
 compile
 run
+activator run
+clean
+reload
+compile
+run
