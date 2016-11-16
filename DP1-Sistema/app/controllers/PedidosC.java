@@ -77,18 +77,18 @@ public class PedidosC extends Controller {
 				
 				Logger.info("Ruta: "+ mejorRuta.imprimirRecorrido());
 				
-				for(int i=0;i<mejorRuta.getListaRutaEscogida().size();i++){
-					Ruta r= mejorRuta.getListaRutaEscogida().get(i);
-					Vuelos v=Vuelos.getIdByOtherValues(ciudad_origen,ciudad_destino, hourFormat.parse(r.getHoraOrigen()), hourFormat.parse(r.getHoraFin()));
+				// for(int i=0;i<mejorRuta.getListaRutaEscogida().size();i++){
+				// 	Ruta r= mejorRuta.getListaRutaEscogida().get(i);
+				// 	Vuelos v=Vuelos.getIdByOtherValues(ciudad_origen,ciudad_destino, hourFormat.parse(r.getHoraOrigen()), hourFormat.parse(r.getHoraFin()));
 					
 					
-					Integer tiempoEspera=mejorRuta.getTiemposEspera().get(i);
-					Integer tiemposTraslado=mejorRuta.getTiemposTraslado().get(i);
+				// 	Integer tiempoEspera=mejorRuta.getTiemposEspera().get(i);
+				// 	Integer tiemposTraslado=mejorRuta.getTiemposTraslado().get(i);
 					
-					Pedidos_x_vuelos pXV= new Pedidos_x_vuelos(pedido.id,personas_id,v.id,i,tiempoEspera,tiemposTraslado);
+				// 	Pedidos_x_vuelos pXV= new Pedidos_x_vuelos(pedido.id,personas_id,v.id,i,tiempoEspera,tiemposTraslado);
 					
-					pXV.save();
-				}
+				// 	pXV.save();
+				// }
 			}else{
 				Logger.info("No se encontro ruta");
 			}

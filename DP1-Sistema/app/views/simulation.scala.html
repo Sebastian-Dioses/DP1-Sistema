@@ -15,13 +15,11 @@
         <link rel='stylesheet' href='@routes.Assets.at("css/bootstrap.css")'>
         <link rel='stylesheet' href='@routes.Assets.at("css/font-awesome.css")'>    
         <link rel='stylesheet' href='@routes.Assets.at("css/DataTable.css")'>   
+        <link rel='stylesheet' href='@routes.Assets.at("css/simulacion.css")'>   
               <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
 <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
-
     </head>
     <body>
-    
-
     <!---Cuerpo -->
     <div class="container">
         <div class="row">
@@ -30,6 +28,28 @@
             </div>
         </div>
     </div>
+
+ <div id="chartdiv" style="background-color:#d5eff7; height: 500px;"></div>
+   
+ <div id="maplog"></div>
+
+         <div class="container" id="contain">
+            <div class="btn-group btn-group-justified">
+                <a type="button" class="btn btn-primary" onclick="togglePlay();">Iniciar/Pausar</a>
+                <a type="button" class="btn btn-primary">Ver Resultados</a>             
+                <div class="btn-group">
+                    <select class="form-control" id="selVel" >
+                        <option>1 seg-1 hora</option>
+                        <option>1 seg-5 horas</option>
+                        <option>1 seg-10 horas</option>
+                    </select>
+                </div>
+            </div>
+        </div> 
+             
+  
+       
+    
 <div style="display:none" >
                 <table id="ciudades_tabla">
                     <tbody>
@@ -62,37 +82,6 @@
 
                 </table>
 </div>
- <div id="chartdiv" style="width: 100%; background-color:#d5eff7; height: 500px;"></div>
-
-
-
-    <div class="content" style="max-width: 100%;">
-        <!-- Utilizando Bootstrap -->           
-        <br/>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 withoutpadding" >
-<!--                    <img style="text-align:center;margin: 0 auto;display: block;" class="img-responsive" src="@routes.Assets.at("images/simulation.gif")"/> -->
-                    
-                </div>
-            </div>
-        </div>          
-        <div class="container">
-            <div class="btn-group btn-group-justified">
-                <a type="button" class="btn btn-primary" onclick="togglePlay();">Iniciar/Pausar</a>
-                <a type="button" class="btn btn-primary">Ver Resultados</a>             
-                <div class="btn-group">
-                    <select class="form-control" id="selVel" >
-                        <option>1 seg-1 hora</option>
-                        <option>1 seg-5 horas</option>
-                        <option>1 seg-10 horas</option>
-                    </select>
-                </div>
-            </div>
-        </div>      
-    </div>      
-    
-
     <!--Pie de págna-->
         
     <!-- JQuery -->
