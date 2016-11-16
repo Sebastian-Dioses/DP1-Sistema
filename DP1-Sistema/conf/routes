@@ -32,17 +32,11 @@ POST    /ciudad/update				controllers.CiudadesC.update()
 GET     /ciudad/delete				controllers.CiudadesC.delete(id: String)
 
 GET     /persona          			controllers.PersonasC.index()
-GET     /persona/new       			controllers.PersonasC.newO()
-POST    /persona/add       			controllers.PersonasC.create()
-GET  	/persona/edit      			controllers.PersonasC.edit(id: Long)
-POST    /persona/update   			controllers.PersonasC.update()
 GET     /persona/delete				controllers.PersonasC.delete(id: Long)
 
 GET     /vuelo          			controllers.VuelosC.index()
 GET     /vuelo/new         			controllers.VuelosC.newO()
 POST    /vuelo/add         			controllers.VuelosC.create()
-GET  	/vuelo/edit      			controllers.VuelosC.edit(id: Long)
-POST    /vuelo/update   			controllers.VuelosC.update()
 GET     /vuelo/delete				controllers.VuelosC.delete(id: Long)
 
 # Map static resources from the /public folder to the /assets URL path
