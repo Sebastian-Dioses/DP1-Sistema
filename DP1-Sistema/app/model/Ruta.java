@@ -1,8 +1,10 @@
-package model;
-
-/**
- * Created by GUERRA on 31/10/2016.
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
+package models;
+
 import java.text.DateFormat;
 import javax.print.attribute.standard.DateTimeAtCompleted;
 
@@ -18,8 +20,9 @@ public class Ruta {
     public int horaO;
     public int horaF;
     private int tiempo;
-
-
+    public int[] cantidadPaquetesXDia = new int[7]; //Cantidad de paquetes que hay en el dia, será tratado como un arreglo circular
+    
+    
 
     public Ruta(String ciudadOrigen,String ciudadFin,String horaOrigen,String horaFin){
         this.ciudadFin=ciudadFin;
@@ -27,7 +30,7 @@ public class Ruta {
         this.horaOrigen=horaOrigen;
         this.horaFin=horaFin;
     }
-
+    
     /**
      * @return the ciudadOrigen
      */
@@ -97,5 +100,13 @@ public class Ruta {
     public void setTiempo(int tiempo) {
         this.tiempo = tiempo;
     }
+    
+    public int getIndCapacidad(int indice){
+        return this.cantidadPaquetesXDia[indice];
+    }
+    
+    public void setIndCapacidad(int indice,int capacidadIndice){
+        this.cantidadPaquetesXDia[indice]=capacidadIndice;
+    }
+    
 }
-

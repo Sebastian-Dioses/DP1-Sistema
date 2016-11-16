@@ -64,8 +64,8 @@
 						<th><div align=center>USUARIO</div></th>
 						<th><div align=center>PERSONA</div></th>
 						<th><div align=center>CORREO</div></th>
-						<!--<th><div align=center>DETALLE</div></th>
-						<th><div align=center>EDITAR</div></th>-->
+						<th><div align=center>DETALLE</div></th>
+						<th><div align=center>EDITAR</div></th>
 						<th><div align=center>ELIMINAR</div></th>
 					</thead>
 
@@ -77,12 +77,12 @@
 							<td>@usuario.nombre</td>							
 							<td>@usuario.persona.nombre</td>
 							<td>@usuario.persona.correo</td>
-							<!--<td>
+							<td>
 				              <a class="btn btn-info" href="#"  title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
 				            </td>
 							<td>
 				              <a class="btn btn-info" href="#" title="Editar" ><i class="glyphicon glyphicon-pencil"></i></a>
-				            </td>-->
+				            </td>
 				            <td>
 				              <a class="btn btn-info"  title="Eliminar" href='@routes.UsuariosC.delete(usuario.id)'><i class="glyphicon glyphicon-remove"></i></a>    
 				            </td>
