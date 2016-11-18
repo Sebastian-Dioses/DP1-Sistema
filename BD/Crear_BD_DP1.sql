@@ -117,7 +117,7 @@ DEFAULT CHARACTER SET = utf8;
 DROP TABLE IF EXISTS `dp1`.`pedidos_x_vuelos` ;
 
 CREATE TABLE IF NOT EXISTS `dp1`.`pedidos_x_vuelos` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `pedidos_id` INT(11) NOT NULL,
   `pedidos_personas_id` INT(11) NOT NULL,
   `vuelos_id` INT(11) NOT NULL,
@@ -147,7 +147,7 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `dp1`.`usuarios` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
-  `contraseña` VARCHAR(45) NOT NULL,
+  `contraseña` VARCHAR(110) NOT NULL,
   `personas_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`, `personas_id`),
   INDEX `fk_usuario_persona_idx` (`personas_id` ASC),
