@@ -3,6 +3,7 @@
 *.log
 tmp
 dump
+/DP1-Sistema/target/
 
 # Eclipse
 .settings
