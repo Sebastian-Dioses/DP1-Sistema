@@ -577,11 +577,27 @@ public class GestorCiudades {
         int tiempoTraslado;       
         Ciudad ciudadI=getCiudades().get(rutaActual.getCiudadOrigen());
         Ciudad ciudadF=getCiudades().get(rutaActual.getCiudadFin());
-        if(ciudadI.getContinente().equals(ciudadF.getContinente()))
-            tiempoTraslado=12;
-        else
-            tiempoTraslado=24;
-        return tiempoTraslado;
+		String[] hhmmO=rutaActual.getHoraOrigen().trim().split(":");
+		int hhOrigen=Integer.parseInt(hhmmO[0]);
+		String[] hhmmF=rutaActual.getHoraFin().trim().split(":");
+		int hhFin=Integer.parseInt(hhmmF[0]);
+		
+		int utcPartida=hhOrigen-ciudadI.getHuso_horario();
+		if(utcPartida<0)
+			utcPartida = 24 + utcPartida;
+		else if(utcPartida >= 24)
+			utcPartida -= 24;
+		
+		int utcLlegada=hhFin-ciudadF.getHuso_horario();
+		if(utcLlegada<0)
+			utcLlegada = 24 + utcLlegada;
+		else if(utcLlegada >= 24)
+			utcLlegada -= 24;
+		
+		if(utcPartida<utcLlegada)
+			return utcLlegada-utcPartida;
+		else
+			return 24+utcLlegada-utcPartida;
     }
     
     private int calcularTiempoEspera (Ruta rutaActual,int horaPartida){
