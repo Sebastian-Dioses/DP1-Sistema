@@ -28,6 +28,8 @@ public class Application extends Controller {
 
 	
 	public static Result requestPackage(Long scale, Long time){
+		//Se debe correr todos los paquetes que calcen en ese periodo de tiempo y escala
+		
 		DummmyClass dc= new DummmyClass();
 		dc.a = scale;
 		dc.b = time;

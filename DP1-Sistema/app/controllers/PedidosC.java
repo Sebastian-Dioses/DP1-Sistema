@@ -55,13 +55,8 @@ public class PedidosC extends Controller {
             //Aca se debe llamar al algoritmo
 			Logger.info("Se lee informacion para el algoritmo");
 			
-			Gson gson = new Gson();
-			GestorCiudades temporal= new GestorCiudades();
-			try (Reader reader = new FileReader( Play.application().getFile("/conf/staff.json"))) {
-				temporal=gson.fromJson(reader, GestorCiudades.class);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			GestorCiudades temporal=GestorCiudades.getInstance();
+			
 			Logger.info("Se leyo informacion con exito");
 			
 			DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");

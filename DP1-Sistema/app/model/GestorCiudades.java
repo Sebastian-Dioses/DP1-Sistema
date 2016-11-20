@@ -18,6 +18,15 @@ import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.*;
+import com.google.gson.Gson;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.File;
+import play.Play; 
 /**
  *
  * @author JoseLuis
@@ -37,7 +46,22 @@ public class GestorCiudades {
     private Random rnd;
     private int TiempoEntregaPaquetes=0;
 
-    public GestorCiudades() {
+	private static GestorCiudades instance;
+	
+	public static GestorCiudades getInstance(){
+		return instance;
+	}
+	
+	static {
+		Gson gson = new Gson();
+		try (Reader reader = new FileReader( Play.application().getFile("/conf/staff.json"))) {
+			instance=gson.fromJson(reader, GestorCiudades.class);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+    private GestorCiudades() {
         
     }
     
