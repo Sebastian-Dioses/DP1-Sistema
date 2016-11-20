@@ -133,6 +133,13 @@ var targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z 
  * Calculates bullet size based on its value
  */
 
+function mostrarResultadosRuteos(data){
+  //el data representa la informacion traida del algoritmo en formato Json
+  //alert( data);
+  var log = document.getElementById('maplog');
+  log.innerHTML = log.innerHTML + "<div>Escala: "+data.a+" Tiempo: "+data.b+"<\div>";
+}
+
 /**
  * The code responsible for animating the motion chart data
  */
@@ -145,14 +152,16 @@ var contador=0;
 // function to start stop
 function togglePlay() {
 
-var divisor=1;
-var opcion=document.getElementById('selVel').selectedIndex;
-if(opcion==1) divisor=5;
-else if(opcion==2) divisor=10;
-var speed = 1000/divisor; // time between frames in milliseconds
-var log = document.getElementById('maplog');
-var planeSVG = "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -80,134h-35l43,-133h-71l-24,30h-28l15,-47";
+  //var divisor=1;
+  //var opcion=document.getElementById('selVel').selectedIndex;
+  //if(opcion==1) divisor=5;
+  //else if(opcion==2) divisor=10;
 
+  escala=parseInt($('#escalaTiempo').val());
+
+  var speed = 1000; // time between frames in milliseconds
+  var log = document.getElementById('maplog');
+  var planeSVG = "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -80,134h-35l43,-133h-71l-24,30h-28l15,-47";
 
 
   // check if animation is playing (intverla is set)
@@ -165,20 +174,23 @@ var planeSVG = "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -
     return;
   }
     
-    // start playing
-    interval = setInterval( function () {
+  // start playing
+  interval = setInterval( function () {
+    $.get( "/simulation/requestPackage?scale="+escala+"&time="+contador, function( data ) {
+      mostrarResultadosRuteos(data);
+
       // var numLineas=map.dataProvider.lines.length;
       // for(var i=0;i<)
-    var hora=currentTime;
-    if(currentTime<10) hora="0"+hora;
-    map.titles.pop();   
-    map.addTitle("Hora actual: "+ hora+":00", 14);
-    //map.validateNow();      
-      while (map.dataProvider.lines.length > 0) {
-          map.dataProvider.lines.pop();
-      } 
+      var hora=currentTime;
+      if(currentTime<10) hora="0"+hora;
+      map.titles.pop();   
+      map.addTitle("Hora actual: "+ hora+":00", 14);
+      //map.validateNow();      
+        while (map.dataProvider.lines.length > 0) {
+            map.dataProvider.lines.pop();
+        } 
 
-      
+        
       var inicioIndex=indicesVuelos[currentTime];
       var finIndex=vuelos.length;
       if(currentTime!=23) finIndex=indicesVuelos[currentTime+1];
@@ -248,7 +260,7 @@ var planeSVG = "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -
               // var imagen= map.dataProvider.images[inicioAviones+i];
               // imagen.validate();
       }
- 
+
         currentTime++;
         currentTime%=24;
 
@@ -265,9 +277,9 @@ var planeSVG = "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -
       //   //console.log(frames[currentTime][image.id]);
       // }
       map.validateData();
-      
-      
-    }, speed );
+    
+    });
+  }, speed );
     
   
 }
