@@ -15,7 +15,7 @@ import java.util.List;
 @Entity
 public class Pedidos_x_vuelos {
     @Id @GeneratedValue
-	public Long id;
+	public Long id=null;
 	@NotNull
     public Long pedidos_id;
     @NotNull

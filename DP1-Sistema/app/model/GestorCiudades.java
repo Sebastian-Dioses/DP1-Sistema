@@ -18,6 +18,15 @@ import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.*;
+import com.google.gson.Gson;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.File;
+import play.Play; 
 /**
  *
  * @author JoseLuis
@@ -37,7 +46,22 @@ public class GestorCiudades {
     private Random rnd;
     private int TiempoEntregaPaquetes=0;
 
-    public GestorCiudades() {
+	private static GestorCiudades instance;
+	
+	public static GestorCiudades getInstance(){
+		return instance;
+	}
+	
+	static {
+		Gson gson = new Gson();
+		try (Reader reader = new FileReader( Play.application().getFile("/conf/staff.json"))) {
+			instance=gson.fromJson(reader, GestorCiudades.class);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+    private GestorCiudades() {
         
     }
     
@@ -577,11 +601,27 @@ public class GestorCiudades {
         int tiempoTraslado;       
         Ciudad ciudadI=getCiudades().get(rutaActual.getCiudadOrigen());
         Ciudad ciudadF=getCiudades().get(rutaActual.getCiudadFin());
-        if(ciudadI.getContinente().equals(ciudadF.getContinente()))
-            tiempoTraslado=12;
-        else
-            tiempoTraslado=24;
-        return tiempoTraslado;
+		String[] hhmmO=rutaActual.getHoraOrigen().trim().split(":");
+		int hhOrigen=Integer.parseInt(hhmmO[0]);
+		String[] hhmmF=rutaActual.getHoraFin().trim().split(":");
+		int hhFin=Integer.parseInt(hhmmF[0]);
+		
+		int utcPartida=hhOrigen-ciudadI.getHuso_horario();
+		if(utcPartida<0)
+			utcPartida = 24 + utcPartida;
+		else if(utcPartida >= 24)
+			utcPartida -= 24;
+		
+		int utcLlegada=hhFin-ciudadF.getHuso_horario();
+		if(utcLlegada<0)
+			utcLlegada = 24 + utcLlegada;
+		else if(utcLlegada >= 24)
+			utcLlegada -= 24;
+		
+		if(utcPartida<utcLlegada)
+			return utcLlegada-utcPartida;
+		else
+			return 24+utcLlegada-utcPartida;
     }
     
     private int calcularTiempoEspera (Ruta rutaActual,int horaPartida){

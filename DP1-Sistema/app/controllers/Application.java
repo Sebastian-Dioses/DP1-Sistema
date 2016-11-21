@@ -6,6 +6,8 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.*;
 
+import play.libs.Json;
+
 import play.mvc.Security;
 
 @Security.Authenticated(SecuredC.class)
@@ -19,6 +21,22 @@ public class Application extends Controller {
         return ok(views.html.simulation.render(Ciudades.getAll(),Vuelos.getAll()));
     }
 
+	public static class DummmyClass{
+		public Long a;
+		public Long b;
+	}
+
+	
+	public static Result requestPackage(Long scale, Long time){
+		//Se debe correr todos los paquetes que calcen en ese periodo de tiempo y escala
+		
+		DummmyClass dc= new DummmyClass();
+		dc.a = scale;
+		dc.b = time;
+		
+		return ok(Json.toJson(dc));
+	}
+	
     public static Result login() {            
         return ok(views.html.login.render("Titulo"));
     }   

@@ -8,7 +8,7 @@ import views.html.pedido.*;
 import play.Logger;
 //import org.joda.time.LocalDateTime;
 //import org.joda.time.DateTime;
-import java.util.Date;
+import java.util.List;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.db.jpa.JPA;
@@ -55,13 +55,8 @@ public class PedidosC extends Controller {
             //Aca se debe llamar al algoritmo
 			Logger.info("Se lee informacion para el algoritmo");
 			
-			Gson gson = new Gson();
-			GestorCiudades temporal= new GestorCiudades();
-			try (Reader reader = new FileReader( Play.application().getFile("/conf/staff.json"))) {
-				temporal=gson.fromJson(reader, GestorCiudades.class);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			GestorCiudades temporal=GestorCiudades.getInstance();
+			
 			Logger.info("Se leyo informacion con exito");
 			
 			DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
@@ -77,23 +72,32 @@ public class PedidosC extends Controller {
 				
 				Logger.info("Ruta: "+ mejorRuta.imprimirRecorrido());
 				
-				// for(int i=0;i<mejorRuta.getListaRutaEscogida().size();i++){
-				// 	Ruta r= mejorRuta.getListaRutaEscogida().get(i);
-				// 	Vuelos v=Vuelos.getIdByOtherValues(ciudad_origen,ciudad_destino, hourFormat.parse(r.getHoraOrigen()), hourFormat.parse(r.getHoraFin()));
+				Logger.info("ID Pedido "+pedido.id);
+				
+				Logger.info("Longitud lista: "+mejorRuta.getListaRutaEscogida().size());
+				
+				for(int i=0;i<mejorRuta.getListaRutaEscogida().size();i++){
+					Ruta r = mejorRuta.getListaRutaEscogida().get(i);
+					Vuelos v = Vuelos.getIdByOtherValues(r.getCiudadOrigen(),r.getCiudadFin(), hourFormat.parse(r.getHoraOrigen()), hourFormat.parse(r.getHoraFin()));
+					Logger.info("Se encontro vuelo");
 					
+					Integer tiempoEspera = mejorRuta.getTiemposEspera().get(i);
+					Integer tiemposTraslado = mejorRuta.getTiemposTraslado().get(i);
 					
-				// 	Integer tiempoEspera=mejorRuta.getTiemposEspera().get(i);
-				// 	Integer tiemposTraslado=mejorRuta.getTiemposTraslado().get(i);
+					Pedidos_x_vuelos pXV = new Pedidos_x_vuelos(pedido.id,personas_id,v.id,i,tiempoEspera,tiemposTraslado);
+					Logger.info("Se creo pedidoXvuelo");
 					
-				// 	Pedidos_x_vuelos pXV= new Pedidos_x_vuelos(pedido.id,personas_id,v.id,i,tiempoEspera,tiemposTraslado);
-					
-				// 	pXV.save();
-				// }
+					pXV.save();
+					Logger.info("Se guardo pedidoXvuelo");
+				}
+				
+				flash("success", "El pedido fue creado con éxito");
 			}else{
 				Logger.info("No se encontro ruta");
+				flash("error", "No se encontro ruta para el paquete");
 			}
 
-            flash("success", "El pedido fue creado con éxito");
+            
             return redirect(controllers.routes.PedidosC.index());
 
         }catch (Exception e){
