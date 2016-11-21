@@ -147,7 +147,7 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `dp1`.`usuarios` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
-  `contraseña` VARCHAR(45) NOT NULL,
+  `contraseña` VARCHAR(255) NOT NULL,
   `personas_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`, `personas_id`),
   INDEX `fk_usuario_persona_idx` (`personas_id` ASC),
