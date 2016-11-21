@@ -57,7 +57,7 @@
       </div>
 
       <div class="collapse navbar-collapse" id="navbar1">
-        <!-- Servicios -->
+        <!-- Principal -->
         <ul class="nav navbar-nav">
           <li class="dropdown">
             <a href='@routes.Application.index()' class="dropdown-toggle btn-lg" role="button">
@@ -66,58 +66,62 @@
           </li>
         </ul>
         
-        <!-- Ambientes -->
+        <!-- Mantenimientos -->
         <ul class="nav navbar-nav">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle btn-lg" data-toggle="dropdown" role="button">
               Mantenimientos <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="#" title="Clientes" target="_self">Clientes</a></li>
-              <li><a href="#" title="Aviones" target="_self">Aviones</a></li>
-              <li><a href="#" title="Aeropuertos" target="_self">Aeropuertos/Almacenes</a></li>
-              <li><a href="#" title="Planes de Vuelo" target="_self">Planes de Vuelo</a></li>
+              <li><a href='@routes.PersonasC.index()' title="Personas" target="_self">Personas</a></li>              
+              <li><a href='@routes.CiudadesC.index()' title="Aeropuertos" target="_self">Aeropuertos/Almacenes</a></li>
+              <li><a href='@routes.VuelosC.index()' title="Planes de Vuelo" target="_self">Planes de Vuelo</a></li>
             </ul>
           </li>
         </ul>
 
-        <!-- Actividades -->
+        <!-- Usuarios -->
         <ul class="nav navbar-nav">
           <li class="dropdown">
             <a href="#" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" role="button" >
               Usuarios <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                <li><a href='@routes.Application.users()' title="Consultar usuarios" target="_self">Consultar</a></li>
-                <li><a href='@routes.Application.newuser()' title="Registrar Usuario" target="_self">Registrar</a></li>
+                <li><a href='@routes.UsuariosC.index()' title="Consultar usuarios" target="_self">Consultar</a></li>
+                <li><a href='@routes.UsuariosC.newO()' title="Registrar Usuario" target="_self">Registrar</a></li>
                 </li>
             </ul>
           </li>
         </ul>
 
-        <!-- Talleres -->
+        <!-- Pedidos -->
         <ul class="nav navbar-nav">
           <li class="dropdown">
             <a href="#" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" role="button" >
               Pedidos <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                <li><a href="#" title="Consultar talleres" target="_self">Consultar</a></li>
-                <li><a href='@routes.Application.test()' title="Registrar talleres" target="_self">Registrar</a></li>
+                <li><a href='@routes.PedidosC.index()' title="Consultar talleres" target="_self">Consultar</a></li>
+                <li><a href='@routes.PedidosC.newO()' title="Registrar talleres" target="_self">Registrar</a></li>
             </ul>
           </li>
         </ul>
         
-         <!-- Proveedores -->
-        <ul class="nav navbar-nav">
+         <!-- Simulacion -->
+         <ul class="nav navbar-nav">
           <li class="dropdown">
-            <a href='@routes.Application.simulation()' class="dropdown-toggle btn-lg" role="button">
-              Simulación 
-            </a>           
+            <a href="#" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" role="button" >
+              Enrutamiento <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href='@routes.Application.simulation()' title="Ejecutar Enrutamiento" target="_self">Ejecutar Enrutamiento</a></li>
+                <li><a href='@routes.Application.simulation()' title="Ejecutar Simulación" target="_self">Ejecutar Simulación</a></li>
+            </ul>
           </li>
         </ul>
 
-        <!-- Concesionarias -->
+        <!-- Reportes -->
+        <!--
         <ul class="nav navbar-nav">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle btn-lg" data-toggle="dropdown" role="button">
@@ -129,21 +133,21 @@
             </ul>
           </li>
         </ul>
-        
+        -->
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle btn-lg" data-toggle="dropdown" role="button">
-            <!--{!!Auth::user()->name!!}--> <span class="glyphicon glyphicon-user"><span class="caret"></span>
+              <span class="glyphicon glyphicon-user"><span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="{!!URL::to('/cuenta')!!}" title="Ir a cuenta" target="_self">Mi Cuenta</a></li>
-              <li><a href="{!!URL::to('/password/change')!!}" title="Cambiar contraseña" target="_self">Cambiar mi contraseña</a></li>
-              <li><a href="{!!URL::to('/logout')!!}" title="LOGOUT" target="_self">Logout</a></li>
+              <!--<li><a href='@routes.UsuariosC.account()' title="Ir a cuenta" target="_self">Mi Cuenta</a></li>-->
+              <li><a href='@routes.SessionC.changePassword()' title="Cambiar contraseña" target="_self">Cambiar mi contraseña</a></li>
+              <li><a href='@routes.SessionC.logout()' title="LOGOUT" target="_self">Logout</a></li>
             </ul>
           </li>
         </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+      </div>
+    </div>
   </nav>
 </header>
 <!---Cuerpo -->
@@ -154,7 +158,7 @@
 <!--Pie de págna-->
 
 <footer class="footer">
-    <div class="content clearfix">
+    <div class="content">
         <div class="footer-1">
             <div class="logofoot">
                 <img alt="Papus Club" src='@routes.Assets.at("images/logo-min.png")' title="Papus Club" style="z-index: -1;">               

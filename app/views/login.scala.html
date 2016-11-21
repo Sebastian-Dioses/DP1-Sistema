@@ -22,18 +22,42 @@
         <div class="panel panel-default panel-login-box">
             <div class="panel-heading lead text-center" style="color: gray"><strong>S I M U &nbsp S O F T &nbsp - &nbsp L O G I N &nbsp; <p class="glyphicon glyphicon-user"></p></strong>
             </div>
+
+            @if(flash.containsKey("success")) {
+                <div class="alert alert-success fade in text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>¡Éxito!</strong> @flash.get("success")
+                </div>
+            }
+
+            @if(flash.containsKey("error")) {
+                <div class="alert alert-danger fade in text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>¡Error!</strong> @flash.get("error")
+                </div>
+            }
+
+            @if(flash.containsKey("info")) {
+                <div class="alert alert-info fade in text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>¡Info!</strong> @flash.get("info")
+                </div>
+            }
+
+            <form class="m-t" role="form" id="login-form" method="POST" action="@controllers.routes.SessionC.authenticate()" novalidate>
+
             <div class="panel-body">                               
                 <div class="form-group">
                     <label class="control-label col-sm-2 col-sm-offset-2 lead"><strong>Usuario:</strong></label>
                     <div class="col-md-5">
-                        <input type="email" class="form-control" name="email" placeholder="Ingresa tu correo">
+                        <input type="email" class="form-control" name="username" id="username" placeholder="Ingresa tu correo">
                     </div>
                 </div>
                 <br/><br/><br/>
                 <div class="form-group">
                     <label class="control-label col-sm-2 col-sm-offset-2 lead"><strong>Contraseña:</strong></label>
                     <div class="col-md-5">
-                        <input type="password" class="form-control" name="password" placeholder="Ingrese su contraseña">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Ingrese su contraseña">
                     </div>
                 </div>
 
@@ -49,17 +73,12 @@
 
                 <div class="form-group">
                     <div class="col-md-6 text-right">
-                        <a href='@routes.Application.index()' class="btn btn-primary" role="button">
-                            <i class="fa fa-btn fa-sign-in" ></i> Ingresar
-                        </a>
+                        <input class="btn btn-primary" type="submit" value="Ingresar">
                     </div>                        
                 </div>
-                
-                <div class="form-group">
-                    <div class="col-sm-12  text-right">
-                        <a class="btn btn-link login-links" ><strong>¿No recuerdas tu contraseña?</strong></a>          
-                    </div>
-                </div>                
+
+                </form>
+                                        
             </div>                                          
     	</div>      
     </div>

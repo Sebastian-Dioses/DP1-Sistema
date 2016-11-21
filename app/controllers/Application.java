@@ -1,37 +1,44 @@
 package controllers;
 
-import play.mvc.*;
-
+import models.Ciudades;
+import models.Vuelos;
+import play.mvc.Controller;
+import play.mvc.Result;
 import views.html.*;
 
+import play.libs.Json;
 
+import play.mvc.Security;
+
+@Security.Authenticated(SecuredC.class)
 public class Application extends Controller {
-    
+    @play.db.jpa.Transactional(readOnly=true)
     public static Result index() {            
-        return ok(views.html.index.render("Titulo"));
+        return ok(views.html.ciudad.index.render(Ciudades.getAll()));
     }
-    
-
-    public static Result test(){
-        return ok(views.html.registrarPedido.render("YA SALIO LA BIENVENIDA PAPA"));
-    }
-    
-
+    @play.db.jpa.Transactional(readOnly=true)
     public static Result simulation() {            
-        return ok(views.html.simulation.render("Titulo"));
+        return ok(views.html.simulation.render(Ciudades.getAll(),Vuelos.getAll()));
     }
 
+	public static class DummmyClass{
+		public Long a;
+		public Long b;
+	}
+
+	
+	public static Result requestPackage(Long scale, Long time){
+		//Se debe correr todos los paquetes que calcen en ese periodo de tiempo y escala
+		
+		DummmyClass dc= new DummmyClass();
+		dc.a = scale;
+		dc.b = time;
+		
+		return ok(Json.toJson(dc));
+	}
+	
     public static Result login() {            
         return ok(views.html.login.render("Titulo"));
-    }
-	
-	public static Result users() {            
-        return ok(views.html.users.render("Titulo"));
-    }
-
-	public static Result newuser() {            
-        return ok(views.html.newuser.render("Titulo"));
-    }
-	
-	
+    }   
+    
 }
