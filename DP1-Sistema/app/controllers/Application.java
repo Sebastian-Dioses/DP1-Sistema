@@ -65,6 +65,7 @@ public class Application extends Controller {
 		
 		GestorCiudades gc=GestorCiudades.getInstance();
 		
+		Logger.info("Cantidad paquetes: "+pedidos.length+"-"+time);
 		for(int i=0;i<pedidos.length;i++){
 			String [] datosPaquete = pedidos[i].trim().split("-");//0:fecha 1:hora 2: ciudad origen 3: ciudad fin			
 			//Logger.info(datosPaquete[0]);
@@ -76,9 +77,9 @@ public class Application extends Controller {
 			RutaEscogida mejorRuta=gc.DFS(datosPaquete[2],datosPaquete[3],1,datosPaquete[1],1,datosPaquete[0]);
 			
 			if(mejorRuta.getEstadoRuta()==0){//0 es Factible
-				Logger.info(pedidos[i]+" Ruta: "+ mejorRuta.imprimirRecorrido());
+				Logger.info("Numpedido: "+i+" "+pedidos[i]+" Ruta: "+ mejorRuta.imprimirRecorrido());
 			}else{
-				Logger.info("No se encontro ruta");
+				Logger.info("Numpedido: "+i+" No se encontro ruta - Ciudad Origen: "+ datosPaquete[2]+" Ciudad Fin: "+datosPaquete[3]);
 			}
 		}
 		

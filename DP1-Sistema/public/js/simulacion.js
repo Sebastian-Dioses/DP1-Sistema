@@ -148,7 +148,7 @@ function mostrarResultadosRuteos(data){
 var currentTime = 0;
 var interval;
  var inicioAviones=cities.size; 
-var contador=0;
+
 // function to start stop
 function togglePlay() {
 
@@ -159,7 +159,7 @@ function togglePlay() {
 
   escala=parseInt($('#escalaTiempo').val());
 
-  var speed = 1000; // time between frames in milliseconds
+  var speed = 40000; // time between frames in milliseconds
   var log = document.getElementById('maplog');
   var planeSVG = "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -80,134h-35l43,-133h-71l-24,30h-28l15,-47";
 
@@ -173,7 +173,7 @@ function togglePlay() {
     interval=undefined;
     return;
   }
-    
+  var contador=0;
   // start playing
   interval = setInterval( function () {
     $.get( "/simulation/requestPackage?scale="+escala+"&time="+contador, function( data ) {
