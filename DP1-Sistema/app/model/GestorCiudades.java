@@ -16,10 +16,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TreeMap;
 import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Logger;
 import java.util.*;
 import com.google.gson.Gson;
 
+import play.Logger;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -175,6 +176,7 @@ public class GestorCiudades {
         }
     }
     
+	
     public GestorCiudades(String archVuelos,String archAeropuertos,String archHusos) throws FileNotFoundException{
         leerCiudades(archAeropuertos,archHusos);
         leerRutas(archVuelos);
@@ -185,6 +187,7 @@ public class GestorCiudades {
         
         this.rnd=new Random();
     }
+	
     public void generarConjRutas(){
         int tEspera;
         int tiempoRuta;
@@ -332,7 +335,6 @@ public class GestorCiudades {
         Ciudad ciudadO=getCiudades().get(codCiudadO);
         Ciudad ciudadF=getCiudades().get(codCiudadF);
         int maxTiempoVuelo;
-        
         //Establece el tiempo maximo de vuelo
         if(ciudadO.getContinente().equals(ciudadF.getContinente()))
             maxTiempoVuelo=maxTiempoContinental;
@@ -370,7 +372,6 @@ public class GestorCiudades {
         
         ArrayList<Integer> listaRutasAEscoger=crearListaAEscogerXCiudad(ciudadO);
         //ArrayList<Integer> listaRutasAEscoger=crearListaAEscogerXCiudad(ciudadO,codCiudadF);
-                
         while(cantAnexosRevisados<cantidadAnexos && encontroAlMenosUno==0){
             int cantPorcAnexosRevisados=porcCantAnexos;
             while(cantPorcAnexosRevisados>0 && cantAnexosRevisados<cantidadAnexos){

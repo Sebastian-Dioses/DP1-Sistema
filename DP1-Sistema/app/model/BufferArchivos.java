@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dfs;
+package models;
 
 import com.google.gson.Gson;
 import java.io.FileWriter;
@@ -28,6 +28,10 @@ public class BufferArchivos {
     private int escala2=3;
     private int escala3=6;
     
+	public BufferArchivos(){
+		
+	}
+	
     public void generarJson(){
         Gson gson = new Gson();
 
@@ -38,6 +42,7 @@ public class BufferArchivos {
         }
     }
     
+	/*
     public void organizarPedidos(GestorCiudades gestor){
         Ciudad siguienteCiudad;
         String fechaActual="";
@@ -180,7 +185,7 @@ public class BufferArchivos {
             
             siguienteCiudad.avanzarBuffer();
         }
-    }
+    }*/
 
     /**
      * @return the listaPedidosEscala1
