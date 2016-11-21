@@ -31,8 +31,6 @@ public class Ciudad {
     public ArrayList<Ruta> rutasAnexas=new ArrayList<Ruta>();
     public TreeMap<Integer, TreeMap<Integer,Integer>> proyeccionAlmacen = new TreeMap<Integer, TreeMap<Integer,Integer>>();
     private ArrayList<Integer> cantVisitadasRutasAnexas=new ArrayList<Integer>();
-    public HashMap<String,ArrayList<ConjRutas>> rutasXDestino = new HashMap<>(); // llave es el codigo de la ciudad destino, valor es las rutasXDestino posibles
-    public HashMap<String,ArrayList<Integer>> CantVisitadasrutasXDestino = new HashMap<>();
     
     
     //private BufferedReader brAeropuertos;
@@ -71,24 +69,7 @@ public class Ciudad {
         return Id;
     }
     
-    public void print(){
-        System.out.println("========"+codigo+"========");
-        Set set = rutasXDestino.entrySet();
-        Iterator i = set.iterator();
-        while(i.hasNext()) {
-            Map.Entry me = (Map.Entry)i.next();
-            System.out.println(me.getKey() + ": ");
-            ArrayList<ConjRutas> conjRuta=(ArrayList<ConjRutas>)me.getValue();
-            for(int j=0;j<conjRuta.size();j++){
-                ConjRutas conj=conjRuta.get(j);
-                ArrayList<Ruta> vuelos=conj.vuelos;
-                for(int h=0;h<vuelos.size();h++){
-                    System.out.print(vuelos.get(h).getCiudadOrigen()+"-"+vuelos.get(h).getCiudadFin());                  
-                }
-                System.out.println();
-            }
-        }    
-    }
+	
     /**
      * @param Id the Id to set
      */
@@ -203,30 +184,12 @@ public class Ciudad {
             this.cantVisitadasRutasAnexas.add(1);//Se instancian con 1 para empezas con probabilidad 1
         }        
     }
-    
-    public void instanciarCantVisitadasrutasXDestino(String codCiudadF){
-        ArrayList<ConjRutas> rutas=(ArrayList<ConjRutas>)this.rutasXDestino.get(codCiudadF);
-        ArrayList<Integer> listaRutas= new ArrayList<Integer>();
         
-        for(int i=0;i<rutas.size();i++){
-            listaRutas.add(1);//Se instancian con 1 para empezas con probabilidad 1
-        }
-        
-        this.CantVisitadasrutasXDestino.put(codCiudadF, listaRutas);
-        
-    }
-    
     
 
     public void incrementarRutaEscogida(int indiceRuta){
         int cant=cantVisitadasRutasAnexas.get(indiceRuta);
         cantVisitadasRutasAnexas.set(indiceRuta, cant+1);
-    }
-    
-    public void incrementarRutaEscogidaXCiudad(String codCiudadF,int indiceRuta){
-        ArrayList<Integer> listaRutas=CantVisitadasrutasXDestino.get(codCiudadF);    
-        int cant=listaRutas.get(indiceRuta);
-        listaRutas.set(indiceRuta, cant+1);
     }
     
     
