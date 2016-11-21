@@ -38,7 +38,7 @@ public class GestorCiudades {
     private int maxCapacidadesVuelos=200;
     private int maxTiempoContinental=24;
     private int maxTiempoIntercontinental=48;
-    private int porcentajeEvaluacion=1;
+    private int porcentajeEvaluacion=4;
     private int estadoRutaFactible=0;
     private int estadoRutaXTiempo=1;
     private int estadoRutaXCapacidadAlmacen=2;
@@ -180,7 +180,6 @@ public class GestorCiudades {
     public GestorCiudades(String archVuelos,String archAeropuertos,String archHusos) throws FileNotFoundException{
         leerCiudades(archAeropuertos,archHusos);
         leerRutas(archVuelos);
-        generarConjRutas();//generar todas las rutasXDestino posibles
         instanciarVecesRecorridasCiudades();
         
         //UTILIZAR ALGORITMO DE TODAS LAS CIUDADES A TODAS LAS CIUDADES
@@ -188,54 +187,7 @@ public class GestorCiudades {
         this.rnd=new Random();
     }
 	
-    public void generarConjRutas(){
-        int tEspera;
-        int tiempoRuta;
-        for(Ciudad ciudad : getCiudades().values()) {
-            ArrayList<Ruta>vuelos = ciudad.rutasAnexas;
-            for(int i=0;i<vuelos.size();i++){
-                String destino=vuelos.get(i).getCiudadFin();
-                if(!ciudad.rutasXDestino.containsKey(destino)){ // si todavia no tiene ninguna ruta ese destino
-                    ArrayList<ConjRutas> rutas= new ArrayList<>();
-                    rutas.add(new ConjRutas(vuelos.get(i),vuelos.get(i).getTiempo()));
-                    ciudad.rutasXDestino.put(destino, rutas);                    
-                }
-                else{
-                    ArrayList<ConjRutas> rutas=ciudad.rutasXDestino.get(destino);
-                    rutas.add(new ConjRutas(vuelos.get(i),vuelos.get(i).getTiempo()));
-                    ciudad.rutasXDestino.put(destino,rutas);    
-                }
-                
-                // caso con Escala
-                String ciudInter=vuelos.get(i).getCiudadFin();
-                Ciudad ciudadIntermedia=getCiudades().get(ciudInter);
-                for(int j=0;j<ciudadIntermedia.rutasAnexas.size();j++){
-                    Ruta vuelo2=ciudadIntermedia.rutasAnexas.get(j);
-                    String destino2=vuelo2.getCiudadFin();
-                    if(ciudad.getContinente().equals(getCiudades().get(destino2).getContinente())) continue;
-                    tEspera=vuelo2.horaO-vuelos.get(i).horaF;
-                    if(tEspera<0)tEspera+=24;
-                    tiempoRuta=vuelos.get(i).getTiempo()+vuelo2.getTiempo()+tEspera;
-                    if(tiempoRuta>48) continue; // si se demora más de 48 horas, no tomar en cuenta
-                    if(!ciudad.rutasXDestino.containsKey(destino2)){ // si todavia no tiene ninguna ruta ese destino
-                        ArrayList<ConjRutas> rutas= new ArrayList<>();
-                        ConjRutas ruta=new ConjRutas(vuelos.get(i),vuelo2,tiempoRuta);
-                        rutas.add(ruta);
-                        ciudad.rutasXDestino.put(destino2, rutas);                    
-                    }
-                    else{
-                        ArrayList<ConjRutas> rutas=ciudad.rutasXDestino.get(destino2);
-                        ConjRutas ruta=new ConjRutas(vuelos.get(i),vuelo2,tiempoRuta);
-                        rutas.add(ruta);
-                        ciudad.rutasXDestino.put(destino2,rutas);    
-                    }
-                }
-            }
-        }          
-    }
-    
-    
-    
+        
     private void limpiarCapacidad_Almacenes_Rutas(String fechaActual){
 
         if(fechaActual.equals(""))return;
@@ -269,6 +221,7 @@ public class GestorCiudades {
         }
     }
     
+	/*
     public void asignarPedidos()throws FileNotFoundException{
 
         int numPedido=1;
@@ -288,7 +241,7 @@ public class GestorCiudades {
         }
         System.out.println("Tiempo Total por paquetes: "+this.TiempoEntregaPaquetes);
         
-    }
+    }*/
     
     public void asignarPedidos(String archPedidos)throws FileNotFoundException{
         BufferedReader brPedidos = new BufferedReader(new FileReader(archPedidos));
@@ -346,7 +299,6 @@ public class GestorCiudades {
         int indiceRutaEscogida=-1;
         
         ArrayList<Ruta> RutasAnexadasO=ciudadO.getRutasAnexas(); //CAMBIAR A LAS RUTAS QUE PUEDAN SER FACTIBLES        
-        //ArrayList<ConjRutas> listaRutasFactibles=(ArrayList<ConjRutas>) ciudadO.rutasXDestino.get(codCiudadF);
         
                
         int cantidadAnexos=RutasAnexadasO.size();        
@@ -381,8 +333,7 @@ public class GestorCiudades {
                 removerElementos_Lista(indRutaARevisar,listaRutasAEscoger);// Se remueve los elementos repetidos
                 
                 Ruta rutaActual=RutasAnexadasO.get(indRutaARevisar);
-                //ConjRutas rutaEvaluada=listaRutasFactibles.get(indRutaARevisar);
-
+                
                 RutaEscogida resultadoRutaInicial = new RutaEscogida(0);
 
                 String[] superTemporal=horaPedido.split(":");
@@ -423,69 +374,6 @@ public class GestorCiudades {
             actualizarCapacidadAlmacen_Rutas(mejorRuta, cantPaquetes,horaPedido,fechaPedido,codCiudadF,dayweek);
         }
 		return mejorRuta;
-    }
-
-    private RutaEscogida evaluarRuta(ConjRutas rutaEvaluada,RutaEscogida resultadoRuta,int maxTiempoVuelo,String ciudadFinal,int horaPartida, String fechaPedido,int cantidadPaquetes, int dayweek){
-        
-        for(Ruta rutaActual: rutaEvaluada.vuelos){
-            if(dayweek>6)dayweek-=7;
-            int tiempoTraslado=calcularTiempoTraslado(rutaActual);
-            int tiempoEspera=calcularTiempoEspera(rutaActual, horaPartida);
-            //buscamos las ciudades para poder obtener las proyecciones de sus almacenes
-            Ciudad ciudadDestino=getCiudades().get(rutaActual.getCiudadOrigen());
-            Ciudad ciudadOrigen=getCiudades().get(rutaActual.getCiudadFin());
-            TreeMap almacenOrigen = (TreeMap) ciudadOrigen.proyeccionAlmacen.get(dayweek);        
-        
-            if(hayCapacidad(ciudadOrigen,dayweek, horaPartida, tiempoEspera,cantidadPaquetes)==0){
-                resultadoRuta.setEstadoRuta(this.estadoRutaXCapacidadAlmacen);
-                return resultadoRuta;
-            }
-            
-            if(rutaActual.cantidadPaquetesXDia[dayweek]>this.maxCapacidadesVuelos){//Si se sobrepasa la capacidad del Vuelo en ese dia 
-                resultadoRuta.setEstadoRuta(this.estadoRutaXCapacidadVuelo);
-                return resultadoRuta;
-            }
-            //int tiempoTraslado_Espera=calcularTiempo(rutaActual,horaPartida);
-            int tiempoTotalActualizado=resultadoRuta.getTiempoRuta()+tiempoTraslado+tiempoEspera;
-
-            int horaLLegada=tiempoTotalActualizado;
-            if(horaLLegada>23){
-                dayweek+=(horaLLegada/24);
-                horaLLegada%=24;
-            }
-
-            if(dayweek>6)dayweek-=7;
-
-            TreeMap almacenDestino = (TreeMap) ciudadDestino.proyeccionAlmacen.get(dayweek);
-            //se revisa si la llegada al aeropuerto de destino desbordaria el almacen
-            if((int)(almacenDestino.get(horaLLegada*100))+cantidadPaquetes>maxCapacidadCiudades){
-                resultadoRuta.setEstadoRuta(this.estadoRutaXCapacidadAlmacen);
-                return resultadoRuta;
-            }
-
-            if(tiempoTotalActualizado>maxTiempoVuelo){ // FALTA REVISAR LO DE LAS CAPACIDADES DE CIUDADES
-                resultadoRuta.setEstadoRuta(this.estadoRutaXTiempo);
-                return resultadoRuta;          
-            }
-            else{
-                if(rutaActual.getCiudadFin().equals(ciudadFinal)){                             
-                    resultadoRuta.agregarRuta(rutaActual);
-                    resultadoRuta.agregarTiempoEspera(tiempoEspera);
-                    resultadoRuta.agregarTiempoTraslado(tiempoTraslado);
-                    resultadoRuta.actualizarTiempoRuta(tiempoTraslado, tiempoEspera);
-                    resultadoRuta.capacidades+=((int)(almacenDestino.get(horaLLegada*100))+cantidadPaquetes+(int)almacenOrigen.get(horaPartida*100)+cantidadPaquetes)/(2*maxCapacidadCiudades);
-                    resultadoRuta.setEstadoRuta(this.estadoRutaFactible);
-                }
-
-                if(tiempoTotalActualizado==maxTiempoVuelo){//Si ya llego al tope, no vale la pena seguir buscando caminos
-                    resultadoRuta.setEstadoRuta(this.estadoRutaXTiempo);
-                    return resultadoRuta;  
-                }
-            }            
-        }
-        
-        resultadoRuta.setEstadoRuta(this.estadoRutaFactible);
-        return resultadoRuta;
     }
     
     private RutaEscogida recursiveSearch(Ruta rutaActual,RutaEscogida resultadoRuta,int maxTiempoVuelo,String ciudadFinal,int horaPartida, String fechaPedido,int cantidadPaquetes, int dayweek){//ACLARAR horaPartida?
@@ -747,7 +635,7 @@ public class GestorCiudades {
             System.out.println("Nombre:"+ciudadActual.getNombre()+" Cantidad Paquetes: "+ciudadActual.getCantPaquetes());
             
         }
-        getCiudades().get("SKBO").print();
+        //getCiudades().get("SKBO").print();
     }
     
     private ArrayList<Integer> crearListaAEscogerXCiudad(Ciudad ciudadO){        
