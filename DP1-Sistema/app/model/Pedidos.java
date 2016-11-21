@@ -37,6 +37,10 @@ public class Pedidos {
     @JoinColumn(name="personas_id", insertable = false, updatable = false)
     public Personas persona;
 
+    /*@ManyToOne
+    @JoinColumn(name="id", insertable = false, updatable = false)    
+    public Pedidos_x_vuelos ruta;
+    */
     private Pedidos(){
 
     }

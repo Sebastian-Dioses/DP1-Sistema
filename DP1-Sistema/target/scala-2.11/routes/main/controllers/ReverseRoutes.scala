@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/conf/routes
-// @DATE:Wed Nov 16 11:43:20 COT 2016
+// @DATE:Mon Nov 21 09:32:22 COT 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -13,14 +13,14 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:49
+  // @LINE:50
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:49
+    // @LINE:50
     def at(file:String): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
@@ -28,38 +28,38 @@ package controllers {
   
   }
 
-  // @LINE:16
+  // @LINE:17
   class ReversePedidosC(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:20
+    // @LINE:21
     def delete(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pedido/delete" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
     }
   
-    // @LINE:19
+    // @LINE:20
     def detail(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pedido/detail" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
     }
   
-    // @LINE:18
+    // @LINE:19
     def create(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "pedido/add")
     }
   
-    // @LINE:17
+    // @LINE:18
     def newO(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pedido/new")
     }
   
-    // @LINE:16
+    // @LINE:17
     def index(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pedido")
@@ -74,19 +74,19 @@ package controllers {
     }
 
   
-    // @LINE:25
+    // @LINE:26
     def delete(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "user/delete" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
     }
   
-    // @LINE:24
+    // @LINE:25
     def create(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "user/add")
     }
   
-    // @LINE:23
+    // @LINE:24
     def newO(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "user/new")
@@ -104,7 +104,7 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "cambiarPassword")
     }
   
-    // @LINE:22
+    // @LINE:23
     def index(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "user")
@@ -112,44 +112,44 @@ package controllers {
   
   }
 
-  // @LINE:34
+  // @LINE:35
   class ReversePersonasC(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:39
+    // @LINE:40
     def delete(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "persona/delete" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
     }
   
-    // @LINE:36
+    // @LINE:37
     def create(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "persona/add")
     }
   
-    // @LINE:37
+    // @LINE:38
     def edit(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "persona/edit" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
     }
   
-    // @LINE:35
+    // @LINE:36
     def newO(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "persona/new")
     }
   
-    // @LINE:38
+    // @LINE:39
     def update(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "persona/update")
     }
   
-    // @LINE:34
+    // @LINE:35
     def index(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "persona")
@@ -157,44 +157,44 @@ package controllers {
   
   }
 
-  // @LINE:41
+  // @LINE:42
   class ReverseVuelosC(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:46
+    // @LINE:47
     def delete(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "vuelo/delete" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
     }
   
-    // @LINE:43
+    // @LINE:44
     def create(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "vuelo/add")
     }
   
-    // @LINE:44
+    // @LINE:45
     def edit(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "vuelo/edit" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
     }
   
-    // @LINE:42
+    // @LINE:43
     def newO(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "vuelo/new")
     }
   
-    // @LINE:45
+    // @LINE:46
     def update(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "vuelo/update")
     }
   
-    // @LINE:41
+    // @LINE:42
     def index(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "vuelo")
@@ -213,6 +213,12 @@ package controllers {
     def index(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix)
+    }
+  
+    // @LINE:15
+    def requestPackage(scale:Long, time:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "simulation/requestPackage" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("scale", scale)), Some(implicitly[QueryStringBindable[Long]].unbind("time", time)))))
     }
   
     // @LINE:14
@@ -256,44 +262,44 @@ package controllers {
   
   }
 
-  // @LINE:27
+  // @LINE:28
   class ReverseCiudadesC(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:30
+    // @LINE:31
     def edit(id:String): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "ciudad/edit" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("id", id)))))
     }
   
-    // @LINE:29
+    // @LINE:30
     def create(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "ciudad/add")
     }
   
-    // @LINE:28
+    // @LINE:29
     def newO(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "ciudad/new")
     }
   
-    // @LINE:32
+    // @LINE:33
     def delete(id:String): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "ciudad/delete" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("id", id)))))
     }
   
-    // @LINE:31
+    // @LINE:32
     def update(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "ciudad/update")
     }
   
-    // @LINE:27
+    // @LINE:28
     def index(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "ciudad")

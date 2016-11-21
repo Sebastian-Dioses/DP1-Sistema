@@ -47,107 +47,101 @@ Seq[Any](format.raw/*1.61*/("""
         <link rel='stylesheet' href='"""),_display_(/*16.39*/routes/*16.45*/.Assets.at("css/font-awesome.css")),format.raw/*16.79*/("""'>    
         <link rel='stylesheet' href='"""),_display_(/*17.39*/routes/*17.45*/.Assets.at("css/DataTable.css")),format.raw/*17.76*/("""'>   
         <link rel='stylesheet' href='"""),_display_(/*18.39*/routes/*18.45*/.Assets.at("css/simulacion.css")),format.raw/*18.77*/("""'>   
-              <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
-<script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+        <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+        <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
     </head>
     <body>
     <!---Cuerpo -->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <p class="lead"><strong>SIMULACIÓN</strong></p>             
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <p class="lead"><strong>SIMULACIÓN</strong></p>             
+                </div>
             </div>
         </div>
-    </div>
 
- <div id="chartdiv" style="background-color:#d5eff7; height: 500px;"></div>
+        <div id="chartdiv" style="background-color:#d5eff7; height: 500px;"></div>
    
- <div id="maplog"></div>
+        <div id="maplog"></div>
 
          <div class="container" id="contain">
             <div class="btn-group btn-group-justified">
                 <a type="button" class="btn btn-primary" onclick="togglePlay();">Iniciar/Pausar</a>
                 <a type="button" class="btn btn-primary">Ver Resultados</a>             
                 <div class="btn-group">
-                    <select class="form-control" id="selVel" >
-                        <option>1 seg-1 hora</option>
-                        <option>1 seg-5 horas</option>
-                        <option>1 seg-10 horas</option>
+                    <select class="form-control" id="escalaTiempo" >
+                        <option value="1">1 seg-1 hora</option>
+                        <option value="3">1 seg-3 horas</option>
+                        <option value="6">1 seg-6 horas</option>
                     </select>
                 </div>
             </div>
         </div> 
              
-  
-       
-    
-<div style="display:none" >
-                <table id="ciudades_tabla">
-                    <tbody>
-                    """),_display_(/*56.22*/for(ciudad <- ciudades) yield /*56.45*/{_display_(Seq[Any](format.raw/*56.46*/("""
-                        """),format.raw/*57.25*/("""<tr>
-                            <td>"""),_display_(/*58.34*/ciudad/*58.40*/.cod_ciudad),format.raw/*58.51*/("""</td>
-                            <td>"""),_display_(/*59.34*/ciudad/*59.40*/.nombre),format.raw/*59.47*/("""</td>
-                            <td>"""),_display_(/*60.34*/ciudad/*60.40*/.pais),format.raw/*60.45*/("""</td>
-                            <td>"""),_display_(/*61.34*/ciudad/*61.40*/.latitud),format.raw/*61.48*/("""</td>
-                            <td>"""),_display_(/*62.34*/ciudad/*62.40*/.longitud),format.raw/*62.49*/("""</td>
-                            <td>"""),_display_(/*63.34*/ciudad/*63.40*/.huso),format.raw/*63.45*/("""</td>
-                        </tr>
-                    """)))}),format.raw/*65.22*/("""
-                    """),format.raw/*66.21*/("""</tbody>                         
+        <div style="display:none" >
+            <table id="ciudades_tabla">
+                <tbody>
+                """),_display_(/*53.18*/for(ciudad <- ciudades) yield /*53.41*/{_display_(Seq[Any](format.raw/*53.42*/("""
+                    """),format.raw/*54.21*/("""<tr>
+                        <td>"""),_display_(/*55.30*/ciudad/*55.36*/.cod_ciudad),format.raw/*55.47*/("""</td>
+                        <td>"""),_display_(/*56.30*/ciudad/*56.36*/.nombre),format.raw/*56.43*/("""</td>
+                        <td>"""),_display_(/*57.30*/ciudad/*57.36*/.pais),format.raw/*57.41*/("""</td>
+                        <td>"""),_display_(/*58.30*/ciudad/*58.36*/.latitud),format.raw/*58.44*/("""</td>
+                        <td>"""),_display_(/*59.30*/ciudad/*59.36*/.longitud),format.raw/*59.45*/("""</td>
+                        <td>"""),_display_(/*60.30*/ciudad/*60.36*/.huso),format.raw/*60.41*/("""</td>
+                    </tr>
+                """)))}),format.raw/*62.18*/("""
+                """),format.raw/*63.17*/("""</tbody>                         
 
-                </table>
- 
-                <table id="vuelos_tabla">
-                    <tbody>
-                    """),_display_(/*72.22*/for(vuelo <- vuelos) yield /*72.42*/{_display_(Seq[Any](format.raw/*72.43*/("""
-                        """),format.raw/*73.25*/("""<tr>
-                            <td>"""),_display_(/*74.34*/vuelo/*74.39*/.id),format.raw/*74.42*/("""</td>
-                            <td>"""),_display_(/*75.34*/vuelo/*75.39*/.ciudad_origen),format.raw/*75.53*/("""</td>
-                            <td>"""),_display_(/*76.34*/vuelo/*76.39*/.ciudad_destino),format.raw/*76.54*/("""</td>
-                            <td>"""),_display_(/*77.34*/vuelo/*77.39*/.hora_salida),format.raw/*77.51*/("""</td>
-                            <td>"""),_display_(/*78.34*/vuelo/*78.39*/.hora_llegada),format.raw/*78.52*/("""</td>
-                        </tr>
-                    """)))}),format.raw/*80.22*/("""
-                    """),format.raw/*81.21*/("""</tbody>                         
+            </table>
 
-                </table>
-</div>
-    <!--Pie de págna-->
+            <table id="vuelos_tabla">
+                <tbody>
+                """),_display_(/*69.18*/for(vuelo <- vuelos) yield /*69.38*/{_display_(Seq[Any](format.raw/*69.39*/("""
+                    """),format.raw/*70.21*/("""<tr>
+                        <td>"""),_display_(/*71.30*/vuelo/*71.35*/.id),format.raw/*71.38*/("""</td>
+                        <td>"""),_display_(/*72.30*/vuelo/*72.35*/.ciudad_origen),format.raw/*72.49*/("""</td>
+                        <td>"""),_display_(/*73.30*/vuelo/*73.35*/.ciudad_destino),format.raw/*73.50*/("""</td>
+                        <td>"""),_display_(/*74.30*/vuelo/*74.35*/.hora_salida),format.raw/*74.47*/("""</td>
+                        <td>"""),_display_(/*75.30*/vuelo/*75.35*/.hora_llegada),format.raw/*75.48*/("""</td>
+                    </tr>
+                """)))}),format.raw/*77.18*/("""
+                """),format.raw/*78.17*/("""</tbody>
+            </table>
+        </div>
+        <!--Pie de págna-->
         
-    <!-- JQuery -->
+        <!-- JQuery -->
 
-<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+        <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+        <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+        <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 
-  <script src='https://code.jquery.com/jquery-1.11.2.min.js'></script>
+        <script src='https://code.jquery.com/jquery-1.11.2.min.js'></script>
 
-
-
-        <script src='"""),_display_(/*97.23*/routes/*97.29*/.Assets.at("js/jquery-1.11.3.min.js")),format.raw/*97.66*/("""'></script>
+        <script src='"""),_display_(/*91.23*/routes/*91.29*/.Assets.at("js/jquery-1.11.3.min.js")),format.raw/*91.66*/("""'></script>
         <!-- Bootstrap -->
-        <script src='"""),_display_(/*99.23*/routes/*99.29*/.Assets.at("js/bootstrap.js")),format.raw/*99.58*/("""'></script>    
+        <script src='"""),_display_(/*93.23*/routes/*93.29*/.Assets.at("js/bootstrap.js")),format.raw/*93.58*/("""'></script>    
         <!-- BXSlider -->
-        <script src='"""),_display_(/*101.23*/routes/*101.29*/.Assets.at("js/jquery.bxslider.min.js")),format.raw/*101.68*/("""'></script>      
+        <script src='"""),_display_(/*95.23*/routes/*95.29*/.Assets.at("js/jquery.bxslider.min.js")),format.raw/*95.68*/("""'></script>      
         <!-- Mis Scripts -->
-        <script src='"""),_display_(/*103.23*/routes/*103.29*/.Assets.at("js/MisScripts.js")),format.raw/*103.59*/("""'></script>
+        <script src='"""),_display_(/*97.23*/routes/*97.29*/.Assets.at("js/MisScripts.js")),format.raw/*97.59*/("""'></script>
 
-        <script src='"""),_display_(/*105.23*/routes/*105.29*/.Assets.at("js/jquery.dataTables.js")),format.raw/*105.66*/("""'></script>
-        <script src='"""),_display_(/*106.23*/routes/*106.29*/.Assets.at("js/simulacion.js")),format.raw/*106.59*/("""'></script>
+        <script src='"""),_display_(/*99.23*/routes/*99.29*/.Assets.at("js/jquery.dataTables.js")),format.raw/*99.66*/("""'></script>
+        <script src='"""),_display_(/*100.23*/routes/*100.29*/.Assets.at("js/simulacion.js")),format.raw/*100.59*/("""'></script>
         <script>
-        $(document).ready(function() """),format.raw/*108.38*/("""{"""),format.raw/*108.39*/("""
-           """),format.raw/*109.12*/("""$('#example').DataTable( """),format.raw/*109.37*/("""{"""),format.raw/*109.38*/("""
-               """),format.raw/*110.16*/(""""language": """),format.raw/*110.28*/("""{"""),format.raw/*110.29*/("""
-                   """),format.raw/*111.20*/(""""url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-               """),format.raw/*112.16*/("""}"""),format.raw/*112.17*/("""
-            """),format.raw/*113.13*/("""}"""),format.raw/*113.14*/(""");
-        """),format.raw/*114.9*/("""}"""),format.raw/*114.10*/(""");
+        $(document).ready(function() """),format.raw/*102.38*/("""{"""),format.raw/*102.39*/("""
+           """),format.raw/*103.12*/("""$('#example').DataTable( """),format.raw/*103.37*/("""{"""),format.raw/*103.38*/("""
+               """),format.raw/*104.16*/(""""language": """),format.raw/*104.28*/("""{"""),format.raw/*104.29*/("""
+                   """),format.raw/*105.20*/(""""url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+               """),format.raw/*106.16*/("""}"""),format.raw/*106.17*/("""
+            """),format.raw/*107.13*/("""}"""),format.raw/*107.14*/(""");
+        """),format.raw/*108.9*/("""}"""),format.raw/*108.10*/(""");
         </script>
     </body>
     </html>
 
-""")))}),format.raw/*119.2*/("""
+""")))}),format.raw/*113.2*/("""
 """))
       }
     }
@@ -168,11 +162,11 @@ Seq[Any](format.raw/*1.61*/("""
 object simulation extends simulation_Scope0.simulation
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 16 02:08:36 COT 2016
+                  DATE: Mon Nov 21 09:32:29 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/simulation.scala.html
-                  HASH: 0f5f0b50a6a8c138006f5c63013c32c992cd6cfa
-                  MATRIX: 790->1|944->60|976->67|990->74|1043->119|1082->121|1120->133|1372->358|1387->364|1445->401|1514->443|1529->449|1582->481|1651->523|1666->529|1718->560|1787->602|1802->608|1857->642|1930->688|1945->694|1997->725|2069->770|2084->776|2137->808|3533->2177|3572->2200|3611->2201|3665->2227|3731->2266|3746->2272|3778->2283|3845->2323|3860->2329|3888->2336|3955->2376|3970->2382|3996->2387|4063->2427|4078->2433|4107->2441|4174->2481|4189->2487|4219->2496|4286->2536|4301->2542|4327->2547|4417->2606|4467->2628|4653->2787|4689->2807|4728->2808|4782->2834|4848->2873|4862->2878|4886->2881|4953->2921|4967->2926|5002->2940|5069->2980|5083->2985|5119->3000|5186->3040|5200->3045|5233->3057|5300->3097|5314->3102|5348->3115|5438->3174|5488->3196|6022->3703|6037->3709|6095->3746|6185->3809|6200->3815|6250->3844|6344->3910|6360->3916|6421->3955|6520->4026|6536->4032|6588->4062|6653->4099|6669->4105|6728->4142|6791->4177|6807->4183|6859->4213|6956->4281|6986->4282|7028->4295|7082->4320|7112->4321|7158->4338|7199->4350|7229->4351|7279->4372|7393->4457|7423->4458|7466->4472|7496->4473|7536->4485|7566->4486|7649->4538
-                  LINES: 27->1|32->1|35->4|35->4|35->4|35->4|37->6|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|47->16|47->16|47->16|48->17|48->17|48->17|49->18|49->18|49->18|87->56|87->56|87->56|88->57|89->58|89->58|89->58|90->59|90->59|90->59|91->60|91->60|91->60|92->61|92->61|92->61|93->62|93->62|93->62|94->63|94->63|94->63|96->65|97->66|103->72|103->72|103->72|104->73|105->74|105->74|105->74|106->75|106->75|106->75|107->76|107->76|107->76|108->77|108->77|108->77|109->78|109->78|109->78|111->80|112->81|128->97|128->97|128->97|130->99|130->99|130->99|132->101|132->101|132->101|134->103|134->103|134->103|136->105|136->105|136->105|137->106|137->106|137->106|139->108|139->108|140->109|140->109|140->109|141->110|141->110|141->110|142->111|143->112|143->112|144->113|144->113|145->114|145->114|150->119
+                  HASH: 8fa1972660234e3783c741885c482b9cab51e8dc
+                  MATRIX: 790->1|944->60|976->67|990->74|1043->119|1082->121|1120->133|1372->358|1387->364|1445->401|1514->443|1529->449|1582->481|1651->523|1666->529|1718->560|1787->602|1802->608|1857->642|1930->688|1945->694|1997->725|2069->770|2084->776|2137->808|3589->2233|3628->2256|3667->2257|3717->2279|3779->2314|3794->2320|3826->2331|3889->2367|3904->2373|3932->2380|3995->2416|4010->2422|4036->2427|4099->2463|4114->2469|4143->2477|4206->2513|4221->2519|4251->2528|4314->2564|4329->2570|4355->2575|4437->2626|4483->2644|4652->2786|4688->2806|4727->2807|4777->2829|4839->2864|4853->2869|4877->2872|4940->2908|4954->2913|4989->2927|5052->2963|5066->2968|5102->2983|5165->3019|5179->3024|5212->3036|5275->3072|5289->3077|5323->3090|5405->3141|5451->3159|5996->3677|6011->3683|6069->3720|6159->3783|6174->3789|6224->3818|6317->3884|6332->3890|6392->3929|6490->4000|6505->4006|6556->4036|6620->4073|6635->4079|6693->4116|6756->4151|6772->4157|6824->4187|6921->4255|6951->4256|6993->4269|7047->4294|7077->4295|7123->4312|7164->4324|7194->4325|7244->4346|7358->4431|7388->4432|7431->4446|7461->4447|7501->4459|7531->4460|7614->4512
+                  LINES: 27->1|32->1|35->4|35->4|35->4|35->4|37->6|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|47->16|47->16|47->16|48->17|48->17|48->17|49->18|49->18|49->18|84->53|84->53|84->53|85->54|86->55|86->55|86->55|87->56|87->56|87->56|88->57|88->57|88->57|89->58|89->58|89->58|90->59|90->59|90->59|91->60|91->60|91->60|93->62|94->63|100->69|100->69|100->69|101->70|102->71|102->71|102->71|103->72|103->72|103->72|104->73|104->73|104->73|105->74|105->74|105->74|106->75|106->75|106->75|108->77|109->78|122->91|122->91|122->91|124->93|124->93|124->93|126->95|126->95|126->95|128->97|128->97|128->97|130->99|130->99|130->99|131->100|131->100|131->100|133->102|133->102|134->103|134->103|134->103|135->104|135->104|135->104|136->105|137->106|137->106|138->107|138->107|139->108|139->108|144->113
                   -- GENERATED --
               */
           

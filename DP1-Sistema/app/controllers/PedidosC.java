@@ -78,11 +78,26 @@ public class PedidosC extends Controller {
 				
 				for(int i=0;i<mejorRuta.getListaRutaEscogida().size();i++){
 					Ruta r = mejorRuta.getListaRutaEscogida().get(i);
+					
+					Logger.info("pedido.id " + pedido.id);
+					Logger.info("peronas_id " + personas_id);					
+					Logger.info("getHoraOrigen " + hourFormat.format(hourFormat.parse(r.getHoraOrigen())));
+					Logger.info("getHoraOrigen " + hourFormat.parse(r.getHoraOrigen()));
+					Logger.info("getHoraFin " + hourFormat.format(hourFormat.parse(r.getHoraFin())));
+					Logger.info("getHoraFin " + hourFormat.parse(r.getHoraFin()));
+					Logger.info("i " + i);					
+
 					Vuelos v = Vuelos.getIdByOtherValues(r.getCiudadOrigen(),r.getCiudadFin(), hourFormat.parse(r.getHoraOrigen()), hourFormat.parse(r.getHoraFin()));
+					
+					Logger.info("v.id " + v.id);
+
 					Logger.info("Se encontro vuelo");
 					
 					Integer tiempoEspera = mejorRuta.getTiemposEspera().get(i);
 					Integer tiemposTraslado = mejorRuta.getTiemposTraslado().get(i);
+					
+					Logger.info("tiempoEspera " + tiempoEspera);
+					Logger.info("tiemposTraslado " + tiemposTraslado);					
 					
 					Pedidos_x_vuelos pXV = new Pedidos_x_vuelos(pedido.id,personas_id,v.id,i,tiempoEspera,tiemposTraslado);
 					Logger.info("Se creo pedidoXvuelo");
@@ -111,7 +126,7 @@ public class PedidosC extends Controller {
 	
     @play.db.jpa.Transactional      
     public static Result detail(Long idPedido) {            
-        return ok(views.html.pedido.detail.render(Pedidos.getById(idPedido)));
+        return ok(views.html.pedido.detail.render(Pedidos.getById(idPedido), Pedidos_x_vuelos.getByPedido(idPedido)));
     }
 
     @play.db.jpa.Transactional      

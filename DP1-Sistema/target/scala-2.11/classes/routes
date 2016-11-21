@@ -12,6 +12,7 @@ GET     /cuenta						controllers.UsuariosC.account()
 
 GET     /							controllers.Application.index()
 GET     /simulation					controllers.Application.simulation()
+GET		/simulation/requestPackage	controllers.Application.requestPackage(scale: Long, time: Long)
 
 GET     /pedido            			controllers.PedidosC.index()
 GET     /pedido/new            		controllers.PedidosC.newO()

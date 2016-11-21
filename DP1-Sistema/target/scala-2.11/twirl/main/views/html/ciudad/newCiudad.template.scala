@@ -135,6 +135,26 @@ Seq[Any](format.raw/*1.19*/("""
 			    	</div>
 			  	</div>
 			  	
+				<div class="form-group required">
+			    	<label for="latitud" class="col-sm-4 control-label">Latitud</label>
+			    	<div class="col-sm-5">
+			      		<input type="text" class="form-control" id="latitud" name="latitud" placeholder="Latitud" required onkeypress="return inputLimiter(event,'SignedNumbers')">
+			    	</div>
+			    </div>
+
+				<div class="form-group required">
+			    	<label for="longitud" class="col-sm-4 control-label">Longitud</label>
+			    	<div class="col-sm-5">
+			      		<input type="text" class="form-control" id="longitud" name="longitud" placeholder="Longitud" required onkeypress="return inputLimiter(event,'SignedNumbers')">
+			    	</div>
+			    </div>
+
+			  	<div class="form-group required">
+			    	<label for="huso" class="col-sm-4 control-label">Huso horario</label>
+			    	<div class="col-sm-5">
+			      		<input type="text" class="form-control" id="huso" name="huso" placeholder="Huso horario" required onkeypress="return inputLimiter(event,'SignedNumbers')">
+			    	</div>
+			  	</div>
 					<!-- FIN FIN FIN  -->				
 			
 				</br>
@@ -146,7 +166,7 @@ Seq[Any](format.raw/*1.19*/("""
 						<input class="btn btn-primary" type="submit" value="Confirmar">
 					</div>
 					<div class="btn-group">						
-						<a href='"""),_display_(/*118.17*/routes/*118.23*/.CiudadesC.index()),format.raw/*118.41*/("""' class="btn btn-info">Cancelar</a>
+						<a href='"""),_display_(/*138.17*/routes/*138.23*/.CiudadesC.index()),format.raw/*138.41*/("""' class="btn btn-info">Cancelar</a>
 					</div>
 				</div>
 				</br>
@@ -191,11 +211,11 @@ Seq[Any](format.raw/*1.19*/("""
 object newCiudad extends newCiudad_Scope0.newCiudad
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 16 02:08:38 COT 2016
+                  DATE: Mon Nov 21 15:47:37 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/ciudad/newCiudad.scala.html
-                  HASH: 89b743ef1bc58f4a4274177159a19020f1411d32
-                  MATRIX: 760->1|872->18|900->21|914->28|942->48|981->50|1017->60|1262->278|1277->284|1335->321|1397->356|1412->362|1465->394|1527->429|1542->435|1594->466|1656->501|1671->507|1726->541|2241->1028|2270->1029|2299->1030|2328->1031|2369->1044|2398->1045|2427->1046|2523->1116|2564->1148|2604->1150|2644->1162|2859->1350|2873->1355|2909->1370|2949->1382|2994->1397|3030->1407|3069->1437|3109->1439|3149->1451|3363->1638|3377->1643|3411->1656|3451->1668|3496->1683|3532->1693|3570->1722|3610->1724|3650->1736|3861->1920|3875->1925|3908->1937|3948->1949|3993->1964|4031->1975|6452->4368|6468->4374|6508->4392
-                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33|67->36|67->36|67->36|68->37|70->39|70->39|70->39|71->40|72->41|74->43|74->43|74->43|75->44|77->46|77->46|77->46|78->47|79->48|81->50|81->50|81->50|82->51|84->53|84->53|84->53|85->54|86->55|89->58|149->118|149->118|149->118
+                  HASH: 716e09796cc40e230eb08f097a1840cde2ff27df
+                  MATRIX: 760->1|872->18|900->21|914->28|942->48|981->50|1017->60|1262->278|1277->284|1335->321|1397->356|1412->362|1465->394|1527->429|1542->435|1594->466|1656->501|1671->507|1726->541|2241->1028|2270->1029|2299->1030|2328->1031|2369->1044|2398->1045|2427->1046|2523->1116|2564->1148|2604->1150|2644->1162|2859->1350|2873->1355|2909->1370|2949->1382|2994->1397|3030->1407|3069->1437|3109->1439|3149->1451|3363->1638|3377->1643|3411->1656|3451->1668|3496->1683|3532->1693|3570->1722|3610->1724|3650->1736|3861->1920|3875->1925|3908->1937|3948->1949|3993->1964|4031->1975|7484->5400|7500->5406|7540->5424
+                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33|67->36|67->36|67->36|68->37|70->39|70->39|70->39|71->40|72->41|74->43|74->43|74->43|75->44|77->46|77->46|77->46|78->47|79->48|81->50|81->50|81->50|82->51|84->53|84->53|84->53|85->54|86->55|89->58|169->138|169->138|169->138
                   -- GENERATED --
               */
           

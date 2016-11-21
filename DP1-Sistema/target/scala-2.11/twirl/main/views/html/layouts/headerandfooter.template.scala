@@ -40,23 +40,24 @@ Seq[Any](format.raw/*1.32*/("""
 
             if (allow == 'Letters')"""),format.raw/*10.36*/("""{"""),format.raw/*10.37*/("""AllowableCharacters=' ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz';"""),format.raw/*10.115*/("""}"""),format.raw/*10.116*/("""
             """),format.raw/*11.13*/("""if (allow == 'Numbers')"""),format.raw/*11.36*/("""{"""),format.raw/*11.37*/("""AllowableCharacters='1234567890';"""),format.raw/*11.70*/("""}"""),format.raw/*11.71*/("""
-            """),format.raw/*12.13*/("""if (allow == 'NameCharacters')"""),format.raw/*12.43*/("""{"""),format.raw/*12.44*/("""AllowableCharacters=' ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz-.\'._';"""),format.raw/*12.128*/("""}"""),format.raw/*12.129*/("""
-            """),format.raw/*13.13*/("""if (allow == 'NameCharactersAndNumbers')"""),format.raw/*13.53*/("""{"""),format.raw/*13.54*/("""AllowableCharacters='1234567890 ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz-\'_.';"""),format.raw/*13.147*/("""}"""),format.raw/*13.148*/("""
-            """),format.raw/*14.13*/("""if (allow == 'DoubleFormat')"""),format.raw/*14.41*/("""{"""),format.raw/*14.42*/("""AllowableCharacters='1234567890,.';"""),format.raw/*14.77*/("""}"""),format.raw/*14.78*/("""
-            """),format.raw/*15.13*/("""if (allow == 'Nulo')"""),format.raw/*15.33*/("""{"""),format.raw/*15.34*/("""AllowableCharacters='';"""),format.raw/*15.57*/("""}"""),format.raw/*15.58*/(""" """),format.raw/*15.59*/("""//sirve para colocarle a las fechas deben ser obligatoriamente ingresadas por el picker
+            """),format.raw/*12.13*/("""if (allow == 'SignedNumbers')"""),format.raw/*12.42*/("""{"""),format.raw/*12.43*/("""AllowableCharacters='1234567890-';"""),format.raw/*12.77*/("""}"""),format.raw/*12.78*/("""
+            """),format.raw/*13.13*/("""if (allow == 'NameCharacters')"""),format.raw/*13.43*/("""{"""),format.raw/*13.44*/("""AllowableCharacters=' ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz-.\'._';"""),format.raw/*13.128*/("""}"""),format.raw/*13.129*/("""
+            """),format.raw/*14.13*/("""if (allow == 'NameCharactersAndNumbers')"""),format.raw/*14.53*/("""{"""),format.raw/*14.54*/("""AllowableCharacters='1234567890 ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz-\'_.';"""),format.raw/*14.147*/("""}"""),format.raw/*14.148*/("""
+            """),format.raw/*15.13*/("""if (allow == 'DoubleFormat')"""),format.raw/*15.41*/("""{"""),format.raw/*15.42*/("""AllowableCharacters='1234567890,.';"""),format.raw/*15.77*/("""}"""),format.raw/*15.78*/("""
+            """),format.raw/*16.13*/("""if (allow == 'Nulo')"""),format.raw/*16.33*/("""{"""),format.raw/*16.34*/("""AllowableCharacters='';"""),format.raw/*16.57*/("""}"""),format.raw/*16.58*/(""" """),format.raw/*16.59*/("""//sirve para colocarle a las fechas deben ser obligatoriamente ingresadas por el picker
 
             var k = document.all?parseInt(e.keyCode): parseInt(e.which);
-            if (k!=13 && k!=8 && k!=0)"""),format.raw/*18.39*/("""{"""),format.raw/*18.40*/("""
-                """),format.raw/*19.17*/("""if ((e.ctrlKey==false) && (e.altKey==false)) """),format.raw/*19.62*/("""{"""),format.raw/*19.63*/("""
-                """),format.raw/*20.17*/("""return (AllowableCharacters.indexOf(String.fromCharCode(k))!=-1);
-                """),format.raw/*21.17*/("""}"""),format.raw/*21.18*/(""" """),format.raw/*21.19*/("""else """),format.raw/*21.24*/("""{"""),format.raw/*21.25*/("""
-                """),format.raw/*22.17*/("""return true;
-                """),format.raw/*23.17*/("""}"""),format.raw/*23.18*/("""
-            """),format.raw/*24.13*/("""}"""),format.raw/*24.14*/(""" """),format.raw/*24.15*/("""else """),format.raw/*24.20*/("""{"""),format.raw/*24.21*/("""
-                """),format.raw/*25.17*/("""return true;
-            """),format.raw/*26.13*/("""}"""),format.raw/*26.14*/("""
-        """),format.raw/*27.9*/("""}"""),format.raw/*27.10*/("""
-"""),format.raw/*28.1*/("""</script>
+            if (k!=13 && k!=8 && k!=0)"""),format.raw/*19.39*/("""{"""),format.raw/*19.40*/("""
+                """),format.raw/*20.17*/("""if ((e.ctrlKey==false) && (e.altKey==false)) """),format.raw/*20.62*/("""{"""),format.raw/*20.63*/("""
+                """),format.raw/*21.17*/("""return (AllowableCharacters.indexOf(String.fromCharCode(k))!=-1);
+                """),format.raw/*22.17*/("""}"""),format.raw/*22.18*/(""" """),format.raw/*22.19*/("""else """),format.raw/*22.24*/("""{"""),format.raw/*22.25*/("""
+                """),format.raw/*23.17*/("""return true;
+                """),format.raw/*24.17*/("""}"""),format.raw/*24.18*/("""
+            """),format.raw/*25.13*/("""}"""),format.raw/*25.14*/(""" """),format.raw/*25.15*/("""else """),format.raw/*25.20*/("""{"""),format.raw/*25.21*/("""
+                """),format.raw/*26.17*/("""return true;
+            """),format.raw/*27.13*/("""}"""),format.raw/*27.14*/("""
+        """),format.raw/*28.9*/("""}"""),format.raw/*28.10*/("""
+"""),format.raw/*29.1*/("""</script>
 
 
 
@@ -84,14 +85,14 @@ Seq[Any](format.raw/*1.32*/("""
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="#" class="navbar-brand"><img alt="Brand" class="img-responsive" src='"""),_display_(/*56.88*/routes/*56.94*/.Assets.at("/images/logoSimu.png")),format.raw/*56.128*/("""' ></a>
+        <a href="#" class="navbar-brand"><img alt="Brand" class="img-responsive" src='"""),_display_(/*57.88*/routes/*57.94*/.Assets.at("/images/logoSimu.png")),format.raw/*57.128*/("""' ></a>
       </div>
 
       <div class="collapse navbar-collapse" id="navbar1">
         <!-- Principal -->
         <ul class="nav navbar-nav">
           <li class="dropdown">
-            <a href='"""),_display_(/*63.23*/routes/*63.29*/.Application.index()),format.raw/*63.49*/("""' class="dropdown-toggle btn-lg" role="button">
+            <a href='"""),_display_(/*64.23*/routes/*64.29*/.Application.index()),format.raw/*64.49*/("""' class="dropdown-toggle btn-lg" role="button">
               Principal 
             </a>           
           </li>
@@ -104,9 +105,9 @@ Seq[Any](format.raw/*1.32*/("""
               Mantenimientos <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><a href='"""),_display_(/*76.29*/routes/*76.35*/.PersonasC.index()),format.raw/*76.53*/("""' title="Personas" target="_self">Personas</a></li>              
-              <li><a href='"""),_display_(/*77.29*/routes/*77.35*/.CiudadesC.index()),format.raw/*77.53*/("""' title="Aeropuertos" target="_self">Aeropuertos/Almacenes</a></li>
-              <li><a href='"""),_display_(/*78.29*/routes/*78.35*/.VuelosC.index()),format.raw/*78.51*/("""' title="Planes de Vuelo" target="_self">Planes de Vuelo</a></li>
+              <li><a href='"""),_display_(/*77.29*/routes/*77.35*/.PersonasC.index()),format.raw/*77.53*/("""' title="Personas" target="_self">Personas</a></li>              
+              <li><a href='"""),_display_(/*78.29*/routes/*78.35*/.CiudadesC.index()),format.raw/*78.53*/("""' title="Aeropuertos" target="_self">Aeropuertos/Almacenes</a></li>
+              <li><a href='"""),_display_(/*79.29*/routes/*79.35*/.VuelosC.index()),format.raw/*79.51*/("""' title="Planes de Vuelo" target="_self">Planes de Vuelo</a></li>
             </ul>
           </li>
         </ul>
@@ -118,8 +119,8 @@ Seq[Any](format.raw/*1.32*/("""
               Usuarios <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                <li><a href='"""),_display_(/*90.31*/routes/*90.37*/.UsuariosC.index()),format.raw/*90.55*/("""' title="Consultar usuarios" target="_self">Consultar</a></li>
-                <li><a href='"""),_display_(/*91.31*/routes/*91.37*/.UsuariosC.newO()),format.raw/*91.54*/("""' title="Registrar Usuario" target="_self">Registrar</a></li>
+                <li><a href='"""),_display_(/*91.31*/routes/*91.37*/.UsuariosC.index()),format.raw/*91.55*/("""' title="Consultar usuarios" target="_self">Consultar</a></li>
+                <li><a href='"""),_display_(/*92.31*/routes/*92.37*/.UsuariosC.newO()),format.raw/*92.54*/("""' title="Registrar Usuario" target="_self">Registrar</a></li>
                 </li>
             </ul>
           </li>
@@ -132,8 +133,8 @@ Seq[Any](format.raw/*1.32*/("""
               Pedidos <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                <li><a href='"""),_display_(/*104.31*/routes/*104.37*/.PedidosC.index()),format.raw/*104.54*/("""' title="Consultar talleres" target="_self">Consultar</a></li>
-                <li><a href='"""),_display_(/*105.31*/routes/*105.37*/.PedidosC.newO()),format.raw/*105.53*/("""' title="Registrar talleres" target="_self">Registrar</a></li>
+                <li><a href='"""),_display_(/*105.31*/routes/*105.37*/.PedidosC.index()),format.raw/*105.54*/("""' title="Consultar talleres" target="_self">Consultar</a></li>
+                <li><a href='"""),_display_(/*106.31*/routes/*106.37*/.PedidosC.newO()),format.raw/*106.53*/("""' title="Registrar talleres" target="_self">Registrar</a></li>
             </ul>
           </li>
         </ul>
@@ -145,8 +146,8 @@ Seq[Any](format.raw/*1.32*/("""
               Enrutamiento <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                <li><a href='"""),_display_(/*117.31*/routes/*117.37*/.Application.simulation()),format.raw/*117.62*/("""' title="Ejecutar Enrutamiento" target="_self">Ejecutar Enrutamiento</a></li>
-                <li><a href='"""),_display_(/*118.31*/routes/*118.37*/.Application.simulation()),format.raw/*118.62*/("""' title="Ejecutar Simulación" target="_self">Ejecutar Simulación</a></li>
+                <li><a href='"""),_display_(/*118.31*/routes/*118.37*/.Application.simulation()),format.raw/*118.62*/("""' title="Ejecutar Enrutamiento" target="_self">Ejecutar Enrutamiento</a></li>
+                <li><a href='"""),_display_(/*119.31*/routes/*119.37*/.Application.simulation()),format.raw/*119.62*/("""' title="Ejecutar Simulación" target="_self">Ejecutar Simulación</a></li>
             </ul>
           </li>
         </ul>
@@ -171,9 +172,9 @@ Seq[Any](format.raw/*1.32*/("""
               <span class="glyphicon glyphicon-user"><span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <!--<li><a href='"""),_display_(/*143.33*/routes/*143.39*/.UsuariosC.account()),format.raw/*143.59*/("""' title="Ir a cuenta" target="_self">Mi Cuenta</a></li>-->
-              <li><a href='"""),_display_(/*144.29*/routes/*144.35*/.SessionC.changePassword()),format.raw/*144.61*/("""' title="Cambiar contraseña" target="_self">Cambiar mi contraseña</a></li>
-              <li><a href='"""),_display_(/*145.29*/routes/*145.35*/.SessionC.logout()),format.raw/*145.53*/("""' title="LOGOUT" target="_self">Logout</a></li>
+              <!--<li><a href='"""),_display_(/*144.33*/routes/*144.39*/.UsuariosC.account()),format.raw/*144.59*/("""' title="Ir a cuenta" target="_self">Mi Cuenta</a></li>-->
+              <li><a href='"""),_display_(/*145.29*/routes/*145.35*/.SessionC.changePassword()),format.raw/*145.61*/("""' title="Cambiar contraseña" target="_self">Cambiar mi contraseña</a></li>
+              <li><a href='"""),_display_(/*146.29*/routes/*146.35*/.SessionC.logout()),format.raw/*146.53*/("""' title="LOGOUT" target="_self">Logout</a></li>
             </ul>
           </li>
         </ul>
@@ -184,27 +185,27 @@ Seq[Any](format.raw/*1.32*/("""
 <!---Cuerpo -->
 
 <main class="main">
-"""),_display_(/*156.2*/content),format.raw/*156.9*/("""
-"""),format.raw/*157.1*/("""</main>
+"""),_display_(/*157.2*/content),format.raw/*157.9*/("""
+"""),format.raw/*158.1*/("""</main>
 <!--Pie de págna-->
 
 <footer class="footer">
     <div class="content">
         <div class="footer-1">
             <div class="logofoot">
-                <img alt="Papus Club" src='"""),_display_(/*164.45*/routes/*164.51*/.Assets.at("images/logo-min.png")),format.raw/*164.84*/("""' title="Papus Club" style="z-index: -1;">               
+                <img alt="Papus Club" src='"""),_display_(/*165.45*/routes/*165.51*/.Assets.at("images/logo-min.png")),format.raw/*165.84*/("""' title="Papus Club" style="z-index: -1;">               
             </div>
             <div class="contacto">
                 <ul class="info">
                         <li><a href="#" title="telefono">(51) 1 523 4910</a></li>
-                        <li><span><img class="PointImg" src='"""),_display_(/*169.63*/routes/*169.69*/.Assets.at("images/punto.png")),format.raw/*169.99*/("""' width="3px" height="3px"></img></span></li>
+                        <li><span><img class="PointImg" src='"""),_display_(/*170.63*/routes/*170.69*/.Assets.at("images/punto.png")),format.raw/*170.99*/("""' width="3px" height="3px"></img></span></li>
                         <li><a href="#" title="e-mail"></a></li>
                 </ul>
                 <ul class="terminos-condiciones">
                         <li><a href="#" title="Terminos y Condiciones">TÉRMINOS Y CONDICIONES</a></li>
-                        <li><span><img class="PointImg" src='"""),_display_(/*174.63*/routes/*174.69*/.Assets.at("images/punto.png")),format.raw/*174.99*/("""'  width="3px" height="3px"></img></span></li>
+                        <li><span><img class="PointImg" src='"""),_display_(/*175.63*/routes/*175.69*/.Assets.at("images/punto.png")),format.raw/*175.99*/("""'  width="3px" height="3px"></img></span></li>
                         <li><a href="#" title="Privacidad">PRIVACIDAD</a></li>
-                        <li><span><img class="PointImg" src='"""),_display_(/*176.63*/routes/*176.69*/.Assets.at("images/punto.png")),format.raw/*176.99*/("""'  width="3px" height="3px"></img></span></li>
+                        <li><span><img class="PointImg" src='"""),_display_(/*177.63*/routes/*177.69*/.Assets.at("images/punto.png")),format.raw/*177.99*/("""'  width="3px" height="3px"></img></span></li>
                 </ul>
                     
             </div>
@@ -231,11 +232,11 @@ Seq[Any](format.raw/*1.32*/("""
 object headerandfooter extends headerandfooter_Scope0.headerandfooter
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 16 02:08:38 COT 2016
+                  DATE: Mon Nov 21 15:42:23 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/layouts/headerandfooter.scala.html
-                  HASH: 9382791c837b77a00d60b44c65ac79faf76f54a7
-                  MATRIX: 778->1|903->31|931->33|1104->179|1132->180|1172->193|1266->259|1295->260|1402->338|1432->339|1473->352|1524->375|1553->376|1614->409|1643->410|1684->423|1742->453|1771->454|1884->538|1914->539|1955->552|2023->592|2052->593|2174->686|2204->687|2245->700|2301->728|2330->729|2393->764|2422->765|2463->778|2511->798|2540->799|2591->822|2620->823|2649->824|2877->1024|2906->1025|2951->1042|3024->1087|3053->1088|3098->1105|3208->1187|3237->1188|3266->1189|3299->1194|3328->1195|3373->1212|3430->1241|3459->1242|3500->1255|3529->1256|3558->1257|3591->1262|3620->1263|3665->1280|3718->1305|3747->1306|3783->1315|3812->1316|3840->1317|5155->2605|5170->2611|5226->2645|5450->2842|5465->2848|5506->2868|6007->3342|6022->3348|6061->3366|6182->3460|6197->3466|6236->3484|6359->3580|6374->3586|6411->3602|6882->4046|6897->4052|6936->4070|7056->4163|7071->4169|7109->4186|7597->4646|7613->4652|7652->4669|7773->4762|7789->4768|7827->4784|8312->5241|8328->5247|8375->5272|8511->5380|8527->5386|8574->5411|9541->6350|9557->6356|9599->6376|9714->6463|9730->6469|9778->6495|9909->6598|9925->6604|9965->6622|10169->6799|10197->6806|10226->6807|10443->6996|10459->7002|10514->7035|10832->7325|10848->7331|10900->7361|11276->7709|11292->7715|11344->7745|11560->7933|11576->7939|11628->7969
-                  LINES: 27->1|32->1|34->3|38->7|38->7|39->8|41->10|41->10|41->10|41->10|42->11|42->11|42->11|42->11|42->11|43->12|43->12|43->12|43->12|43->12|44->13|44->13|44->13|44->13|44->13|45->14|45->14|45->14|45->14|45->14|46->15|46->15|46->15|46->15|46->15|46->15|49->18|49->18|50->19|50->19|50->19|51->20|52->21|52->21|52->21|52->21|52->21|53->22|54->23|54->23|55->24|55->24|55->24|55->24|55->24|56->25|57->26|57->26|58->27|58->27|59->28|87->56|87->56|87->56|94->63|94->63|94->63|107->76|107->76|107->76|108->77|108->77|108->77|109->78|109->78|109->78|121->90|121->90|121->90|122->91|122->91|122->91|135->104|135->104|135->104|136->105|136->105|136->105|148->117|148->117|148->117|149->118|149->118|149->118|174->143|174->143|174->143|175->144|175->144|175->144|176->145|176->145|176->145|187->156|187->156|188->157|195->164|195->164|195->164|200->169|200->169|200->169|205->174|205->174|205->174|207->176|207->176|207->176
+                  HASH: 278af3fa8f54fee1063f6d9d05fd41f36ec39f5a
+                  MATRIX: 778->1|903->31|931->33|1104->179|1132->180|1172->193|1266->259|1295->260|1402->338|1432->339|1473->352|1524->375|1553->376|1614->409|1643->410|1684->423|1741->452|1770->453|1832->487|1861->488|1902->501|1960->531|1989->532|2102->616|2132->617|2173->630|2241->670|2270->671|2392->764|2422->765|2463->778|2519->806|2548->807|2611->842|2640->843|2681->856|2729->876|2758->877|2809->900|2838->901|2867->902|3095->1102|3124->1103|3169->1120|3242->1165|3271->1166|3316->1183|3426->1265|3455->1266|3484->1267|3517->1272|3546->1273|3591->1290|3648->1319|3677->1320|3718->1333|3747->1334|3776->1335|3809->1340|3838->1341|3883->1358|3936->1383|3965->1384|4001->1393|4030->1394|4058->1395|5373->2683|5388->2689|5444->2723|5668->2920|5683->2926|5724->2946|6225->3420|6240->3426|6279->3444|6400->3538|6415->3544|6454->3562|6577->3658|6592->3664|6629->3680|7100->4124|7115->4130|7154->4148|7274->4241|7289->4247|7327->4264|7815->4724|7831->4730|7870->4747|7991->4840|8007->4846|8045->4862|8530->5319|8546->5325|8593->5350|8729->5458|8745->5464|8792->5489|9759->6428|9775->6434|9817->6454|9932->6541|9948->6547|9996->6573|10127->6676|10143->6682|10183->6700|10387->6877|10415->6884|10444->6885|10661->7074|10677->7080|10732->7113|11050->7403|11066->7409|11118->7439|11494->7787|11510->7793|11562->7823|11778->8011|11794->8017|11846->8047
+                  LINES: 27->1|32->1|34->3|38->7|38->7|39->8|41->10|41->10|41->10|41->10|42->11|42->11|42->11|42->11|42->11|43->12|43->12|43->12|43->12|43->12|44->13|44->13|44->13|44->13|44->13|45->14|45->14|45->14|45->14|45->14|46->15|46->15|46->15|46->15|46->15|47->16|47->16|47->16|47->16|47->16|47->16|50->19|50->19|51->20|51->20|51->20|52->21|53->22|53->22|53->22|53->22|53->22|54->23|55->24|55->24|56->25|56->25|56->25|56->25|56->25|57->26|58->27|58->27|59->28|59->28|60->29|88->57|88->57|88->57|95->64|95->64|95->64|108->77|108->77|108->77|109->78|109->78|109->78|110->79|110->79|110->79|122->91|122->91|122->91|123->92|123->92|123->92|136->105|136->105|136->105|137->106|137->106|137->106|149->118|149->118|149->118|150->119|150->119|150->119|175->144|175->144|175->144|176->145|176->145|176->145|177->146|177->146|177->146|188->157|188->157|189->158|196->165|196->165|196->165|201->170|201->170|201->170|206->175|206->175|206->175|208->177|208->177|208->177
                   -- GENERATED --
               */
           

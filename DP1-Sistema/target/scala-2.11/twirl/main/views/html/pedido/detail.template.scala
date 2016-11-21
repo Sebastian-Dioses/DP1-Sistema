@@ -21,15 +21,15 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class detail extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[models.Pedidos,play.twirl.api.HtmlFormat.Appendable] {
+class detail extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template2[models.Pedidos,List[models.Pedidos_x_vuelos],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(pedido: models.Pedidos):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(pedido: models.Pedidos, rutas: List[models.Pedidos_x_vuelos]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.26*/("""
+Seq[Any](format.raw/*1.64*/("""
 
 """),_display_(/*3.2*/layouts/*3.9*/.headerandfooter("")/*3.29*/ {_display_(Seq[Any](format.raw/*3.31*/("""
     
@@ -130,7 +130,7 @@ Seq[Any](format.raw/*1.26*/("""
 		  		</div>		  				  
 
 		  		<div class="form-group">
-		    		<label for="fecha_input" class="col-sm-4 control-label">Fecha de Registro:</label>
+		    		<label for="fecha" class="col-sm-4 control-label">Fecha de Registro:</label>
 		    		<div class="col-sm-4">
 		      			<input type="text" class="form-control" id="fecha" name="fecha" readonly value=""""),_display_(/*104.93*/pedido/*104.99*/.fecha_registro.format("dd/MM/YYYY")),format.raw/*104.135*/("""">
 		    		</div>
@@ -139,7 +139,17 @@ Seq[Any](format.raw/*1.26*/("""
 		      			<input type="text" class="form-control" id="fecha" name="fecha" readonly value=""""),_display_(/*108.93*/pedido/*108.99*/.fecha_registro.format("HH:mm")),format.raw/*108.130*/("""">
 		    		</div>
 		  		</div>
-			  	
+
+		  		
+			  	<div class="form-group">
+		    		<label for="ciudad1" class="col-sm-4 control-label">Ruta:</label>
+		    		<div class="col-sm-6">
+		      			<input type="text" class="form-control" id="ciudad1" name="ciudad1" readonly 
+		      			value=""""),_display_(/*117.20*/for(ruta <- rutas) yield /*117.38*/{_display_(Seq[Any](_display_(/*117.40*/ruta/*117.44*/.vuelo.ciudad_origen),format.raw/*117.64*/(""" """),format.raw/*117.65*/("""- """),_display_(/*117.68*/ruta/*117.72*/.vuelo.ciudad_destino)))}),format.raw/*117.94*/(""""
+		      			>
+		    		</div>		    		
+		  		</div>
+		  		
 					<!-- FIN FIN FIN  -->				
 			
 				</br>
@@ -147,7 +157,7 @@ Seq[Any](format.raw/*1.26*/("""
 				<div class="btn-inline">
 					<div class="btn-group col-sm-5"></div>									
 					<div class="btn-group">						
-						<a href='"""),_display_(/*119.17*/routes/*119.23*/.PedidosC.index()),format.raw/*119.40*/("""' class="btn btn-info">Regresar</a>
+						<a href='"""),_display_(/*129.17*/routes/*129.23*/.PedidosC.index()),format.raw/*129.40*/("""' class="btn btn-info">Regresar</a>
 					</div>
 				</div>
 				</br>
@@ -160,12 +170,12 @@ Seq[Any](format.raw/*1.26*/("""
         </div>		
     
 	<!-- JQuery -->
-	<script src='"""),_display_(/*132.16*/routes/*132.22*/.Assets.at("js/jquery-1.11.3.min.js")),format.raw/*132.59*/("""'></script>
+	<script src='"""),_display_(/*142.16*/routes/*142.22*/.Assets.at("js/jquery-1.11.3.min.js")),format.raw/*142.59*/("""'></script>
 	<!-- Bootstrap -->
-	<script src='"""),_display_(/*134.16*/routes/*134.22*/.Assets.at("js/bootstrap.js")),format.raw/*134.51*/("""'></script>	
+	<script src='"""),_display_(/*144.16*/routes/*144.22*/.Assets.at("js/bootstrap.js")),format.raw/*144.51*/("""'></script>	
 	<!-- BXSlider -->
-	<script src='"""),_display_(/*136.16*/routes/*136.22*/.Assets.at("js/jquery.bxslider.min.js")),format.raw/*136.61*/("""'></script>
-    	<script src='"""),_display_(/*137.20*/routes/*137.26*/.Assets.at("js/MisScripts.js")),format.raw/*137.56*/("""'></script>
+	<script src='"""),_display_(/*146.16*/routes/*146.22*/.Assets.at("js/jquery.bxslider.min.js")),format.raw/*146.61*/("""'></script>
+    	<script src='"""),_display_(/*147.20*/routes/*147.26*/.Assets.at("js/MisScripts.js")),format.raw/*147.56*/("""'></script>
     
     
     </body>
@@ -176,9 +186,9 @@ Seq[Any](format.raw/*1.26*/("""
     }
   }
 
-  def render(pedido:models.Pedidos): play.twirl.api.HtmlFormat.Appendable = apply(pedido)
+  def render(pedido:models.Pedidos,rutas:List[models.Pedidos_x_vuelos]): play.twirl.api.HtmlFormat.Appendable = apply(pedido,rutas)
 
-  def f:((models.Pedidos) => play.twirl.api.HtmlFormat.Appendable) = (pedido) => apply(pedido)
+  def f:((models.Pedidos,List[models.Pedidos_x_vuelos]) => play.twirl.api.HtmlFormat.Appendable) = (pedido,rutas) => apply(pedido,rutas)
 
   def ref: this.type = this
 
@@ -191,11 +201,11 @@ Seq[Any](format.raw/*1.26*/("""
 object detail extends detail_Scope0.detail
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 16 11:43:27 COT 2016
+                  DATE: Mon Nov 21 16:22:28 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/pedido/detail.scala.html
-                  HASH: 9f49f813d85a03716904793e548c41fb7ca4945f
-                  MATRIX: 762->1|881->25|911->30|925->37|953->57|992->59|1030->71|1279->293|1294->299|1352->336|1415->372|1430->378|1483->410|1546->446|1561->452|1613->483|1676->519|1691->525|1746->559|2276->1061|2305->1062|2334->1063|2363->1064|2404->1077|2433->1078|2462->1079|2984->1573|3000->1579|3025->1582|3443->1972|3459->1978|3505->2002|3788->2257|3804->2263|3846->2283|4121->2530|4137->2536|4177->2554|4607->2956|4623->2962|4670->2987|4949->3238|4965->3244|5008->3265|5286->3515|5302->3521|5343->3540|5762->3931|5778->3937|5811->3948|6088->4197|6104->4203|6138->4215|6411->4460|6427->4466|6464->4481|6786->4775|6802->4781|6861->4817|7111->5039|7127->5045|7181->5076|7448->5315|7464->5321|7503->5338|7708->5515|7724->5521|7783->5558|7860->5607|7876->5613|7927->5642|8004->5691|8020->5697|8081->5736|8141->5768|8157->5774|8209->5804
-                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33|80->49|80->49|80->49|88->57|88->57|88->57|92->61|92->61|92->61|96->65|96->65|96->65|104->73|104->73|104->73|108->77|108->77|108->77|112->81|112->81|112->81|120->89|120->89|120->89|124->93|124->93|124->93|128->97|128->97|128->97|135->104|135->104|135->104|139->108|139->108|139->108|150->119|150->119|150->119|163->132|163->132|163->132|165->134|165->134|165->134|167->136|167->136|167->136|168->137|168->137|168->137
+                  HASH: f84695b7e29eb33d28092863fa74b862588c011b
+                  MATRIX: 792->1|949->63|979->68|993->75|1021->95|1060->97|1098->109|1347->331|1362->337|1420->374|1483->410|1498->416|1551->448|1614->484|1629->490|1681->521|1744->557|1759->563|1814->597|2344->1099|2373->1100|2402->1101|2431->1102|2472->1115|2501->1116|2530->1117|3052->1611|3068->1617|3093->1620|3511->2010|3527->2016|3573->2040|3856->2295|3872->2301|3914->2321|4189->2568|4205->2574|4245->2592|4675->2994|4691->3000|4738->3025|5017->3276|5033->3282|5076->3303|5354->3553|5370->3559|5411->3578|5830->3969|5846->3975|5879->3986|6156->4235|6172->4241|6206->4253|6479->4498|6495->4504|6532->4519|6848->4807|6864->4813|6923->4849|7173->5071|7189->5077|7243->5108|7563->5400|7598->5418|7638->5420|7652->5424|7694->5444|7724->5445|7755->5448|7769->5452|7816->5474|8104->5734|8120->5740|8159->5757|8364->5934|8380->5940|8439->5977|8516->6026|8532->6032|8583->6061|8660->6110|8676->6116|8737->6155|8797->6187|8813->6193|8865->6223
+                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|64->33|64->33|64->33|64->33|64->33|64->33|64->33|80->49|80->49|80->49|88->57|88->57|88->57|92->61|92->61|92->61|96->65|96->65|96->65|104->73|104->73|104->73|108->77|108->77|108->77|112->81|112->81|112->81|120->89|120->89|120->89|124->93|124->93|124->93|128->97|128->97|128->97|135->104|135->104|135->104|139->108|139->108|139->108|148->117|148->117|148->117|148->117|148->117|148->117|148->117|148->117|148->117|160->129|160->129|160->129|173->142|173->142|173->142|175->144|175->144|175->144|177->146|177->146|177->146|178->147|178->147|178->147
                   -- GENERATED --
               */
           

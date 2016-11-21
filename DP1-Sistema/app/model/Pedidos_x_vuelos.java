@@ -68,6 +68,15 @@ public class Pedidos_x_vuelos {
         return query.getResultList();                  
     }
 
+    public static List<Pedidos_x_vuelos> getByPedido(Long idPedido){                   
+        TypedQuery<Pedidos_x_vuelos> query = JPA.em().createQuery(
+           "Select v from Pedidos_x_vuelos v " +
+                    "where v.pedidos_id=:pedidos_id", Pedidos_x_vuelos.class);
+        query.setParameter("pedidos_id", idPedido);
+                    
+        return query.getResultList();                  
+    }
+
 	public void save(){
         JPA.em().persist(this);
         JPA.em().flush();
