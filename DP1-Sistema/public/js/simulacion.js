@@ -133,12 +133,96 @@ var targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z 
  * Calculates bullet size based on its value
  */
 
+/*
+  function recursive() {
+    $.get(, function() {
+    }).done(function () {
+    if (notFinish) {
+      recursive()
+    }   
+    });
+    
+  }*/
+
+
+
+
 function mostrarResultadosRuteos(data){
   //el data representa la informacion traida del algoritmo en formato Json
   //alert( data);
   var log = document.getElementById('maplog');
-  log.innerHTML = log.innerHTML + "<div>Escala: "+data.a+" Tiempo: "+data.b+"<\div>";
+  log.innerHTML = log.innerHTML + "<div>Origen: "+data.origen+" Destino: "+data.destino+"<\div>";
 }
+
+function recursiveVuelosPaquetes(contador) {
+  var stop=0;
+
+  $.get( "/simulation/requestPackage?scale="+escala+"&time="+contador, function( data ) {
+    stop=data.stop;
+    mostrarResultadosRuteos(data);
+
+    // var numLineas=map.dataProvider.lines.length;
+    // for(var i=0;i<)
+    var hora=currentTime;
+    if(currentTime<10) hora="0"+hora;
+    map.titles.pop();   
+    map.addTitle("Hora actual: "+ hora+":00", 14);
+    //map.validateNow();      
+      while (map.dataProvider.lines.length > 0) {
+          map.dataProvider.lines.pop();
+      } 
+
+      
+    var inicioIndex=indicesVuelos[currentTime];
+    var finIndex=vuelos.length;
+    if(currentTime!=23) finIndex=indicesVuelos[currentTime+1];
+
+    ///////actualizamos aviones
+
+    // for(var j=inicioAviones;j<map.dataProvider.images.length;j++){
+
+
+    //agregamos los nuevos aviones
+    for(var i=inicioIndex;i<finIndex;i++){
+        var vuelo=vuelos[i];
+        //datos de la ciudad origen
+        var latO=cities.get(vuelo.ciudadO).latitud;
+        var lonO=cities.get(vuelo.ciudadO).longitud;
+        //datos de la ciudad destino
+        var latF=cities.get(vuelo.ciudadF).latitud;
+        var lonF=cities.get(vuelo.ciudadF).longitud;
+
+        map.dataProvider.lines.push({
+          id: i,
+          arc: -0.85,
+          alpha: 0.3,
+          color: "#990000",
+          latitudes: [ latO, latF ],
+          longitudes: [ lonO, lonF ]              
+        });
+
+        //CREAR AVIONES
+
+    }
+
+      currentTime++;
+      currentTime%=24;
+    // check if maybe we need to wrap to frame 0
+    // update size of each bubble for the specific frame
+
+    // for( var i = 0; i < map.dataProvider.images.length; i++ ) {
+
+    map.validateData();
+
+  }).done(function () {
+    if (stop==0) {
+      recursiveVuelosPaquetes(contador+1);
+    }   
+
+  });
+  
+}
+
 
 /**
  * The code responsible for animating the motion chart data
@@ -159,7 +243,7 @@ function togglePlay() {
 
   escala=parseInt($('#escalaTiempo').val());
 
-  var speed = 40000; // time between frames in milliseconds
+  var speed = 1000; // time between frames in milliseconds
   var log = document.getElementById('maplog');
   var planeSVG = "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -80,134h-35l43,-133h-71l-24,30h-28l15,-47";
 
@@ -175,7 +259,10 @@ function togglePlay() {
   }
   var contador=0;
   // start playing
-  interval = setInterval( function () {
+  
+  recursiveVuelosPaquetes(contador);
+
+  /*interval = setInterval( function () {
     $.get( "/simulation/requestPackage?scale="+escala+"&time="+contador, function( data ) {
       mostrarResultadosRuteos(data);
 
@@ -198,21 +285,7 @@ function togglePlay() {
       ///////actualizamos aviones
 
       // for(var j=inicioAviones;j<map.dataProvider.images.length;j++){
-      //   var avion=map.getObjectById(map.dataProvider.images[j].id);
-      //   var vuelo=vuelos[avion.id];
-      //   if(parseInt(avion.description)==currentTime){ // si ya llego a su destino
-      //     //borramos avion
-      //     console.log("Borrando: "+cities.get(vuelo.ciudadO).nombre+"-"+
-      //                 cities.get(vuelo.ciudadF).nombre);
-      //     map.dataProvider.images[j].deleteObject();
-      //     continue;
-      //   }
-      //   avion.longitude=parseInt(avion.longitude)+vuelo.stepLongitud;
-      //   avion.latitude=parseInt(avion.latitude)+vuelo.stepLatitud;
-      //   //console.log(avion);
-      //   //avion.updatePosition();
-      //    //avion.validate();        
-      // }
+
 
       //agregamos los nuevos aviones
       for(var i=inicioIndex;i<finIndex;i++){
@@ -232,54 +305,23 @@ function togglePlay() {
             latitudes: [ latO, latF ],
             longitudes: [ lonO, lonF ]              
           });
-         //  console.log(latO);
-         // console.log(lonO);
 
           //CREAR AVIONES
-              // map.dataProvider.images.push({
-              //   id:i,
-              //   type: "circle",
-              //   color: "#585869",
-              //   longitude: lonO,
-              //   latitude: latO,
-              //   description:""+vuelo.horaLlegada,
-              //   title: cities.get(vuelo.ciudadF).nombre
-              // });
 
-
-              //   log.innerHTML = JSON.stringify({
-              //   "vuelo id: ":vuelo.id,
-              //   "origen: ": vuelo.ciudadO,
-              //   "destino: ": vuelo.ciudadF,
-              //   "hora Salida ": vuelo.horaSalida,
-              //   "hora Llegada ": vuelo.horaLlegada,
-              // }) + "<br />" + log.innerHTML;
-              //console.log("Vuelo: "+cities.get(vuelo.ciudadO).nombre+
-               //           "-"+cities.get(vuelo.ciudadF).nombre);
-              //console.log(lonO+"-"+latO);
-              // var imagen= map.dataProvider.images[inicioAviones+i];
-              // imagen.validate();
       }
 
         currentTime++;
         currentTime%=24;
-
         contador++;
       // check if maybe we need to wrap to frame 0
-      
-      
       // update size of each bubble for the specific frame
 
       // for( var i = 0; i < map.dataProvider.images.length; i++ ) {
-      //   var image = map.dataProvider.images[i];
-      //   image.value = frames[currentTime][image.id];
-      //   image.width = calcBubbleSize( frames[currentTime][image.id] );
-      //   //console.log(frames[currentTime][image.id]);
-      // }
+
       map.validateData();
     
     });
   }, speed );
-    
+    */
   
 }

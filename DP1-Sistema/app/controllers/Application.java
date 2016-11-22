@@ -16,6 +16,7 @@ import java.io.Reader;
 import java.io.File;
 import play.Play; 
 import static java.lang.Math.toIntExact;
+import java.util.TreeMap;
 
 import play.mvc.Security;
 
@@ -37,11 +38,13 @@ public class Application extends Controller {
 		public String origen;
 		public String destino;
 		public String ruta;
+		public Long stop;
 	}
 
 	
 	public static Result requestPackage(Long scale, Long time){
 		//Se debe correr todos los paquetes que calcen en ese periodo de tiempo y escala
+		Logger.info("Escala: "+scale+" Time: "+time);
 		
 		Gson gson = new Gson();
 		BufferArchivos baPedidos = new BufferArchivos();
@@ -52,20 +55,41 @@ public class Application extends Controller {
 			e.printStackTrace();
 		}
 		
+		TreeMap<Integer,String[]> listaPedidosEscala=null;
+		if(scale==1){
+			listaPedidosEscala = baPedidos.getListaPedidosEscala1();
+		}else if(scale==3){
+			listaPedidosEscala = baPedidos.getListaPedidosEscala2();		
+		}else{
+			listaPedidosEscala = baPedidos.getListaPedidosEscala3();
+		}
+		
+		Paquete pk = new Paquete();
+		
+		Logger.info("Cantidad horas en escala: "+listaPedidosEscala.size());
+		if(toIntExact(time)==listaPedidosEscala.size()){
+			Integer a=1;
+			pk.stop=a.longValue();
+			return ok(Json.toJson(pk));
+		}
+		Integer a=0;
+		pk.stop=a.longValue();
+		
 		
 		
 		String [] pedidos = null;
 		if(scale==1){
-			pedidos = baPedidos.getListaPedidosEscala1().get(toIntExact(time));
+			pedidos = listaPedidosEscala.get(toIntExact(time));
 		}else if(scale==3){
-			pedidos = baPedidos.getListaPedidosEscala2().get(toIntExact(time));		
+			pedidos = listaPedidosEscala.get(toIntExact(time));		
 		}else{
-			pedidos = baPedidos.getListaPedidosEscala3().get(toIntExact(time));
+			pedidos = listaPedidosEscala.get(toIntExact(time));
 		}
 		
 		GestorCiudades gc=GestorCiudades.getInstance();
 		
 		Logger.info("Cantidad paquetes: "+pedidos.length+"-"+time);
+		
 		for(int i=0;i<pedidos.length;i++){
 			String [] datosPaquete = pedidos[i].trim().split("-");//0:fecha 1:hora 2: ciudad origen 3: ciudad fin			
 			//Logger.info(datosPaquete[0]);
@@ -83,7 +107,6 @@ public class Application extends Controller {
 			}
 		}
 		
-		Paquete pk = new Paquete();
 		pk.hora="12:20";
 		pk.origen="ABCD";
 		pk.destino="EFGH";
