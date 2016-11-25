@@ -172,7 +172,7 @@ Seq[Any](format.raw/*1.19*/("""
 object newUser extends newUser_Scope0.newUser
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 16 02:08:43 COT 2016
+                  DATE: Fri Nov 25 10:46:10 COT 2016
                   SOURCE: C:/Users/MARCELO/Documents/GitHub/DP1-Sistema/DP1-Sistema/app/views/usuario/newUser.scala.html
                   HASH: cf56236d8d1514728aea935b3ecad0b4d8bda510
                   MATRIX: 757->1|869->18|897->21|911->28|939->48|978->50|1014->60|1256->275|1271->281|1329->318|1391->353|1406->359|1459->391|1521->426|1536->432|1588->463|1650->498|1665->504|1720->538|2232->1022|2261->1023|2290->1024|2319->1025|2360->1038|2389->1039|2418->1040|4917->3512|4932->3518|4971->3536

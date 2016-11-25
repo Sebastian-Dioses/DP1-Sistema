@@ -19,7 +19,9 @@ libraryDependencies ++= Seq(
   //  http://mvnrepository.com/artifact/org.mindrot/jbcrypt/
   "org.mindrot" % "jbcrypt" % "0.3m",
   "org.webjars" %% "webjars-play" % "2.5.0",
-  "org.webjars" % "bootstrap" % "3.1.1-2"
+  "org.webjars" % "bootstrap" % "3.1.1-2",
+  "org.apache.commons" % "commons-email" % "1.4",
+  "com.typesafe.play" %% "play-mailer" % "5.0.0"
   )
 
 // Play provides two styles of routers, one expects its actions to be injected, the

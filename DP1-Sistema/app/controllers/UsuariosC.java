@@ -17,6 +17,8 @@ import play.db.jpa.JPA;
 import org.mindrot.jbcrypt.BCrypt;
 import play.mvc.Security;
 
+import org.apache.commons.mail.*;
+
 @Security.Authenticated(SecuredC.class)
 public class UsuariosC extends Controller {
     
@@ -47,6 +49,18 @@ public class UsuariosC extends Controller {
             Usuarios user = new Usuarios(cuenta, "1234", per.id); 
             
             user.save();
+
+            Email email = new SimpleEmail();
+            email.setHostName("smtp.gmail.com");
+            email.setSmtpPort(587);
+            email.setAuthenticator(new DefaultAuthenticator("contact.simusoft@gmail.com", "simusoft123"));
+            email.setSSLOnConnect(true);
+            email.setFrom("contact.simusoft@gmail.com", "SIMUSOFT");
+            email.setSubject("[Simusoft] - Nuevo Usuario");
+            //email.setMsg("Buenas tardes," + '\n' + "Simusoft le informa que su paquete con código 231462 ha arribado a su destino: Bogotá, Colombia.");
+            email.setMsg("Buenas tardes," + '\n' + "Simusoft le informa que se ha registrado exitosamente su nuevo usuario:" +  '\n' + "Nombre de usuario: " + user.nombre + '\n' + "contraseña: " + user.contraseña);
+            email.addTo(user.persona.correo);                    
+            email.send();              
 
             flash("success", "El usuario fue creado con éxito");
             return redirect(controllers.routes.UsuariosC.index());
@@ -93,6 +107,18 @@ public class UsuariosC extends Controller {
                     user.save();
 
                     flash("success", "Se cambió la contraseña con éxito");
+
+                    Email email = new SimpleEmail();
+                    email.setHostName("smtp.gmail.com");
+                    email.setSmtpPort(587);
+                    email.setAuthenticator(new DefaultAuthenticator("contact.simusoft@gmail.com", "simusoft123"));
+                    email.setSSLOnConnect(true);
+                    email.setFrom("contact.simusoft@gmail.com", "SIMUSOFT");
+                    email.setSubject("[Simusoft] - Cambio de contraseña");
+                    email.setMsg("Buenas tardes," + '\n' + "Simusoft le informa que su contraseña ha sido modificada." + '\n' + "nueva contraseña: " + pwNueva);                    
+                    email.addTo(user.persona.correo);                    
+                    email.send();                    
+
                     return redirect(controllers.routes.Application.index());        
                 }
                 else{
