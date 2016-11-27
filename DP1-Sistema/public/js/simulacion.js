@@ -133,19 +133,6 @@ var targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z 
  * Calculates bullet size based on its value
  */
 
-/*
-  function recursive() {
-    $.get(, function() {
-    }).done(function () {
-    if (notFinish) {
-      recursive()
-    }   
-    });
-    
-  }*/
-
-
-
 
 function mostrarResultadosRuteos(data){
   //el data representa la informacion traida del algoritmo en formato Json
@@ -157,12 +144,11 @@ function mostrarResultadosRuteos(data){
 function recursiveVuelosPaquetes(contador) {
   var stop=0;
 
-  $.get( "/simulation/requestPackage?scale="+escala+"&time="+contador, function( data ) {
+  $.get( "/simulation/requestPackage?scale="+escala+"&time="+contador).done(function (data) {
     stop=data.stop;
     mostrarResultadosRuteos(data);
-
-  }).done(function () {
     if (stop==0) {
+      isSendRequest=0;
       recursiveVuelosPaquetes(contador+1);
     }   
 
@@ -176,6 +162,7 @@ function recursiveVuelosPaquetes(contador) {
  */
 
 // initilize variables
+var isSendRequest=0;
 var currentTime = 0;
 var interval;
  var inicioAviones=cities.size; 
@@ -206,7 +193,10 @@ function togglePlay() {
   var contador=0;
   // start playing
   
-  recursiveVuelosPaquetes(contador);
+  if(isSendRequest==0){
+    isSendRequest=1;
+    recursiveVuelosPaquetes(contador);
+  }
 
   interval = setInterval( function () {
 

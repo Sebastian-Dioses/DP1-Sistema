@@ -10,6 +10,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.TreeMap;
 
+import play.Logger;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.File;
+import play.Play; 
+/**
+
 /**
  *
  * @author Sebastián
@@ -28,7 +38,23 @@ public class BufferArchivos {
     private int escala2=3;
     private int escala3=6;
     
-	public BufferArchivos(){
+	private static BufferArchivos instance;
+	
+	public static BufferArchivos getInstance(){
+		return instance;
+	}
+	
+	static {
+		Gson gson = new Gson();		
+		try (Reader reader = new FileReader( Play.application().getFile("/conf/pedidosArutear.json"))) {
+			instance=gson.fromJson(reader, BufferArchivos.class);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	private BufferArchivos(){
 		
 	}
 	
