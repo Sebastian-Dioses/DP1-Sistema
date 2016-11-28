@@ -118,10 +118,10 @@ public class GestorCiudades {
         try{
             while((linea=brRutas.readLine()) != null){
                 String [] datos=linea.trim().split("-");
-                String ciudadO=datos[0];
-                String ciudadF=datos[1];
-                String horaO=datos[2];
-                String horaF=datos[3];
+                String ciudadO=datos[1];
+                String ciudadF=datos[2];
+                String horaO=datos[3];
+                String horaF=datos[4];
 
                 String[] hhmm=horaO.split(":");        
                 int horaPartida=Integer.parseInt(hhmm[0]);
@@ -365,7 +365,12 @@ public class GestorCiudades {
         }
         if(mejorRuta.getTiempoRuta()==1000 || mejorRuta.getEstadoRuta()!=this.estadoRutaFactible){
             //APLICAR RERUTEO
-            
+            if(cantidadNFCapacidadAlmacen>0)
+                mejorRuta.setEstadoRuta(this.estadoRutaXCapacidadAlmacen);
+            else if(cantidadNFCapacidadVuelo>0)
+                mejorRuta.setEstadoRuta(this.estadoRutaXCapacidadVuelo);
+            else
+                mejorRuta.setEstadoRuta(this.estadoRutaXTiempo);
         }
         else{
             if(numPedido%5000==0)System.out.println("dfs.GestorCiudades.DFS()");

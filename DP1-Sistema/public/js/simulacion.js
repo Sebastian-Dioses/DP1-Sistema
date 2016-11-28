@@ -96,10 +96,10 @@ function mostrarResultadosRuteos(data){
   //el data representa la informacion traida del algoritmo en formato Json
   //alert( data);
   if(data.factible==2){
-    writeToScreen("<span style='color: red'>No es factible por capacidad de almacén </span>");
+    writeToScreen("<span style='color: red'>No es factible por capacidad de almacén Id paquete:"+data.id+"</span>");
   }else{
     if(data.factible==3){
-      writeToScreen("<span style='color: red'>No es factible por capacidad de vuelo </span>");
+      writeToScreen("<span style='color: red'>No es factible por capacidad de vuelo Id paquete:"+data.id+"</span>");
     }
   }
 }

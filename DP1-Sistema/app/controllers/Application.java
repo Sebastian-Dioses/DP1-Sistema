@@ -47,7 +47,7 @@ public class Application extends Controller {
 	
 	
 	public static class Paquete{
-		public Long id;
+		public String id;
 		public String fecha;
 		public String hora;
 		public String origen;
@@ -64,24 +64,16 @@ public class Application extends Controller {
 		BufferArchivos baPedidos = BufferArchivos.getInstance();
 		
 		TreeMap<Integer,String[]> listaPedidosEscala=null;
-		if(scale==1){
+		if(scale==1)
 			listaPedidosEscala = baPedidos.getListaPedidosEscala1();
-		}else if(scale==3){
+		else
 			listaPedidosEscala = baPedidos.getListaPedidosEscala2();		
-		}else{
-			listaPedidosEscala = baPedidos.getListaPedidosEscala3();
-		}
+
 		
 		Logger.info("Cantidad horas en escala: "+listaPedidosEscala.size());
 			
 		String [] pedidos = null;
-		if(scale==1){
-			pedidos = listaPedidosEscala.get(toIntExact(time));
-		}else if(scale==3){
-			pedidos = listaPedidosEscala.get(toIntExact(time));		
-		}else{
-			pedidos = listaPedidosEscala.get(toIntExact(time));
-		}
+		pedidos = listaPedidosEscala.get(toIntExact(time));
 		
 		Paquete pk = new Paquete();
 		if(toIntExact(time)==listaPedidosEscala.size()){
@@ -99,26 +91,37 @@ public class Application extends Controller {
 		
 		Boolean todosFactibles=true;
 		for(int i=0;i<pedidos.length && todosFactibles;i++){
-			String [] datosPaquete = pedidos[i].trim().split("-");//0:fecha 1:hora 2: ciudad origen 3: ciudad fin					
-			
-			RutaEscogida mejorRuta=gc.DFS(datosPaquete[2],datosPaquete[3],1,datosPaquete[1],1,datosPaquete[0]);
+			String [] datosPaquete = pedidos[i].trim().split("-");//0:id 1:fecha 2:hora 3:ciudad origen 4:ciudad fin					
+						
+			RutaEscogida mejorRuta=gc.DFS(datosPaquete[3],datosPaquete[4],1,datosPaquete[2],1,datosPaquete[1]);
 			String resultado=null;
 			if(mejorRuta.getEstadoRuta()==0){//0 es Factible
 				resultado="Numpedido: "+i+" "+pedidos[i]+" Ruta: "+ mejorRuta.imprimirRecorrido();
 				String resultadoJSON=(String)gson.toJson(mejorRuta, RutaEscogida.class);
 				SimpleChat.notifyAll(resultadoJSON);//Acá se podría mandar un Json con los datos del paquete
+				
 			}else{
+				/*Logger.info("Entro aca Estado: "+mejorRuta.getEstadoRuta());
+				Logger.info("Id: "+datosPaquete[0]);
+				Logger.info("fecha: "+datosPaquete[1]);
+				Logger.info("Hora: "+datosPaquete[2]);
+				Logger.info("Ciudad Origen: "+datosPaquete[3]);
+				Logger.info("Ciudad Fin: "+datosPaquete[4]);*/
+				
 				if(mejorRuta.getEstadoRuta()!=1){//Si se cae por condición de capacidades
 					todosFactibles=false;
+					Logger.info("Entro aca Estado: "+mejorRuta.getEstadoRuta());
 					pk.factible=mejorRuta.getEstadoRuta();
 					pk.stop=1;//para que el front sepa que ya se debe terminar de iterar
-					pk.fecha=datosPaquete[0];
-					pk.hora=datosPaquete[1];
-					pk.origen=datosPaquete[2];
-					pk.destino=datosPaquete[3];
+					pk.id=datosPaquete[0];
+					pk.fecha=datosPaquete[1];
+					pk.hora=datosPaquete[2];
+					pk.origen=datosPaquete[3];
+					pk.destino=datosPaquete[4];
 				}
-				resultado="Numpedido: "+i+" No se encontro ruta - Ciudad Origen: "+ datosPaquete[2]+" Ciudad Fin: "+datosPaquete[3];	
-			}			
+				resultado="Numpedido: "+i+" No se encontro ruta - Ciudad Origen: "+ datosPaquete[3]+" Ciudad Fin: "+datosPaquete[4];	
+			}	
+			//SimpleChat.notifyAll(resultado);
 			Logger.info(resultado);
 		}
 		return ok(Json.toJson(pk));
