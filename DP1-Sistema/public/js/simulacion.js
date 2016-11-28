@@ -1,6 +1,10 @@
 var websocket;
-
-var websocketEchoServerUri = "ws://localhost:9000/socket";
+var url=window.location.href;
+var res = url.split(":"); 
+var ip=res[1].substring(2);
+console.log("ip: "+ip);
+var websocketEchoServerUri = "ws://"+ip+":9000/socket";
+console.log(websocketEchoServerUri);
 var serverLog = document.getElementById("maplog");
 
 ///////GRAFICOS PARA LA SIMULACION (INICIALIZACION)
@@ -164,10 +168,10 @@ function togglePlay() {
   var contador=0;
   // start playing
   
-  if(isSendRequest==0){
-    isSendRequest=1;
-    recursiveVuelosPaquetes(contador);
-  }
+  // if(isSendRequest==0){
+  //   isSendRequest=1;
+  //   recursiveVuelosPaquetes(contador);
+  // }
 
   interval = setInterval( function () {
 
