@@ -168,10 +168,10 @@ function togglePlay() {
   var contador=0;
   // start playing
   
-  // if(isSendRequest==0){
-  //   isSendRequest=1;
-  //   recursiveVuelosPaquetes(contador);
-  // }
+  if(isSendRequest==0){
+    isSendRequest=1;
+    recursiveVuelosPaquetes(contador);
+  }
 
   interval = setInterval( function () {
 
