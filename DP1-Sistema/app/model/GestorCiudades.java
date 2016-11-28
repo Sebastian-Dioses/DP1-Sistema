@@ -118,10 +118,10 @@ public class GestorCiudades {
         try{
             while((linea=brRutas.readLine()) != null){
                 String [] datos=linea.trim().split("-");
-                String ciudadO=datos[0];
-                String ciudadF=datos[1];
-                String horaO=datos[2];
-                String horaF=datos[3];
+                String ciudadO=datos[1];
+                String ciudadF=datos[2];
+                String horaO=datos[3];
+                String horaF=datos[4];
 
                 String[] hhmm=horaO.split(":");        
                 int horaPartida=Integer.parseInt(hhmm[0]);
