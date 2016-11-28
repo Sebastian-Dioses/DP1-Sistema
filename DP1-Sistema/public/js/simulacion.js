@@ -15,6 +15,7 @@ AmCharts.ready(function() {
   };
   map.imagesSettings.balloonText = "<span style='font-size:14px;'><b>[[title]]</b>: [[value]]</span>";
   map.addTitle("Hora actual: 00:00", 14);
+  map.addTitle("Dias transcurridos: 0",14);
   var dataProvider = {
     mapVar: AmCharts.maps.worldLow,
     images: []
@@ -131,8 +132,11 @@ function recursiveVuelosPaquetes(contador) {
 // initilize variables
 var isSendRequest=0;
 var currentTime = 0;
+var diaSimulacion=0;
 var interval;
+  var speed = 1000; // time between frames in milliseconds
  var inicioAviones=cities.size; 
+ var planeSVG = "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -80,134h-35l43,-133h-71l-24,30h-28l15,-47";
 
 // function to start stop
 function togglePlay() {
@@ -144,8 +148,8 @@ function togglePlay() {
 
   escala=parseInt($('#escalaTiempo').val());
 
-  var speed = 1000; // time between frames in milliseconds
-  var planeSVG = "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -80,134h-35l43,-133h-71l-24,30h-28l15,-47";
+  
+ 
 
 
   // check if animation is playing (intverla is set)
@@ -172,7 +176,9 @@ function togglePlay() {
       var hora=currentTime;
       if(currentTime<10) hora="0"+hora;
       map.titles.pop();   
+      map.titles.pop(); 
       map.addTitle("Hora actual: "+ hora+":00", 14);
+      map.addTitle("Dias transcurridos: "+diaSimulacion,14);
       //map.validateNow();      
         while (map.dataProvider.lines.length > 0) {
             map.dataProvider.lines.pop();
@@ -185,33 +191,69 @@ function togglePlay() {
 
       ///////actualizamos aviones
 
-      // for(var j=inicioAviones;j<map.dataProvider.images.length;j++){
+
+
+      for(var j=inicioAviones;j<map.dataProvider.images.length;j++){
+          var avion=map.dataProvider.images[j];
+          var vuelo=vuelos[avion.id];
+
+          if(avion.customData==0){
+            avion.deleteObject();
+            //console.log("Borrando");
+          }
+          else{
+           // console.log("Antes: "+avion.longitude+"//"+avion.latitude+"//"+avion.customData);
+            var lon=parseInt(avion.longitude)+vuelo.stepLongitud;
+            var lat=parseInt(avion.latitude)+vuelo.stepLatitud;
+            avion.longitude=lon;
+            avion.latitude=lat;
+            avion.customData--;
+           // console.log("Después: "+avion.longitude+"//"+avion.latitude+"//"+avion.customData);            
+          }
+
+      }
+
 
 
       //agregamos los nuevos aviones
       for(var i=inicioIndex;i<finIndex;i++){
           var vuelo=vuelos[i];
           //datos de la ciudad origen
+          var id=i;
           var latO=cities.get(vuelo.ciudadO).latitud;
           var lonO=cities.get(vuelo.ciudadO).longitud;
           //datos de la ciudad destino
           var latF=cities.get(vuelo.ciudadF).latitud;
           var lonF=cities.get(vuelo.ciudadF).longitud;
 
-          map.dataProvider.lines.push({
-            id: i,
-            arc: -0.85,
-            alpha: 0.3,
-            color: "#990000",
-            latitudes: [ latO, latF ],
-            longitudes: [ lonO, lonF ]              
-          });
+          var ciudO=cities.get(vuelo.ciudadO).nombre;
+          var ciudF=cities.get(vuelo.ciudadF).nombre;        
+          var titulo=ciudO+"-"+ciudF; 
+          // map.dataProvider.lines.push({
+          //   id: i,
+          //   arc: -0.85,
+          //   alpha: 0.3,
+          //   color: "#990000",
+          //   latitudes: [ latO, latF ],
+          //   longitudes: [ lonO, lonF ]              
+          // });
 
           //CREAR AVIONES
+          map.dataProvider.images.push({
+            id: id,
+            type: "circle",
+            title: titulo,
+            latitude: latO,
+            longitude: lonO,
+            width: 3,
+            customData: vuelo.tiempo,
+            height: 3
+          });
 
       }
 
         currentTime++;
+        if(currentTime==24) diaSimulacion++;
         currentTime%=24;
       // check if maybe we need to wrap to frame 0
       // update size of each bubble for the specific frame
