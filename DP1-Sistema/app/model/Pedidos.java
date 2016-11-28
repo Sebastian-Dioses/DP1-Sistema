@@ -24,6 +24,8 @@ public class Pedidos {
     public Date fecha_registro;
     @NotNull
     public Long personas_id;
+    @NotNull
+    public Long personas2_id;
 
     @ManyToOne
     @JoinColumn(name="ciudad_origen", insertable = false, updatable = false)
@@ -37,6 +39,10 @@ public class Pedidos {
     @JoinColumn(name="personas_id", insertable = false, updatable = false)
     public Personas persona;
 
+    @ManyToOne
+    @JoinColumn(name="personas2_id", insertable = false, updatable = false)
+    public Personas persona2;
+
     /*@ManyToOne
     @JoinColumn(name="id", insertable = false, updatable = false)    
     public Pedidos_x_vuelos ruta;
@@ -45,10 +51,11 @@ public class Pedidos {
 
     }
 
-    public Pedidos(String ciudad_origen, String ciudad_destino, Long personas_id){
+    public Pedidos(String ciudad_origen, String ciudad_destino, Long personas_id, Long personas2_id){
         this.ciudad_origen=ciudad_origen;
         this.ciudad_destino=ciudad_destino;
-        this.personas_id=personas_id;        
+        this.personas_id=personas_id;
+        this.personas2_id=personas2_id;
         this.fecha_registro=new Date();        
     }
     

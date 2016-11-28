@@ -14,7 +14,7 @@ INSERT INTO `personas` (`id`,`nombre`,`dni`,`correo`,`tipo_persona`) VALUES (7,'
 INSERT INTO `personas` (`id`,`nombre`,`dni`,`correo`,`tipo_persona`) VALUES (8,'Donald Trump','37462514','soydonaldtrump@gmail.com','1');
 INSERT INTO `personas` (`id`,`nombre`,`dni`,`correo`,`tipo_persona`) VALUES (9,'Hillary Clinton','37462514','lahillary@gmail.com','1');
 INSERT INTO `personas` (`id`,`nombre`,`dni`,`correo`,`tipo_persona`) VALUES (10,'Olinda Castañeda','37462514','olinda@gmail.com','1');
-INSERT INTO `personas` (`id`,`nombre`,`dni`,`correo`,`tipo_persona`) VALUES (11,'Sebastian Dioses','19374728','s.dioses@pucp.pe','1');
-INSERT INTO `personas` (`id`,`nombre`,`dni`,`correo`,`tipo_persona`) VALUES (12,'Nilton Guerra','29437362','guerra.nilton@pucp.pe','1');
-INSERT INTO `personas` (`id`,`nombre`,`dni`,`correo`,`tipo_persona`) VALUES (13,'Jose Luis Gil','37462514','josegil@pucp.pe','1');
+INSERT INTO `personas` (`id`,`nombre`,`dni`,`correo`,`tipo_persona`) VALUES (11,'Sebastian Dioses','19374728','sebastian.dioses@pucp.pe','1');
+INSERT INTO `personas` (`id`,`nombre`,`dni`,`correo`,`tipo_persona`) VALUES (12,'Nilton Guerra','29437362','guerra.n@pucp.pe','1');
+INSERT INTO `personas` (`id`,`nombre`,`dni`,`correo`,`tipo_persona`) VALUES (13,'Jose Luis Gil','37462514','jose.gil@pucp.pe','1');
 INSERT INTO `personas` (`id`,`nombre`,`dni`,`correo`,`tipo_persona`) VALUES (14,'Marcelo Milera','18273941','m.milera@pucp.pe','1');

@@ -82,21 +82,43 @@
 		    		</div>
 		  		</div>		  				  	
 
+		  		</br>
+		  		</br>
+
 		  		<div class="form-group">
-		    		<label for="ciudadDestino_input" class="col-sm-3 control-label">Remitente:</label>
-		    		<label for="ciudadDestino_input" class="col-sm-1 control-label">ID</label>
+		    		<label for="personas_id" class="col-sm-3 control-label">Remitente:</label>
+		    		<label for="personas_id" class="col-sm-1 control-label">ID</label>
 		    		<div class="col-sm-1">
 		      			<input type="text" class="form-control" id="personas_id" name="personas_id" readonly value="@pedido.persona.id">
 		    		</div>		    	
-		    		<label for="ciudadDestino_input" class="col-sm-1 control-label">DNI</label>	
+		    		<label for="personas_dni" class="col-sm-1 control-label">DNI</label>	
 		    		<div class="col-sm-2">
-		      			<input type="text" class="form-control" id="personas_id" name="personas_id" readonly value="@pedido.persona.dni">
+		      			<input type="text" class="form-control" id="personas_dni" name="personas_dni" readonly value="@pedido.persona.dni">
 		    		</div>
-		    		<label for="ciudadDestino_input" class="col-sm-1 control-label">Nombre</label>	
+		    		<label for="personas_nombre" class="col-sm-1 control-label">Nombre</label>	
 		    		<div class="col-sm-2">
-		      			<input type="text" class="form-control" id="personas_id" name="personas_id" readonly value="@pedido.persona.nombre">
+		      			<input type="text" class="form-control" id="personas_nombre" name="personas_nombre" readonly value="@pedido.persona.nombre">
 		    		</div>
-		  		</div>		  				  
+		  		</div>
+
+		  		<div class="form-group">
+		    		<label for="personas2_id" class="col-sm-3 control-label">Destinatario:</label>
+		    		<label for="personas2_id" class="col-sm-1 control-label">ID</label>
+		    		<div class="col-sm-1">
+		      			<input type="text" class="form-control" id="personas2_id" name="personas2_id" readonly value="@pedido.persona2.id">
+		    		</div>		    	
+		    		<label for="personas2_dni" class="col-sm-1 control-label">DNI</label>	
+		    		<div class="col-sm-2">
+		      			<input type="text" class="form-control" id="personas2_dni" name="personas2_dni" readonly value="@pedido.persona2.dni">
+		    		</div>
+		    		<label for="personas2_nombre" class="col-sm-1 control-label">Nombre</label>	
+		    		<div class="col-sm-2">
+		      			<input type="text" class="form-control" id="personas2_nombre" name="personas2_nombre" readonly value="@pedido.persona2.nombre">
+		    		</div>
+		  		</div>
+
+		  		</br>
+		  		</br>
 
 		  		<div class="form-group">
 		    		<label for="fecha" class="col-sm-4 control-label">Fecha de Registro:</label>
@@ -116,13 +138,18 @@
 				  			<input type="text" class="form-control" id="ciudad1" name="ciudad1" readonly 
 			      			value="@ruta.vuelo.ciudad_origen ( @ruta.vuelo.hora_salida.format("HH:mm") ) - @ruta.vuelo.ciudad_destino ( @ruta.vuelo.hora_llegada.format("HH:mm") )">
 			      		</div>
+			      		<label for="estado" class="col-sm-1 control-label">Estado:</label>				  		
+			  			<div class="col-sm-2">
+				  			<input type="text" class="form-control" id="estado" name="estado" readonly 
+			      			value="@ruta.estado">
+			      		</div>
 			      	</div>
 			  	}		  				  
 		  		
 					<!-- FIN FIN FIN  -->				
 			
 				</br>
-			  	</br>
+
 				<div class="btn-inline">
 					<div class="btn-group col-sm-5"></div>									
 					<div class="btn-group">						

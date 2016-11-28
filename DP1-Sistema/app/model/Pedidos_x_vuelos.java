@@ -29,6 +29,8 @@ public class Pedidos_x_vuelos {
 	
 	public Integer tiempo_TrasladoH;
 
+    public String estado;
+
 	@ManyToOne
     @JoinColumn(name="pedidos_personas_id", insertable = false, updatable = false)
     public Personas persona;

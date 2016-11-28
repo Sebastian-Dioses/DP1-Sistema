@@ -28,6 +28,8 @@ import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
+import org.apache.commons.mail.*;
+
 import play.mvc.Security;
 
 @Security.Authenticated(SecuredC.class)
@@ -49,8 +51,11 @@ public class PedidosC extends Controller {
             String ciudad_origen = requestData.get("ciudad_origen");
             String ciudad_destino = requestData.get("ciudad_destino");
             Long personas_id = new Long(Integer.parseInt(requestData.get("personas_id")));
+            Long personas2_id = new Long(Integer.parseInt(requestData.get("personas2_id")));
             
-            Pedidos pedido = new Pedidos(ciudad_origen, ciudad_destino, personas_id); 
+            Long id;
+
+            Pedidos pedido = new Pedidos(ciudad_origen, ciudad_destino, personas_id, personas2_id); 
            
             //Aca se debe llamar al algoritmo
 			Logger.info("Se lee informacion para el algoritmo");
@@ -69,7 +74,7 @@ public class PedidosC extends Controller {
 			
 			if(mejorRuta.getEstadoRuta()==0){//0 es Factible
 				pedido.save();
-				
+				Logger.info("Se lee informacion para el algoritmo");	
 				Logger.info("Ruta: "+ mejorRuta.imprimirRecorrido());
 				
 				Logger.info("ID Pedido "+pedido.id);
@@ -106,6 +111,31 @@ public class PedidosC extends Controller {
 					Logger.info("Se guardo pedidoXvuelo");
 				}
 				
+				Personas p1 = Personas.getById(personas_id);
+				Personas p2 = Personas.getById(personas2_id);
+				Ciudades c1 = Ciudades.getById(ciudad_origen);
+				Ciudades c2 = Ciudades.getById(ciudad_destino);
+				DateFormat f = new SimpleDateFormat("dd/MM/yyyy HH:mm");									
+
+				Email email = new SimpleEmail();
+	            email.setHostName("smtp.gmail.com");
+	            email.setSmtpPort(587);
+	            email.setAuthenticator(new DefaultAuthenticator("contact.simusoft@gmail.com", "simusoft123"));
+	            email.setSSLOnConnect(true);
+	            email.setFrom("contact.simusoft@gmail.com", "SIMUSOFT");
+	            email.setSubject("[Simusoft] - Pedido");
+	            email.setMsg("Buenas tardes," + '\n' + "Simusoft le informa que se ha registrado el siguiente pedido:" +
+	            	"código N°: " + pedido.id + '\n' +
+	            	"Remitente: " + p1.nombre + '\n' +
+	            	"Destinatario: " + p2.nombre + '\n' + '\n' +
+	            	"Origen: " + c1.nombre + '\n' +
+	            	"Destino: " + c2.nombre + '\n' + '\n' +
+	            	"Fecha: " + f.format(pedido.fecha_registro)
+	            	);
+	            email.addTo(p1.correo);
+	            email.addTo(p2.correo);
+	            email.send();       
+				
 				flash("success", "El pedido fue creado con éxito");
 			}else{
 				Logger.info("No se encontro ruta");
@@ -125,8 +155,49 @@ public class PedidosC extends Controller {
     }
 	
     @play.db.jpa.Transactional      
-    public static Result detail(Long idPedido) {            
-        return ok(views.html.pedido.detail.render(Pedidos.getById(idPedido), Pedidos_x_vuelos.getByPedido(idPedido)));
+    public static Result detail(Long idPedido) {
+    	Pedidos pedido = Pedidos.getById(idPedido);
+    	List<Pedidos_x_vuelos> rutas = Pedidos_x_vuelos.getByPedido(idPedido);
+    	Date fecha = new Date();
+    	Logger.info("fecha acual: " + fecha);    	
+    	Logger.info("fecha de registro: " + pedido.fecha_registro);
+    	int diaAnt = pedido.fecha_registro.getDate();
+    	int horaAnt = pedido.fecha_registro.getHours();
+    	for(Pedidos_x_vuelos ruta : rutas){    		
+    		if(ruta.vuelo.hora_salida.getHours()>horaAnt){
+    			ruta.vuelo.hora_salida.setDate(diaAnt);
+    		}
+    		else{
+    			ruta.vuelo.hora_salida.setDate(++diaAnt);	
+    		}
+    		ruta.vuelo.hora_salida.setMonth(pedido.fecha_registro.getMonth());
+    		ruta.vuelo.hora_salida.setYear(pedido.fecha_registro.getYear());    		
+    		
+    		if(ruta.vuelo.hora_salida.getHours()<ruta.vuelo.hora_llegada.getHours()){
+    			ruta.vuelo.hora_llegada.setDate(diaAnt);	
+    		}
+    		else{
+    			ruta.vuelo.hora_llegada.setDate(++diaAnt);    			
+    		}
+    		ruta.vuelo.hora_llegada.setMonth(pedido.fecha_registro.getMonth());
+    		ruta.vuelo.hora_llegada.setYear(pedido.fecha_registro.getYear());
+
+    		Logger.info("hora_salida: " + ruta.vuelo.hora_salida);
+    		Logger.info("hora_llegada: " + ruta.vuelo.hora_llegada);
+    		if (fecha.compareTo(ruta.vuelo.hora_salida)>0 && fecha.compareTo(ruta.vuelo.hora_llegada)<0){
+    			ruta.estado = "En vuelo";
+    		}
+    		if (fecha.compareTo(ruta.vuelo.hora_salida)<=0){
+    			ruta.estado = "En espera";	
+    		}
+			if (fecha.compareTo(ruta.vuelo.hora_llegada)>=0){
+    			ruta.estado = "Aterrizado";	
+    		}
+    		horaAnt = ruta.vuelo.hora_llegada.getHours();
+			ruta.save();
+		}
+
+        return ok(views.html.pedido.detail.render(pedido, rutas));
     }
 
     @play.db.jpa.Transactional      

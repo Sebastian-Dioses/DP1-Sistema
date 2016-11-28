@@ -1,5 +1,5 @@
-ALTER TABLE ciudades ADD latitud SMALLINT;
-ALTER TABLE ciudades ADD longitud SMALLINT;
+#ALTER TABLE ciudades ADD latitud SMALLINT;
+#ALTER TABLE ciudades ADD longitud SMALLINT;
 
 SET SQL_SAFE_UPDATES = 0;
 UPDATE `dp1`.`ciudades` SET `nombre`='Montevideo' WHERE `cod_ciudad`='SUAA';
@@ -47,7 +47,7 @@ UPDATE ciudades c SET c.latitud = 51.507 , c.longitud = -0.127 WHERE c.nombre = 
 UPDATE ciudades c SET c.latitud = 59.329 , c.longitud = 18.068 WHERE c.nombre = "Estocolmo";
 UPDATE ciudades c SET c.latitud = 46.947 , c.longitud = 7.447 WHERE c.nombre = "Berna";
 
-ALTER TABLE ciudades ADD huso SMALLINT;
+#ALTER TABLE ciudades ADD huso SMALLINT;
 
 UPDATE ciudades c SET c.huso = -5 WHERE c.cod_ciudad = "SKBO";
 UPDATE ciudades c SET c.huso = -5 WHERE c.cod_ciudad = "SEQM";

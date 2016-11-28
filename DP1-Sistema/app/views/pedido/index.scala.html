@@ -59,20 +59,23 @@
 					<thead class="active" data-sortable="true">
 						<th><div align=center>ID</div></th>
 						<th><div align=center>ORIGEN</div></th>
-						<th><div align=center>DESTINO</div></th>							
-						<th><div align=center>REMITENTE</div></th>	
+						<th><div align=center>DESTINO</div></th>
+						<th><div align=center>REMITENTE</div></th>
+						<th><div align=center>DESTINATARIO</div></th>
+						<th><div align=center>FECHA</div></th>
 						<th><div align=center>DETALLE</div></th>
 						<th><div align=center>ELIMINAR</div></th>
 					</thead>
-
 											
 					<tbody>
 					@for(pedido <- pedidos){
 						<tr>
 							<td>@pedido.id</td>
-							<td>@pedido.ciudad_origen</td>
-							<td>@pedido.ciudad_destino</td>							
+							<td>@pedido.ciudadOrigen.nombre</td>
+							<td>@pedido.ciudadDestino.nombre</td>							
 							<td>@pedido.persona.nombre</td>
+							<td>@pedido.persona2.nombre</td>
+							<td>@pedido.fecha_registro.format("dd/MM/YYYY")</td>
 							<td>
 				              <a class="btn btn-info" href='@routes.PedidosC.detail(pedido.id)' title="Detalle" ><i class="glyphicon glyphicon-list-alt"></i></a>
 				            </td>							

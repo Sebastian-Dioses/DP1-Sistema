@@ -51,23 +51,30 @@
 
 				<!-- INICIO INCIO-->				                       				
 				<div class="form-group required">
-		    		<label for="clienteOrigen_input" class="col-sm-4 control-label">Ciudad de Origen</label>
+		    		<label for="ciudad_origen" class="col-sm-4 control-label">Ciudad de Origen</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" placeholder="Ciudad de Origen" >
+		      			<input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" placeholder="Ciudad de Origen" required onkeypress="return inputLimiter(event,'Letters')">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudadOrigen_input" class="col-sm-4 control-label">Ciudad de Destino</label>
+		    		<label for="ciudad_destino" class="col-sm-4 control-label">Ciudad de Destino</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" placeholder="Ciudad de Destino" >
+		      			<input type="text" class="form-control" id="ciudad_destino" name="ciudad_destino" placeholder="Ciudad de Destino" required onkeypress="return inputLimiter(event,'Letters')">
 		    		</div>
 		  		</div>
 		  		
 		  		<div class="form-group required">
-		    		<label for="ciudadDestino_input" class="col-sm-4 control-label">ID Persona</label>
+		    		<label for="personas_id" class="col-sm-4 control-label">ID REMITENTE</label>
 		    		<div class="col-sm-5">
-		      			<input type="text" class="form-control" id="personas_id" name="personas_id" placeholder="ID de Persona" >
+		      			<input type="text" class="form-control" id="personas_id" name="personas_id" placeholder="ID de Remitente" required onkeypress="return inputLimiter(event,'Numbers')">
+		    		</div>
+		  		</div>
+
+		  		<div class="form-group required">
+		    		<label for="personas2_id" class="col-sm-4 control-label">ID DESTINATARIO</label>
+		    		<div class="col-sm-5">
+		      			<input type="text" class="form-control" id="personas2_id" name="personas2_id" placeholder="ID de Destinatario" required onkeypress="return inputLimiter(event,'Numbers')">
 		    		</div>
 		  		</div>
 		  		

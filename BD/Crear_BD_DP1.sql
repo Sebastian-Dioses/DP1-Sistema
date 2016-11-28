@@ -5,6 +5,9 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
 -- Schema dp1
 -- -----------------------------------------------------
 
@@ -23,6 +26,9 @@ CREATE TABLE IF NOT EXISTS `dp1`.`ciudades` (
   `pais` VARCHAR(45) NOT NULL,
   `abreviado` VARCHAR(45) NOT NULL,
   `capacidad_almacen` INT(11) NOT NULL,
+  `latitud` SMALLINT(6) NULL DEFAULT NULL,
+  `longitud` SMALLINT(6) NULL DEFAULT NULL,
+  `huso` SMALLINT(6) NULL DEFAULT NULL,
   PRIMARY KEY (`cod_ciudad`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
@@ -48,7 +54,6 @@ CREATE TABLE IF NOT EXISTS `dp1`.`personas` (
   `tipo_persona` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -61,10 +66,12 @@ CREATE TABLE IF NOT EXISTS `dp1`.`pedidos` (
   `ciudad_destino` VARCHAR(4) NOT NULL,
   `fecha_registro` DATETIME NULL DEFAULT NULL,
   `personas_id` INT(11) NOT NULL,
-  PRIMARY KEY (`id`, `personas_id`),
+  `personas2_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`, `personas_id`, `personas2_id`),
   INDEX `fk_pedido_persona1_idx` (`personas_id` ASC),
   INDEX `fk_pedido_ciudad1_idx` (`ciudad_origen` ASC),
   INDEX `fk_pedido_ciudad2_idx` (`ciudad_destino` ASC),
+  INDEX `fk_pedido_persona2_idx` (`personas2_id` ASC),
   CONSTRAINT `fk_pedido_ciudad1`
     FOREIGN KEY (`ciudad_origen`)
     REFERENCES `dp1`.`ciudades` (`cod_ciudad`)
@@ -107,26 +114,25 @@ CREATE TABLE IF NOT EXISTS `dp1`.`vuelos` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 1001
 DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
 -- Table `dp1`.`pedidos_x_vuelos`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `dp1`.`pedidos_x_vuelos` ;
-
 CREATE TABLE IF NOT EXISTS `dp1`.`pedidos_x_vuelos` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `pedidos_id` INT(11) NOT NULL,
   `pedidos_personas_id` INT(11) NOT NULL,
   `vuelos_id` INT(11) NOT NULL,
   `num_vuelo` INT(11) NOT NULL,
-  `tiempo_EsperaH` INT(11) NULL,
-  `tiempo_TrasladoH` INT(11) NULL,
+  `tiempo_EsperaH` INT(11) NULL DEFAULT NULL,
+  `tiempo_TrasladoH` INT(11) NULL DEFAULT NULL,
+  `estado` VARCHAR(45) NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_pedido_has_plan_de_vuelo_plan_de_vuelo1_idx` (`vuelos_id` ASC),
   INDEX `fk_pedido_has_plan_de_vuelo_pedido1_idx` (`pedidos_id` ASC, `pedidos_personas_id` ASC),
+  INDEX `FKhp8kskvrdbisigr1dkli9f0ii` (`pedidos_personas_id` ASC),
   CONSTRAINT `fk_pedido_has_plan_de_vuelo_pedido1`
     FOREIGN KEY (`pedidos_id` , `pedidos_personas_id`)
     REFERENCES `dp1`.`pedidos` (`id` , `personas_id`)
@@ -147,7 +153,7 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `dp1`.`usuarios` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
-  `contraseña` VARCHAR(255) NOT NULL,
+  `contraseÃ±a` VARCHAR(255) NOT NULL,
   `personas_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`, `personas_id`),
   INDEX `fk_usuario_persona_idx` (`personas_id` ASC),
@@ -157,7 +163,6 @@ CREATE TABLE IF NOT EXISTS `dp1`.`usuarios` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8;
 
 
