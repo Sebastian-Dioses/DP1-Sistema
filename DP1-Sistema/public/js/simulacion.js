@@ -1,6 +1,10 @@
 var websocket;
-
-var websocketEchoServerUri = "ws://localhost:9000/socket";
+var url=window.location.href;
+var res = url.split(":"); 
+var ip=res[1].substring(2);
+console.log("ip: "+ip);
+var websocketEchoServerUri = "ws://"+ip+":9000/socket";
+console.log(websocketEchoServerUri);
 var serverLog = document.getElementById("maplog");
 
 ///////GRAFICOS PARA LA SIMULACION (INICIALIZACION)
@@ -96,10 +100,10 @@ function mostrarResultadosRuteos(data){
   //el data representa la informacion traida del algoritmo en formato Json
   //alert( data);
   if(data.factible==2){
-    writeToScreen("<span style='color: red'>No es factible por capacidad de almacén </span>");
+    writeToScreen("<span style='color: red'>No es factible por capacidad de almacén Id paquete:"+data.id+"</span>");
   }else{
     if(data.factible==3){
-      writeToScreen("<span style='color: red'>No es factible por capacidad de vuelo </span>");
+      writeToScreen("<span style='color: red'>No es factible por capacidad de vuelo Id paquete:"+data.id+"</span>");
     }
   }
 }
@@ -164,10 +168,10 @@ function togglePlay() {
   var contador=0;
   // start playing
   
-  if(isSendRequest==0){
-    isSendRequest=1;
-    recursiveVuelosPaquetes(contador);
-  }
+  // if(isSendRequest==0){
+  //   isSendRequest=1;
+  //   recursiveVuelosPaquetes(contador);
+  // }
 
   interval = setInterval( function () {
 

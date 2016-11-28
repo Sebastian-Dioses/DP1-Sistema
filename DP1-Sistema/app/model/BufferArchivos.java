@@ -33,10 +33,10 @@ public class BufferArchivos {
     //private TreeMap<Integer, TreeMap<Integer,String[]>> listasPorEscala = new TreeMap<Integer, TreeMap<Integer,String[]>>();
     private TreeMap<Integer,String[]> listaPedidosEscala1 =new TreeMap<Integer, String[]>();
     private TreeMap<Integer,String[]> listaPedidosEscala2 =new TreeMap<Integer, String[]>();
-    private TreeMap<Integer,String[]> listaPedidosEscala3 =new TreeMap<Integer, String[]>();
+    //private TreeMap<Integer,String[]> listaPedidosEscala3 =new TreeMap<Integer, String[]>();
     private int escala1=1;
     private int escala2=3;
-    private int escala3=6;
+    //private int escala3=6;
     
 	private static BufferArchivos instance;
 	
@@ -240,20 +240,15 @@ public class BufferArchivos {
     public void setListaPedidosEscala2(TreeMap<Integer,String[]> listaPedidosEscala2) {
         this.listaPedidosEscala2 = listaPedidosEscala2;
     }
-
-    /**
-     * @return the listaPedidosEscala3
-     */
+	/*
+     
     public TreeMap<Integer,String[]> getListaPedidosEscala3() {
         return listaPedidosEscala3;
     }
 
-    /**
-     * @param listaPedidosEscala3 the listaPedidosEscala3 to set
-     */
     public void setListaPedidosEscala3(TreeMap<Integer,String[]> listaPedidosEscala3) {
         this.listaPedidosEscala3 = listaPedidosEscala3;
-    }
+    }*/
 
     /**
      * @return the escala1
@@ -283,19 +278,14 @@ public class BufferArchivos {
         this.escala2 = escala2;
     }
 
-    /**
-     * @return the escala3
-     */
+	/*
     public int getEscala3() {
         return escala3;
     }
 
-    /**
-     * @param escala3 the escala3 to set
-     */
     public void setEscala3(int escala3) {
         this.escala3 = escala3;
-    }
+    }*/
 
 
 }
