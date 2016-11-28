@@ -94,20 +94,30 @@ function updateLog(wsEvent) {
 function mostrarResultadosRuteos(data){
   //el data representa la informacion traida del algoritmo en formato Json
   //alert( data);
-  var log = document.getElementById('maplog');
-  log.innerHTML = log.innerHTML + "<div>Origen: "+data.origen+" Destino: "+data.destino+"<\div>";
+  if(data.factible==2){
+    writeToScreen("<span style='color: red'>No es factible por capacidad de almacén </span>");
+  }else{
+    if(data.factible==3){
+      writeToScreen("<span style='color: red'>No es factible por capacidad de vuelo </span>");
+    }
+  }
 }
 
 function recursiveVuelosPaquetes(contador) {
   var stop=0;
+  var factible=0;
 
   $.get( "/simulation/requestPackage?scale="+escala+"&time="+contador).done(function (data) {
     stop=data.stop;
-    mostrarResultadosRuteos(data);
+    factible=data.factible;    
     if (stop==0) {
       isSendRequest=0;
       recursiveVuelosPaquetes(contador+1);
-    }   
+    }else{
+      if(factible!=0){
+        mostrarResultadosRuteos(data);
+      }
+    }
 
   });
   
