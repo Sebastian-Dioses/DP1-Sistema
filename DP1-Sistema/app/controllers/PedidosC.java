@@ -163,8 +163,12 @@ public class PedidosC extends Controller {
     	Logger.info("fecha de registro: " + pedido.fecha_registro);
     	int diaAnt = pedido.fecha_registro.getDate();
     	int horaAnt = pedido.fecha_registro.getHours();
-    	for(Pedidos_x_vuelos ruta : rutas){    		
-    		if(ruta.vuelo.hora_salida.getHours()>horaAnt){
+    	int tam = rutas.size();
+    	int i = 1;
+
+    	for(Pedidos_x_vuelos ruta : rutas){    
+    		Logger.info("hora salida: " + ruta.vuelo.hora_salida.getHours());
+    		if(ruta.vuelo.hora_salida.getHours()>=horaAnt){
     			ruta.vuelo.hora_salida.setDate(diaAnt);
     		}
     		else{
@@ -191,10 +195,16 @@ public class PedidosC extends Controller {
     			ruta.estado = "En espera";	
     		}
 			if (fecha.compareTo(ruta.vuelo.hora_llegada)>=0){
-    			ruta.estado = "Aterrizado";	
+				if (i==tam){
+					ruta.estado = "Entregado";
+				}else{
+					ruta.estado = "Aterrizado";	
+				}    			
     		}
     		horaAnt = ruta.vuelo.hora_llegada.getHours();
+    		Logger.info("horaAnd: " + horaAnt);
 			ruta.save();
+			i++;
 		}
 
         return ok(views.html.pedido.detail.render(pedido, rutas));
