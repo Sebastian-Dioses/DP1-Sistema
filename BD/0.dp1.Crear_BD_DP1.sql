@@ -18,9 +18,9 @@ CREATE SCHEMA IF NOT EXISTS `dp1` DEFAULT CHARACTER SET utf8 ;
 USE `dp1` ;
 
 -- -----------------------------------------------------
--- Table `dp1`.`ciudades`
+-- Table `dp1`.`Ciudades`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `dp1`.`ciudades` (
+CREATE TABLE IF NOT EXISTS `dp1`.`Ciudades` (
   `cod_ciudad` VARCHAR(4) NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
   `pais` VARCHAR(45) NOT NULL,
@@ -44,9 +44,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `dp1`.`personas`
+-- Table `dp1`.`Personas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `dp1`.`personas` (
+CREATE TABLE IF NOT EXISTS `dp1`.`Personas` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
   `dni` CHAR(8) NOT NULL,
@@ -58,9 +58,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `dp1`.`pedidos`
+-- Table `dp1`.`Pedidos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `dp1`.`pedidos` (
+CREATE TABLE IF NOT EXISTS `dp1`.`Pedidos` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `ciudad_origen` VARCHAR(4) NOT NULL,
   `ciudad_destino` VARCHAR(4) NOT NULL,
@@ -74,17 +74,17 @@ CREATE TABLE IF NOT EXISTS `dp1`.`pedidos` (
   INDEX `fk_pedido_persona2_idx` (`personas2_id` ASC),
   CONSTRAINT `fk_pedido_ciudad1`
     FOREIGN KEY (`ciudad_origen`)
-    REFERENCES `dp1`.`ciudades` (`cod_ciudad`)
+    REFERENCES `dp1`.`Ciudades` (`cod_ciudad`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_pedido_ciudad2`
     FOREIGN KEY (`ciudad_destino`)
-    REFERENCES `dp1`.`ciudades` (`cod_ciudad`)
+    REFERENCES `dp1`.`Ciudades` (`cod_ciudad`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_pedido_persona1`
     FOREIGN KEY (`personas_id`)
-    REFERENCES `dp1`.`personas` (`id`)
+    REFERENCES `dp1`.`Personas` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -92,9 +92,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `dp1`.`vuelos`
+-- Table `dp1`.`Vuelos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `dp1`.`vuelos` (
+CREATE TABLE IF NOT EXISTS `dp1`.`Vuelos` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `ciudad_origen` VARCHAR(4) NOT NULL,
   `ciudad_destino` VARCHAR(4) NOT NULL,
@@ -105,12 +105,12 @@ CREATE TABLE IF NOT EXISTS `dp1`.`vuelos` (
   INDEX `fk_vuelos_ciudad2_idx` (`ciudad_origen` ASC),
   CONSTRAINT `fk_vuelos_ciudad1`
     FOREIGN KEY (`ciudad_destino`)
-    REFERENCES `dp1`.`ciudades` (`cod_ciudad`)
+    REFERENCES `dp1`.`Ciudades` (`cod_ciudad`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_vuelos_ciudad2`
     FOREIGN KEY (`ciudad_origen`)
-    REFERENCES `dp1`.`ciudades` (`cod_ciudad`)
+    REFERENCES `dp1`.`Ciudades` (`cod_ciudad`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -118,9 +118,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `dp1`.`pedidos_x_vuelos`
+-- Table `dp1`.`Pedidos_x_vuelos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `dp1`.`pedidos_x_vuelos` (
+CREATE TABLE IF NOT EXISTS `dp1`.`Pedidos_x_vuelos` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `pedidos_id` INT(11) NOT NULL,
   `pedidos_personas_id` INT(11) NOT NULL,
@@ -135,12 +135,12 @@ CREATE TABLE IF NOT EXISTS `dp1`.`pedidos_x_vuelos` (
   INDEX `FKhp8kskvrdbisigr1dkli9f0ii` (`pedidos_personas_id` ASC),
   CONSTRAINT `fk_pedido_has_plan_de_vuelo_pedido1`
     FOREIGN KEY (`pedidos_id` , `pedidos_personas_id`)
-    REFERENCES `dp1`.`pedidos` (`id` , `personas_id`)
+    REFERENCES `dp1`.`Pedidos` (`id` , `personas_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_pedido_has_plan_de_vuelo_plan_de_vuelo1`
     FOREIGN KEY (`vuelos_id`)
-    REFERENCES `dp1`.`vuelos` (`id`)
+    REFERENCES `dp1`.`Vuelos` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -148,9 +148,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `dp1`.`usuarios`
+-- Table `dp1`.`Usuarios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `dp1`.`usuarios` (
+CREATE TABLE IF NOT EXISTS `dp1`.`Usuarios` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
   `contraseña` VARCHAR(255) NOT NULL,
@@ -159,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `dp1`.`usuarios` (
   INDEX `fk_usuario_persona_idx` (`personas_id` ASC),
   CONSTRAINT `fk_usuario_persona`
     FOREIGN KEY (`personas_id`)
-    REFERENCES `dp1`.`personas` (`id`)
+    REFERENCES `dp1`.`Personas` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
