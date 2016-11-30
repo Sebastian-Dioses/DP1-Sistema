@@ -207,7 +207,7 @@ public class PedidosC extends Controller {
 			i++;
 		}
 
-        return ok(views.html.pedido.detail.render(pedido, rutas));
+        return ok(views.html.pedido.detail.render(Ciudades.getAll(),pedido, rutas));
     }
 
     @play.db.jpa.Transactional      
