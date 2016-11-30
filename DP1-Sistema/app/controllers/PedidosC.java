@@ -60,6 +60,7 @@ public class PedidosC extends Controller {
             //Aca se debe llamar al algoritmo
 			Logger.info("Se lee informacion para el algoritmo");
 			
+			
 			GestorCiudades temporal=GestorCiudades.getInstance();
 			
 			Logger.info("Se leyo informacion con exito");

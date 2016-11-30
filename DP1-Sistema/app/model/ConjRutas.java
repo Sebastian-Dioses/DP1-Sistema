@@ -34,4 +34,8 @@ public class ConjRutas {
         //}
         System.out.println(" Tiempo: "+tiempo);
     }    
+	public void addRuta(Ruta vuelo,int tiemp){
+        vuelos.add(vuelo);
+        tiempo+=tiemp;
+    }
 }

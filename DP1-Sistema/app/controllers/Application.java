@@ -72,6 +72,9 @@ public class Application extends Controller {
 		
 		Logger.info("Cantidad horas en escala: "+listaPedidosEscala.size());
 			
+		GestorCiudades gc=GestorCiudades.getInstance();
+		Logger.info("Se leyo informacion con exito");	
+		
 		String [] pedidos = null;
 		pedidos = listaPedidosEscala.get(toIntExact(time));
 		
@@ -84,7 +87,7 @@ public class Application extends Controller {
 		pk.factible=0;
 
 		
-		GestorCiudades gc=GestorCiudades.getInstance();
+		
 		
 		Logger.info("Cantidad paquetes: "+pedidos.length+"-"+time);
 		Gson gson = new Gson();
@@ -92,8 +95,9 @@ public class Application extends Controller {
 		Boolean todosFactibles=true;
 		for(int i=0;i<pedidos.length && todosFactibles;i++){
 			String [] datosPaquete = pedidos[i].trim().split("-");//0:id 1:fecha 2:hora 3:ciudad origen 4:ciudad fin					
-						
+			Logger.info("Va a entrar a DFS");
 			RutaEscogida mejorRuta=gc.DFS(datosPaquete[3],datosPaquete[4],1,datosPaquete[2],1,datosPaquete[1]);
+			Logger.info("Salio de DFS");
 			String resultado=null;
 			if(mejorRuta.getEstadoRuta()==0){//0 es Factible
 				resultado="Numpedido: "+i+" "+pedidos[i]+" Ruta: "+ mejorRuta.imprimirRecorrido();

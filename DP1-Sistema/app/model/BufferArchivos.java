@@ -46,7 +46,7 @@ public class BufferArchivos {
 	
 	static {
 		Gson gson = new Gson();		
-		try (Reader reader = new FileReader( Play.application().getFile("/conf/pedidosArutear.json"))) {
+		try (Reader reader = new FileReader( Play.application().getFile("/conf/pedidosArutear_7.json"))) {
 			instance=gson.fromJson(reader, BufferArchivos.class);
 		} catch (IOException e) {
 			e.printStackTrace();
