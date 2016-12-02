@@ -6,7 +6,7 @@ console.log("ip: "+ip);
 var websocketEchoServerUri = "ws://"+ip+":9000/socket";
 console.log(websocketEchoServerUri);
 var serverLog = document.getElementById("maplog");
-
+var escala=1;
 ///////GRAFICOS PARA LA SIMULACION (INICIALIZACION)
 AmCharts.ready(function() {
     AmCharts.theme = AmCharts.themes.dark;
@@ -141,6 +141,7 @@ function recursiveVuelosPaquetes(contador) {
     writeToScreen("SCREEN - PAUSADO");    
     return;
   }
+  writeToScreen("ESCALA: " + escala);
   $.get( "/simulation/requestPackage?scale="+escala+"&time="+contador).done(function (data) {
     stop=data.stop;
     factible=data.factible;    
@@ -171,6 +172,7 @@ var inicioAviones=cities.size;
 var planeSVG = "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -80,134h-35l43,-133h-71l-24,30h-28l15,-47";
 var contador=0;
 var pause=0;
+
 // function to start stop
 function togglePlay() {
   pause=0;
@@ -180,7 +182,7 @@ function togglePlay() {
   //else if(opcion==2) divisor=10;
 
   escala=parseInt($('#escalaTiempo').val());
-
+  
   // check if animation is playing (intverla is set)
   if ( interval!=undefined ) {
     
