@@ -112,8 +112,8 @@ public class Application extends Controller {
 			String resultado=null;
 			if(mejorRuta.getEstadoRuta()==0){//0 es Factible
 				resultado="Numpedido: "+i+" "+pedidos[i]+" Ruta: "+ mejorRuta.imprimirRecorrido();
-				String resultadoJSON=(String)gson.toJson(mejorRuta, RutaEscogida.class);
-				SimpleChat.notifyAll(resultadoJSON);//Acá se podría mandar un Json con los datos del paquete
+				//String resultadoJSON=(String)gson.toJson(mejorRuta, RutaEscogida.class);
+				SimpleChat.notifyAll(resultado);//Acá se podría mandar un Json con los datos del paquete
 				
 			}else{
 				/*Logger.info("Entro aca Estado: "+mejorRuta.getEstadoRuta());
