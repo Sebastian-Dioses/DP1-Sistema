@@ -17,7 +17,7 @@ AmCharts.ready(function() {
     unlistedAreasColor: "#000000",
     unlistedAreasAlpha: 0.1
   };
-  map.imagesSettings.balloonText = "<span style='font-size:14px;'><b>[[title]]</b>: [[value]]</span>";
+  map.imagesSettings.balloonText = "<span style='font-size:14px;'><b>[[title]]</b>: [[description]]</span>";
   map.addTitle("Hora actual: 00:00", 14);
   map.addTitle("Dias transcurridos: 0",14);
   var dataProvider = {
@@ -41,7 +41,9 @@ var targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z 
           longitude: long,
           title: nombre,
           latitude: lat,
-          scale: 0.3
+          scale: 0.3,    
+          color: "#000000",
+          description: "Normal"  
       });
   }
 
@@ -108,7 +110,7 @@ function updateLog(wsEvent) {
   else
     if (wsEvent.data == "0"){
       writeToScreen("PAUSA SIMULACION");
-      pause=1;
+      pause=1;           
       // stop playing (clear interval)
       clearInterval( interval );
       //currentTime=0;
@@ -125,7 +127,8 @@ function mostrarResultadosRuteos(data){
   //el data representa la informacion traida del algoritmo en formato Json
   //alert( data);
   if(data.factible==2){
-    writeToScreen("<span style='color: red'>No es factible por capacidad de almacén Id paquete:"+data.id+"</span>");
+    writeToScreen("<span style='color: red'>No es factible por capacidad de almacén Id paquete:"+data.id+"</span>");    
+    map.validateData();
   }else{
     if(data.factible==3){
       writeToScreen("<span style='color: red'>No es factible por capacidad de vuelo Id paquete:"+data.id+"</span>");
@@ -150,6 +153,18 @@ function recursiveVuelosPaquetes(contador) {
       recursiveVuelosPaquetes(contador+1);
     }else{
       if(factible!=0){
+        var id = cities.get(data.destino).id;
+        
+        map.dataProvider.images[id].color= "#CC0000";
+        map.dataProvider.images[id].scale= 1;
+        map.dataProvider.images[id].description= "Colapsado";
+        map.validateData();
+        writeToScreen("FIN DE SIMULACION");
+        pause=1;           
+        // stop playing (clear interval)
+        clearInterval( interval );
+        //currentTime=0;
+        interval=undefined;
         mostrarResultadosRuteos(data);
       }
     }
