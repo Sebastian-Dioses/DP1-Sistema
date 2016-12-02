@@ -60,6 +60,7 @@ public class PedidosC extends Controller {
             //Aca se debe llamar al algoritmo
 			Logger.info("Se lee informacion para el algoritmo");
 			
+			
 			GestorCiudades temporal=GestorCiudades.getInstance();
 			
 			Logger.info("Se leyo informacion con exito");
@@ -207,7 +208,7 @@ public class PedidosC extends Controller {
 			i++;
 		}
 
-        return ok(views.html.pedido.detail.render(pedido, rutas));
+        return ok(views.html.pedido.detail.render(Ciudades.getAll(),pedido, rutas));
     }
 
     @play.db.jpa.Transactional      

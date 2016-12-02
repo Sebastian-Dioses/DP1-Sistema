@@ -31,7 +31,10 @@ public class Ciudad {
     public ArrayList<Ruta> rutasAnexas=new ArrayList<Ruta>();
     public TreeMap<Integer, TreeMap<Integer,Integer>> proyeccionAlmacen = new TreeMap<Integer, TreeMap<Integer,Integer>>();
     private ArrayList<Integer> cantVisitadasRutasAnexas=new ArrayList<Integer>();
+    public HashMap<String,ArrayList<ConjRutas>> rutasXDestino = new HashMap<>(); // llave es el codigo de la ciudad destino, valor es las rutasXDestino posibles
+    public HashMap<String,ArrayList<Integer>> CantVisitadasrutasXDestino = new HashMap<>();
     
+	
     
     //private BufferedReader brAeropuertos;
     private String ultimaHora;
@@ -185,13 +188,28 @@ public class Ciudad {
         }        
     }
         
-    
+    public void instanciarCantVisitadasrutasXDestino(String codCiudadF){
+        ArrayList<ConjRutas> rutas=(ArrayList<ConjRutas>)this.rutasXDestino.get(codCiudadF);
+        ArrayList<Integer> listaRutas= new ArrayList<Integer>();
+ 
+        for(int i=0;rutas!=null &&i<rutas.size();i++){
+            listaRutas.add(1);//Se instancian con 1 para empezas con probabilidad 1
+        }
+        
+        this.CantVisitadasrutasXDestino.put(codCiudadF, listaRutas);
+        
+    }
 
     public void incrementarRutaEscogida(int indiceRuta){
         int cant=cantVisitadasRutasAnexas.get(indiceRuta);
         cantVisitadasRutasAnexas.set(indiceRuta, cant+1);
     }
     
+	public void incrementarRutaEscogidaXCiudad(String codCiudadF,int indiceRuta){
+        ArrayList<Integer> listaRutas=CantVisitadasrutasXDestino.get(codCiudadF);    
+        int cant=listaRutas.get(indiceRuta);
+        listaRutas.set(indiceRuta, cant+1);
+    }
     
     public void disminuirOtrasRutas(int indiceRuta){
         for(int i=0;i<this.rutasAnexas.size();i++){
@@ -295,53 +313,6 @@ public class Ciudad {
             this.setUltimoDestino(DestinoPaquete);                     
         }
         else this.setUltimaHora(null);
-        /*BufferedReader archivoCiudad= new BufferedReader(new FileReader("Extras/_archivos_1dia/1arch_"+codigo+".txt"));
-        String linea;
-        try{
-            for(int i=0;i<this.linea;++i) linea=archivoCiudad.readLine();
-        }catch (IOException e)
-        {
-            System.err.println(e.toString());
-        }
-        finally
-        {
-            try
-            {
-                archivoCiudad.close();
-            }
-            catch (IOException ex)
-            {
-                System.err.println(ex.toString());
-            }
-        }
-        try{
-            if((linea=archivoCiudad.readLine()) != null){
-                String codigoPaquete=linea.substring(0, 9);
-                String fechaLlegadaPaquete=linea.substring(15,17)+"/"+linea.substring(13,15)+"/"+linea.substring(9,13);
-                String horaLlegadaPaquete=linea.substring(17,22);
-                String DestinoPaquete=linea.substring(22,26);
-                this.setLinea(this.linea+1);
-                this.setUltimaFecha(fechaLlegadaPaquete);
-                this.setUltimaHora(horaLlegadaPaquete);
-                this.setUltimoDestino(DestinoPaquete);                     
-            }
-            else this.setUltimaHora(null);
-            archivoCiudad.close();      
-        }catch (IOException e)
-        {
-            System.err.println(e.toString());
-        }
-        finally
-        {
-            try
-            {
-                archivoCiudad.close();
-            }
-            catch (IOException ex)
-            {
-                System.err.println(ex.toString());
-            }
-        } */
     }
 
     /**
