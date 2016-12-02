@@ -28,6 +28,8 @@ import play.mvc.Security;
 
 @Security.Authenticated(SecuredC.class)
 public class Application extends Controller {
+	public static boolean pausa=false;
+
     @play.db.jpa.Transactional(readOnly=true)
     public static Result index() {            
         return ok(views.html.ciudad.index.render(Ciudades.getAll()));
@@ -55,8 +57,17 @@ public class Application extends Controller {
 		public Integer factible;
 		public Integer stop;
 	}
+	public static Result action(String act){
+		if (act.equals("1")){
+			pausa=false;
+		}
+		else{
+			pausa=true;
+		}
+		SimpleChat.notifyAll(act);
+		return ok(act);
+	}	
 
-	
 	public static Result requestPackage(Long scale, Long time){
 		//Se debe correr todos los paquetes que calcen en ese periodo de tiempo y escala
 		Logger.info("Escala: "+scale+" Time: "+time);
@@ -90,7 +101,7 @@ public class Application extends Controller {
 		Gson gson = new Gson();
 		
 		Boolean todosFactibles=true;
-		for(int i=0;i<pedidos.length && todosFactibles;i++){
+		for(int i=0;i<pedidos.length && todosFactibles && !pausa;i++){			
 			String [] datosPaquete = pedidos[i].trim().split("-");//0:id 1:fecha 2:hora 3:ciudad origen 4:ciudad fin					
 						
 			RutaEscogida mejorRuta=gc.DFS(datosPaquete[3],datosPaquete[4],1,datosPaquete[2],1,datosPaquete[1]);

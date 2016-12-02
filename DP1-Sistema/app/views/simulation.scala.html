@@ -18,6 +18,7 @@
         <link rel='stylesheet' href='@routes.Assets.at("css/simulacion.css")'>   
         <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
         <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+
     </head>
     <body>
     <!---Cuerpo -->
@@ -31,12 +32,13 @@
 
         <div id="chartdiv" style="background-color:#d5eff7; height: 500px;"></div>
    
-        <div id="maplog"></div>
+        <div id="maplog" style="height: 500px;"></div>
 
          <div class="container" id="contain">
             <div class="btn-group btn-group-justified">
-                <a type="button" class="btn btn-primary" onclick="togglePlay();">Iniciar/Pausar</a>
-                <a type="button" class="btn btn-primary">Ver Resultados</a>             
+                <a type="button" class="btn btn-primary" onclick="action(1);">Iniciar/Reanudar</a>
+                <a type="button" class="btn btn-primary" onclick="action(0);">Pausar</a>
+                <a type="button" class="btn btn-primary">Ver Resultados</a>
                 <div class="btn-group">
                     <select class="form-control" id="escalaTiempo" >
                         <option value="1">1 seg-10 mins</option>
@@ -96,8 +98,9 @@
         <script src='@routes.Assets.at("js/MisScripts.js")'></script>
 
         <script src='@routes.Assets.at("js/jquery.dataTables.js")'></script>
-                <script src='@routes.Assets.at("js/precargaDatos.js")'></script>
+        <script src='@routes.Assets.at("js/precargaDatos.js")'></script>
         <script src='@routes.Assets.at("js/simulacion.js")'></script>
+
         <script>
         $(document).ready(function() {
            $('#example').DataTable( {

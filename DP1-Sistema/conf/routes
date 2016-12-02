@@ -13,6 +13,7 @@ GET     /cuenta						controllers.UsuariosC.account()
 GET     /							controllers.Application.index()
 GET     /simulation					controllers.Application.simulation()
 GET		/simulation/requestPackage	controllers.Application.requestPackage(scale: Long, time: Long)
+GET		/simulation/action			controllers.Application.action(act: String)
 
 GET 	/socket                		controllers.Application.socket()
 
