@@ -206,83 +206,81 @@ function togglePlay() {
   // start playing
   interval = setInterval( function () {
 
-    // var numLineas=map.dataProvider.lines.length;
-    // for(var i=0;i<)
-    var hora=currentTime;
-    if(currentTime<10) hora="0"+hora;
-    map.titles.pop();   
-    map.titles.pop(); 
-    map.addTitle("Hora actual: "+ hora+":00", 14);
-    map.addTitle("Dias transcurridos: "+diaSimulacion,14);
-    //map.validateNow();      
-      while (map.dataProvider.lines.length > 0) {
-          map.dataProvider.lines.pop();
-      } 
-    
-    var inicioIndex=indicesVuelos[currentTime];
-    var finIndex=vuelos.length;
-    if(currentTime!=23) finIndex=indicesVuelos[currentTime+1];
+  // var numLineas=map.dataProvider.lines.length;
+  // for(var i=0;i<)
+  var hora=currentTime;
+  if(currentTime<10) hora="0"+hora;
+  map.titles.pop();   
+  map.titles.pop(); 
+  map.addTitle("Hora actual: "+ hora+":00", 14);
+  map.addTitle("Dias transcurridos: "+diaSimulacion,14);
+  //map.validateNow();      
+  while (map.dataProvider.lines.length > 0) {
+      map.dataProvider.lines.pop();
+  } 
+  
+  var inicioIndex=indicesVuelos[currentTime];
+  var finIndex=vuelos.length;
+  if(currentTime!=23) finIndex=indicesVuelos[currentTime+1];
 
-    ///////actualizamos aviones
-    for(var j=inicioAviones;j<map.dataProvider.images.length;j++){
-        var avion=map.dataProvider.images[j];
-        var vuelo=vuelos[avion.id];
+  ///////actualizamos aviones
+  for(var j=inicioAviones;j<map.dataProvider.images.length;j++){
+    var avion=map.dataProvider.images[j];
+    var vuelo=vuelos[avion.id];
 
-        if(avion.customData==0){
-          avion.deleteObject();
-          //console.log("Borrando");
-        }
-        else{
-          var lon=parseInt(avion.longitude)+vuelo.stepLongitud;
-          var lat=parseInt(avion.latitude)+vuelo.stepLatitud;
-          avion.longitude=lon;
-          avion.latitude=lat;
-          avion.customData--;         
-        }
-
+    if(avion.customData==0){
+      avion.deleteObject();
+      //console.log("Borrando");
     }
-
-    //agregamos los nuevos aviones
-    for(var i=inicioIndex;i<finIndex;i++){
-        var vuelo=vuelos[i];
-        //datos de la ciudad origen
-        var id=i;
-        var latO=cities.get(vuelo.ciudadO).latitud;
-        var lonO=cities.get(vuelo.ciudadO).longitud;
-        //datos de la ciudad destino
-        var latF=cities.get(vuelo.ciudadF).latitud;
-        var lonF=cities.get(vuelo.ciudadF).longitud;
-
-        var ciudO=cities.get(vuelo.ciudadO).nombre;
-        var ciudF=cities.get(vuelo.ciudadF).nombre;        
-        var titulo=ciudO+"-"+ciudF; 
-
-        //CREAR AVIONES
-        map.dataProvider.images.push({
-          id: id,
-          type: "circle",
-          title: titulo,
-          latitude: latO,
-          longitude: lonO,
-          width: 3,
-          customData: vuelo.tiempo,
-          height: 3
-        });
-
+    else{
+      var lon=parseInt(avion.longitude)+vuelo.stepLongitud;
+      var lat=parseInt(avion.latitude)+vuelo.stepLatitud;
+      avion.longitude=lon;
+      avion.latitude=lat;
+      avion.customData--;         
     }
+  }
 
-      currentTime++;
-      if(currentTime==24) diaSimulacion++;
-      currentTime%=24;
-    // check if maybe we need to wrap to frame 0
-    // update size of each bubble for the specific frame
+  //agregamos los nuevos aviones
+  for(var i=inicioIndex;i<finIndex;i++){
+    var vuelo=vuelos[i];
+    //datos de la ciudad origen
+    var id=i;
+    var latO=cities.get(vuelo.ciudadO).latitud;
+    var lonO=cities.get(vuelo.ciudadO).longitud;
+    //datos de la ciudad destino
+    var latF=cities.get(vuelo.ciudadF).latitud;
+    var lonF=cities.get(vuelo.ciudadF).longitud;
 
-    // for( var i = 0; i < map.dataProvider.images.length; i++ ) {
-    if (pause==1){
-      writeToScreen("MAP - PAUSADO");    
-      return;
-    }
-    map.validateData();
+    var ciudO=cities.get(vuelo.ciudadO).nombre;
+    var ciudF=cities.get(vuelo.ciudadF).nombre;        
+    var titulo=ciudO+"-"+ciudF; 
+
+    //CREAR AVIONES
+    map.dataProvider.images.push({
+      id: id,
+      type: "circle",
+      title: titulo,
+      latitude: latO,
+      longitude: lonO,
+      width: 3,
+      customData: vuelo.tiempo,
+      height: 3
+    });
+  }
+
+  currentTime++;
+  if(currentTime==24) diaSimulacion++;
+  currentTime%=24;
+  // check if maybe we need to wrap to frame 0
+  // update size of each bubble for the specific frame
+
+  // for( var i = 0; i < map.dataProvider.images.length; i++ ) {
+  if (pause==1){
+    writeToScreen("MAP - PAUSADO");    
+    return;
+  }
+  map.validateData();
     
   }, speed );  
   
