@@ -160,12 +160,7 @@ function recursiveVuelosPaquetes(contador) {
         map.dataProvider.images[id].description= "Colapsado";
         map.validateData();
         writeToScreen("FIN DE SIMULACION");
-        pause=1;           
-        // stop playing (clear interval)
-        clearInterval( interval );
-        //currentTime=0;
-        interval=undefined;
-        mostrarResultadosRuteos(data);
+        $.get( "/simulation/action?act=0").done(function (data){ });
       }
     }
 
