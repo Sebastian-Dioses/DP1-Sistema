@@ -45,7 +45,7 @@ public class BufferArchivos {
     public void generarJson(){
         Gson gson = new Gson();
 
-        try (FileWriter writer = new FileWriter("pedidosArutear.json")) {
+        try (FileWriter writer = new FileWriter("pedidosData3Dias.json")) {
             gson.toJson(this,writer);
         } catch(IOException e){
             e.printStackTrace();
