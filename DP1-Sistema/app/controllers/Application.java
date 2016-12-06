@@ -70,7 +70,7 @@ public class Application extends Controller {
 		BufferArchivos baPedidos = new BufferArchivos();
 		Gson gson = new Gson();		
 
-		Logger.info("NumArchivo: "+gc.numArchivoLeido);
+		Logger.info("NumArchivo: "+gc.numArchivoLeido+"   ");
 
 		if(gc.leyendoArchivos==0){
 			try (Reader reader = new FileReader( Play.application().getFile("/conf/pedidosArutear0.json"))) {
@@ -90,21 +90,20 @@ public class Application extends Controller {
 			
 		}
 		
-		if(gc.numArchivoLeido==16 && time==listaPedidosEscala.size()-1){			
+		//TreeMap<Integer,String[]> listaPedidosEscala= baPedidos.getListaPedidosEscala2();
+
+
+
+
+		TreeMap<Integer,String[]> listaPedidosEscala=null;
+		
+		listaPedidosEscala = baPedidos.getListaPedidosEscala2();		
+
+		if(gc.numArchivoLeido==16 && time==listaPedidosEscala.size()-1){		
 			gc.leyendoArchivos=0;
 		}
 
 		if(time==listaPedidosEscala.size()-1)
-			gc.numArchivoLeido++;
-
-
-		TreeMap<Integer,String[]> listaPedidosEscala=null;
-		if(scale==1)
-			listaPedidosEscala = baPedidos.getListaPedidosEscala1();
-		else
-			listaPedidosEscala = baPedidos.getListaPedidosEscala2();		
-
-		if(listaPedidosEscala.size())
 			gc.numArchivoLeido++;
 
 		//Logger.info("Cantidad horas en escala: "+listaPedidosEscala.size());
@@ -123,12 +122,12 @@ public class Application extends Controller {
 		
 		
 		//Logger.info("Cantidad paquetes: "+pedidos.length+"-"+time);
-		Gson gson = new Gson();
+		//Gson gson = new Gson();
 		
 		Boolean todosFactibles=true;
 		for(int i=0;i<pedidos.length && todosFactibles;i++){
 			String [] datosPaquete = pedidos[i].trim().split("-");//0:id 1:fecha 2:hora 3:ciudad origen 4:ciudad fin					
-						
+			//Logger.info("i: "+i +" Total: "+pedidos.length);
 			RutaEscogida mejorRuta=gc.DFS(datosPaquete[3],datosPaquete[4],1,datosPaquete[2],1,datosPaquete[1]);
 			String resultado=null;
 			if(mejorRuta.getEstadoRuta()==0){//0 es Factible
@@ -188,10 +187,10 @@ public class Application extends Controller {
 		else
 			listaPedidosEscala = baPedidos.getListaPedidosEscala2();		
 
-		if(listaPedidosEscala.size())
+		if(listaPedidosEscala.size()>0)
 			gc.numArchivoLeido++;
 
-		//Logger.info("Cantidad horas en escala: "+listaPedidosEscala.size());
+		Logger.info("Cantidad horas en escala: "+listaPedidosEscala.size());
 			
 		String [] pedidos = null;
 		pedidos = listaPedidosEscala.get(toIntExact(time));
@@ -207,7 +206,7 @@ public class Application extends Controller {
 		
 		
 		//Logger.info("Cantidad paquetes: "+pedidos.length+"-"+time);
-		Gson gson = new Gson();
+		//Gson gson = new Gson();
 		
 		Boolean todosFactibles=true;
 		for(int i=0;i<pedidos.length && todosFactibles;i++){
@@ -217,8 +216,8 @@ public class Application extends Controller {
 			String resultado=null;
 			if(mejorRuta.getEstadoRuta()==0){//0 es Factible
 				resultado="Numpedido: "+i+" "+pedidos[i]+" Ruta: "+ mejorRuta.imprimirRecorrido();
-				//String resultadoJSON=(String)gson.toJson(mejorRuta, RutaEscogida.class);
-				SimpleChat.notifyAll(resultado);//Acá se podría mandar un Json con los datos del paquete
+				String resultadoJSON=(String)gson.toJson(mejorRuta, RutaEscogida.class);
+				SimpleChat.notifyAll(resultadoJSON);//Acá se podría mandar un Json con los datos del paquete
 				
 			}else{
 				/*Logger.info("Entro aca Estado: "+mejorRuta.getEstadoRuta());

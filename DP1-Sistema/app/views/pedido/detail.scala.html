@@ -1,4 +1,4 @@
-@(ciudades:List[models.Ciudades],pedido: models.Pedidos, rutas: List[models.Pedidos_x_vuelos])
+@(pedido: models.Pedidos, rutas: List[models.Pedidos_x_vuelos])
 
 @layouts.headerandfooter("") {
     
@@ -13,8 +13,7 @@
 		<link rel='stylesheet' href='@routes.Assets.at("css/MisEstilos.css")'>
 		<link rel='stylesheet' href='@routes.Assets.at("css/bootstrap.css")'>
 		<link rel='stylesheet' href='@routes.Assets.at("css/font-awesome.css")'>
-        <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
-        <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>    	
+    	
     </head>
     <body>
 
@@ -133,7 +132,7 @@
 		  		</div>		  					  		
 			  				  	
 			  	@for(ruta <- rutas){			  		
-			  		<div class="form-group" id="rutasForm">			  		
+			  		<div class="form-group">			  		
 			  			<label for="ciudad1" class="col-sm-4 control-label">Ruta:</label>				  		
 			  			<div class="col-sm-4">
 				  			<input type="text" class="form-control" id="ciudad1" name="ciudad1" readonly 
@@ -159,38 +158,8 @@
 				</div>
 				</br>
 				</br>
-        <div id="chartdiv" style="background-color:#d5eff7; height: 500px;"></div>
 
-        <div style="display:none" >
-            <table id="rutas_tabla">
-                <tbody>
-                @for(ruta <- rutas){
-                    <tr>
-                        <td>@ruta.vuelo.ciudad_origen</td>
-                        <td>@ruta.vuelo.hora_salida.format("HH:mm")</td>
-                        <td>@ruta.vuelo.ciudad_destino</td>
-                        <td>@ruta.vuelo.hora_llegada.format("HH:mm")</td>
-                    </tr>
-                }
-                </tbody>                         
-
-            </table>
-            <table id="ciudades_tabla">
-                <tbody>
-                @for(ciudad <- ciudades){
-                    <tr>
-                        <td>@ciudad.cod_ciudad</td>
-                        <td>@ciudad.nombre</td>
-                        <td>@ciudad.pais</td>
-                        <td>@ciudad.latitud</td>
-                        <td>@ciudad.longitud</td>
-                        <td>@ciudad.huso</td>
-                    </tr>
-                }
-                </tbody>                         
-
-            </table>            
-        </div>				
+				
 				
 			</form>
 		</div>
@@ -203,8 +172,7 @@
 	<!-- BXSlider -->
 	<script src='@routes.Assets.at("js/jquery.bxslider.min.js")'></script>
     	<script src='@routes.Assets.at("js/MisScripts.js")'></script>
-    <script src='@routes.Assets.at("js/precargaCiudades.js")'></script>
-        <script src='@routes.Assets.at("js/simuReal.js")'></script>
+    
     
     </body>
     </html>

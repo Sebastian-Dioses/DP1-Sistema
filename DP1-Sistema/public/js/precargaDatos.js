@@ -13,7 +13,6 @@ for (i = 0; i < rowLength; i++){
 
    var codCiud=ciudadFila.item(0).innerHTML;
    var city= {
-      id: i,
       codigo: ciudadFila.item(0).innerHTML,
       nombre: ciudadFila.item(1).innerHTML,
       pais: ciudadFila.item(2).innerHTML,
