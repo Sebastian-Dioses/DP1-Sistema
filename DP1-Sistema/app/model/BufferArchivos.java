@@ -38,30 +38,14 @@ public class BufferArchivos {
     private int escala2=3;
     //private int escala3=6;
     
-	private static BufferArchivos instance;
-	
-	public static BufferArchivos getInstance(){
-		return instance;
-	}
-	
-	static {
-		Gson gson = new Gson();		
-		try (Reader reader = new FileReader( Play.application().getFile("/conf/pedidosArutear_7.json"))) {
-			instance=gson.fromJson(reader, BufferArchivos.class);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	
-	private BufferArchivos(){
+	public BufferArchivos(){
 		
 	}
 	
     public void generarJson(){
         Gson gson = new Gson();
 
-        try (FileWriter writer = new FileWriter("pedidosArutear.json")) {
+        try (FileWriter writer = new FileWriter("pedidosData3Dias.json")) {
             gson.toJson(this,writer);
         } catch(IOException e){
             e.printStackTrace();
