@@ -116,7 +116,16 @@ function recursiveVuelosPaquetes(contador) {
       recursiveVuelosPaquetes(contador+1);
     }else{
       if(factible!=0){
-        mostrarResultadosRuteos(data);
+
+        var id = cities.get(data.destino).id;
+        
+        map.dataProvider.images[id].color= "#CC0000";
+        map.dataProvider.images[id].scale= 1;
+        map.dataProvider.images[id].description= "Colapsado";
+        map.validateData();
+        writeToScreen("FIN DE SIMULACION");
+        $.get( "/simulation/action?act=0").done(function (data){ });
+
       }
     }
 
