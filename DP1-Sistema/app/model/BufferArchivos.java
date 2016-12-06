@@ -31,8 +31,8 @@ public class BufferArchivos {
     
     
     //private TreeMap<Integer, TreeMap<Integer,String[]>> listasPorEscala = new TreeMap<Integer, TreeMap<Integer,String[]>>();
-    private TreeMap<Integer,String[]> listaPedidosEscala1 =new TreeMap<Integer, String[]>();
-    private TreeMap<Integer,String[]> listaPedidosEscala2 =new TreeMap<Integer, String[]>();
+    public TreeMap<Integer,String[]> listaPedidosEscala1 =new TreeMap<Integer, String[]>();
+    public TreeMap<Integer,String[]> listaPedidosEscala2 =new TreeMap<Integer, String[]>();
     //private TreeMap<Integer,String[]> listaPedidosEscala3 =new TreeMap<Integer, String[]>();
     private int escala1=1;
     private int escala2=3;
@@ -45,7 +45,7 @@ public class BufferArchivos {
     public void generarJson(){
         Gson gson = new Gson();
 
-        try (FileWriter writer = new FileWriter("pedidosData3Dias.json")) {
+        try (FileWriter writer = new FileWriter("pedidosArutear.json")) {
             gson.toJson(this,writer);
         } catch(IOException e){
             e.printStackTrace();
